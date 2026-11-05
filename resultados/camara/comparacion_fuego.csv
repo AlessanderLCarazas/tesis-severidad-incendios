@@ -1,0 +1,65 @@
+archivo,quitar,variante,clase,muestras,trayectorias,cortes,cortas,duracion_media_s,duracion_max_s,detecciones,cobertura
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.0,original,fuego,392,78,19,20,1.23,13.0,1481,0.361
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.0,original,humo,392,20,5,2,3.1,14.6,513,0.838
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.0,original_cmc,fuego,392,74,13,15,1.69,9.4,1481,0.409
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.0,original_cmc,humo,392,21,4,2,2.95,15.3,513,0.838
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.0,dt_tope2,fuego,392,78,19,20,1.23,13.0,1481,0.361
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.0,dt_tope2,humo,392,20,5,2,3.1,14.6,513,0.838
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.0,dt_tope2_cmc,fuego,392,74,13,15,1.69,9.4,1481,0.409
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.0,dt_tope2_cmc,humo,392,21,4,2,2.95,15.3,513,0.838
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.5,original,fuego,200,38,6,12,1.65,8.2,686,0.274
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.5,original,humo,200,12,5,3,3.66,21.0,262,0.744
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.5,original_cmc,fuego,200,36,8,7,2.57,11.4,686,0.343
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.5,original_cmc,humo,200,13,6,3,3.21,21.0,262,0.737
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.5,dt_tope2,fuego,200,39,5,14,2.02,14.9,686,0.277
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.5,dt_tope2,humo,200,14,6,3,3.14,11.0,262,0.74
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.5,dt_tope2_cmc,fuego,200,37,8,10,2.34,15.5,686,0.322
+Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4,0.5,dt_tope2_cmc,humo,200,15,7,3,2.78,11.0,262,0.737
+14294880_3840_2160_24fps.mp4,0.0,original,fuego,273,9,0,0,8.91,24.27,495,0.6
+14294880_3840_2160_24fps.mp4,0.0,original,humo,273,1,0,0,27.19,27.19,274,0.996
+14294880_3840_2160_24fps.mp4,0.0,original_cmc,fuego,273,7,0,0,12.72,24.4,495,0.669
+14294880_3840_2160_24fps.mp4,0.0,original_cmc,humo,273,1,0,0,27.19,27.19,274,0.996
+14294880_3840_2160_24fps.mp4,0.0,dt_tope2,fuego,273,9,0,0,8.24,22.81,495,0.616
+14294880_3840_2160_24fps.mp4,0.0,dt_tope2,humo,273,1,0,0,27.19,27.19,274,0.996
+14294880_3840_2160_24fps.mp4,0.0,dt_tope2_cmc,fuego,273,7,0,0,9.5,22.81,495,0.59
+14294880_3840_2160_24fps.mp4,0.0,dt_tope2_cmc,humo,273,1,0,0,27.19,27.19,274,0.996
+14294880_3840_2160_24fps.mp4,0.5,original,fuego,132,6,0,0,10.23,24.11,228,0.456
+14294880_3840_2160_24fps.mp4,0.5,original,humo,132,1,0,0,27.11,27.11,133,0.992
+14294880_3840_2160_24fps.mp4,0.5,original_cmc,fuego,132,5,0,0,9.73,24.11,228,0.417
+14294880_3840_2160_24fps.mp4,0.5,original_cmc,humo,132,1,0,0,27.11,27.11,133,0.992
+14294880_3840_2160_24fps.mp4,0.5,dt_tope2,fuego,132,6,0,0,9.38,24.11,228,0.447
+14294880_3840_2160_24fps.mp4,0.5,dt_tope2,humo,132,1,0,0,27.11,27.11,133,0.992
+14294880_3840_2160_24fps.mp4,0.5,dt_tope2_cmc,fuego,132,5,0,0,9.73,24.11,228,0.417
+14294880_3840_2160_24fps.mp4,0.5,dt_tope2_cmc,humo,132,1,0,0,27.11,27.11,133,0.992
+12021934_3840_2160_30fps.mp4,0.0,original,fuego,333,15,3,3,2.51,9.4,446,0.693
+12021934_3840_2160_30fps.mp4,0.0,original,humo,333,0,0,0,0.0,0.0,4,0.0
+12021934_3840_2160_30fps.mp4,0.0,original_cmc,fuego,333,13,2,1,3.04,17.7,446,0.722
+12021934_3840_2160_30fps.mp4,0.0,original_cmc,humo,333,0,0,0,0.0,0.0,4,0.0
+12021934_3840_2160_30fps.mp4,0.0,dt_tope2,fuego,333,15,3,3,2.51,9.4,446,0.693
+12021934_3840_2160_30fps.mp4,0.0,dt_tope2,humo,333,0,0,0,0.0,0.0,4,0.0
+12021934_3840_2160_30fps.mp4,0.0,dt_tope2_cmc,fuego,333,13,2,1,3.04,17.7,446,0.722
+12021934_3840_2160_30fps.mp4,0.0,dt_tope2_cmc,humo,333,0,0,0,0.0,0.0,4,0.0
+12021934_3840_2160_30fps.mp4,0.5,original,fuego,162,10,2,2,3.85,18.4,214,0.664
+12021934_3840_2160_30fps.mp4,0.5,original,humo,162,0,0,0,0.0,0.0,3,0.0
+12021934_3840_2160_30fps.mp4,0.5,original_cmc,fuego,162,11,2,3,3.8,13.5,214,0.696
+12021934_3840_2160_30fps.mp4,0.5,original_cmc,humo,162,0,0,0,0.0,0.0,3,0.0
+12021934_3840_2160_30fps.mp4,0.5,dt_tope2,fuego,162,11,2,2,3.59,10.7,214,0.668
+12021934_3840_2160_30fps.mp4,0.5,dt_tope2,humo,162,0,0,0,0.0,0.0,3,0.0
+12021934_3840_2160_30fps.mp4,0.5,dt_tope2_cmc,fuego,162,13,1,3,2.86,8.3,214,0.678
+12021934_3840_2160_30fps.mp4,0.5,dt_tope2_cmc,humo,162,0,0,0,0.0,0.0,3,0.0
+5284fda1-b4c45d7c.mp4,0.0,original,fuego,200,12,4,1,3.11,19.92,437,0.533
+5284fda1-b4c45d7c.mp4,0.0,original,humo,200,0,0,0,0.0,0.0,0,0.0
+5284fda1-b4c45d7c.mp4,0.0,original_cmc,fuego,200,12,4,1,3.11,19.92,437,0.533
+5284fda1-b4c45d7c.mp4,0.0,original_cmc,humo,200,0,0,0,0.0,0.0,0,0.0
+5284fda1-b4c45d7c.mp4,0.0,dt_tope2,fuego,200,12,4,1,3.11,19.92,437,0.533
+5284fda1-b4c45d7c.mp4,0.0,dt_tope2,humo,200,0,0,0,0.0,0.0,0,0.0
+5284fda1-b4c45d7c.mp4,0.0,dt_tope2_cmc,fuego,200,12,4,1,3.11,19.92,437,0.533
+5284fda1-b4c45d7c.mp4,0.0,dt_tope2_cmc,humo,200,0,0,0,0.0,0.0,0,0.0
+5284fda1-b4c45d7c.mp4,0.5,original,fuego,93,8,1,1,4.91,18.8,226,0.478
+5284fda1-b4c45d7c.mp4,0.5,original,humo,93,0,0,0,0.0,0.0,0,0.0
+5284fda1-b4c45d7c.mp4,0.5,original_cmc,fuego,93,8,1,1,4.91,18.8,226,0.478
+5284fda1-b4c45d7c.mp4,0.5,original_cmc,humo,93,0,0,0,0.0,0.0,0,0.0
+5284fda1-b4c45d7c.mp4,0.5,dt_tope2,fuego,93,8,0,1,4.36,18.8,226,0.469
+5284fda1-b4c45d7c.mp4,0.5,dt_tope2,humo,93,0,0,0,0.0,0.0,0,0.0
+5284fda1-b4c45d7c.mp4,0.5,dt_tope2_cmc,fuego,93,8,0,1,4.36,18.8,226,0.469
+5284fda1-b4c45d7c.mp4,0.5,dt_tope2_cmc,humo,93,0,0,0,0.0,0.0,0,0.0

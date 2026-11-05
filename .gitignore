@@ -33,3 +33,11 @@ __pycache__/
 !etiquetas.csv
 !seleccion_etiquetado.csv
 !metadatos_videos.csv
+
+fire_prompts.json
+pruebas.txt
+etiquetas_rapidas_respaldo.csv
+CLAUDE.md
+AGENTS.md
+resultados/preprocesamiento/mosaicos/
+Detecci*_Temprana_y_Clasificaci*_de_la_Severidad_de_Incendios_en_Video_mediante_Localizaci*_Temporal*.pdf
