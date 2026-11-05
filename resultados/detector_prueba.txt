@@ -1,0 +1,17 @@
+evaluacion del detector final en la particion de prueba de FASDD (subconjunto CV)
+fecha: 2026-11-05 13:03
+pesos: runs_fuego/fasdd_v8s_full/weights/best.pt
+datos: FASDD_yolo/data.yaml, split test
+llamada: YOLO(pesos).val(data='FASDD_yolo/data.yaml', split='test', imgsz=640, batch=8, device=0)
+es la misma llamada que hace entrenar_yolo.py --evaluar, aplicada solo a test
+
+salida de ultralytics:
+Ultralytics 8.4.142  Python-3.10.0 torch-2.5.1+cu121 CUDA:0 (NVIDIA GeForce RTX 3050 Ti Laptop GPU, 4096MiB)
+Model summary (fused): 72 layers, 11,126,358 parameters, 0 gradients, 28.4 GFLOPs
+val: Scanning FASDD_yolo\labels\test.cache... 15884 images, 6533 backgrounds, 0 corrupt
+
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)
+                   all      15884      17246       0.87      0.766      0.867      0.616
+                 fuego       5449       9023       0.85      0.792      0.881      0.592
+                  humo       7259       8223       0.89      0.739      0.853       0.64
+Speed: 0.7ms preprocess, 6.7ms inference, 0.0ms loss, 0.8ms postprocess per image
