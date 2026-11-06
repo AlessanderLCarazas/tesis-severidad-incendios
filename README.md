@@ -12,11 +12,72 @@ El sistema recibe un video y realiza estos pasos:
 
 La salida se convierte en segmentos `(inicio, fin, nivel)`, es decir, en una localización temporal de los niveles de severidad, y en alertas calibradas.
 
-**Estado:** avance del 50 %. Ya funcionan las etapas 1 a 4, desde el video hasta los descriptores. Las etapas 5 a 8 (modelo temporal, estimación de riesgo, calibración y salida) corresponden al avance del 80 %.
+**Estado:** avance del 80 % **en desarrollo** (última actualización: 5 de noviembre de 2026). Las etapas 1 a 4 están implementadas desde el avance del 50 %. En el 80 % se corrigen los datos y se implementan las etapas 5 a 8 (modelo temporal, estimación de riesgo, calibración y salida). La tabla de abajo muestra qué está hecho.
 
 ![Pipeline de la tesis](docs/img/pipeline_estado.png)
 
-*Figura 4.1 de la tesis. En verde, lo implementado en este avance; en gris, lo que corresponde al avance del 80 %.*
+*Figura 4.1 de la tesis. En verde, las etapas ya implementadas (1 a 4); en gris, las que se implementan en este avance del 80 % (5 a 8).*
+
+## Avance del 80 %
+
+| Fase | Paso | Estado |
+|---|---|---|
+| A. Correcciones del 50 % | 1 a 4. Descriptores v2 (tasas con mediana de 1 s, región de humo mínima, d13 con 1 s) y normalización | ✅ hecho |
+| | 5. Cortes de escena en videos editados | ✅ método y umbrales; corrida sobre 604 videos en curso |
+| | 6. Exclusión de la copia duplicada | pendiente |
+| B. Etiquetas con cambios de nivel | 7 a 9. Etiquetado con IA de 218 candidatos de crecimiento, validación humana a ciegas de los cambios y meta del riesgo continuo | pendiente |
+| C. Secuencias | 10 y 11. Partición por origen y secuencias por trayectoria | pendiente |
+| D. Modelo | 12 a 14. Compuerta + CfC con 3 salidas, GRU y LSTM de comparación, entrenamiento | pendiente |
+| E. Decisión | 15 y 16. Calibración conformal, histéresis y segmentos `(inicio, fin, nivel)` | pendiente |
+| F. Evaluación | 17 y 18. Métricas y demo con nivel y alerta | pendiente |
+| G. Entrega | 19 y 20. README final y tag `v0.8` | pendiente |
+
+### Pasos 1 a 4: descriptores v2 (`descriptores_v2.py`, `normalizacion.py`)
+
+Se aplica, en orden:
+
+1. **Tasas suavizadas:** d3, d4 y d12 se calculan sobre la mediana del área en el último segundo (solo el pasado, porque el sistema funciona en línea). Cada área pasada se lleva a la escala actual con la escala acumulada de la cámara. La mediana introduce un retraso de unos 0.45 s.
+2. **Región de humo mínima:** la región donde se busca humo mide 2 veces la caja de fuego, pero al menos el 20 % del ancho y del alto del fotograma.
+3. **Regiones activas:** d13 cuenta solo las trayectorias de fuego que llevan al menos 1 s.
+4. **Normalización:** recorte por los percentiles 1 y 99 y estandarización, con estadísticas calculadas solo en entrenamiento.
+
+**Evidencia 1: no se rompió nada.** Con las tres correcciones desactivadas, v2 reproduce exactamente el CSV de v1 en los 4 videos de prueba (1 955 filas, 0 diferencias). Además, 13 pruebas sintéticas (parpadeo, crecimiento lineal, zoom continuo, humo grande, trayectoria nueva, normalización) dan el resultado esperado.
+
+**Evidencia 2: menos ruido** (4 videos, 1 955 filas).
+
+| Medida | v1 | v2 |
+|---|---|---|
+| Desviación de d3 | 0.084 | 0.021 |
+| Desviación de d4 | 1.82 | 0.67 |
+| Desviación de d12 | 1.31 | 0.41 |
+| Filas con \|d12\| ≥ 5 | 1.8 % | 0.2 % |
+| d11 saturada en la vista aérea (llama pequeña) | 35.7 % | 8.6 % |
+| d11 saturada con humo denso real | 33.7 % | 31.2 % |
+
+La saturación de d11 baja donde era un artefacto (llama pequeña) y se mantiene donde el humo denso es real.
+
+![Comparación v1 y v2](resultados/descriptores_v2/comparacion_14294880_3840_2160_24fps_id1.png)
+
+*Trayectoria 1 de la vista aérea: v1 en naranja y v2 en azul.*
+
+### Paso 5: cortes de escena (`cortes.py`)
+
+Muchos videos son noticias o documentales editados. Un corte de escena rompe el seguimiento, los descriptores y el tiempo al peligro, por lo que se detecta y el video se divide en tramos.
+
+1. **Indicador de color:** distancia de Bhattacharyya entre histogramas HSV de muestras consecutivas (`h`).
+2. **Indicador de cámara:** si la estimación del movimiento de la cámara es válida.
+3. **Regla:** corte si `h` ≥ 0.85, o si `h` ≥ 0.65 y la cámara no es válida; la cámara sola nunca marca un corte, y entre dos cortes debe haber al menos 1 s.
+4. **En cada corte:** se reinician los seguidores, la cámara y los descriptores, y empieza un tramo nuevo.
+5. **Tiempo al peligro por tramo:** normal si el paso a Incontrolado ocurre dentro del tramo, 0 si ocurrió en un tramo anterior y enmascarado si ocurre en uno posterior.
+
+**Evidencia: umbrales con datos revisados.** Se revisaron a mano 37 cortes y 46 cambios bruscos sin corte (llamaradas, destellos, luces de emergencia, humo); los casos dudosos se resolvieron mirando el video. Los umbrales se eligieron en 13 videos y se comprobaron en otros 11.
+
+| Conjunto | Cortes detectados | Falsos cortes |
+|---|---|---|
+| Ajuste (13 videos) | 12 de 19 | 0 |
+| Validación (11 videos) | 14 de 18 | 0 |
+
+Se eligió no tener falsos cortes: un falso corte cae en explosiones o destellos, justo cuando el fuego pasa a Incontrolado, y reiniciaría el seguimiento en el momento clave. Los cortes perdidos tienen poca diferencia de color (`h` entre 0.27 y 0.64), en su mayoría cambios de encuadre dentro del mismo lugar.
 
 ## Evolución desde el avance del 30 %
 
@@ -129,7 +190,7 @@ Salida completa de la evaluación: [`resultados/detector_prueba.txt`](resultados
 2. **Con la escala `s` y `dt_k`:** tasa de crecimiento compensada (d3) y crecimiento relativo (d4).
 3. **Con la traslación de la cámara:** velocidad del centro compensada (d7).
 4. **En una ventana de 3 s:** persistencia (d8) y variación de forma (d9).
-5. **Con el humo en una región 2 veces mayor que la caja:** confianza de humo (d10), área de humo (d11) y su tasa de cambio (d12).
+5. **Con el humo en una región 2 veces mayor que la caja (al menos el 20 % del ancho y del alto del fotograma):** confianza de humo (d10), área de humo (d11) y su tasa de cambio (d12).
 6. **De la escena:** regiones de fuego activas (d13).
 
 La salida en cada muestra es la matriz `X_t` de N trayectorias por 13 descriptores. Las definiciones están en la tabla [Los 13 descriptores](#los-13-descriptores-cuadro-44-de-la-tesis).
@@ -208,22 +269,22 @@ Los tres niveles agrupan los de DetectiumFire: sin riesgo → Controlado; riesgo
 | 7. Calibración y decisión | umbral de alerta con predicción conformal por video e histéresis | avance del 80 % | |
 | 8. Salida | nivel, alerta, tiempo al peligro, caja de la región y segmentos `(t_s, t_e, nivel)` | avance del 80 % | |
 
-### Los 13 descriptores (Cuadro 4.4 de la tesis)
+### Los 13 descriptores (versión 2, avance del 80 %)
 
 | Grupo | N.º | Descriptor | Definición |
 |---|---|---|---|
 | Detección | 1 | Confianza | confianza de la detección de fuego |
 | Tamaño y crecimiento | 2 | Área | `A_k` = área de la caja / área del fotograma |
-| | 3 | Tasa de crecimiento | `(A_k - s_k^2 A_{k-1}) / dt_k` |
-| | 4 | Crecimiento relativo | tasa de crecimiento / `A_k` |
+| | 3 | Tasa de crecimiento | `(Ã_k - S^2 Ã_prev) / dt`, con `Ã` la mediana del área en el último segundo, `Ã_prev` la de la observación anterior de la trayectoria y `S` la escala acumulada de la cámara desde esa observación |
+| | 4 | Crecimiento relativo | tasa de crecimiento / `Ã_k` |
 | Posición y movimiento | 5-6 | Centro | `(x_k, y_k)` normalizado de la caja |
 | | 7 | Velocidad del centro | desplazamiento compensado por la cámara / `dt_k` |
 | Comportamiento en el tiempo | 8 | Persistencia | fracción de los últimos 3 s con detección |
 | | 9 | Variación de forma | varianza de la relación de aspecto en 3 s |
-| Humo | 10 | Confianza de humo | máxima confianza de humo cerca de la caja (región ampliada 2 veces) |
+| Humo | 10 | Confianza de humo | máxima confianza de humo cerca de la caja (región ampliada 2 veces, mínimo 20 % del ancho y del alto del fotograma) |
 | | 11 | Área de humo | área de humo en esa región |
-| | 12 | Tasa del humo | cambio del área de humo / `dt_k` |
-| Escena | 13 | Regiones activas | trayectorias de fuego activas |
+| | 12 | Tasa del humo | cambio de la mediana del área de humo en el último segundo / `dt_k` |
+| Escena | 13 | Regiones activas | trayectorias de fuego activas que llevan al menos 1 s |
 
 ## Instalación
 
@@ -252,6 +313,7 @@ python camara.py
 python descriptores.py
 python demo.py --crecimiento 12487581_1920_1080_30fps.mp4
 python figuras_readme.py
+python descriptores_v2.py --lista resultados/cortes/lista_noche.csv --salida runs_fuego/descriptores_v2_noche --salida_cortes resultados/cortes --grafico ninguno
 ```
 
 Cada script usa `argparse` con valores por defecto razonables; ejecuta `python <script>.py --help` para ver sus opciones.
@@ -270,6 +332,10 @@ Cada script usa `argparse` con valores por defecto razonables; ejecuta `python <
 | `descriptores.py` | los 13 descriptores por trayectoria y fotograma |
 | `demo.py` | videos y GIF de demostración |
 | `figuras_readme.py` | figuras y tablas de las evidencias |
+| `descriptores_v2.py` | descriptores v2 y cortes de escena (`--sin_cortes` y los tres parámetros en 0 reproducen v1) |
+| `normalizacion.py` | recorte por percentiles y estandarización con estadísticas de entrenamiento |
+| `comparar_descriptores.py` | comparación de v1 contra v2 |
+| `cortes.py` | detector de cortes de escena, umbrales y tiempo al peligro por tramo |
 
 ## Créditos y licencia de las imágenes
 
@@ -285,5 +351,5 @@ Cada script usa `argparse` con valores por defecto razonables; ejecuta `python <
 |---|---|
 | `avance-30` | avance del 30 %: detector entrenado y datos preparados (congelada, tag `v0.3`) |
 | `avance-50` | avance del 50 %: etapas 1 a 4, del video a los descriptores (congelada, tag `v0.5`) |
-| `avance-80` | avance del 80 %: etapas 5 a 8 (en desarrollo) |
+| `avance-80` | avance del 80 %: corrección de datos y etapas 5 a 8 (en desarrollo, esta rama) |
 | `main` | desarrollo desde el 80 % hasta la versión final |

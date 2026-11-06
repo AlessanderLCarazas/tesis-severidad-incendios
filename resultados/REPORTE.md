@@ -768,7 +768,7 @@ El peligro es `t_incontrolado`. Cada tramo va desde su inicio hasta el inicio de
      - #15 no es corte: es la misma toma y el humo sale con mas fuerza (Claude lo habia marcado como corte desde una tira de fotogramas);
      - #24 es corte: un fundido hacia otra escena con pantalla azul.
    - El paso a negro (#9, #21) cuenta como corte.
-4. **Validacion.** Las 4 detecciones de validacion que nadie habia revisado (Die Provinzial 6.3, 11.0 y 97.1 s; videoplayback (5) 81.9 s) son cortes reales. Las reviso Claude a ojo, no el usuario (`ref` B1 a B4).
+4. **Validacion.** Las 4 detecciones de validacion que no se habian revisado (Die Provinzial 6.3, 11.0 y 97.1 s; videoplayback (5) 81.9 s) son cortes reales: Claude los propuso como cortes y el usuario lo confirmo (`ref` B1 a B4, `runs_fuego/cortes/hojas/sin_revisar_A.jpg`).
 5. **Total:** 37 cortes y 46 pares sin corte.
 
 ### Indicadores y eleccion de umbrales
@@ -800,6 +800,17 @@ El peligro es `t_incontrolado`. Cada tramo va desde su inicio hasta el inicio de
 | 0.85 | 0.40 | 16 de 19 / 5 / 0 | 14 de 14 / 0 / 37 | 13 de 13 | 2 de 11 |
 | 0.85 | 0.50 | 13 de 19 / 4 / 0 | 11 de 14 / 0 / 22 | - | - |
 | **0.85** | **0.65** | **12 de 19 / 0 / 0** | **14 de 18 / 0 / 0** (con B1-B4) | **10 de 13** | **0 de 11** |
+
+**Resultado con los umbrales elegidos (confirmados por el usuario el 2026-11-05):**
+
+| Conjunto | Cortes revisados | Detectados | Perdidos | Falsos | Videos con cortes marcados como editados | Videos sin cortes marcados como editados |
+|---|---|---|---|---|---|---|
+| Ajuste (13 videos) | 19 | 12 | 7 | 0 | 5 de 7 | 0 de 6 |
+| Validacion (11 videos) | 18 | 14 | 4 | 0 | 5 de 6 | 0 de 5 |
+| **Total (24 videos)** | **37** | **26** | **11** | **0** | **10 de 13** | **0 de 11** |
+
+- **Precision: 26 de 26 detecciones son cortes reales (100 %, 0 falsos).**
+- **Exhaustividad total: 26 de 37 cortes (70.3 %).** Por video: 10 de 13 videos editados quedan marcados (76.9 %), y ningun video sin cortes queda marcado.
 
 - Con 0 falsos en ajuste, el maximo es 12 de 19 cortes. Se logra con `T_bajo` de 0.625 a 0.675 y `T_alto` de 0.70 a 1.0. En validacion los falsos desaparecen con `T_alto >= 0.825`, porque las luces de emergencia de BRANDWEER llegan a h 0.812 con la camara valida.
   - Se eligio el centro: `T_alto = 0.85` (margen sobre 0.812) y `T_bajo = 0.65`.
@@ -841,3 +852,92 @@ Se reviso un fotograma cada 5 s: es una camara en tierra con zoom y paneos, no u
 - `resultados/cortes/prueba/cortes.csv` y `resumen.csv`: corrida de punta a punta.
 - `resultados/cortes/lista_non_fire.csv` y `lista_noche.csv`.
 - `runs_fuego/cortes/` (no se versiona): pares y hojas de revision.
+
+### Resultado de la corrida de la noche (2026-11-05 20:40 a 2026-11-06 02:48)
+
+- Comando: `python descriptores_v2.py --lista resultados/cortes/lista_noche.csv --salida runs_fuego/descriptores_v2_noche --salida_cortes resultados/cortes --grafico ninguno`.
+- **604 de 604 videos procesados**, sin errores, sin repetidos y sin faltantes. Tiempo de proceso: **6.13 h** (6.02 h los de fuego y 0.12 h los sin fuego; se habian estimado 6.7 h).
+- `runs_fuego/descriptores_v2_noche/descriptores.csv` (no se versiona): **118.9 MB**, 561 799 filas.
+
+| | Videos | Muestras | Filas de fuego | Trayectorias de fuego `(tramo, id)` | Videos editados | Cortes | Tramos |
+|---|---|---|---|---|---|---|---|
+| Fuego | 389 | 312 837 | 561 331 | 17 968 | 60 (15.4 %) | 234 | 623 |
+| Sin fuego | 215 | 16 855 | 468 | 19 | 4 | 7 | 222 |
+
+- Sin la copia excluida en el paso 6 (que no tenia cortes): 388 videos de fuego, 60 editados, 234 cortes y 622 tramos.
+- Motivos de los 241 cortes: 173 `histograma_y_camara` y 68 `histograma`.
+- Cortes por video editado:
+  - 21 videos con 1 corte, 14 con 2 y 8 con 3;
+  - el maximo es `This Can Create a House Inferno!.mp4` (26 cortes en 155 s), seguido de `DUTCH FIREFIGHTERS - CLUBHUIS BRAND AF. 15.mp4` (19 cortes).
+- **Falsos del detector en videos sin fuego:** 14 de los 215 videos sin fuego (6.5 %) tienen alguna trayectoria de fuego: 19 trayectorias y 468 filas, en 1 116 de las 16 855 muestras de esos videos. El mayor es `2030845629_clip_003.mp4`, con 142 filas.
+- **Cortes en videos sin fuego** (revisados a ojo por Claude, no por el usuario; `runs_fuego/cortes/hojas/non_fire_cortes.jpg`): de 7, solo 1 es un corte (paso desde negro al inicio de `1898933216_clip_001.mp4`). Los otros 6 son cambios de luz en escenas que no estaban en el ajuste:
+  - luces de un concierto (`1694496253_clip_002.mp4`, 2);
+  - relampagos (`2382573000_clip_001.mp4`, 2);
+  - una camara dentro del agua (`2568999255_clip_001.mp4`, 2).
+  - La precision del 100 % medida en videos de fuego no se mantiene con destellos fuertes de otro tipo. En los videos de calibracion el efecto es menor, porque se usa el riesgo maximo por video.
+- **Videos de fuego sin ninguna fila (6):** 13567986, 14196334, 14283144, 17469008, 18153408 y 19539603. El detector no ve fuego en ellos; sus curvas de `preanotar.py` ya tenian una presencia de 0 a 0.07. La IA los etiqueto como Controlado (5) o los descarto (1). No aportan secuencias.
+- **Videos con menos muestras que 10 por segundo (4), sin falla:**
+  - `fire20_clip_013`, `fire23_clip_044` y `fire26_clip_004` son clips de 7 a 9 fps;
+  - `12220604_1080_1920_30fps.mp4` tiene 830 fotogramas aunque los metadatos dicen 861.
+
+## Fase A del 80 %, paso 6: duplicados excluidos
+
+Fecha: 2026-11-06. Rama: `avance-80`. Script nuevo: `duplicados.py`.
+
+### Que se hizo
+
+- La copia `14296658_3840_2160_24fps - Copy.mp4` es **identica byte a byte** al original `14296658_3840_2160_24fps.mp4`: 81 521 877 bytes y el mismo SHA-256 (`df2be7afb31634d1...`). Sus 1 034 filas de descriptores de la corrida de la noche tambien son identicas.
+  - El original esta en la prueba humana (`resultados/prueba_humana.csv`).
+  - Ambos estan en las etiquetas de la IA y en `seleccion_etiquetado.csv`.
+- `duplicados.py` busca duplicados exactos en los 2 468 videos de DetectiumFire (`fire` y `non_fire`): agrupa por tamano y calcula SHA-256 solo dentro de cada grupo.
+  - En cada grupo conserva el que esta en la prueba humana; si no hay ninguno, el que no tiene nombre de copia y despues el de numero menor.
+  - Escribe `resultados/excluidos.csv` (`archivo, conservado, motivo, sha256, tamano, en_lista`).
+- Resultado: **10 grupos de duplicados exactos y 34 archivos excluidos.**
+  - El unico excluido que esta en los 604 de la noche es la copia.
+  - Los otros 9 grupos son clips de fuego de 6 s (`video (4209)` a `video (6700)`, hasta 7 copias por grupo) que no estan en ninguna lista actual. Quedan registrados por si se agregan despues.
+- **Regla para el paso 10:** los archivos de `excluidos.csv` no entran en ningun conjunto (entrenamiento, validacion, calibracion ni prueba). La funcion `duplicados.cargar_excluidos()` devuelve ese conjunto. El original de la copia sigue en la prueba.
+
+### Comando
+
+```
+python duplicados.py
+```
+
+### Pendiente para el paso 10 (particion por origen)
+
+El campo `origen` de `metadatos_videos.csv` no sirve tal cual para particionar:
+
+- **La copia y su original tienen origenes distintos:** `"14296658_3840_2160_24fps "` (con un espacio al final) y `"14296658_3840_2160_24fps"`. Sin la exclusion, la copia y el original de prueba habrian podido quedar en conjuntos distintos.
+- **27 videos (26 con nombre y la copia) tienen el origen cortado en el primer " - " y con espacios al final.**
+  - Videos de un mismo canal quedan en el mismo origen sin ser el mismo video (por ejemplo, `"BRANDWEER "` agrupa 5 videos distintos).
+  - Un mismo canal queda partido en dos origenes (`"DUTCH FIREFIGHTERS "` y `"DUTCH FIREFIGHTERS  "`, con dos espacios).
+- **Casi duplicados con origenes distintos:**
+  - `2016 April - Fire Investigation 1B - Milpitas CA.mp4` (278 s) y `April 2016 - Fire Investigation 1B - Milpitas CA.mp4` (137 s) parecen el mismo ensayo con otra edicion; sus origenes son `"2016 April "` y `"April 2016 "`;
+  - `March 2016 - Fire Investigation 1A - Milpitas CA.mp4` y su version `(1)` no son identicas byte a byte.
+- Hay que decidir en el paso 10 como se agrupan estos origenes, normalizandolos y uniendo a mano los casos como el de Milpitas.
+
+## Cierre de la Fase A del 80 % (pasos 1 a 6)
+
+| Paso | Que se hizo | Resultado principal | Archivos |
+|---|---|---|---|
+| 1 | d3, d4 y d12 sobre la mediana de 1 s (solo pasado, con escala acumulada de la camara) | desviacion de d3: 0.084 -> 0.0215; d4: 1.82 -> 0.67; d12: 1.31 -> 0.41; retraso de 0.45 s | `descriptores_v2.py` |
+| 2 | region de humo minima del 20 % del ancho y del alto | d11 saturada: 23.7 % -> 14.3 % (vista aerea: 35.7 % -> 8.6 %; humo denso real: 33.7 % -> 31.2 %) | `descriptores_v2.py` |
+| 3 | d13 cuenta solo trayectorias de al menos 1 s | media de d13: 2.68 -> 1.77 | `descriptores_v2.py` |
+| 4 | normalizacion: recorte por p1 y p99 y estandarizacion con estadisticas de entrenamiento | funcion lista y probada; se ajustara en la Fase C | `normalizacion.py` |
+| 5 | cortes de escena (histograma HSV + camara; 0.85 y 0.65), tramos y tau por tramo | 26 de 37 cortes revisados, 0 falsos en los videos de fuego; 60 de 388 videos de fuego editados, 622 tramos | `cortes.py`, `descriptores_v2.py` |
+| 6 | duplicados exactos excluidos | la copia de 14296658 y 33 clips repetidos; solo la copia estaba en los 604 | `duplicados.py`, `resultados/excluidos.csv` |
+
+- **Verificacion de que no se rompio nada:**
+  - con las correcciones en 0, v2 reproduce v1 (1 955 filas, 0 diferencias);
+  - `--sin_cortes` reproduce v2 byte a byte;
+  - 13 pruebas sinteticas de los descriptores y 12 de los cortes y tau.
+- **Datos listos para la Fase C:**
+  - descriptores v2 de 603 videos (388 de fuego, despues de excluir la copia, y 215 sin fuego), con contexto de camara, `tramo` y cortes;
+  - `runs_fuego/descriptores_v2_noche/descriptores.csv`, que no se versiona;
+  - `resultados/cortes/resumen.csv`, `cortes.csv` y `resultados/excluidos.csv`.
+- **Limitaciones que se declaran:**
+  - la mediana retrasa las tasas unos 0.5 s;
+  - el detector de cortes pierde cortes entre encuadres parecidos (exhaustividad 26 de 37) y da falsos con destellos fuertes en escenas sin fuego (6 de 7 en los clips sin fuego, revision de Claude);
+  - 6 videos de fuego no tienen trayectorias;
+  - 14 de 215 videos sin fuego tienen falsos del detector.
+- **Pendiente para la Fase C (paso 10):** normalizar y agrupar los origenes antes de particionar.

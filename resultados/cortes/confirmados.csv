@@ -78,7 +78,7 @@ A30,videoplayback (11).mp4,151.5,0.3045,no_corte,
 A31,videoplayback (11).mp4,253.5,0.3111,no_corte,
 A32,videoplayback (12).mp4,36.6,0.265,corte,
 A33,videoplayback (12).mp4,153.5,0.2517,no_corte,
-B1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,6.3,0.706,corte,"deteccion de validacion sin revisar; revisada a ojo por claude (runs_fuego/cortes/hojas/sin_revisar_A.jpg), no por el usuario"
-B2,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,11.0,0.682,corte,"deteccion de validacion sin revisar; revisada a ojo por claude (runs_fuego/cortes/hojas/sin_revisar_A.jpg), no por el usuario"
-B3,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,97.1,0.81,corte,"deteccion de validacion sin revisar; revisada a ojo por claude (runs_fuego/cortes/hojas/sin_revisar_A.jpg), no por el usuario"
-B4,videoplayback (5).mp4,81.9,0.686,corte,"deteccion de validacion sin revisar; revisada a ojo por claude (runs_fuego/cortes/hojas/sin_revisar_A.jpg), no por el usuario"
+B1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,6.3,0.706,corte,deteccion de validacion sin revisar; confirmada como corte por el usuario (runs_fuego/cortes/hojas/sin_revisar_A.jpg)
+B2,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,11.0,0.682,corte,deteccion de validacion sin revisar; confirmada como corte por el usuario (runs_fuego/cortes/hojas/sin_revisar_A.jpg)
+B3,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,97.1,0.81,corte,deteccion de validacion sin revisar; confirmada como corte por el usuario (runs_fuego/cortes/hojas/sin_revisar_A.jpg)
+B4,videoplayback (5).mp4,81.9,0.686,corte,deteccion de validacion sin revisar; confirmada como corte por el usuario (runs_fuego/cortes/hojas/sin_revisar_A.jpg)
