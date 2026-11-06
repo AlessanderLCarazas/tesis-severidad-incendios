@@ -1,0 +1,91 @@
+ajuste: 13 videos | 13063 muestras | pares revisados: 19 cortes y 36 sin corte
+   dentro de toma (sin revisar) | n  12995 | h p50 0.072 | p99 0.213 | max 0.910 | camara no valida   7.5 %
+   pares sin corte              | n     36 | h p50 0.316 | p99 0.636 | max 0.650 | camara no valida  38.9 %
+   pares con corte              | n     19 | h p50 0.755 | p99 0.995 | max 0.996 | camara no valida 100.0 %
+validacion: 11 videos | 9654 muestras | pares revisados: 18 cortes y 10 sin corte
+   dentro de toma (sin revisar) | n   9615 | h p50 0.055 | p99 0.418 | max 0.869 | camara no valida   7.4 %
+   pares sin corte              | n     10 | h p50 0.291 | p99 0.809 | max 0.812 | camara no valida  20.0 %
+   pares con corte              | n     18 | h p50 0.768 | p99 0.994 | max 0.994 | camara no valida  94.4 %
+rejilla en: resultados\cortes\indicadores\umbrales_rejilla.csv
+ajuste sin falsos: maximo 12 aciertos; combinaciones que lo logran:
+   t_alto 0.675 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 2 sin revisar 4
+   t_alto 0.675 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 2 sin revisar 2
+   t_alto 0.675 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 2 sin revisar 2
+   t_alto 0.700 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 2 sin revisar 3
+   t_alto 0.700 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 2 sin revisar 1
+   t_alto 0.700 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 2 sin revisar 1
+   t_alto 0.725 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 2 sin revisar 3
+   t_alto 0.725 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 2 sin revisar 1
+   t_alto 0.725 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 2 sin revisar 1
+   t_alto 0.750 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 2 sin revisar 2
+   t_alto 0.750 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 2 sin revisar 0
+   t_alto 0.750 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 2 sin revisar 0
+   t_alto 0.775 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 2 sin revisar 2
+   t_alto 0.775 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 2 sin revisar 0
+   t_alto 0.775 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 2 sin revisar 0
+   t_alto 0.800 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 1 sin revisar 2
+   t_alto 0.800 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 1 sin revisar 0
+   t_alto 0.800 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 1 sin revisar 0
+   t_alto 0.825 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 0 sin revisar 2
+   t_alto 0.825 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.825 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.850 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 0 sin revisar 2
+   t_alto 0.850 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.850 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.875 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 0 sin revisar 2
+   t_alto 0.875 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.875 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.900 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 0 sin revisar 2
+   t_alto 0.900 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.900 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.925 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 0 sin revisar 2
+   t_alto 0.925 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.925 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.950 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 0 sin revisar 2
+   t_alto 0.950 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.950 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.975 | t_bajo 0.625 | validacion: aciertos 15 perdidos 3 falsos 0 sin revisar 2
+   t_alto 0.975 | t_bajo 0.650 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 0.975 | t_bajo 0.675 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 0
+   t_alto 1.000 | t_bajo 0.625 | validacion: aciertos 14 perdidos 4 falsos 0 sin revisar 2
+   t_alto 1.000 | t_bajo 0.650 | validacion: aciertos 13 perdidos 5 falsos 0 sin revisar 0
+   t_alto 1.000 | t_bajo 0.675 | validacion: aciertos 13 perdidos 5 falsos 0 sin revisar 0
+ajuste con t_alto 0.85 y t_bajo 0.65: aciertos 12 | perdidos 7 | falsos 0 | sin revisar 0 | duplicados 0
+   acierto     2016 April - Fire Investigation 1B - Mil t  216.50 | h 0.755 | valido 0
+   acierto     Brannutvikling.mp4                       t   44.60 | h 0.675 | valido 0
+   acierto     Brannutvikling.mp4                       t  147.40 | h 0.744 | valido 0
+   acierto     Brannutvikling.mp4                       t  148.90 | h 0.793 | valido 0
+   acierto     videoplayback (11).mp4                   t   45.40 | h 0.996 | valido 0
+   acierto     videoplayback (11).mp4                   t  248.80 | h 0.919 | valido 0
+   acierto     videoplayback (12).mp4                   t   98.70 | h 0.774 | valido 0
+   acierto     Brennende Akkus.mp4                      t    3.70 | h 0.910 | valido 0
+   acierto     Brennende Akkus.mp4                      t   10.60 | h 0.962 | valido 0
+   acierto     Brennende Akkus.mp4                      t   13.80 | h 0.791 | valido 0
+   acierto     Brennende Akkus.mp4                      t   24.50 | h 0.814 | valido 0
+   acierto     Brennende Akkus.mp4                      t   83.00 | h 0.849 | valido 0
+   perdido     2016 April - Fire Investigation 1B - Mil t  229.50 | h 0.471 | valido 0
+   perdido     Early Video_ Firefighters make attack on t   33.20 | h 0.271 | valido 0
+   perdido     Early Video_ Firefighters make attack on t   35.70 | h 0.514 | valido 0
+   perdido     PRE-ARRIVAL VIDEO_ Dumpster fire at the  t    3.20 | h 0.405 | valido 0
+   perdido     Brannutvikling.mp4                       t    6.90 | h 0.404 | valido 0
+   perdido     Brannutvikling.mp4                       t   56.80 | h 0.327 | valido 0
+   perdido     videoplayback (12).mp4                   t   36.60 | h 0.265 | valido 0
+validacion con t_alto 0.85 y t_bajo 0.65: aciertos 14 | perdidos 4 | falsos 0 | sin revisar 0 | duplicados 0
+   acierto     2271869938.mp4                           t   31.29 | h 0.990 | valido 0
+   acierto     BRANDWEER - UITRUK - PRIO 1 - 2 Auto tot t   64.30 | h 0.994 | valido 1
+   acierto     Die Provinzial klärt auf – Brandursache  t    2.40 | h 0.908 | valido 0
+   acierto     Die Provinzial klärt auf – Brandursache  t    6.30 | h 0.706 | valido 0
+   acierto     Die Provinzial klärt auf – Brandursache  t   11.00 | h 0.682 | valido 0
+   acierto     Die Provinzial klärt auf – Brandursache  t   63.40 | h 0.869 | valido 0
+   acierto     Die Provinzial klärt auf – Brandursache  t   74.70 | h 0.936 | valido 0
+   acierto     Die Provinzial klärt auf – Brandursache  t   97.10 | h 0.810 | valido 0
+   acierto     videoplayback (4).mp4                    t   56.00 | h 0.755 | valido 0
+   acierto     videoplayback (4).mp4                    t   62.00 | h 0.758 | valido 0
+   acierto     videoplayback (5).mp4                    t   10.40 | h 0.669 | valido 0
+   acierto     videoplayback (5).mp4                    t   58.90 | h 0.879 | valido 0
+   acierto     videoplayback (5).mp4                    t   81.90 | h 0.686 | valido 0
+   acierto     videoplayback (5).mp4                    t   98.60 | h 0.778 | valido 0
+   perdido     videoplayback (15).mp4                   t   14.10 | h 0.483 | valido 0
+   perdido     videoplayback (15).mp4                   t   24.30 | h 0.414 | valido 0
+   perdido     videoplayback (15).mp4                   t  104.60 | h 0.489 | valido 0
+   perdido     videoplayback (4).mp4                    t   38.20 | h 0.639 | valido 0

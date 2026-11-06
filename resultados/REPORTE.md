@@ -214,7 +214,12 @@ python seguimiento.py
 
 ### Videos de prueba (`resultados/seguimiento/videos_prueba.csv`)
 
-- `Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4`: camara movil (dron), 39 s, 30 fps; tiene cortes de escena.
+- `Berkeley Township Structure Fire 2_12_21 (Heavy Flames  Drone Angle) New Jersey.mp4`: camara movil en tierra (en mano, con zoom y paneos), 39 s, 30 fps; sin cortes de escena.
+  - **Correccion del 2026-11-05.** Este video se habia descrito como "dron" y con "cortes de escena". Se reviso un fotograma cada 5 s y las muestras con la camara no valida o con mayor diferencia de histograma:
+    - es una camara en tierra: planos a la altura de las personas, con el camion de bomberos en primer plano; el "Drone Angle" del titulo no corresponde;
+    - la escala estimada por `camara.py` muestra dos alejamientos continuos de zoom (de 1.0 a 0.44 entre los 12 y los 16 s, y otro hacia los 28-30 s);
+    - las 9 muestras no validas (27.4 s y 34.1-35.1 s) son paneos rapidos, y la mayor diferencia de histograma entre muestras es 0.171;
+    - no tiene cortes de escena.
 - `14294880_3840_2160_24fps.mp4`: vista aerea 4K, 27 s, 23.98 fps (dt irregular).
 - `12021934_3840_2160_30fps.mp4`: horno con llamas que parpadean, 4K, 33 s, 30 fps.
 - `5284fda1-b4c45d7c.mp4`: 20 s, 25 fps (dt irregular).
@@ -242,7 +247,7 @@ python seguimiento.py
 
 - `dt_constante` dio exactamente las mismas trayectorias que `original` en los 8 casos (4 videos, con y sin quitar fotogramas): la implementacion de las subclases es correcta.
 - Sin quitar fotogramas, `dt_real` es identico a `original` en 3 de 4 videos; en el de 23.98 fps tiene las mismas 9 trayectorias de fuego, con cobertura 0.616 frente a 0.600 y duracion media 8.24 s frente a 8.91 s.
-- Quitando el 50 % de los fotogramas, `dt_real` empeora el seguimiento en los 4 videos: mas trayectorias y mas cortas, y menor cobertura (en el dron, humo: 15 trayectorias y 7 cortes frente a 12 y 5).
+- Quitando el 50 % de los fotogramas, `dt_real` empeora el seguimiento en los 4 videos: mas trayectorias y mas cortas, y menor cobertura (en Berkeley, camara en mano, humo: 15 trayectorias y 7 cortes frente a 12 y 5).
 
 ### Diagnostico (quitar 0.5, fuego, suma de los 4 videos)
 
@@ -332,12 +337,12 @@ python camara.py --mascara fuego
 
 | Video | Muestras validas | Desplazamiento medio (px) | Inliers medio | Error de alineacion |
 |---|---|---|---|---|
-| Berkeley (dron) | 382/391 | 14.1 | 0.91 | 66.6 % menor |
+| Berkeley (camara en mano con zoom) | 382/391 | 14.1 | 0.91 | 66.6 % menor |
 | 14294880 (aerea) | 272/272 | 2.7 | 0.97 | 18.7 % menor |
 | 12021934 (horno, camara en mano) | 323/332 | 19.8 | 0.84 | 35.2 % menor |
 | 5284fda1 (camara fija) | 199/199 | 0.1 | 0.95 | 2.1 % mayor (sin movimiento que corregir) |
 
-- En el dron las cajas de humo dejan libre en promedio el 40 % de la imagen (minimo 1 %). Con la mascara `fuego` el error de alineacion baja 57.2 % (se mide en una zona distinta, que incluye el humo, asi que no es comparable directamente).
+- En Berkeley las cajas de humo dejan libre en promedio el 40 % de la imagen (minimo 1 %). Con la mascara `fuego` el error de alineacion baja 57.2 % (se mide en una zona distinta, que incluye el humo, asi que no es comparable directamente).
 - La grafica `resultados/camara/movimiento_Berkeley Township Structure Fire 2_12_21_fuego.png` muestra un alejamiento de zoom hacia los 13-14 s (`s` hasta 0.87) con paneo, mas movimiento desde los 25 s y 9 muestras no validas (inliers por debajo de 0.5).
 
 ### Efecto en el seguimiento (variante del sistema `dt_tope2`)
@@ -376,8 +381,8 @@ python camara.py --mascara fuego
 | quitando 50 % | humo | dt_tope2 + compensacion (mascara todas) | 16 | 7 | 3 | 0.859 |
 | quitando 50 % | humo | dt_tope2 + compensacion (mascara fuego) | 16 | 7 | 3 | 0.865 |
 
-- Con todos los fotogramas, la compensacion con mascara `fuego` reduce los cortes de fuego de 26 a 19 (de 19 a 13 en el dron y de 3 a 2 en el horno), las trayectorias cortas de 24 a 17 y sube la cobertura media de 0.551 a 0.564. Con mascara `todas` casi no cambia (26 a 25 cortes).
-- Quitando el 50 % de los fotogramas, la compensacion no mejora los cortes (7 sin compensar, 9 con mascara `fuego`, 10 con `todas`); son pocos casos y el desplazamiento entre muestras es mayor (22 px de media en el dron).
+- Con todos los fotogramas, la compensacion con mascara `fuego` reduce los cortes de fuego de 26 a 19 (de 19 a 13 en Berkeley y de 3 a 2 en el horno), las trayectorias cortas de 24 a 17 y sube la cobertura media de 0.551 a 0.564. Con mascara `todas` casi no cambia (26 a 25 cortes).
+- Quitando el 50 % de los fotogramas, la compensacion no mejora los cortes (7 sin compensar, 9 con mascara `fuego`, 10 con `todas`); son pocos casos y el desplazamiento entre muestras es mayor (22 px de media en Berkeley).
 - En el video de camara fija la compensacion no cambia nada, como se esperaba.
 - La medida de cortes compara cajas en coordenadas de la imagen; con camara movil es una aproximacion.
 - Pendiente de decision: mascara para los puntos (`todas`, como la tesis, o `fuego`) y si el sistema usa la compensacion en el seguimiento.
@@ -431,7 +436,7 @@ python descriptores.py
 
 | Video | Muestras | Trayectorias de fuego | Filas | Tiempo (s) |
 |---|---|---|---|---|
-| Berkeley (dron) | 392 | 74 | 731 | 22.4 |
+| Berkeley (camara en mano con zoom) | 392 | 74 | 731 | 22.4 |
 | 14294880 (aerea 4K) | 273 | 7 | 607 | 29.5 |
 | 12021934 (horno 4K) | 333 | 13 | 332 | 30.9 |
 | 5284fda1 | 200 | 12 | 285 | 5.5 |
@@ -665,7 +670,7 @@ python normalizacion.py aplicar --parametros resultados/normalizacion.json --ent
 |---|---|---|
 | filas con d11 = 1 (saturada), total | 23.7 % | 14.3 % |
 | d11 = 1 en 14294880 (aerea 4K) | 35.7 % | 8.6 % |
-| d11 = 1 en Berkeley (dron) | 33.7 % | 31.2 % |
+| d11 = 1 en Berkeley (camara en mano) | 33.7 % | 31.2 % |
 | d11 = 1 en la trayectoria 1 de 14294880 | 172 de 229 | 10 de 229 |
 | filas con \|d12\| >= 5 | 1.8 % | 0.2 % |
 | filas con \|d4\| >= 5 | 3.0 % | 0.1 % |
@@ -712,3 +717,127 @@ python normalizacion.py aplicar --parametros resultados/normalizacion.json --ent
 - `resultados/descriptores_v2/comparacion.csv`: estadisticas de d3, d4, d10, d11, d12 y d13 por video y en total, v1 y v2.
 - `resultados/descriptores_v2/comparacion_14294880_3840_2160_24fps_id1.png`: v1 contra v2 en la trayectoria 1.
 - `resultados/descriptores_v2/descriptores_14294880_3840_2160_24fps_id1.png`: los 13 descriptores v2 de la misma trayectoria, en el mismo formato que la grafica de v1.
+
+## Fase A del 80 %, paso 5: videos editados (cortes de escena)
+
+Fecha: 2026-11-05. Rama: `avance-80`. Script nuevo: `cortes.py`. Cambio en `descriptores_v2.py` (con permiso del usuario): opcion de cortes activada por defecto; `--sin_cortes` reproduce el CSV anterior.
+
+### Detector
+
+- Dos indicadores entre muestras consecutivas (10 fps):
+  - **`h_k`**: distancia de Bhattacharyya entre histogramas HSV (16 x 4 x 4 bins) del fotograma reducido a 160 px de ancho; va de 0 a 1.
+  - **camara**: `valido` de `MovimientoCamara` (mascara de fuego), que es 0 si hay menos de 10 puntos o menos de 50 % de inliers.
+- Regla:
+  - corte si `h_k >= T_alto` (motivo `histograma`);
+  - corte si `T_bajo <= h_k < T_alto` y la camara no es valida (motivo `histograma_y_camara`);
+  - la camara sola nunca marca un corte, porque tambien falla con humo denso o poca textura;
+  - separacion minima de 1 s entre cortes.
+- **Umbrales elegidos: `T_alto = 0.85`, `T_bajo = 0.65`.**
+- Al detectar un corte se crean de nuevo los trackers, la camara y `DescriptoresV2`. El CSV de descriptores tiene una columna `tramo` (0, 1, 2...) y cada `(archivo, tramo, id)` es una secuencia aparte. `t` sigue siendo el tiempo del video.
+- Video editado = al menos un corte.
+
+### Tiempo al peligro por tramo (`cortes.tau_valido`, `cortes.estado_tramos`)
+
+El peligro es `t_incontrolado`. Cada tramo va desde su inicio hasta el inicio del siguiente.
+
+| Caso | Tramo | tau |
+|---|---|---|
+| `t_incontrolado` cae dentro del tramo | `normal` | `max(0, t_incontrolado - t_k)` |
+| `t_incontrolado` cayo en un tramo anterior | `peligro` | 0 en todo el tramo (valido) |
+| `t_incontrolado` cae en un tramo posterior | `enmascarado` | sin tau en todo el tramo |
+| el video no llega a Incontrolado | `enmascarado` | sin tau (como en la tesis) |
+
+### Pruebas sinteticas: 12 de 12
+
+- Corte entre dos escenas con textura: h 0.833, detectado; dentro de la toma h <= 0.033.
+- Destello de brillo +35 con la camara valida: h 0.387, sin corte.
+- Camara no valida sin salto de histograma: sin corte.
+- Salto medio con la camara no valida: `histograma_y_camara`; el mismo salto con la camara valida: sin corte.
+- Separacion minima de 1 s.
+- Los cuatro casos de tau, mas `t_incontrolado` justo en el corte, tau por muestra y un video sin cortes.
+- Las primeras imagenes sinteticas (colores planos) daban h ~1 con un cambio de brillo porque sus histogramas son picos. Se reemplazaron por texturas suavizadas, mas parecidas a imagenes reales.
+
+### Busqueda de ejemplos y revision
+
+1. **Busqueda.** `python cortes.py seleccionar` eligio al azar (semilla 42) 60 de los 263 videos "con nombre" (no Pexels ni hash) de hasta 300 s, entre los 389 etiquetados o candidatos (1.00 h de video). `python cortes.py explorar` calculo solo el histograma (248 s en total) y guardo pares antes/despues de los 3 saltos mayores de cada video con `h >= 0.25` en `runs_fuego/cortes/revision/` (no se versiona ni se publica). 40 de los 60 videos no tienen ningun salto de 0.25 o mas.
+2. **Videos de ajuste.** Se eligieron 9 videos (8 con cortes y 1 negativo dificil: una luz que se enciende) y se generaron pares de **todos** sus candidatos (`resultados/cortes/lista_ajuste.csv`, `runs_fuego/cortes/revision_ajuste/`).
+3. **Revision.** 79 pares, en `resultados/cortes/confirmados.csv` (`ref, archivo, t_corte, h, tipo, nota`). Claude propuso una clasificacion y el usuario la reviso:
+   - #5, A13 y A14: no son cortes.
+   - **Los dudosos #6, #15 y #24 se resolvieron mirando el video:**
+     - #6 es corte: termina una toma y empieza otra desde mas atras;
+     - #15 no es corte: es la misma toma y el humo sale con mas fuerza (Claude lo habia marcado como corte desde una tira de fotogramas);
+     - #24 es corte: un fundido hacia otra escena con pantalla azul.
+   - El paso a negro (#9, #21) cuenta como corte.
+4. **Validacion.** Las 4 detecciones de validacion que nadie habia revisado (Die Provinzial 6.3, 11.0 y 97.1 s; videoplayback (5) 81.9 s) son cortes reales. Las reviso Claude a ojo, no el usuario (`ref` B1 a B4).
+5. **Total:** 37 cortes y 46 pares sin corte.
+
+### Indicadores y eleccion de umbrales
+
+- Comando: `python descriptores_v2.py --lista resultados/cortes/lista_indicadores.csv --indicadores --salida_cortes resultados/cortes/indicadores`.
+- 24 videos:
+  - **ajuste:** los 9 de ajuste y los 4 de prueba, 13 063 muestras;
+  - **validacion:** los otros 11 videos con pares revisados, 9 654 muestras.
+- `python cortes.py umbrales` simula la regla sobre los indicadores (es exacto, porque los indicadores no dependen de los umbrales) para `T_alto` y `T_bajo` de 0.25 a 1.0 cada 0.025. Una deteccion se empareja con el par revisado mas cercano a 0.5 s o menos; si no hay ninguno, cuenta como "sin revisar".
+
+| Grupo (ajuste) | Muestras | h mediana | h p99 | h max | Camara no valida |
+|---|---|---|---|---|---|
+| dentro de toma (sin revisar) | 12 995 | 0.072 | 0.213 | 0.910 | 7.5 % |
+| pares sin corte | 36 | 0.316 | 0.636 | 0.650 | 38.9 % |
+| pares con corte | 19 | 0.755 | 0.995 | 0.996 | 100 % |
+
+- El histograma solo no separa los grupos:
+  - hay cortes con h de 0.27, sobre todo cambios de encuadre en el mismo lugar;
+  - hay pares sin corte con h de 0.81, por luces de emergencia (camara valida), un destello de explosion o humo que sale con fuerza.
+- La camara no es valida en casi todos los cortes (100 % en ajuste y 13 de 14 en validacion), pero tampoco en las llamaradas y explosiones.
+- Se probo exigir inliers por debajo de 0.20 a 0.40 en vez de `valido = 0`:
+  - con `T_bajo` bajo reduce los falsos (de 15 a 5 con `T_bajo` 0.30);
+  - no cambia el punto sin falsos, porque #15 (h 0.59, inliers 0.09) y A18 (h 0.61, inliers 0.13) tienen inliers de corte.
+  - Se mantuvo la regla con `valido`.
+
+| `T_alto` | `T_bajo` | Ajuste: cortes / falsos / sin revisar | Validacion: cortes / falsos / sin revisar | Videos con cortes marcados (ajuste + validacion) | Videos sin cortes marcados como editados |
+|---|---|---|---|---|---|
+| 0.85 | 0.25 | 18 de 19 / 15 / 3 | 14 de 14 / 2 / 64 | - | - |
+| 0.85 | 0.40 | 16 de 19 / 5 / 0 | 14 de 14 / 0 / 37 | 13 de 13 | 2 de 11 |
+| 0.85 | 0.50 | 13 de 19 / 4 / 0 | 11 de 14 / 0 / 22 | - | - |
+| **0.85** | **0.65** | **12 de 19 / 0 / 0** | **14 de 18 / 0 / 0** (con B1-B4) | **10 de 13** | **0 de 11** |
+
+- Con 0 falsos en ajuste, el maximo es 12 de 19 cortes. Se logra con `T_bajo` de 0.625 a 0.675 y `T_alto` de 0.70 a 1.0. En validacion los falsos desaparecen con `T_alto >= 0.825`, porque las luces de emergencia de BRANDWEER llegan a h 0.812 con la camara valida.
+  - Se eligio el centro: `T_alto = 0.85` (margen sobre 0.812) y `T_bajo = 0.65`.
+- **Por que se prioriza no tener falsos:** los falsos cortes caen en explosiones, destellos y humo que sale con fuerza, que son justo los momentos en que el fuego pasa a Incontrolado. Un falso corte ahi reiniciaria el seguimiento en el momento clave y dejaria `t_incontrolado` en un tramo posterior, con lo que se enmascararia el tiempo al peligro de todo lo anterior.
+- **Limitacion que se declara:** se pierden los cortes con h bajo:
+  - en ajuste, 7: cambios de encuadre en el mismo lugar (h 0.27 a 0.51) y dos cambios de toma en Brannutvikling (h 0.40 y 0.33);
+  - en validacion, 4: tres en el recuadro de videoplayback (15) (h 0.41 a 0.49) y uno con h 0.64;
+  - 3 de los 13 videos con cortes no quedan marcados como editados (Early Video, PRE-ARRIVAL Dumpster y videoplayback (15)).
+
+### Pruebas con los umbrales elegidos
+
+- **Regresion:** `python descriptores_v2.py --sin_cortes` sobre los 4 videos de prueba da un CSV **identico byte a byte** a `resultados/descriptores_v2/descriptores.csv`.
+- **Punta a punta (4 videos de prueba, Brennende Akkus y video (4309))**, salida en `resultados/cortes/prueba/`:
+  - 4 videos de prueba: 0 cortes, `editado = no`;
+  - video (4309) (la luz que se enciende): 0 cortes;
+  - Brennende Akkus: 5 cortes (3.7, 10.6, 13.8, 24.5 y 83.0 s), los mismos 5 confirmados en ese video. Queda en 6 tramos y el seguimiento se reinicia en cada uno.
+- Tiempo: igual que sin cortes (el histograma cuesta ~1 ms por muestra).
+
+### Correccion sobre Berkeley
+
+Se reviso un fotograma cada 5 s: es una camara en tierra con zoom y paneos, no un dron, y no tiene cortes de escena. Ver la correccion en el paso 2 del 50 %. Tambien se corrigio la columna `motivo` de `resultados/seguimiento/videos_prueba.csv` y la Evidencia 2 del `README.md`.
+
+### Corrida de la noche (la lanza el usuario)
+
+- Lista: `resultados/cortes/lista_noche.csv` (`python cortes.py listas`):
+  - los 389 videos de fuego (200 etiquetados por la IA y 218 candidatos, 29 en comun; 8.69 h);
+  - **215 videos sin fuego, uno por cada origen** (semilla 42; 0.47 h; `resultados/cortes/lista_non_fire.csv`), para la calibracion conformal.
+  - Incluye la copia `14296658_3840_2160_24fps - Copy.mp4`, que se excluye en la particion (paso 6).
+- Ritmos medidos (segundos de proceso por segundo de video): 720p o menos 0.37; 1080p 0.73; 4K 1.12.
+- Estimacion: **~6.7 h** (6.3 h los de fuego y 0.35 h los sin fuego).
+- Los descriptores de la noche (~0.5 millones de filas, del orden de 100 MB) van a `runs_fuego/` (no se versiona, por el limite de 100 MB de GitHub). `cortes.csv` y `resumen.csv` van a `resultados/cortes/`.
+
+### Archivos generados
+
+- `resultados/cortes/lista_exploracion.csv`, `exploracion.csv`, `exploracion_resumen.csv`: busqueda con solo el histograma.
+- `resultados/cortes/lista_ajuste.csv`, `ajuste/`: candidatos de los videos de ajuste.
+- `resultados/cortes/confirmados.csv`: 83 pares revisados.
+- `resultados/cortes/lista_indicadores.csv`, `indicadores/indicadores.csv` (h, `valido`, inliers y puntos por muestra), `indicadores/umbrales_rejilla.csv`, `indicadores/umbrales_elegidos.txt`.
+- `resultados/cortes/prueba/cortes.csv` y `resumen.csv`: corrida de punta a punta.
+- `resultados/cortes/lista_non_fire.csv` y `lista_noche.csv`.
+- `runs_fuego/cortes/` (no se versiona): pares y hojas de revision.

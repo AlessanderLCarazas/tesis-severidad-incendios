@@ -142,7 +142,7 @@ La salida en cada muestra es la matriz `X_t` de N trayectorias por 13 descriptor
 | compensando, puntos fuera de todas las cajas | 114 | 25 | 19 | 0.560 |
 | compensando, puntos fuera de las cajas de fuego (sistema) | 106 | 19 | 17 | 0.564 |
 
-**Evidencia 2: movimiento estimado.** Traslación, escala e inliers en un video tomado desde un dron, con un alejamiento de zoom hacia los 13 s. En rojo, las muestras descartadas (menos de 10 puntos o menos de 50 % de inliers).
+**Evidencia 2: movimiento estimado.** Traslación, escala e inliers en un video tomado con una cámara en tierra con zoom y paneos, con un alejamiento de zoom hacia los 13 s. En rojo, las muestras descartadas (menos de 10 puntos o menos de 50 % de inliers).
 
 ![Movimiento de la cámara](resultados/camara/movimiento_Berkeley%20Township%20Structure%20Fire%202_12_21_fuego.png)
 
