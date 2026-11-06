@@ -583,3 +583,132 @@ python demo.py --crecimiento 12487581_1920_1080_30fps.mp4 --alto 360 --ancho_pan
   - (d) Videos editados: el video del rociador comprime unos 7 min de ensayo en 1:48 con cortes, asi que `dt` no es tiempo real. Contar los cortes de escena con las muestras no validas de `camara.py` y excluir los videos editados del entrenamiento del tiempo al peligro.
   - (e) Fragmentacion: en ese video la trayectoria principal llega al id 415 en 108 s. Evaluar describir la escena como una sola secuencia y reiniciar el seguimiento en cada corte de escena.
   - (f) Humo difuso: con la sala llena de humo, d11 = 0 porque no hay cajas de humo cerca de la llama. Evaluar una medida global de neblina de la escena o reportarlo como limitacion.
+
+## Fase A del 80 %, pasos 1 a 4: descriptores corregidos (v2) y normalizacion
+
+Fecha: 2026-11-05. Rama: `avance-80`. Scripts nuevos: `descriptores_v2.py` (clase `DescriptoresV2`), `normalizacion.py` (clase `Normalizador`) y `comparar_descriptores.py`. `descriptores.py` y `demo.py` no se modificaron.
+
+### Que se hizo
+
+- `descriptores_v2.py` usa el mismo pipeline de v1 (`LectorVideo` a 10 fps, YOLOv8s con `conf 0.1`, `MovimientoCamara` con mascara fuego, ByteTrack `dt_tope2_cmc`) y cambia cuatro cosas:
+  1. **d3, d4 y d12 sobre la serie suavizada.** Para cada trayectoria se guarda la ventana de sus observaciones en `(t_k - 1 s, t_k]`. `d2_med` es la mediana de las areas de esa ventana, cada una llevada a la escala del fotograma actual con la **escala acumulada desde esa muestra hasta ahora**: `A_j * (s_{j+1} * ... * s_k)^2`. Es exacto porque la composicion de similitudes multiplica las escalas. `d11_med` es la mediana de d11 en la misma ventana; no necesita escala porque es una fraccion de la region.
+     - `d3 = (d2_med_k - S^2 * d2_med_prev) / dt`, con `S` la escala acumulada desde la observacion anterior de la trayectoria.
+     - `d4 = d3 / d2_med_k`.
+     - `d12 = (d11_med_k - d11_med_prev) / dt`.
+     - d2 y d11 siguen siendo el valor instantaneo.
+     - El borde de la ventana tiene una tolerancia de 1e-6 s. Sin ella, por el redondeo de punto flotante, la ventana alternaba entre 10 y 11 muestras y d3 oscilaba entre 0.001 y 0.003 en una rampa de pendiente 0.002 (lo detecto la prueba sintetica).
+  2. **Region de humo con tamano minimo:** ancho = `max(2 w, 0.2 W)` y alto = `max(2 h, 0.2 H)`, centrada en la caja de fuego y recortada al fotograma. En 4K la region minima es de 768 x 432 px. Cambian d10 y d11, que usan esa region, y por lo tanto d12.
+  3. **d13 cuenta solo las trayectorias de fuego con al menos 1 s de edad.** La edad es `t_k - t` de la primera observacion de la trayectoria; usa solo el pasado. La trayectoria que se esta describiendo tambien cuenta si ya cumplio 1 s; si es mas joven, d13 cuenta solo a las demas que ya cumplieron 1 s. Por eso todas las filas de un mismo fotograma tienen el mismo d13, y d13 puede valer 0 (por ejemplo, en el primer segundo del video o cuando todas las trayectorias son nuevas).
+  4. **Normalizacion (`normalizacion.py`):**
+     - `Normalizador.ajustar(X)` calcula los percentiles 1 y 99 de cada columna, recorta y calcula media y desviacion (ddof 0) sobre los datos recortados; si la desviacion es 0 se usa 1.
+     - `transformar(X)` recorta con esos limites y calcula `(x - media) / desv`.
+     - `guardar` y `cargar` usan un JSON con columnas, percentiles, limites, media, desviacion, numero de filas y la lista de videos usados en el ajuste.
+     - Por defecto normaliza d1 a d13.
+     - **Todavia no se aplica a los videos:** las estadisticas se calcularan solo con los videos de entrenamiento cuando exista la particion (Fase C).
+- Parametros nuevos de `descriptores_v2.py`: `--mediana 1.0`, `--min_humo 0.2`, `--min_duracion 1.0`. Con los tres en 0 se reproduce v1.
+- Columnas de salida: las mismas de v1 mas `d2_med` y `d11_med` al final.
+- Para la corrida sobre todos los videos, `descriptores_v2.py` escribe cada video al terminarlo, registra los videos terminados en `procesados.csv` y con `--reanudar` salta los que ya estan.
+
+### Comandos
+
+```
+python descriptores_v2.py
+python descriptores_v2.py --mediana 0 --min_humo 0 --min_duracion 0 --salida <carpeta temporal>
+python comparar_descriptores.py --despues <carpeta temporal>/descriptores.csv --solo_igualdad
+python comparar_descriptores.py
+python normalizacion.py ajustar --lista <videos de entrenamiento>.csv --salida resultados/normalizacion.json
+python normalizacion.py aplicar --parametros resultados/normalizacion.json --entrada <csv> --salida <csv normalizado>
+```
+
+### Pruebas sinteticas (sin YOLO): 13 de 13 correctas
+
+| Prueba | Resultado |
+|---|---|
+| llama constante con un parpadeo de 1 muestra (+50 % de ancho) | max \|d3\|: v1 0.0241 1/s, v2 0 |
+| rampa de area con pendiente 0.002 1/s | v2 da d3 = 0.00200 en todas las muestras desde 1.2 s; retraso de `d2_med` respecto del area real: 0.45 s |
+| zoom continuo de 3 % por muestra durante 40 muestras (el area en la imagen crece x10, el area real es constante) | max \|d3\| v2 = 7e-17. Con solo la escala del fotograma actual en vez de la acumulada, d3 llega a 0.0024 1/s |
+| zoom irregular (0.97 a 1.05 por muestra) con parpadeo | media \|d4\|: v1 1.771 1/s, v2 0.173 1/s |
+| tamano de la region | caja de 100 x 100 px en 4K -> 768 x 432 px; caja de 1000 x 600 px -> 2000 x 1200 px (factor 2) |
+| llama de 100 x 100 px con una caja de humo de 400 x 350 px | d11: v1 1.000 (saturada), v2 0.423 |
+| caja de humo mas confiable fuera de la region 2x pero dentro de la region minima | d10: v1 0.70, v2 0.90 |
+| trayectoria 1 desde 0 s y trayectoria 2 desde 1.5 s | d13 = 0 hasta 0.9 s, 1 desde 1.0 s (tambien en la fila de la trayectoria 2 mientras es joven), 2 desde 2.5 s; v1 da 2 a los 1.5 s |
+| v1 contra v2 con los tres parametros en 0, 3 trayectorias, zoom aleatorio y humo | diferencia maxima 2e-14 |
+| normalizador | media 0 y desviacion 1 en los datos de ajuste; valores nuevos recortados a p1 y p99 del ajuste; guardar y cargar da el mismo resultado |
+
+### Modo compatibilidad (4 videos reales)
+
+`descriptores_v2.py --mediana 0 --min_humo 0 --min_duracion 0` reproduce exactamente `resultados/descriptores/descriptores.csv`: 1 955 filas con las mismas claves `(archivo, id, k)` y 0 diferencias en d1 a d13, `s_k`, `rot`, `tx`, `ty`, `inliers`, `t` y `dt`. Las diferencias de v2 se deben solo a los tres cambios.
+
+### Numeros: v1 contra v2 (4 videos de prueba, 1 955 filas)
+
+- En v2, d1, d2, d5 a d9 y el contexto son identicos a v1. Cambian d3 (1 835 filas), d4 (1 836), d10 (34), d11 (559), d12 (674) y d13 (973).
+- Tiempos de v2: 28.7, 36.3, 38.1 y 7.7 s por video. En el modo compatibilidad, 14294880 marco 1 579 s porque la laptop se suspendio a mitad de la corrida; no es un costo del metodo.
+
+| Descriptor | Version | Media | Desv. | p1 | Mediana | p99 | Min | Max | Variacion media entre muestras |
+|---|---|---|---|---|---|---|---|---|---|
+| d3 (1/s) | v1 | 0.0037 | 0.0837 | -0.217 | 0.0001 | 0.290 | -1.132 | 0.601 | 0.0582 |
+| d3 (1/s) | v2 | 0.0020 | 0.0215 | -0.067 | 0.0000 | 0.075 | -0.182 | 0.188 | 0.0109 |
+| d4 (1/s) | v1 | 0.005 | 1.822 | -6.24 | 0.012 | 4.91 | -9.93 | 7.27 | 1.627 |
+| d4 (1/s) | v2 | 0.095 | 0.673 | -1.89 | 0.000 | 2.40 | -9.18 | 3.56 | 0.393 |
+| d10 | v1 | 0.362 | 0.339 | 0 | 0.359 | 0.824 | 0 | 0.831 | 0.037 |
+| d10 | v2 | 0.368 | 0.337 | 0 | 0.377 | 0.824 | 0 | 0.831 | 0.035 |
+| d11 | v1 | 0.421 | 0.425 | 0 | 0.354 | 1 | 0 | 1 | 0.041 |
+| d11 | v2 | 0.407 | 0.406 | 0 | 0.354 | 1 | 0 | 1 | 0.038 |
+| d12 (1/s) | v1 | -0.027 | 1.311 | -4.78 | 0 | 4.02 | -10.0 | 10.0 | 0.628 |
+| d12 (1/s) | v2 | -0.025 | 0.415 | -0.93 | 0 | 0.77 | -5.42 | 3.65 | 0.106 |
+| d13 | v1 | 2.68 | 1.70 | 1 | 2 | 8 | 1 | 10 | 0.400 |
+| d13 | v2 | 1.77 | 1.14 | 0 | 2 | 5 | 0 | 6 | 0.268 |
+
+"Variacion media entre muestras" = media de \|valor_k - valor_anterior\| entre observaciones consecutivas de una misma trayectoria; mide el parpadeo.
+
+| Medida | v1 | v2 |
+|---|---|---|
+| filas con d11 = 1 (saturada), total | 23.7 % | 14.3 % |
+| d11 = 1 en 14294880 (aerea 4K) | 35.7 % | 8.6 % |
+| d11 = 1 en Berkeley (dron) | 33.7 % | 31.2 % |
+| d11 = 1 en la trayectoria 1 de 14294880 | 172 de 229 | 10 de 229 |
+| filas con \|d12\| >= 5 | 1.8 % | 0.2 % |
+| filas con \|d4\| >= 5 | 3.0 % | 0.1 % |
+| filas con d13 = 0 | 0 % | 9.8 % |
+| media de d13 en Berkeley (74 trayectorias, 34 llegan a 1 s) | 4.00 | 2.10 |
+
+- Trayectoria 1 de 14294880 (`resultados/descriptores_v2/comparacion_14294880_3840_2160_24fps_id1.png`):
+  - `d2_med` sigue la tendencia del area sin los picos de una muestra;
+  - d3 y d4 quedan cerca de 0 mientras el area es estable, y el pico de -6.5 1/s de d4 (caida brusca de la caja hacia los 20.3 s) baja a -2.4 1/s y aparece unos 0.5 s despues;
+  - d11 deja de estar saturada: en v2 vale ~0.93 hasta los 10 s y luego baja de forma gradual hasta ~0.52, mientras que v1 estaba en 1 hasta los 17 s;
+  - d12 pasa de oscilar entre -1 y 0.8 despues de los 17 s a valores de +-0.1;
+  - d13 sube un segundo despues de que aparece cada trayectoria nueva;
+  - d10 no cambia en esta trayectoria.
+- En Berkeley el humo es denso y extenso, asi que la region minima casi no cambia la saturacion (33.7 % -> 31.2 %): ahi d11 = 1 refleja humo real alrededor del fuego.
+- Siguen quedando colas: d4 llega a -9.18 en Berkeley (id 378, t = 10.5 s). Al inicio de una trayectoria la ventana tiene 2 muestras y la mediana es su promedio, asi que una caida de la caja todavia pesa; el recorte por percentiles de la normalizacion se encarga de estos casos.
+- La mediana de 1 s **retrasa unos 0.5 s** la respuesta de d3, d4 y d12 (0.45 s medido en la rampa sintetica). Elimina los parpadeos de menos de ~0.5 s y conserva los cambios sostenidos.
+
+### Ensayo de la normalizacion (no son las estadisticas del modelo)
+
+- Ajuste con 3 videos (1 348 filas; se excluye 14294880) y aplicacion al cuarto (607 filas, ninguna usada en el ajuste).
+- En los datos de ajuste: media 0 y desviacion 1 en las 13 columnas.
+- En el video excluido, los valores quedan dentro de los limites del ajuste. Por ejemplo, d10 llega a 2.283, que es el p99 del ajuste ya normalizado; d1 baja hasta -1.968, que es el p1.
+- p1 y p99 del ajuste para las colas: d3 -0.073 / 0.086 1/s, d4 -2.22 / 2.53 1/s, d12 -2.74 / 0.99 1/s, d13 0 / 6.
+- El JSON del ensayo quedo fuera del repositorio. Las estadisticas reales se calcularan en la Fase C, solo con los videos de entrenamiento: `python normalizacion.py ajustar --lista <entrenamiento>.csv`.
+
+### Cambios para la tesis (Cuadro 4.4)
+
+| N | Descriptor | Definicion nueva |
+|---|---|---|
+| 3 | tasa de crecimiento | `(A~_k - S^2 A~_prev) / dt`, donde `A~_k` es la mediana de las areas de la trayectoria en el ultimo segundo `(t_k - 1, t_k]`, cada area `A_j` llevada al fotograma actual con la escala acumulada `(s_{j+1} ... s_k)^2`; `A~_prev` es el mismo valor en la observacion anterior de la trayectoria, `S` la escala acumulada desde ella y `dt` el tiempo transcurrido. 0 en la primera observacion |
+| 4 | crecimiento relativo | d3 / `A~_k` |
+| 10 | confianza de humo | maxima confianza de las detecciones de humo (>= 0.25) que tocan la region de humo: la caja de fuego escalada 2 veces alrededor de su centro, con un tamano minimo del 20 % del ancho y del 20 % del alto del fotograma, recortada al fotograma |
+| 11 | area de humo | fraccion de esa region cubierta por la union de las cajas de humo |
+| 12 | tasa del humo | `(H~_k - H~_prev) / dt`, donde `H~_k` es la mediana de d11 de la trayectoria en el ultimo segundo |
+| 13 | regiones activas | numero de trayectorias de fuego presentes en el fotograma con al menos 1 s desde su primera observacion. Incluye a la trayectoria descrita si ya cumplio 1 s; si no, cuenta solo a las demas |
+
+- Retraso: la mediana de 1 s usa solo el pasado (el sistema funciona en linea), asi que las tasas d3, d4 y d12 responden unos 0.5 s despues del cambio real del area. Esto suma al tiempo de alerta y debe mencionarse junto al EWT.
+- Normalizacion antes de la CfC: cada descriptor se recorta a los percentiles 1 y 99 y se estandariza con la media y la desviacion del conjunto de entrenamiento; los mismos parametros se aplican en validacion, calibracion, prueba y la demo.
+
+### Archivos generados
+
+- `resultados/descriptores_v2/descriptores.csv`: columnas de v1 mas `d2_med` y `d11_med`.
+- `resultados/descriptores_v2/procesados.csv`: `archivo, muestras, trayectorias, filas, segundos`.
+- `resultados/descriptores_v2/comparacion.csv`: estadisticas de d3, d4, d10, d11, d12 y d13 por video y en total, v1 y v2.
+- `resultados/descriptores_v2/comparacion_14294880_3840_2160_24fps_id1.png`: v1 contra v2 en la trayectoria 1.
+- `resultados/descriptores_v2/descriptores_14294880_3840_2160_24fps_id1.png`: los 13 descriptores v2 de la misma trayectoria, en el mismo formato que la grafica de v1.
