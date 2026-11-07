@@ -12,20 +12,22 @@ El sistema recibe un video y realiza estos pasos:
 
 La salida se convierte en segmentos `(inicio, fin, nivel)`, es decir, en una localización temporal de los niveles de severidad, y en alertas calibradas.
 
-**Estado:** avance del 80 % **en desarrollo** (última actualización: 5 de noviembre de 2026). Las etapas 1 a 4 están implementadas desde el avance del 50 %. En el 80 % se corrigen los datos y se implementan las etapas 5 a 8 (modelo temporal, estimación de riesgo, calibración y salida). La tabla de abajo muestra qué está hecho.
+**Estado:** avance del 80 % **en desarrollo** (última actualización: 6 de noviembre de 2026). Las etapas 1 a 4 están implementadas desde el avance del 50 %. En el 80 % se corrigen los datos y se implementan las etapas 5 a 8 (modelo temporal, estimación de riesgo, calibración y salida). La fase A, de correcciones, está terminada, y la fase B, de etiquetas con cambios de nivel, está en curso. La tabla de abajo muestra qué está hecho.
 
-![Pipeline de la tesis](docs/img/pipeline_estado.png)
+![Pipeline de la tesis al 80 %](docs/img/pipeline_estado_80.png)
 
-*Figura 4.1 de la tesis. En verde, las etapas ya implementadas (1 a 4); en gris, las que se implementan en este avance del 80 % (5 a 8).*
+*Figura 4.1 de la tesis, marcada con el estado actual. En verde, las etapas implementadas (1 a 4), corregidas en la fase A del 80 %. En ámbar, lo que está en curso: las etiquetas con cambios de nivel con las que se entrenarán las etapas 5 y 6 (fase B). En gris, las etapas que aún no empiezan (7 y 8).*
 
 ## Avance del 80 %
 
 | Fase | Paso | Estado |
 |---|---|---|
-| A. Correcciones del 50 % | 1 a 4. Descriptores v2 (tasas con mediana de 1 s, región de humo mínima, d13 con 1 s) y normalización | ✅ hecho |
-| | 5. Cortes de escena en videos editados | ✅ método y umbrales; corrida sobre 604 videos en curso |
-| | 6. Exclusión de la copia duplicada | pendiente |
-| B. Etiquetas con cambios de nivel | 7 a 9. Etiquetado con IA de 218 candidatos de crecimiento, validación humana a ciegas de los cambios y meta del riesgo continuo | pendiente |
+| A. Correcciones del 50 % | 1 a 4. Descriptores v2 (tasas con mediana de 1 s, región de humo mínima, d13 con 1 s) y normalización | hecho |
+| | 5. Cortes de escena en videos editados: método, umbrales y corrida sobre 604 videos | hecho |
+| | 6. Exclusión de archivos duplicados | hecho |
+| B. Etiquetas con cambios de nivel | 7. Etiquetado con IA en dos pasadas de los 210 candidatos de crecimiento | en curso: pasada 1 con 198 de 210 videos |
+| | 8. Validación humana a ciegas de los cambios de nivel (30 videos) | pendiente |
+| | 9. Meta del riesgo continuo | pendiente |
 | C. Secuencias | 10 y 11. Partición por origen y secuencias por trayectoria | pendiente |
 | D. Modelo | 12 a 14. Compuerta + CfC con 3 salidas, GRU y LSTM de comparación, entrenamiento | pendiente |
 | E. Decisión | 15 y 16. Calibración conformal, histéresis y segmentos `(inicio, fin, nivel)` | pendiente |
@@ -70,7 +72,7 @@ Muchos videos son noticias o documentales editados. Un corte de escena rompe el 
 4. **En cada corte:** se reinician los seguidores, la cámara y los descriptores, y empieza un tramo nuevo.
 5. **Tiempo al peligro por tramo:** normal si el paso a Incontrolado ocurre dentro del tramo, 0 si ocurrió en un tramo anterior y enmascarado si ocurre en uno posterior.
 
-**Evidencia: umbrales con datos revisados.** Se revisaron a mano 37 cortes y 46 cambios bruscos sin corte (llamaradas, destellos, luces de emergencia, humo); los casos dudosos se resolvieron mirando el video. Los umbrales se eligieron en 13 videos y se comprobaron en otros 11.
+**Evidencia 1: umbrales con datos revisados.** Se revisaron a mano 37 cortes y 46 cambios bruscos sin corte (llamaradas, destellos, luces de emergencia, humo); los casos dudosos se resolvieron mirando el video. Los umbrales se eligieron en 13 videos y se comprobaron en otros 11.
 
 | Conjunto | Cortes detectados | Falsos cortes |
 |---|---|---|
@@ -79,25 +81,91 @@ Muchos videos son noticias o documentales editados. Un corte de escena rompe el 
 
 Se eligió no tener falsos cortes: un falso corte cae en explosiones o destellos, justo cuando el fuego pasa a Incontrolado, y reiniciaría el seguimiento en el momento clave. Los cortes perdidos tienen poca diferencia de color (`h` entre 0.27 y 0.64), en su mayoría cambios de encuadre dentro del mismo lugar.
 
-## Evolución desde el avance del 30 %
+**Evidencia 2: la regla sobre los 83 pares revisados.** Cada punto es un par de muestras consecutivas revisado a mano. Con la cámara válida (arriba) solo se marca corte si `h` ≥ 0.85, porque un destello cambia el color pero el fondo sigue en su lugar; con la cámara no válida (abajo) basta `h` ≥ 0.65. Ningún cambio brusco sin corte cae en la zona sombreada.
 
-El avance del 30 % (rama [`avance-30`](https://github.com/AlessanderLCarazas/tesis-severidad-incendios/tree/avance-30)) tenía solo la detección y los datos preparados:
+![Regla de cortes sobre los pares revisados](docs/img/cortes_regla.png)
+
+**Evidencia 3: corrida completa** sobre 604 videos (389 con fuego y 215 sin fuego, 9.2 h de video, 6.1 h de proceso). Los números de los videos con fuego no cuentan la copia excluida en el paso 6.
+
+| Medida | Valor |
+|---|---|
+| Videos con fuego con al menos un corte | 60 de 388 (15.4 %) |
+| Cortes en videos con fuego | 234 |
+| Tramos en videos con fuego | 622 |
+| Video más editado | 26 cortes en 155 s |
+| Cortes en videos sin fuego | 7: 1 real y 6 por cambios de luz (luces de concierto, relámpagos y una cámara bajo el agua), según una revisión con IA de las hojas de cortes |
+| Videos sin fuego con alguna trayectoria de fuego falsa | 14 de 215 (6.5 %) |
+| Videos con fuego sin ninguna trayectoria | 6 |
+
+Los 6 falsos cortes en videos sin fuego muestran que la regla no se mantiene con destellos fuertes de tipos que no estaban en el ajuste. Las trayectorias falsas en videos sin fuego son las que debe controlar la calibración de la etapa 7. Cortes por video: [`resultados/cortes/resumen.csv`](resultados/cortes/resumen.csv) y [`resultados/cortes/cortes.csv`](resultados/cortes/cortes.csv).
+
+### Paso 6: archivos duplicados (`duplicados.py`)
+
+1. **Huella:** se calcula el SHA-256 de los 2 468 videos de DetectiumFire.
+2. **Grupos:** los archivos con la misma huella son copias exactas, aunque tengan otro nombre.
+3. **Exclusión:** de cada grupo se conserva un archivo y se excluyen los demás. La lista la usan los scripts de las fases siguientes.
+
+**Evidencia.** Hay 10 grupos de copias exactas y se excluyen 34 archivos ([`resultados/excluidos.csv`](resultados/excluidos.csv), con el archivo excluido, el que se conserva y su huella). Uno es la copia de un video de la prueba humana guardada con otro nombre (`14296658_3840_2160_24fps - Copy.mp4`); sin esta exclusión, el mismo video habría quedado en entrenamiento y en prueba.
+
+### Paso 7: etiquetado con IA en dos pasadas (`etiquetar_ia_v2.py`, en curso)
+
+Las etiquetas del avance del 50 % usaban 24 fotos por video y marcaron cambio de nivel en solo 3 de 200 videos. Para entrenar la localización temporal se necesitan más cambios y más precisos, así que se etiquetan los 218 candidatos con crecimiento sostenido; 8 de ellos están en la prueba humana y se excluyen, por lo que quedan 210.
+
+Se aplica, en orden:
+
+1. **Pasada 1, tira uniforme:** 48 fotos repartidas en todo el video, en dos imágenes de 24 (6 columnas por 4 filas), cada foto con su número y su instante real. La IA responde el nivel inicial, la foto de cada cambio y el tramo útil, con las mismas claves de la fase 1.
+2. **Pasada 2, tira densa (pendiente):** solo para los cambios marcados en la pasada 1 y solo si sus fotos están a más de 1 s. Se arma una tira con una foto cada 0.5 s alrededor del cambio para precisar el instante.
+3. **Prompt fijo:** [`prompts/prompt_severidad_v2.txt`](prompts/prompt_severidad_v2.txt). Las definiciones de los tres niveles y las 7 reglas son copia textual del prompt de la fase 1 (comprobado con `diff`).
+4. **Subagentes:** Claude Sonnet 5.5, un subagente nuevo por lote de 10 videos, en tandas de 5 lotes. Cada uno usa un agente que solo puede leer y escribir archivos, sin ejecutar comandos.
+5. **Lo que la IA no ve:** las propuestas de las reglas, las curvas de área, las etiquetas de la fase 1 ni los tiempos reales de las fotos.
+6. **Controles de cada respuesta:** JSON válido, modelo reportado igual a `claude-sonnet-5-5` y una prueba de lectura: la IA debe escribir los instantes que lee en las fotos 24 y 48, y deben coincidir con los reales. Si no coinciden, el video se repite.
+
+Las respuestas crudas quedan en `resultados/ia_crudo_v2/`, una por video.
+
+**Evidencia 1: tanda de ensayo.** La primera tanda (50 videos) se corrió con el agente general. Sus 50 respuestas eran válidas, pero 4 de los 5 subagentes ejecutaron comandos que el prompt prohíbe y no se podía comprobar que hubieran visto las dos imágenes de cada video. Por eso se agregaron el agente que solo lee y escribe y la prueba de lectura, y la tanda se repitió con el protocolo final. Las respuestas del ensayo se guardan aparte (`resultados/ia_crudo_v2_ensayo/`) y no se usan como etiquetas.
+
+<img src="docs/img/subagentes_ensayo.png" alt="Subagentes de la tanda de ensayo" width="600">
+
+*Captura de la tanda de ensayo: cinco subagentes en paralelo, uno por lote, coordinados desde la sesión principal.*
+
+En el ensayo, 13 de 49 videos tienen algún cambio de nivel (1 solo a Incipiente, 11 solo a Incontrolado y 1 con ambos), contra 3 de 200 en la fase 1, como se espera en videos elegidos por su crecimiento. Si la IA marca cambios de más, se verá en la validación humana del paso 8.
+
+**Evidencia 2: avance de la pasada 1.**
+
+| Tanda | Lotes | Videos | Estado |
+|---|---|---|---|
+| 1, repetida con el protocolo final | 1 a 5 | 50 | hecha |
+| 2 | 6 a 10 | 50 | hecha |
+| 3 | 11 a 15 | 50 | hecha: 50 respuestas válidas, 1 video descartado |
+| 4 | 16 a 20 | 50 | 48 hechos; 2 por repetir, porque un subagente se detuvo antes de escribirlos |
+| 5 | 21 | 10 | pendiente |
+
+Resultado parcial con 198 videos: todas las respuestas pasan los controles (JSON válido, modelo `claude-sonnet-5-5` e instantes de las fotos 24 y 48 correctos), 4 videos se descartan y 63 de los 194 restantes (32.5 %) tienen algún cambio de nivel. El acuerdo entre el ensayo y la repetición está en [`resultados/REPORTE.md`](resultados/REPORTE.md). Al cerrar la pasada 1 se publicarán los cambios por tipo, los motivos de descarte y la consistencia con las etiquetas de la fase 1 en los 21 videos que tienen ambas.
+
+## Evolución entre avances
+
+El avance del 30 % (rama [`avance-30`](https://github.com/AlessanderLCarazas/tesis-severidad-incendios/tree/avance-30)) tenía solo la detección y los datos preparados, y el del 50 % (rama [`avance-50`](https://github.com/AlessanderLCarazas/tesis-severidad-incendios/tree/avance-50)) implementó las etapas 1 a 4:
 
 ![Pipeline de la tesis al 30 %](docs/img/pipeline_estado_30.png)
 
-*La misma figura marcada para el avance del 30 %: en verde, solo la detección de fuego y humo.*
+*La figura marcada para el avance del 30 %: en verde, solo la detección de fuego y humo.*
 
-| Componente | Avance 30 % | Avance 50 % |
-|---|---|---|
-| Etapas 1 y 2: entrada y preprocesamiento | sin implementar | lector con marca de tiempo real, `dt_k` y muestreo a unos 10 fps |
-| Etapa 3: detección | YOLOv8s entrenado y evaluado (mAP50 0.867) | el mismo detector |
-| Etapa 3: seguimiento | sin implementar | ByteTrack por clase, Kalman con `dt` real (tope de 2 periodos) y compensación de la cámara |
-| Etapa 4: movimiento de la cámara | sin implementar | Shi-Tomasi, Lucas-Kanade y similitud con RANSAC |
-| Etapa 4: descriptores | sin implementar | 13 descriptores por trayectoria y muestra |
-| Etiquetado de la severidad | curvas de área con reglas y herramienta manual | etiquetas con IA en 200 videos y validación humana a ciegas en 40 (acuerdo 85 %, kappa 0.80) |
-| Evidencias | métricas del detector | demos en video, pruebas del filtro de Kalman y de la cámara, figuras del etiquetado |
+![Pipeline de la tesis al 50 %](docs/img/pipeline_estado.png)
 
-Los cambios exactos de código entre los dos avances se ven en la [comparación de ramas `avance-30...avance-50`](https://github.com/AlessanderLCarazas/tesis-severidad-incendios/compare/avance-30...avance-50).
+*La figura marcada para el avance del 50 %: en verde, las etapas 1 a 4.*
+
+| Componente | Avance 30 % | Avance 50 % | Avance 80 % (hasta ahora) |
+|---|---|---|---|
+| Etapas 1 y 2: entrada y preprocesamiento | sin implementar | lector con marca de tiempo real, `dt_k` y muestreo a unos 10 fps | sin cambios |
+| Etapa 3: detección | YOLOv8s entrenado y evaluado (mAP50 0.867) | el mismo detector | el mismo detector |
+| Etapa 3: seguimiento | sin implementar | ByteTrack por clase, Kalman con `dt` real (tope de 2 periodos) y compensación de la cámara | además, se reinicia en cada corte de escena |
+| Etapa 4: movimiento de la cámara | sin implementar | Shi-Tomasi, Lucas-Kanade y similitud con RANSAC | sin cambios; su validez se usa para detectar cortes |
+| Etapa 4: descriptores | sin implementar | 13 descriptores por trayectoria y muestra | versión 2: tasas con mediana de 1 s, región de humo mínima, d13 con 1 s y normalización |
+| Cortes de escena y duplicados | sin implementar | sin implementar | regla de histograma y cámara (0 falsos cortes en los pares revisados), corrida de 604 videos y 34 duplicados excluidos |
+| Etiquetado de la severidad | curvas de área con reglas y herramienta manual | etiquetas con IA en 200 videos y validación humana a ciegas en 40 (acuerdo 85 %, kappa 0.80) | en curso: etiquetado con IA en dos pasadas de 210 candidatos (198 hechos en la pasada 1), con prueba de lectura |
+| Evidencias | métricas del detector | demos en video, pruebas del filtro de Kalman y de la cámara, figuras del etiquetado | comparación de descriptores v1 y v2, figura de la regla de cortes, corrida completa y captura del ensayo del etiquetado |
+
+Los cambios exactos de código se ven en las comparaciones de ramas [`avance-30...avance-50`](https://github.com/AlessanderLCarazas/tesis-severidad-incendios/compare/avance-30...avance-50) y [`avance-50...avance-80`](https://github.com/AlessanderLCarazas/tesis-severidad-incendios/compare/avance-50...avance-80).
 
 ## Demo: etapas 1 a 4 sobre video
 
@@ -187,13 +255,13 @@ Salida completa de la evaluación: [`resultados/detector_prueba.txt`](resultados
 **B. Descriptores**, por cada trayectoria de fuego y muestra:
 
 1. **De la caja:** confianza (d1), área relativa (d2) y centro (d5-d6).
-2. **Con la escala `s` y `dt_k`:** tasa de crecimiento compensada (d3) y crecimiento relativo (d4).
+2. **Con la escala acumulada de la cámara y la mediana del área en el último segundo:** tasa de crecimiento compensada (d3) y crecimiento relativo (d4).
 3. **Con la traslación de la cámara:** velocidad del centro compensada (d7).
 4. **En una ventana de 3 s:** persistencia (d8) y variación de forma (d9).
 5. **Con el humo en una región 2 veces mayor que la caja (al menos el 20 % del ancho y del alto del fotograma):** confianza de humo (d10), área de humo (d11) y su tasa de cambio (d12).
-6. **De la escena:** regiones de fuego activas (d13).
+6. **De la escena:** regiones de fuego activas que llevan al menos 1 s (d13).
 
-La salida en cada muestra es la matriz `X_t` de N trayectorias por 13 descriptores. Las definiciones están en la tabla [Los 13 descriptores](#los-13-descriptores-cuadro-44-de-la-tesis).
+La salida en cada muestra es la matriz `X_t` de N trayectorias por 13 descriptores. Las definiciones están en la tabla [Los 13 descriptores](#los-13-descriptores). Desde el avance del 80 % se calculan con `descriptores_v2.py`, que además detecta los cortes de escena (paso 5).
 
 **Evidencia 1: compensación de la cámara.** Con los puntos fuera de las cajas de fuego, los cortes bajan de 26 (sin compensar) a 19; con los puntos fuera de todas las cajas, solo a 25.
 
@@ -207,9 +275,9 @@ La salida en cada muestra es la matriz `X_t` de N trayectorias por 13 descriptor
 
 ![Movimiento de la cámara](resultados/camara/movimiento_Berkeley%20Township%20Structure%20Fire%202_12_21_fuego.png)
 
-**Evidencia 3: descriptores.** Los 13 descriptores de una trayectoria de fuego en un video aéreo. El centro se desplaza en la imagen por el paneo de la cámara, mientras que la velocidad compensada (d7) queda cerca de 0.
+**Evidencia 3: descriptores.** Los 13 descriptores (versión 2) de una trayectoria de fuego en un video aéreo. El centro se desplaza en la imagen por el paneo de la cámara, mientras que la velocidad compensada (d7) queda cerca de 0.
 
-![Descriptores](resultados/descriptores/descriptores_14294880_3840_2160_24fps_id1.png)
+![Descriptores](resultados/descriptores_v2/descriptores_14294880_3840_2160_24fps_id1.png)
 
 ### Etiquetado de la severidad (subproceso que prepara los datos de la CfC)
 
@@ -263,13 +331,13 @@ Los tres niveles agrupan los de DetectiumFire: sin riesgo → Controlado; riesgo
 | 1. Entrada | video `V = {(I_k, t_k)}`: cada fotograma llega con su marca de tiempo | implementada | `preprocesamiento.py` |
 | 2. Preprocesamiento | marca de tiempo `t_k` y `dt_k = t_k - t_{k-1}`; muestreo a unos 10 fps conservando la marca real; redimensión a 640x640 con relleno y normalización a [0, 1] | implementada | `preprocesamiento.py` |
 | 3. Detección y seguimiento | YOLOv8s detecta fuego y humo, y ByteTrack forma las trayectorias con Kalman (`dt_k` real con tope de 2 periodos) y compensación de la cámara | implementada | `seguimiento.py` |
-| 4. Representación de características | movimiento de la cámara (Shi-Tomasi, Lucas-Kanade y similitud con RANSAC) y 13 descriptores por trayectoria y fotograma | implementada | `camara.py`, `descriptores.py` |
+| 4. Representación de características | movimiento de la cámara (Shi-Tomasi, Lucas-Kanade y similitud con RANSAC), cortes de escena y 13 descriptores por trayectoria y fotograma | implementada | `camara.py`, `descriptores_v2.py`, `cortes.py` |
 | 5. Procesamiento temporal | compuerta multiplicativa con el contexto de la cámara y `dt_k`, y red CfC con `timespans = dt_k` | avance del 80 % | |
 | 6. Estimación de riesgo | severidad (CORAL), riesgo continuo y tiempo al peligro | avance del 80 % | |
 | 7. Calibración y decisión | umbral de alerta con predicción conformal por video e histéresis | avance del 80 % | |
 | 8. Salida | nivel, alerta, tiempo al peligro, caja de la región y segmentos `(t_s, t_e, nivel)` | avance del 80 % | |
 
-### Los 13 descriptores (versión 2, avance del 80 %)
+### Los 13 descriptores
 
 | Grupo | N.º | Descriptor | Definición |
 |---|---|---|---|
@@ -336,6 +404,9 @@ Cada script usa `argparse` con valores por defecto razonables; ejecuta `python <
 | `normalizacion.py` | recorte por percentiles y estandarización con estadísticas de entrenamiento |
 | `comparar_descriptores.py` | comparación de v1 contra v2 |
 | `cortes.py` | detector de cortes de escena, umbrales y tiempo al peligro por tramo |
+| `duplicados.py` | huella SHA-256 de los videos y lista de archivos excluidos |
+| `etiquetar_ia_v2.py` | etiquetado con IA en dos pasadas: tiras de 48 fotos, lotes, revisión de las respuestas y comparación con el ensayo |
+| `figura_cortes.py` | figura de la regla de cortes sobre los pares revisados |
 
 ## Créditos y licencia de las imágenes
 
@@ -343,7 +414,7 @@ Cada script usa `argparse` con valores por defecto razonables; ejecuta `python <
 - **Las demás imágenes con fotogramas de video:** dataset DetectiumFire ([arXiv:2511.02495](https://arxiv.org/abs/2511.02495)), cuyos videos de búsqueda web se publican bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Se usan con fines académicos y no comerciales.
 - **Las imágenes y los GIF de este README** se comparten bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 - **Criterio de selección:** los fotogramas publicados no tienen marcas de agua, logos de canales o noticieros, texto superpuesto ni caras reconocibles.
-- Las gráficas sin fotogramas son de elaboración propia.
+- Las gráficas sin fotogramas y las capturas de pantalla son de elaboración propia.
 
 ## Ramas
 

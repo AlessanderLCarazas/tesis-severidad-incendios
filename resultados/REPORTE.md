@@ -941,3 +941,85 @@ El campo `origen` de `metadatos_videos.csv` no sirve tal cual para particionar:
   - 6 videos de fuego no tienen trayectorias;
   - 14 de 215 videos sin fuego tienen falsos del detector.
 - **Pendiente para la Fase C (paso 10):** normalizar y agrupar los origenes antes de particionar.
+
+## Fase B del 80 %, paso 7: etiquetado con IA de los candidatos con crecimiento (en curso)
+
+Fecha: 2026-11-06. Rama: `avance-80`. Script nuevo: `etiquetar_ia_v2.py`. Prompt nuevo: `prompts/prompt_severidad_v2.txt`; el de la fase 1 (`prompts/prompt_severidad.txt`) no se modifica.
+
+### Decisiones (2026-11-06)
+
+- **Videos:** los 218 candidatos con crecimiento sostenido, menos los 8 que estan en `resultados/prueba_humana.csv` y menos los de `resultados/excluidos.csv` (ninguno). Quedan **210**.
+- **Pasada 1:**
+  - 48 fotos uniformes en todo el video, sin usar las reglas, en dos imagenes de 24 (`tiras_v2/<video>_a.jpg` y `_b.jpg`, 6 x 4, fotos de 320 px de ancho);
+  - la IA da el nivel inicial y la primera foto de cada cambio;
+  - lotes de 10 videos (20 imagenes), en orden barajado con semilla 42 (`prompts/lotes_v2/p1_lote_XX.csv`).
+- **Pasada 2:**
+  - solo para los cambios marcados en la pasada 1 y solo si la separacion entre fotos es mayor de 1 s;
+  - tira densa (una foto cada 0.5 s, maximo 24) entre las fotos `j-2` y `j+1`, mas 2 s;
+  - se reporta cuantas veces la IA responde que no se ve el cambio.
+- **Modelo:** el mismo de la fase 1, Claude Sonnet 5.5, con subagentes nuevos sin contexto.
+  - Cada JSON crudo guarda el identificador del modelo, y `etiquetas_ia_v2.csv` tiene una columna con el modelo.
+  - Las respuestas crudas van a `resultados/ia_crudo_v2/`.
+- **Consistencia con la fase 1:** se mide en los 21 videos que tienen las dos etiquetas (los otros 8 de los 29 estan en la prueba humana), solo para el nivel inicial y el nivel maximo. Los instantes los mide el paso 8. `resultados/etiquetas_ia.csv` no se modifica.
+- **Paso 8 (prueba de la localizacion temporal):**
+  - 30 videos elegidos al azar con semilla fija entre los 210: 25 con al menos un cambio segun la IA v2 y 5 sin cambio, mezclados en una sola lista (`resultados/prueba_cambios.csv`), para que el anotador no sepa cuales tienen cambio y para medir si la IA se pierde cambios;
+  - se etiquetan a ciegas con `etiquetar_v3.py --ciego` (nuevo; `etiquetar_v2.py` no se modifica porque con el se hizo la validacion de los 40).
+
+### Ensayo de la tanda 1 y cambios al protocolo (2026-11-06)
+
+- **Ensayo:** la tanda 1 (lotes 1 a 5, 50 videos) se corrio con el agente general de Claude Code (alias `sonnet`).
+  - Los 50 JSON fueron validos y los 50 reportaron el modelo `claude-sonnet-5-5`.
+  - **4 de 5 subagentes ejecutaron comandos prohibidos por el prompt:** `ls`, copias de tiras a una carpeta temporal y un script de Python para escribir los JSON (este ultimo tambien listo la carpeta de respuestas, donde se ven los nombres de las respuestas de los otros subagentes).
+  - Parte del problema vino del script: 11 de las 210 tiras con nombres no ASCII se guardaron con el nombre mal codificado (`cv2.imwrite` en Windows). Se corrigio (`cv2.imencode` y escritura binaria) y se renombraron las 22 imagenes.
+  - No se pudo comprobar que cada subagente abriera las 2 imagenes de cada video: los registros de los subagentes no quedaron disponibles, y en 3 lotes el numero de llamadas a herramientas fue menor que el minimo esperado.
+  - Las 50 respuestas del ensayo se movieron a `resultados/ia_crudo_v2_ensayo/` y **no se usan como etiquetas**.
+- **Cambios respecto de la fase 1, y su motivo:**
+  - **Tipo de agente:** en lugar del agente general, un agente propio, `anotador_severidad` (`.claude/agents/anotador_severidad.md`, modelo `sonnet`), **con solo las herramientas Read y Write**. Asi el subagente no puede ejecutar comandos ni listar carpetas. Su mensaje de sistema solo dice que siga el archivo de prompt que se le indique y que solo puede leer y escribir archivos. Motivo: en el ensayo, 4 de 5 subagentes ejecutaron comandos prohibidos. `.claude/` no se versiona (igual que `CLAUDE.md`).
+  - **Prueba de lectura:** el JSON de la pasada 1 agrega `t_foto_24` y `t_foto_48`, los instantes escritos en la ultima foto de cada imagen. Se comparan con `tiras_v2/tiempos.csv` con una tolerancia de 0.1 s; si no coinciden, el video se repite una vez y, si vuelve a fallar, se marca. Mientras corren los subagentes, `tiempos.csv` se saca de la carpeta del proyecto.
+  - Las definiciones de los niveles y las 7 reglas del prompt v2 son identicas, letra por letra, a las del prompt de la fase 1 (verificado con `diff`).
+- La tanda 1 se repite con el protocolo final, y se reporta el acuerdo entre el ensayo y la repeticion.
+
+### Estado de la pasada 1 (2026-11-06)
+
+- Lanzamiento por tandas de 5 lotes, con el agente `anotador_severidad` y `tiras_v2/tiempos.csv` fuera del proyecto mientras corren los subagentes. Cada tanda se revisa con `python etiquetar_ia_v2.py revisar --archivos_lote ...`.
+- **Repeticion de la tanda 1** (lotes 1 a 5), **tanda 2** (6 a 10) y **tanda 3** (11 a 15):
+  - 150 de 150 JSON validos;
+  - modelo `claude-sonnet-5-5` en los 150;
+  - `t_foto_24` y `t_foto_48` correctos en los 150;
+  - cada subagente uso 33 herramientas (prompt, lote, 20 imagenes, 10 escrituras y la respuesta final).
+- **Tanda 4** (lotes 16 a 20): los 5 subagentes se detuvieron al alcanzar el limite de uso de 5 horas de Claude (error 429).
+  - Quedaron 48 JSON, todos validos y con los controles correctos.
+  - En el lote 19 faltan 2 videos (`Brannutvikling.mp4` y `240_F_1735655681_pTyPr0KLjIg3vG6BCfyzokPM3pPYMI5B_ST.mp4`). No quedaron archivos incompletos.
+  - Los 2 que faltan estan en `prompts/lotes_v2/p1_repetir_faltantes_t4.csv`.
+- **Pendiente:** esos 2 videos y el lote 21 (10 videos). En total faltan **12 de 210**.
+- **Acuerdo entre el ensayo y la repeticion de la tanda 1** (48 videos no descartados en ambos):
+
+| Medida | Acuerdo |
+|---|---|
+| nivel inicial | 45 de 48 (93.8 %); 2 de incipiente pasan a controlado y 1 de incontrolado a incipiente |
+| nivel maximo | 45 de 48 (93.8 %) |
+| hay cambio | 46 de 48 (95.8 %) |
+| foto del paso a incontrolado (11 marcados por ambos) | 8 en la misma foto, 2 a 1-2 fotos y 1 a 6 fotos |
+| foto del paso a incipiente | 1 marcado por ambos, en la misma foto |
+
+- **Resultado parcial: 198 videos validos de los lotes 1 a 20**
+  - 4 descartados:
+    - `videoplayback (5).mp4`: compilacion de ensayos con cortes y mosaicos;
+    - `240_F_1127423393...`: colada de metal con aspecto de render 3D;
+    - `Living room fires with and without a fire sprinkler (Timecode).mp4`: escenas cambiantes con cortes;
+    - `700_F_1623872802...`: erupcion volcanica.
+  - Nivel inicial de los 194 no descartados: controlado 82, incipiente 71, incontrolado 41.
+  - Cambios:
+    - 131 sin cambio;
+    - 48 solo a incontrolado (desde incipiente);
+    - 4 solo a incipiente;
+    - 10 con ambos cambios;
+    - 1 directo de controlado a incontrolado.
+  - **En total, 63 de 194 videos (32.5 %) tienen algun cambio.**
+- El resumen final de los 210 y la pasada 2 se haran cuando terminen los 12 que faltan.
+
+### Regla para el paso 10 (particion)
+
+- Los 30 videos de `resultados/prueba_cambios.csv` y los 40 de `resultados/prueba_humana.csv` son prueba.
+- **Los videos que compartan origen con cualquiera de esos 70 tampoco entran en entrenamiento, validacion ni calibracion.**
+- El origen se toma ya normalizado y agrupado (ver "Pendiente para el paso 10" en el paso 6).
