@@ -16,7 +16,7 @@ La salida se convierte en segmentos `(inicio, fin, nivel)`, es decir, en una loc
 
 ![Pipeline de la tesis al 80 %](docs/img/pipeline_estado_80.png)
 
-*Figura 4.1 de la tesis, marcada con el estado actual. Cómo leerla: cada caja numerada es una etapa del sistema, de izquierda a derecha, desde el video de entrada hasta el nivel y la alerta; la barra de abajo indica el estado de las etapas que tiene encima. En verde, las etapas implementadas (1 a 4), corregidas en la fase A del 80 %. En ámbar, lo que está en curso: las etiquetas con cambios de nivel con las que se entrenarán las etapas 5 y 6 (fase B); esas cajas se ven apagadas porque aún no están implementadas. En gris, las etapas que aún no empiezan (7 y 8).*
+*Figura 4.1 de la tesis con el estado del avance. Las etapas 1 a 4 están implementadas y se corrigieron en la fase A. Las etapas 5 y 6 todavía no se implementan, pero ya se preparan sus etiquetas de entrenamiento (fase B). Las etapas 7 y 8 quedan para después.*
 
 ## Avance del 80 %
 
@@ -60,7 +60,7 @@ La saturación de d11 baja donde era un artefacto (llama pequeña) y se mantiene
 
 ![Comparación v1 y v2](resultados/descriptores_v2/comparacion_14294880_3840_2160_24fps_id1.png)
 
-*Cómo leerla: cada panel es un descriptor de la misma trayectoria de fuego (vista aérea, 23 s, 229 muestras); en naranja la versión del 50 % (v1) y en azul la del 80 % (v2). Arriba, el área de cada muestra y su mediana de 1 s: la mediana sigue la tendencia sin los saltos del parpadeo. En d3 y d4 la versión azul queda cerca de 0 mientras el área no cambia, y el pico cerca de los 20 s baja de -6.5 a -2.4. En d11 la versión naranja se queda pegada en 1 hasta los 17 s (saturada), mientras que la azul baja de forma gradual. En d12 desaparecen los saltos del final, y en d13 la azul empieza en 0 porque solo cuenta regiones que llevan al menos 1 s. En d10 las dos versiones coinciden, por eso solo se ve la azul.*
+*Trayectoria 1 de la vista aérea durante 23 s: en naranja, los descriptores del avance del 50 %; en azul, los del 80 %. La mediana de 1 s sigue la tendencia del área sin los saltos del parpadeo, por eso d3 y d4 quedan cerca de 0 cuando el fuego no crece, y el pico de d4 cerca de los 20 s pasa de -6.5 a -2.4. Antes, d11 se quedaba en 1 hasta los 17 s; ahora baja poco a poco. d12 ya no tiene los saltos del final, d13 empieza en 0 porque solo cuenta regiones que llevan al menos 1 s, y d10 no cambia.*
 
 ### Paso 5: cortes de escena (`cortes.py`)
 
@@ -85,7 +85,7 @@ Se eligió no tener falsos cortes: un falso corte cae en explosiones o destellos
 
 ![Regla de cortes sobre los pares revisados](docs/img/cortes_regla.png)
 
-*Cómo leerla: cada punto es un par de muestras consecutivas revisado a mano; los triángulos naranjas son cortes reales y los círculos azules, cambios bruscos sin corte. El eje horizontal mide cuánto cambia el color entre las dos muestras (`h`). La fila de arriba tiene los pares en que la cámara se pudo estimar, y la de abajo, los pares en que no. La zona sombreada es donde la regla marca corte: no cae ningún círculo azul (0 falsos cortes) y caen 26 de los 37 triángulos; los otros 11 son cortes con poco cambio de color.*
+*Triángulos: cortes reales; círculos: cambios bruscos sin corte, como llamaradas, destellos o luces de emergencia. Los 11 cortes que quedan fuera de la zona sombreada cambian poco de color, casi siempre porque la toma nueva muestra el mismo lugar con otro encuadre.*
 
 **Evidencia 3: corrida completa** sobre 604 videos (389 con fuego y 215 sin fuego, 9.2 h de video, 6.1 h de proceso). Los números de los videos con fuego no cuentan la copia excluida en el paso 6.
 
@@ -128,7 +128,7 @@ Las respuestas crudas quedan en `resultados/ia_crudo_v2/`, una por video.
 
 <img src="docs/img/subagentes_ensayo.png" alt="Subagentes de la tanda de ensayo" width="600">
 
-*Captura de la tanda de ensayo. Cómo leerla: a la izquierda, la sesión principal que coordina el etiquetado; a la derecha, los cinco subagentes que trabajaron en paralelo, uno por lote de 10 videos, con el tiempo que tardó cada uno (alrededor de 1 minuto) y los tokens que procesó. Esta tanda se repitió después con el protocolo final.*
+*Tanda de ensayo del etiquetado: la sesión principal reparte los lotes y cinco subagentes trabajan en paralelo, uno por lote de 10 videos, cada uno en alrededor de un minuto. Esta tanda se repitió después con el protocolo final.*
 
 En el ensayo, 13 de 49 videos tienen algún cambio de nivel (1 solo a Incipiente, 11 solo a Incontrolado y 1 con ambos), contra 3 de 200 en la fase 1, como se espera en videos elegidos por su crecimiento. Si la IA marca cambios de más, se verá en la validación humana del paso 8.
 
@@ -281,7 +281,7 @@ La salida en cada muestra es la matriz `X_t` de N trayectorias por 13 descriptor
 
 ![Descriptores](resultados/descriptores_v2/descriptores_14294880_3840_2160_24fps_id1.png)
 
-*Cómo leerla: cada panel es uno de los 13 descriptores de la misma trayectoria a lo largo de 23 s, con una muestra cada 0.1 s. El centro de la caja (d5 y d6) baja de forma continua porque la cámara se mueve, pero la velocidad compensada (d7) se queda cerca de 0, porque el fuego en sí no se desplaza. La persistencia (d8) vale 1 porque el fuego se detecta en todas las muestras, y el área de humo (d11) baja de forma gradual desde los 11 s, cuando el humo deja de cubrir la región alrededor del fuego.*
+*Una muestra cada 0.1 s durante 23 s. La persistencia (d8) vale 1 porque el fuego se detecta en todas las muestras, la variación de forma (d9) sube al final, cuando la caja cambia de proporción, y el área de humo (d11) disminuye desde los 11 s.*
 
 ### Etiquetado de la severidad (subproceso que prepara los datos de la CfC)
 
