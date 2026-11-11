@@ -1018,6 +1018,78 @@ Fecha: 2026-11-06. Rama: `avance-80`. Script nuevo: `etiquetar_ia_v2.py`. Prompt
   - **En total, 63 de 194 videos (32.5 %) tienen algun cambio.**
 - El resumen final de los 210 y la pasada 2 se haran cuando terminen los 12 que faltan.
 
+### Cierre de la pasada 1, pasada 2 y etiquetas v2 (2026-11-11)
+
+- **Pasada 1 completa: 210 de 210 JSON validos.**
+  - Los 2 videos que faltaban del lote 19 y el lote 21 se corrieron con el mismo agente y los mismos controles.
+  - Los 210 tienen el modelo `claude-sonnet-5-5` y `t_foto_24` y `t_foto_48` correctos.
+
+| Resultado (210 videos) | Videos |
+|---|---|
+| descartados | 4 (compilacion con mosaicos, colada de metal con aspecto de render, escenas con cortes del video del rociador, erupcion volcanica) |
+| nivel inicial (206 no descartados) | controlado 89, incipiente 73, incontrolado 44 |
+| sin cambio | 142 |
+| controlado -> incipiente (solo) | 4 |
+| incipiente -> incontrolado | 49 |
+| controlado -> incontrolado (con paso por incipiente: 10; directo: 1) | 11 |
+| **con algun cambio** | **64 (31.1 % de 206)** |
+
+- **Pasada 2:**
+  - **Cambios:** de los 74 cambios marcados en la pasada 1, 15 estan en videos con separacion de 1 s o menos y conservan el instante de la pasada 1. Para los otros 59 se armaron tiras densas: mediana de 0.53 s entre fotos, entre 11 y 24 fotos por tira, en `tiras_v2/precision/` (no se versiona).
+  - **Lotes:** 3 lotes de 20 (`prompts/lotes_v2/p2_lote_XX.csv`, sin los instantes de la ventana para que la prueba de lectura sea valida). Mismo agente; tiempos de las tiras fuera del proyecto mientras corrian.
+  - **Prueba de lectura:** el JSON agrega `t_foto_primera` y `t_foto_ultima`. Las definiciones y las reglas del prompt no cambiaron.
+  - **Resultado:** 59 de 59 respuestas validas, con el modelo y los tiempos correctos. **En 47 se preciso el instante; en 12 (20 %) la IA respondio que no se ve el cambio** y se conserva el instante de la pasada 1.
+  - **Incidencia:** un subagente escribio un archivo de mas con el nombre mal escrito y el mismo contenido. Se saco de `resultados/ia_crudo_v2/precision/`.
+- **`resultados/etiquetas_ia_v2.csv`** (anotador `ia_sonnet_v2`), con columnas:
+  - `modelo` (reportado) y `alias` (`sonnet`);
+  - `agente` (`anotador_severidad`);
+  - `sep_p1_s`, `sep_p2_incipiente_s` y `sep_p2_incontrolado_s`;
+  - `origen_t_incipiente` y `origen_t_incontrolado`.
+- **Origen de los 75 instantes:** 48 de la pasada 2 (47 tiras; el cambio directo a incontrolado da los dos instantes), 15 de la pasada 1 por separacion corta y 12 de la pasada 1 porque la pasada 2 no vio el cambio.
+- `resultados/etiquetas_ia.csv` no se modifico.
+
+### Consistencia con la fase 1 (`resultados/consistencia_ia_v1_v2.md`)
+
+- 21 videos con las dos etiquetas. v2 descarta 1 (la colada de metal), asi que quedan **20 sin descartar en ambos**.
+
+| Medida | Acuerdo | Kappa ponderado lineal |
+|---|---|---|
+| nivel inicial | 15 de 20 (75.0 %) | 0.615 |
+| nivel maximo | 16 de 20 (80.0 %) | 0.750 |
+
+- Videos con algun cambio: 2 en v1 y 2 en v2 (de 20). Los instantes no se comparan; eso lo mide el paso 8.
+
+## Fase B del 80 %, paso 8: preparacion (2026-11-11)
+
+- **Lista:** `python etiquetar_ia_v2.py prueba_cambios` genera `resultados/prueba_cambios.csv` (solo la columna `archivo`, orden aleatorio, semilla 42).
+  - 25 videos con cambio segun la IA v2, estratificados por tipo de cambio (minimo 5 por tipo si hay; el resto, proporcional), mas 5 sin cambio.
+- **Primera lista, sin tope de duracion: 98.2 min** (mediana de 146 s, maximo de 1 084 s; 4 videos pasaban de 300 s y sumaban 43.7 min). Pasaba de 1 h y no se uso.
+- **Regla de duracion (decision del usuario, 2026-11-11): tope de 300 s por video, salvo en el estrato de controlado a incipiente, que se incluye completo por ser el mas escaso (solo hay 4).**
+  - Parametros: `--tope_s 300` y `--sin_tope controlado_a_incipiente` (valores por defecto). El tope se aplica antes del sorteo: en los demas estratos solo se sortea entre los videos de 300 s o menos. Misma semilla (42) y mismos estratos.
+  - **Limitacion que se declara: el tope favorece los videos cortos en los demas estratos** (incipiente a incontrolado, controlado a incontrolado y sin cambio). El error en segundos que se mida vale para videos de hasta 300 s en esos estratos.
+  - Control: con `--tope_s 0` el script reproduce byte a byte la primera lista.
+- **Lista final: 30 videos, 53.1 min** (mediana de 76 s, maximo de 364 s).
+
+| Estrato | Disponibles | Con el tope | Elegidos | Duracion | Maximo |
+|---|---|---|---|---|---|
+| controlado a incipiente (sin tope) | 4 | 4 | 4 | 10.6 min | 364 s |
+| incipiente a incontrolado | 49 | 46 | 15 | 24.2 min | 260 s |
+| controlado a incontrolado | 11 | 8 | 6 | 14.0 min | 220 s |
+| sin cambio | 142 | 137 | 5 | 4.3 min | 149 s |
+| **Total** | 206 | 195 | **30** | **53.1 min** | 364 s |
+
+  - Un solo video pasa de 300 s (364 s), del estrato de controlado a incipiente.
+  - El tope deja fuera del sorteo a 11 videos: 3 de incipiente a incontrolado, 3 de controlado a incontrolado y 5 sin cambio.
+  - Verificado: 30 videos distintos, todos existen en disco, ninguno esta en `resultados/prueba_humana.csv` y ninguno esta descartado por la IA.
+- Comando para etiquetar: `python etiquetar_v3.py --anotador aleCa_cambios --lista resultados/prueba_cambios.csv --ciego`.
+- **`etiquetar_v3.py --ciego` (nuevo; `etiquetar_v2.py` no se modifica):**
+  - reproduce el video completo: espacio para reproducir y pausar, flechas para saltar 1 s y 5 s, `,` y `.` para retroceder o avanzar un fotograma, y clic en la linea de tiempo para ir a un instante;
+  - marca el nivel inicial (1/2/3), el instante exacto de cada cambio (i/u) y el tramo util (a/f);
+  - no carga nada de la IA, de las reglas ni de las curvas;
+  - escribe en `etiquetas.csv` con un anotador propio. Rechaza un anotador que ya tenga etiquetas de videos fuera de la lista. Las filas existentes quedan identicas (probado en una copia: las 40 filas sin cambios);
+  - registra el tiempo por video en `resultados/tiempos_etiquetado.csv` (`archivo, anotador, segundos_abierto, reproducciones, guardado, fecha`);
+  - no necesita tiras.
+
 ### Regla para el paso 10 (particion)
 
 - Los 30 videos de `resultados/prueba_cambios.csv` y los 40 de `resultados/prueba_humana.csv` son prueba.

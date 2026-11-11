@@ -41,7 +41,8 @@ PASADA 2: instante preciso de un cambio
 =====================================================================
 
 ENTRADA
-Tu lote es un archivo CSV con las columnas archivo, cambio, nivel_antes, tira, fotos, t_desde y t_hasta. Cada fila es un cambio de nivel de un video. La columna tira es la ruta de una imagen con fotos tomadas a intervalos regulares entre t_desde y t_hasta segundos del video, en filas de 6. La columna cambio es el nivel al que pasa el video (incipiente o incontrolado) y nivel_antes es el nivel anterior.
+Tu lote es un archivo CSV con las columnas archivo, cambio, nivel_antes, tira y fotos. Cada fila es un cambio de nivel de un video. La columna tira es la ruta de una imagen con fotos del video tomadas a intervalos regulares dentro de un tramo corto, en filas de 6; la columna fotos dice cuantas fotos tiene. La columna cambio es el nivel al que pasa el video (incipiente o incontrolado) y nivel_antes es el nivel anterior.
+Ademas, en t_foto_primera escribe el instante en segundos que aparece abajo a la izquierda de la foto 1 y en t_foto_ultima el de la ultima foto de la tira, tal como esta escrito en la imagen.
 
 TAREA
 En algun punto de estas fotos el video podria pasar de nivel_antes a cambio. Indica el numero de la primera foto en la que se ve el nivel cambio y se mantiene segun la REGLA 2. Si en ninguna foto se ve ese cambio sostenido (por ejemplo, porque ya estaba en ese nivel desde la primera foto o porque nunca llega a el), responde se_ve_cambio false y foto null. Las REGLAS 1, 4, 5 y 6 no se aplican en esta pasada.
@@ -50,4 +51,4 @@ PROCEDIMIENTO DE LA PASADA 2
 1. Lee el CSV de tu lote.
 2. Para cada fila, en el orden del CSV: abre su imagen con la herramienta Read, decide y escribe tu respuesta con la herramienta Write en resultados/ia_crudo_v2/precision/<nombre del archivo de video sin la extension>_<cambio>.json (relativo a la carpeta del proyecto).
 3. El contenido de cada archivo es solo un objeto JSON, sin texto adicional, con exactamente estas claves:
-{"archivo": "<nombre del video con extension>", "modelo": "<identificador del modelo>", "cambio": "incipiente" | "incontrolado", "se_ve_cambio": true | false, "foto": <entero> | null, "motivo": "<texto>"}
+{"archivo": "<nombre del video con extension>", "modelo": "<identificador del modelo>", "cambio": "incipiente" | "incontrolado", "se_ve_cambio": true | false, "foto": <entero> | null, "motivo": "<texto>", "t_foto_primera": <numero>, "t_foto_ultima": <numero>}
