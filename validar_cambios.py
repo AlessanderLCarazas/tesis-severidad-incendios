@@ -101,6 +101,109 @@ def seccion_nivel(hum, ia, videos, titulo, lineas):
     return iguales, kl
 
 
+def tramo_util(r, dur):
+    ini, fin = num(r["t_inicio_util"]), num(r["t_fin_util"])
+    return (0.0 if ini is None else ini), (dur if fin is None else min(fin, dur))
+
+
+def nivel_t(r, t):
+    n = NIVELES.index(r["nivel_inicial"])
+    ti, tu = num(r["t_incipiente"]), num(r["t_incontrolado"])
+    if ti is not None and t >= ti:
+        n = max(n, 1)
+    if tu is not None and t >= tu:
+        n = 2
+    return n
+
+
+def seccion_segundos(hum, ia, validos, duracion, lineas, paso, margen):
+    lineas.append("## 6. Nivel segundo a segundo en el tramo util comun")
+    lineas.append("")
+    lineas.append("- Tramo util comun de cada video: desde el mayor de los dos inicios hasta el menor de los dos fines."
+                  " Un inicio o un fin vacio significa el inicio o el fin del video.")
+    lineas.append(f"- Se compara el nivel de cada uno en el centro de cada intervalo de {paso:g} s del tramo comun."
+                  " El nivel de un instante sale del nivel inicial y de los cambios marcados.")
+    lineas.append("- Las muestras de un mismo video no son independientes: el kappa por segundo describe el acuerdo,"
+                  " no sirve para una prueba de significancia.")
+    lineas.append("")
+    todo_h, todo_a, filas = [], [], []
+    for v in validos:
+        h0, h1 = tramo_util(hum[v], duracion[v])
+        a0, a1 = tramo_util(ia[v], duracion[v])
+        t0, t1 = max(h0, a0), min(h1, a1)
+        ts = np.arange(t0 + paso / 2.0, t1, paso)
+        h = np.array([nivel_t(hum[v], t) for t in ts], int)
+        g = np.array([nivel_t(ia[v], t) for t in ts], int)
+        todo_h += h.tolist()
+        todo_a += g.tolist()
+        filas.append({"video": v, "t0": t0, "t1": t1, "n": len(ts), "iguales": int((h == g).sum()),
+                      "ia_mayor": int((g > h).sum()), "ia_menor": int((g < h).sum())})
+    n = len(todo_h)
+    iguales = sum(x == y for x, y in zip(todo_h, todo_a))
+    kl, m = kappa(todo_h, todo_a, 3, "lineal")
+    por_video = np.array([f["iguales"] / f["n"] for f in filas if f["n"] > 0])
+    ia_mayor = sum(f["ia_mayor"] for f in filas)
+    ia_menor = sum(f["ia_menor"] for f in filas)
+    seg = paso
+    lineas.append(f"**Total:** {n * seg:.0f} s comparados en {len(filas)} videos. Segundos con el mismo nivel:"
+                  f" {iguales * seg:.0f} ({100.0 * iguales / n:.1f} %). Kappa ponderado lineal por segundo: {kl:.3f}.")
+    lineas.append("")
+    lineas.append(f"- Segundos en que la IA pone un nivel mayor que el humano: {ia_mayor * seg:.0f} ({100.0 * ia_mayor / n:.1f} %)."
+                  f" Segundos en que pone un nivel menor: {ia_menor * seg:.0f} ({100.0 * ia_menor / n:.1f} %).")
+    lineas.append(f"- Acuerdo por video (cada video pesa igual): media {100.0 * por_video.mean():.1f} %, mediana"
+                  f" {100.0 * np.median(por_video):.1f} %, minimo {100.0 * por_video.min():.1f} %."
+                  f" Videos con 90 % o mas de segundos iguales: {int((por_video >= 0.9).sum())} de {len(por_video)}.")
+    lineas.append("")
+    lineas.append("Matriz de confusion en segundos (filas: humano; columnas: IA):")
+    lineas.append("")
+    lineas.append("| humano / IA | " + " | ".join(NIVELES) + " | total |")
+    lineas.append("|---|" + "---|" * 4)
+    for i, nv in enumerate(NIVELES):
+        lineas.append(f"| {nv} | " + " | ".join(f"{x * seg:.0f}" for x in m[i]) + f" | {m[i].sum() * seg:.0f} |")
+    lineas.append("| total | " + " | ".join(f"{x * seg:.0f}" for x in m.sum(0)) + f" | {m.sum() * seg:.0f} |")
+    lineas.append("")
+    lineas.append("| video | tramo comun (s) | segundos | iguales (%) | IA con nivel mayor (s) | IA con nivel menor (s) |")
+    lineas.append("|---|---|---|---|---|---|")
+    for f in sorted(filas, key=lambda f: f["iguales"] / max(1, f["n"])):
+        lineas.append(f"| {f['video']} | {f['t0']:.2f} a {f['t1']:.2f} | {f['n'] * seg:.0f} |"
+                      f" {100.0 * f['iguales'] / max(1, f['n']):.1f} | {f['ia_mayor'] * seg:.0f} | {f['ia_menor'] * seg:.0f} |")
+    lineas.append("")
+
+    distintos = [v for v in validos if hum[v]["nivel_inicial"] != ia[v]["nivel_inicial"]]
+    explicadas, cercanas = [], []
+    lineas.append("### Diferencias de nivel inicial y comienzo del tramo util")
+    lineas.append("")
+    lineas.append("Una diferencia de nivel inicial se explica por el tramo util si, en el inicio del tramo comun, los dos"
+                  " niveles ya coinciden (cada nivel inicial se refiere a un instante distinto).")
+    lineas.append("")
+    lineas.append("| video | inicio humano (s) | inicio IA (s) | inicial humano | inicial IA | nivel humano en el inicio comun |"
+                  " nivel IA en el inicio comun | segundos hasta que coinciden | se explica por el tramo util |")
+    lineas.append("|---|---|---|---|---|---|---|---|---|")
+    for v in distintos:
+        h0, h1 = tramo_util(hum[v], duracion[v])
+        a0, a1 = tramo_util(ia[v], duracion[v])
+        t0, t1 = max(h0, a0), min(h1, a1)
+        nh, na = nivel_t(hum[v], t0), nivel_t(ia[v], t0)
+        ts = np.arange(t0, t1, 0.01)
+        coincide = next((t for t in ts if nivel_t(hum[v], t) == nivel_t(ia[v], t)), None)
+        espera = None if coincide is None else coincide - t0
+        if nh == na:
+            explicadas.append(v)
+        elif espera is not None and espera <= margen:
+            cercanas.append(v)
+        lineas.append(f"| {v} | {h0:.2f} | {a0:.2f} | {hum[v]['nivel_inicial']} | {ia[v]['nivel_inicial']} | {NIVELES[nh]} |"
+                      f" {NIVELES[na]} | {'nunca' if espera is None else format(espera, '.2f')} | {'si' if nh == na else 'no'} |")
+    lineas.append("")
+    lineas.append(f"- **De las {len(distintos)} diferencias de nivel inicial, {len(explicadas)} se explican porque los tramos"
+                  f" utiles empiezan en instantes distintos.**")
+    lineas.append(f"- Otras {len(cercanas)} desaparecen en {margen:g} s o menos desde el inicio comun (uno de los dos marca"
+                  f" el cambio justo despues). Las {len(distintos) - len(explicadas) - len(cercanas)} restantes son"
+                  f" diferencias de criterio sobre el nivel.")
+    lineas.append("")
+    return {"n": n * seg, "iguales": iguales * seg, "kappa": kl, "media_video": float(por_video.mean()),
+            "distintos": len(distintos), "explicadas": len(explicadas), "cercanas": len(cercanas)}
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--etiquetas", default="etiquetas.csv")
@@ -110,6 +213,8 @@ def main():
     p.add_argument("--tiempos", default=os.path.join("resultados", "tiempos_etiquetado.csv"))
     p.add_argument("--metadatos", default="metadatos_videos.csv")
     p.add_argument("--pausa_s", type=float, default=1000.0)
+    p.add_argument("--paso_s", type=float, default=1.0)
+    p.add_argument("--margen_s", type=float, default=5.0)
     p.add_argument("--salida", default=os.path.join("resultados", "validacion_cambios.md"))
     a = p.parse_args()
 
@@ -317,6 +422,8 @@ def main():
         lineas.append("- No hay registro de tiempos para este anotador.")
         lineas.append("")
 
+    por_seg = seccion_segundos(hum, ia, validos, duracion, lineas, a.paso_s, a.margen_s)
+
     with open(a.salida, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(lineas))
 
@@ -337,6 +444,10 @@ def main():
     if resumen_t:
         print(f"tiempo: total {resumen_t[0] / 60:.1f} min | sin {resumen_t[5]} pausas {resumen_t[1] / 60:.1f} min"
               f" | mediana {resumen_t[2]:.1f} s | abierto menos que la duracion en {resumen_t[3]} de {resumen_t[4]}")
+    print(f"por segundo: {por_seg['n']:.0f} s | iguales {por_seg['iguales']:.0f} s ({100.0 * por_seg['iguales'] / por_seg['n']:.1f} %)"
+          f" | kappa lineal {por_seg['kappa']:.3f} | media por video {100.0 * por_seg['media_video']:.1f} %")
+    print(f"nivel inicial distinto: {por_seg['distintos']} | explicadas por el tramo util {por_seg['explicadas']}"
+          f" | desaparecen en {a.margen_s:g} s {por_seg['cercanas']}")
     print(f"reporte en: {a.salida}")
 
 

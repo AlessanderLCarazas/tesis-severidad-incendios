@@ -223,3 +223,73 @@ Diferencia = instante del humano menos instante de la IA, en los videos no desca
 | VID_20230612_142839.mp4 | 37.9 | 6.7 | 0.18 | 1 | sin cambio |
 | 13871980_3840_2160_24fps.mp4 | 18.7 | 34.7 | 1.86 | 6 | sin cambio |
 | 700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4 | 13.2 | 14.8 | 1.12 | 3 | a incontrolado en 9.20 s |
+
+## 6. Nivel segundo a segundo en el tramo util comun
+
+- Tramo util comun de cada video: desde el mayor de los dos inicios hasta el menor de los dos fines. Un inicio o un fin vacio significa el inicio o el fin del video.
+- Se compara el nivel de cada uno en el centro de cada intervalo de 1 s del tramo comun. El nivel de un instante sale del nivel inicial y de los cambios marcados.
+- Las muestras de un mismo video no son independientes: el kappa por segundo describe el acuerdo, no sirve para una prueba de significancia.
+
+**Total:** 2911 s comparados en 29 videos. Segundos con el mismo nivel: 1707 (58.6 %). Kappa ponderado lineal por segundo: 0.426.
+
+- Segundos en que la IA pone un nivel mayor que el humano: 1101 (37.8 %). Segundos en que pone un nivel menor: 103 (3.5 %).
+- Acuerdo por video (cada video pesa igual): media 62.1 %, mediana 64.3 %, minimo 0.0 %. Videos con 90 % o mas de segundos iguales: 5 de 29.
+
+Matriz de confusion en segundos (filas: humano; columnas: IA):
+
+| humano / IA | controlado | incipiente | incontrolado | total |
+|---|---|---|---|---|
+| controlado | 220 | 289 | 0 | 509 |
+| incipiente | 89 | 951 | 812 | 1852 |
+| incontrolado | 0 | 14 | 536 | 550 |
+| total | 309 | 1254 | 1348 | 2911 |
+
+| video | tramo comun (s) | segundos | iguales (%) | IA con nivel mayor (s) | IA con nivel menor (s) |
+|---|---|---|---|---|---|
+| 700_F_1193365801_Vq9ZwN74WallFA9y1947785GEEYilGqp_ST.mp4 | 0.00 a 13.50 | 13 | 0.0 | 13 | 0 |
+| Har du en fungerande brandvarnare_.mp4 | 0.13 a 27.33 | 27 | 14.8 | 0 | 23 |
+| Launch of Fire Investigations by BRE and FIUK.mp4 | 0.00 a 215.63 | 216 | 25.0 | 135 | 27 |
+| Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4 | 7.73 a 351.27 | 344 | 29.9 | 241 | 0 |
+| videoplayback (1).mp4 | 5.50 a 254.13 | 249 | 30.9 | 172 | 0 |
+| Brandgefahren im Haushalt.mp4 | 0.20 a 65.93 | 66 | 36.4 | 42 | 0 |
+| Die Provinzial klärt auf – Brandursache Fettbrand.mp4 | 2.73 a 126.20 | 123 | 39.0 | 75 | 0 |
+| videoplayback (17).mp4 | 9.63 a 48.47 | 39 | 41.0 | 23 | 0 |
+| 13871980_3840_2160_24fps.mp4 | 0.00 a 18.64 | 19 | 42.1 | 6 | 5 |
+| 700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4 | 0.00 a 6.57 | 7 | 42.9 | 4 | 0 |
+| Brannutvikling.mp4 | 0.27 a 145.70 | 145 | 53.1 | 68 | 0 |
+| VID_20230612_142839.mp4 | 0.20 a 37.77 | 38 | 55.3 | 17 | 0 |
+| 700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4 | 0.00 a 46.35 | 46 | 56.5 | 20 | 0 |
+| April 2016 - Fire Investigation 1B - Milpitas CA.mp4 | 0.37 a 135.43 | 135 | 63.0 | 50 | 0 |
+| Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4 | 64.90 a 135.03 | 70 | 64.3 | 20 | 5 |
+| Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4 | 0.20 a 148.80 | 149 | 65.8 | 49 | 2 |
+| videoplayback (12).mp4 | 3.90 a 184.80 | 181 | 69.1 | 56 | 0 |
+| 14297190_3840_2160_24fps.mp4 | 0.08 a 24.98 | 25 | 76.0 | 6 | 0 |
+| Weihnachtsbaumbrände - sind vermeidbar.mp4 | 0.50 a 178.60 | 178 | 76.4 | 42 | 0 |
+| videoplayback1.mp4 | 0.10 a 242.33 | 242 | 79.8 | 49 | 0 |
+| videoplayback (3).mp4 | 0.00 a 192.77 | 193 | 82.4 | 0 | 34 |
+| 700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4 | 0.12 a 13.16 | 13 | 84.6 | 0 | 2 |
+| 1723634695.mp4 | 0.10 a 36.07 | 36 | 86.1 | 0 | 5 |
+| videoplayback (15).mp4 | 33.57 a 140.43 | 107 | 87.9 | 13 | 0 |
+| 2301425156.mp4 | 0.16 a 25.88 | 26 | 100.0 | 0 | 0 |
+| 2354872182.mp4 | 0.00 a 30.20 | 30 | 100.0 | 0 | 0 |
+| What Type Of Smoke Alarm Is Best For Your Home_.mp4 | 0.03 a 8.93 | 9 | 100.0 | 0 | 0 |
+| 700_F_199061911_W4h9LVdrne9VAzuLYrxuZAA68JuuaXHw_ST.mp4 | 0.17 a 40.61 | 40 | 100.0 | 0 | 0 |
+| Box Alarm Structure Fire Bradley Beach 3_19_23.mp4 | 0.83 a 146.00 | 145 | 100.0 | 0 | 0 |
+
+### Diferencias de nivel inicial y comienzo del tramo util
+
+Una diferencia de nivel inicial se explica por el tramo util si, en el inicio del tramo comun, los dos niveles ya coinciden (cada nivel inicial se refiere a un instante distinto).
+
+| video | inicio humano (s) | inicio IA (s) | inicial humano | inicial IA | nivel humano en el inicio comun | nivel IA en el inicio comun | segundos hasta que coinciden | se explica por el tramo util |
+|---|---|---|---|---|---|---|---|---|
+| videoplayback1.mp4 | 0.10 | 0.00 | controlado | incipiente | controlado | incipiente | 24.88 | no |
+| Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4 | 0.20 | 0.00 | incipiente | controlado | incipiente | controlado | 1.80 | no |
+| Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4 | 64.90 | 23.47 | incipiente | controlado | incipiente | controlado | 5.10 | no |
+| 700_F_1193365801_Vq9ZwN74WallFA9y1947785GEEYilGqp_ST.mp4 | 0.00 | 0.00 | incipiente | incontrolado | incipiente | incontrolado | nunca | no |
+| videoplayback (3).mp4 | 0.00 | 0.00 | incipiente | controlado | incipiente | controlado | 34.00 | no |
+| Launch of Fire Investigations by BRE and FIUK.mp4 | 0.00 | 0.00 | incipiente | controlado | incipiente | controlado | 27.10 | no |
+| Har du en fungerande brandvarnare_.mp4 | 0.13 | 0.00 | incipiente | controlado | incipiente | controlado | 16.20 | no |
+| 13871980_3840_2160_24fps.mp4 | 0.00 | 0.00 | incipiente | controlado | incipiente | controlado | 5.13 | no |
+
+- **De las 8 diferencias de nivel inicial, 0 se explican porque los tramos utiles empiezan en instantes distintos.**
+- Otras 1 desaparecen en 5 s o menos desde el inicio comun (uno de los dos marca el cambio justo despues). Las 7 restantes son diferencias de criterio sobre el nivel.

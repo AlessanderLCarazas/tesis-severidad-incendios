@@ -1,0 +1,605 @@
+archivo,clase,grupo,conjunto,lista_prueba,tipo,nivel_max,version_ia,calibra_umbral,duracion_s,motivo
+11925055_1920_1080_25fps.mp4,fuego,fuego: 11925055_1920_1080_25fps,entrenamiento,,incontrolado,incontrolado,ia_v2,no,14.16,sorteo por grupo de origen
+11954238_3840_2160_25fps.mp4,fuego,fuego: 11954238_3840_2160_25fps,entrenamiento,,controlado,controlado,ia_v1,no,36.92,sorteo por grupo de origen
+12151479_2160_3840_60fps.mp4,fuego,fuego: 12151479_2160_3840_60fps,entrenamiento,,controlado,controlado,ia_v2,no,15.92,sorteo por grupo de origen
+12218199_3114_1440_30fps.mp4,fuego,fuego: 12218199_3114_1440_30fps,entrenamiento,,controlado,controlado,ia_v2,no,10.62,sorteo por grupo de origen
+12364337_3840_2160_24fps.mp4,fuego,fuego: 12364337_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,27.53,sorteo por grupo de origen
+12364450_3840_2160_24fps.mp4,fuego,fuego: 12364450_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,38.04,sorteo por grupo de origen
+12399285_3840_2160_60fps.mp4,fuego,fuego: 12399285_3840_2160_60fps,entrenamiento,,incipiente,incipiente,ia_v2,no,52.55,sorteo por grupo de origen
+12487517_1920_1080_30fps.mp4,fuego,fuego: 12487517_1920_1080_30fps,entrenamiento,,incontrolado,incontrolado,ia_v2,no,7.7,sorteo por grupo de origen
+12529455_3840_2160_30fps.mp4,fuego,fuego: 12529455_3840_2160_30fps,entrenamiento,,controlado,controlado,ia_v1,no,32.33,sorteo por grupo de origen
+12740891_2160_3840_24fps.mp4,fuego,fuego: 12740891_2160_3840_24fps,entrenamiento,,controlado,controlado,ia_v1,no,35.75,sorteo por grupo de origen
+12768368_1920_1080_50fps.mp4,fuego,fuego: 12768368_1920_1080_50fps,entrenamiento,,controlado,controlado,ia_v1,no,30.44,sorteo por grupo de origen
+12795413_1920_1080_30fps.mp4,fuego,fuego: 12795413_1920_1080_30fps,entrenamiento,,controlado,controlado,ia_v2,no,26.37,sorteo por grupo de origen
+12858015_3840_2160_24fps.mp4,fuego,fuego: 12858015_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,28.61,sorteo por grupo de origen
+13129273_1920_1080_30fps.mp4,fuego,fuego: 13129273_1920_1080_30fps,entrenamiento,,controlado,controlado,ia_v1,no,35.4,sorteo por grupo de origen
+13256420_1080_1920_30fps.mp4,fuego,fuego: 13256420_1080_1920_30fps,entrenamiento,,controlado,controlado,ia_v1,no,42.47,sorteo por grupo de origen
+13283125_2160_3840_24fps.mp4,fuego,fuego: 13283125_2160_3840_24fps,entrenamiento,,controlado,controlado,ia_v1,no,27.94,sorteo por grupo de origen
+13301362_3840_2160_24fps.mp4,fuego,fuego: 13301362_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,33.41,sorteo por grupo de origen
+13341367_2160_3840_24fps.mp4,fuego,fuego: 13341367_2160_3840_24fps,entrenamiento,,controlado,controlado,ia_v1,no,28.28,sorteo por grupo de origen
+13444160_3840_2160_24fps.mp4,fuego,fuego: 13444160_3840_2160_24fps,entrenamiento,,controlado,controlado,ia_v1,no,44.21,sorteo por grupo de origen
+13444309_3840_2160_24fps.mp4,fuego,fuego: 13444309_3840_2160_24fps,entrenamiento,,controlado,controlado,ia_v1,no,60.54,sorteo por grupo de origen
+13567986_1920_1080_25fps.mp4,fuego,fuego: 13567986_1920_1080_25fps,entrenamiento,,controlado,controlado,ia_v1,no,42.9,sorteo por grupo de origen
+13626662_1080_1920_30fps.mp4,fuego,fuego: 13626662_1080_1920_30fps,entrenamiento,,controlado,controlado,ia_v2,no,10.5,sorteo por grupo de origen
+13636149_1920_1080_25fps.mp4,fuego,fuego: 13636149_1920_1080_25fps,entrenamiento,,controlado,controlado,ia_v2,no,29.36,sorteo por grupo de origen
+13879991_1920_1080_24fps.mp4,fuego,fuego: 13879991_1920_1080_24fps,entrenamiento,,controlado,controlado,ia_v2,no,21.56,sorteo por grupo de origen
+14283144_1080_1920_30fps.mp4,fuego,fuego: 14283144_1080_1920_30fps,entrenamiento,,controlado,controlado,ia_v1,no,29.53,sorteo por grupo de origen
+14294880_3840_2160_24fps.mp4,fuego,fuego: 14294880_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,27.24,sorteo por grupo de origen
+14294945_3840_2160_24fps.mp4,fuego,fuego: 14294945_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,30.32,sorteo por grupo de origen
+14294964_3840_2160_24fps.mp4,fuego,fuego: 14294964_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,36.7,sorteo por grupo de origen
+14294970_3840_2160_24fps.mp4,fuego,fuego: 14294970_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,45.3,sorteo por grupo de origen
+14296665_3840_2160_24fps.mp4,fuego,fuego: 14296665_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,38.71,sorteo por grupo de origen
+14296688_3840_2160_24fps.mp4,fuego,fuego: 14296688_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v2,no,14.97,sorteo por grupo de origen
+14296742_3840_2160_24fps.mp4,fuego,fuego: 14296742_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,31.74,sorteo por grupo de origen
+14296820_3840_2160_24fps.mp4,fuego,fuego: 14296820_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,30.57,sorteo por grupo de origen
+14297196_3840_2160_24fps.mp4,fuego,fuego: 14297196_3840_2160_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,28.78,sorteo por grupo de origen
+14302124_2160_3840_24fps.mp4,fuego,fuego: 14302124_2160_3840_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,26.36,sorteo por grupo de origen
+14302214_2160_3840_24fps.mp4,fuego,fuego: 14302214_2160_3840_24fps,entrenamiento,,incontrolado,incontrolado,ia_v1,no,32.78,sorteo por grupo de origen
+14402042_3840_2160_32fps.mp4,fuego,fuego: 14402042_3840_2160_32fps,entrenamiento,,controlado,controlado,ia_v2,no,11.5,sorteo por grupo de origen
+14422167_1080_1920_60fps.mp4,fuego,fuego: 14422167_1080_1920_60fps,entrenamiento,,controlado,controlado,ia_v2,no,27.01,sorteo por grupo de origen
+1547094614.mp4,fuego,fuego: 1547094614,entrenamiento,,controlado,controlado,ia_v2,no,28.84,sorteo por grupo de origen
+1547543338.mp4,fuego,fuego: 1547543338,entrenamiento,,controlado,controlado,ia_v1,no,61.23,sorteo por grupo de origen
+16357295-uhd_2160_3840_30fps.mp4,fuego,fuego: 16357295,entrenamiento,,controlado,controlado,ia_v1,no,34.63,sorteo por grupo de origen
+1663828248.mp4,fuego,fuego: 1663828248,entrenamiento,,controlado,controlado,ia_v2,no,24.76,sorteo por grupo de origen
+16696555-uhd_3816_1600_24fps.mp4,fuego,fuego: 16696555,entrenamiento,,controlado,controlado,ia_v2,no,8.92,sorteo por grupo de origen
+17203524-uhd_3840_2160_24fps.mp4,fuego,fuego: 17203524,entrenamiento,,controlado,controlado,ia_v1,no,62.35,sorteo por grupo de origen
+1721250124.mp4,fuego,fuego: 1721250124,entrenamiento,,controlado,controlado,ia_v1,no,37.21,sorteo por grupo de origen
+1721256861.mp4,fuego,fuego: 1721256861,entrenamiento,,controlado,controlado,ia_v1,no,60.71,sorteo por grupo de origen
+1736034241.mp4,fuego,fuego: 1736034241,entrenamiento,,controlado,controlado,ia_v1,no,30.04,sorteo por grupo de origen
+1736034247.mp4,fuego,fuego: 1736034247,entrenamiento,,controlado,controlado,ia_v2,no,30.17,sorteo por grupo de origen
+1736035292.mp4,fuego,fuego: 1736035292,entrenamiento,,controlado,controlado,ia_v1,no,29.96,sorteo por grupo de origen
+1736035945.mp4,fuego,fuego: 1736035945,entrenamiento,,controlado,controlado,ia_v1,no,40.62,sorteo por grupo de origen
+1748530614.mp4,fuego,fuego: 1748530614,entrenamiento,,controlado,controlado,ia_v1,no,29.48,sorteo por grupo de origen
+1748775209.mp4,fuego,fuego: 1748775209,entrenamiento,,controlado,controlado,ia_v2,no,17.48,sorteo por grupo de origen
+1749180198.mp4,fuego,fuego: 1749180198,entrenamiento,,controlado,controlado,ia_v2,no,19.88,sorteo por grupo de origen
+17638026-uhd_3840_2160_30fps.mp4,fuego,fuego: 17638026,entrenamiento,,controlado,controlado,ia_v1,no,33.03,sorteo por grupo de origen
+1763937212.mp4,fuego,fuego: 1763937212,entrenamiento,,controlado,controlado,ia_v1,no,39.33,sorteo por grupo de origen
+17717812-uhd_4096_2160_60fps.mp4,fuego,fuego: 17717812,entrenamiento,,incontrolado,incontrolado,ia_v1,no,40.54,sorteo por grupo de origen
+18084807-uhd_3840_2160_60fps.mp4,fuego,fuego: 18084807,entrenamiento,,controlado,controlado,ia_v1,no,34.53,sorteo por grupo de origen
+18153408-hd_1920_1080_30fps.mp4,fuego,fuego: 18153408,entrenamiento,,controlado,controlado,ia_v1,no,49.53,sorteo por grupo de origen
+1826780011.mp4,fuego,fuego: 1826780011,entrenamiento,,controlado,controlado,ia_v2,no,15.71,sorteo por grupo de origen
+18270789-hd_1080_1920_30fps.mp4,fuego,fuego: 18270789,entrenamiento,,controlado,controlado,ia_v2,no,23.46,sorteo por grupo de origen
+1827393730.mp4,fuego,fuego: 1827393730,entrenamiento,,controlado,controlado,ia_v1,no,59.83,sorteo por grupo de origen
+1829206645.mp4,fuego,fuego: 1829206645,entrenamiento,,controlado,controlado,ia_v1,no,31.67,sorteo por grupo de origen
+18295463-uhd_3840_2160_60fps.mp4,fuego,fuego: 18295463,entrenamiento,,controlado,controlado,ia_v2,no,24.26,sorteo por grupo de origen
+1837064838.mp4,fuego,fuego: 1837064838,entrenamiento,,controlado,controlado,ia_v1,no,45.77,sorteo por grupo de origen
+1862436323.mp4,fuego,fuego: 1862436323,entrenamiento,,controlado,controlado,ia_v1,no,77.75,sorteo por grupo de origen
+18679022-uhd_3840_2160_24fps.mp4,fuego,fuego: 18679022,entrenamiento,,controlado,controlado,ia_v1,no,61.06,sorteo por grupo de origen
+18679026-uhd_3840_2160_24fps.mp4,fuego,fuego: 18679026,entrenamiento,,controlado,controlado,ia_v1,no,61.06,sorteo por grupo de origen
+19027422-hd_1920_1080_30fps.mp4,fuego,fuego: 19027422,entrenamiento,,controlado,controlado,ia_v1,no,119.42,sorteo por grupo de origen
+1908609497.mp4,fuego,fuego: 1908609497,entrenamiento,,controlado,controlado,ia_v2,no,8.96,sorteo por grupo de origen
+19537505-uhd_3840_2160_24fps.mp4,fuego,fuego: 19537505,entrenamiento,,controlado,controlado,ia_v2,no,8.63,sorteo por grupo de origen
+1974202055.mp4,fuego,fuego: 1974202055,entrenamiento,,controlado,controlado,ia_v1,no,38.84,sorteo por grupo de origen
+"2 ALARM FULLY INVOLVED Structure Fire Brick, New Jersey 1_24_22.mp4",fuego,"fuego: 2 alarm fully involved structure fire brick, new jersey 1_24_22",entrenamiento,,incontrolado,incontrolado,ia_v2,no,236.7,sorteo por grupo de origen
+"2 ALARM Fatal STRUCTURE FIRE Keyport, New Jersey 12_30_21 - Made with Clipchamp.mp4",fuego,"fuego: 2 alarm fatal structure fire keyport, new jersey 12_30_21",entrenamiento,,incontrolado,incontrolado,ia_v1,no,794.1,sorteo por grupo de origen
+2 ALARM STRUCTURE FIRE Jackson New Jersey 6_14_22.mp4,fuego,fuego: 2 alarm structure fire jackson new jersey 6_14_22,entrenamiento,,incontrolado,incontrolado,ia_v1,no,330.13,sorteo por grupo de origen
+2 ALARM STRUCTURE FIRE Lakewood New Jersey 4_15_22.mp4,fuego,fuego: 2 alarm structure fire lakewood new jersey 4_15_22,entrenamiento,,incontrolado,incontrolado,ia_v1,no,722.87,sorteo por grupo de origen
+"2 Alarm FULLY INVOLVED Commercial Structure Fire Lakewood, NJ 6_20_21.mp4",fuego,"fuego: 2 alarm fully involved commercial structure fire lakewood, nj 6_20_21",entrenamiento,,incontrolado,incontrolado,ia_v1,no,801.43,sorteo por grupo de origen
+2 Alarm Six Story Occupied Structure Fire Bradly Beach New Jersey 6_5_22.mp4,fuego,fuego: 2 alarm six story occupied structure fire bradly beach new jersey 6_5_22,entrenamiento,,incontrolado,incontrolado,ia_v1,no,84.47,sorteo por grupo de origen
+2018240130.mp4,fuego,fuego: 2018240130,entrenamiento,,controlado,controlado,ia_v1,no,57.27,sorteo por grupo de origen
+2024990948.mp4,fuego,fuego: 2024990948,entrenamiento,,controlado,controlado,ia_v1,no,35.88,sorteo por grupo de origen
+2037724049.mp4,fuego,fuego: 2037724049,entrenamiento,,controlado,controlado,ia_v1,no,64.92,sorteo por grupo de origen
+20385584-uhd_2160_3840_50fps.mp4,fuego,fuego: 20385584,entrenamiento,,controlado,controlado,ia_v2,no,58.8,sorteo por grupo de origen
+2059427371.mp4,fuego,fuego: 2059427371,entrenamiento,,controlado,controlado,ia_v1,no,60.6,sorteo por grupo de origen
+2078778617.mp4,fuego,fuego: 2078778617,entrenamiento,,controlado,controlado,ia_v2,no,18.12,sorteo por grupo de origen
+2078792487.mp4,fuego,fuego: 2078792487,entrenamiento,,controlado,controlado,ia_v2,no,68.92,sorteo por grupo de origen
+2086190162.mp4,fuego,fuego: 2086190162,entrenamiento,,incontrolado,incontrolado,ia_v1,no,65.27,sorteo por grupo de origen
+2114417383.mp4,fuego,fuego: 2114417383,entrenamiento,,controlado,controlado,ia_v2,no,40.37,sorteo por grupo de origen
+2114417414.mp4,fuego,fuego: 2114417414,entrenamiento,,controlado,controlado,ia_v1,no,32.3,sorteo por grupo de origen
+2162671193.mp4,fuego,fuego: 2162671193,entrenamiento,,controlado,controlado,ia_v1,no,33.21,sorteo por grupo de origen
+2186206037.mp4,fuego,fuego: 2186206037,entrenamiento,,controlado,controlado,ia_v2,no,18.08,sorteo por grupo de origen
+2186322958.mp4,fuego,fuego: 2186322958,entrenamiento,,controlado,controlado,ia_v1,no,172.33,sorteo por grupo de origen
+2194433740.mp4,fuego,fuego: 2194433740,entrenamiento,,controlado,controlado,ia_v1,no,35.87,sorteo por grupo de origen
+2204708015.mp4,fuego,fuego: 2204708015,entrenamiento,,controlado,controlado,ia_v1,no,31.03,sorteo por grupo de origen
+2217410215.mp4,fuego,fuego: 2217410215,entrenamiento,,controlado,controlado,ia_v1,no,60.03,sorteo por grupo de origen
+2227024176.mp4,fuego,fuego: 2227024176,entrenamiento,,incontrolado,incontrolado,ia_v1,no,54.0,sorteo por grupo de origen
+2246574559.mp4,fuego,fuego: 2246574559,entrenamiento,,controlado,controlado,ia_v1,no,31.0,sorteo por grupo de origen
+2247269160.mp4,fuego,fuego: 2247269160,entrenamiento,,controlado,controlado,ia_v2,no,20.79,sorteo por grupo de origen
+2255851286.mp4,fuego,fuego: 2255851286,entrenamiento,,controlado,controlado,ia_v1,no,119.4,sorteo por grupo de origen
+2281473103.mp4,fuego,fuego: 2281473103,entrenamiento,,controlado,controlado,ia_v1,no,26.2,sorteo por grupo de origen
+2310023304.mp4,fuego,fuego: 2310023304,entrenamiento,,controlado,controlado,ia_v1,no,35.32,sorteo por grupo de origen
+2310050739.mp4,fuego,fuego: 2310050739,entrenamiento,,controlado,controlado,ia_v1,no,26.2,sorteo por grupo de origen
+2310056129.mp4,fuego,fuego: 2310056129,entrenamiento,,controlado,controlado,ia_v1,no,28.04,sorteo por grupo de origen
+2354872168.mp4,fuego,fuego: 2354872168,entrenamiento,,controlado,controlado,ia_v1,no,30.4,sorteo por grupo de origen
+2391434472.mp4,fuego,fuego: 2391434472,entrenamiento,,controlado,controlado,ia_v1,no,32.2,sorteo por grupo de origen
+2392243950.mp4,fuego,fuego: 2392243950,entrenamiento,,controlado,controlado,ia_v1,no,26.16,sorteo por grupo de origen
+2392279700.mp4,fuego,fuego: 2392279700,entrenamiento,,controlado,controlado,ia_v1,no,28.88,sorteo por grupo de origen
+2400196463.mp4,fuego,fuego: 2400196463,entrenamiento,,controlado,controlado,ia_v1,no,56.52,sorteo por grupo de origen
+2407878924.mp4,fuego,fuego: 2407878924,entrenamiento,,controlado,controlado,ia_v2,no,17.52,sorteo por grupo de origen
+240_F_1054378251_vyV2FY6G1JrluQEDiwBUFH61XfbM7S3v_ST.mp4,fuego,fuego: 240_f_1054378251_vyv2fy6g1jrluqediwbufh61xfbm7s3v_st,entrenamiento,,controlado,controlado,ia_v1,no,27.64,sorteo por grupo de origen
+240_F_1144752010_6rb9kcEBhPn5eBW0YX5wC4g5US8J1W2z_ST.mp4,fuego,fuego: 240_f_1144752010_6rb9kcebhpn5ebw0yx5wc4g5us8j1w2z_st,entrenamiento,,incontrolado,incontrolado,ia_v1,no,42.4,sorteo por grupo de origen
+240_F_1173797793_KsDoyD9HaN4fBsfq2FOGOxiSDqhf5mD9_ST.mp4,fuego,fuego: 240_f_1173797793_ksdoyd9han4fbsfq2fogoxisdqhf5md9_st,entrenamiento,,controlado,controlado,ia_v1,no,28.93,sorteo por grupo de origen
+240_F_1231264814_5OlEdixj2oxA6qbdUeGXkrofN0LoMUHT_ST.mp4,fuego,fuego: 240_f_1231264814_5oledixj2oxa6qbduegxkrofn0lomuht_st,entrenamiento,,incipiente,incipiente,ia_v1,no,27.92,sorteo por grupo de origen
+240_F_1238741685_0xAv4eqbTOkvpWEu2GclQ02AWdPDGJWE_ST.mp4,fuego,fuego: 240_f_1238741685_0xav4eqbtokvpweu2gclq02awdpdgjwe_st,entrenamiento,,incontrolado,incontrolado,ia_v1,no,62.53,sorteo por grupo de origen
+240_F_1258580149_YoxIbUXjD8OekO23bshkOIEVUc8Ypsc4_ST.mp4,fuego,fuego: 240_f_1258580149_yoxibuxjd8oeko23bshkoievuc8ypsc4_st,entrenamiento,,controlado,controlado,ia_v1,no,41.94,sorteo por grupo de origen
+240_F_1269892566_L2h8wg4LZgyJAe8cwKHnbEedDmhwynin_ST.mp4,fuego,fuego: 240_f_1269892566_l2h8wg4lzgyjae8cwkhnbeeddmhwynin_st,entrenamiento,,controlado,controlado,ia_v1,no,26.56,sorteo por grupo de origen
+240_F_1277999664_arzGGYINgjia51a0uZ9JcAEnRn7O7djy_ST.mp4,fuego,fuego: 240_f_1277999664_arzggyingjia51a0uz9jcaenrn7o7djy_st,entrenamiento,,controlado,controlado,ia_v1,no,36.14,sorteo por grupo de origen
+240_F_1279001095_boRvjgpw4Nqq6OjwKWioh6NiXcWGKUoI_ST.mp4,fuego,fuego: 240_f_1279001095_borvjgpw4nqq6ojwkwioh6nixcwgkuoi_st,entrenamiento,,controlado,controlado,ia_v1,no,32.57,sorteo por grupo de origen
+240_F_1423397833_DYXXpUYFOnbRYvgFCNZe9T9Ubevejqdd_ST.mp4,fuego,fuego: 240_f_1423397833_dyxxpuyfonbryvgfcnze9t9ubevejqdd_st,entrenamiento,,incipiente,incipiente,ia_v1,no,42.78,sorteo por grupo de origen
+240_F_1463123095_V6CyYXt141TtVuqOlVG3L2tvC4Ctgxzd_ST.mp4,fuego,fuego: 240_f_1463123095_v6cyyxt141ttvuqolvg3l2tvc4ctgxzd_st,entrenamiento,,controlado,controlado,ia_v1,no,27.03,sorteo por grupo de origen
+240_F_1494990722_OLg702646JyrNnd3QsiOWR4fGD3sprvC_ST.mp4,fuego,fuego: 240_f_1494990722_olg702646jyrnnd3qsiowr4fgd3sprvc_st,entrenamiento,,controlado,controlado,ia_v1,no,37.13,sorteo por grupo de origen
+240_F_1499570074_4PoLc3WicY9UonDzAQC2OKcjGZ2zNWeB_ST.mp4,fuego,fuego: 240_f_1499570074_4polc3wicy9uondzaqc2okcjgz2znweb_st,entrenamiento,,controlado,controlado,ia_v2,no,8.76,sorteo por grupo de origen
+240_F_1518542191_iHSnv4JpmStk3zq4kKDafkRTf1PKnJYk_ST.mp4,fuego,fuego: 240_f_1518542191_ihsnv4jpmstk3zq4kkdafkrtf1pknjyk_st,entrenamiento,,incipiente,incipiente,ia_v2,no,27.27,sorteo por grupo de origen
+240_F_1518544931_W48iXY0n7jqvls6uCGlLbVVyv4HLVudq_ST.mp4,fuego,fuego: 240_f_1518544931_w48ixy0n7jqvls6ucgllbvvyv4hlvudq_st,entrenamiento,,incipiente,incipiente,ia_v1,no,30.73,sorteo por grupo de origen
+240_F_1561101979_lDJLxObdPkMF2Ps2bSyEH1x5AFJByAsb_ST.mp4,fuego,fuego: 240_f_1561101979_ldjlxobdpkmf2ps2bsyeh1x5afjbyasb_st,entrenamiento,,incipiente,incipiente,ia_v2,no,12.85,sorteo por grupo de origen
+240_F_1564561096_DzPmRSh590mRXEQFIgFri5VTPYnsgzCp_ST.mp4,fuego,fuego: 240_f_1564561096_dzpmrsh590mrxeqfigfri5vtpynsgzcp_st,entrenamiento,,controlado,controlado,ia_v1,no,53.25,sorteo por grupo de origen
+240_F_1564583668_XBo7NJR1dNRGq6fmjpYuUOLno0WWyQrV_ST.mp4,fuego,fuego: 240_f_1564583668_xbo7njr1dnrgq6fmjpyuuolno0wwyqrv_st,entrenamiento,,incipiente,incipiente,ia_v2,no,42.14,sorteo por grupo de origen
+240_F_1574350608_l0yP8G0EjfigfkiYw1FaQrSX5DPXywEO_ST.mp4,fuego,fuego: 240_f_1574350608_l0yp8g0ejfigfkiyw1faqrsx5dpxyweo_st,entrenamiento,,controlado,controlado,ia_v1,no,29.23,sorteo por grupo de origen
+240_F_1576088520_EZ9YsImp0nG5iWMdFfbktAcp43iccmO0_ST.mp4,fuego,fuego: 240_f_1576088520_ez9ysimp0ng5iwmdffbktacp43iccmo0_st,entrenamiento,,incontrolado,incontrolado,ia_v1,no,32.9,sorteo por grupo de origen
+240_F_1714614304_v1ZCZNLkJhGsJk2S3466RmrVK0fgVw7A_ST.mp4,fuego,fuego: 240_f_1714614304_v1zcznlkjhgsjk2s3466rmrvk0fgvw7a_st,entrenamiento,,incontrolado,incontrolado,ia_v2,no,16.88,sorteo por grupo de origen
+240_F_1716069728_kLX5ztEtNPu0uLUNmSpxAofX9uqDZkIa_ST.mp4,fuego,fuego: 240_f_1716069728_klx5ztetnpu0ulunmspxaofx9uqdzkia_st,entrenamiento,,incipiente,incipiente,ia_v1,no,31.74,sorteo por grupo de origen
+240_F_1731085669_l3n6zjPjppIyW6UOr3oihsOXPO8O04oT_ST.mp4,fuego,fuego: 240_f_1731085669_l3n6zjpjppiyw6uor3oihsoxpo8o04ot_st,entrenamiento,,incipiente,incipiente,ia_v1,no,33.76,sorteo por grupo de origen
+240_F_1735655681_pTyPr0KLjIg3vG6BCfyzokPM3pPYMI5B_ST.mp4,fuego,fuego: 240_f_1735655681_ptypr0kljig3vg6bcfyzokpm3ppymi5b_st,entrenamiento,,incontrolado,incontrolado,ia_v2,no,11.75,sorteo por grupo de origen
+240_F_230141811_3JblicgBRYtd1WEc0wfPeb6ONWBK99H3_ST.mp4,fuego,fuego: 240_f_230141811_3jblicgbrytd1wec0wfpeb6onwbk99h3_st,entrenamiento,,incontrolado,incontrolado,ia_v2,no,21.22,sorteo por grupo de origen
+240_F_384597062_s7Kn77dSH7dkYj2sJPhi0xKZTozS9mvs_ST.mp4,fuego,fuego: 240_f_384597062_s7kn77dsh7dkyj2sjphi0xkztozs9mvs_st,entrenamiento,,controlado,controlado,ia_v1,no,28.98,sorteo por grupo de origen
+2412493264.mp4,fuego,fuego: 2412493264,entrenamiento,,controlado,controlado,ia_v1,no,41.12,sorteo por grupo de origen
+2412513552.mp4,fuego,fuego: 2412513552,entrenamiento,,incontrolado,incontrolado,ia_v2,no,103.1,sorteo por grupo de origen
+2451511630.mp4,fuego,fuego: 2451511630,entrenamiento,,controlado,controlado,ia_v2,no,7.3,sorteo por grupo de origen
+2559134823.mp4,fuego,fuego: 2559134823,entrenamiento,,controlado,controlado,ia_v2,no,23.32,sorteo por grupo de origen
+2678243083.mp4,fuego,fuego: 2678243083,entrenamiento,,controlado,controlado,ia_v2,no,6.24,sorteo por grupo de origen
+2793307319.mp4,fuego,fuego: 2793307319,entrenamiento,,incontrolado,incontrolado,ia_v2,no,14.61,sorteo por grupo de origen
+3 ALARM STRUCTURE FIRE Toms River New Jersey (No Injuries) 12_2_22.mp4,fuego,fuego: 3 alarm structure fire toms river new jersey (no injuries) 12_2_22,entrenamiento,,incontrolado,incontrolado,ia_v2,no,757.9,sorteo por grupo de origen
+3078370702.mp4,fuego,fuego: 3078370702,entrenamiento,,controlado,controlado,ia_v2,no,70.33,sorteo por grupo de origen
+624108572.mp4,fuego,fuego: 624108572,entrenamiento,,controlado,controlado,ia_v2,no,20.73,sorteo por grupo de origen
+627970766.mp4,fuego,fuego: 627970766,entrenamiento,,controlado,controlado,ia_v2,no,34.76,sorteo por grupo de origen
+674129286.mp4,fuego,fuego: 674129286,entrenamiento,,controlado,controlado,ia_v2,no,11.44,sorteo por grupo de origen
+700_F_1041577763_6yEesz6dNyBq6J3mtOu5McGPp4GVLb0Z_ST.mp4,fuego,fuego: 700_f_1041577763_6yeesz6dnybq6j3mtou5mcgpp4gvlb0z_st,entrenamiento,,controlado,controlado,ia_v2,no,18.69,sorteo por grupo de origen
+700_F_1052896794_1I83ghYusc2d70Ve0NXVPZERnLE6TFGk_ST.mp4,fuego,fuego: 700_f_1052896794_1i83ghyusc2d70ve0nxvpzernle6tfgk_st,entrenamiento,,incontrolado,incontrolado,ia_v2,no,50.92,sorteo por grupo de origen
+700_F_105649331_qogS7qGVXbGYAwpaKAkCP72jbkWaBo6s_ST.mp4,fuego,fuego: 700_f_105649331_qogs7qgvxbgyawpakakcp72jbkwabo6s_st,entrenamiento,,incontrolado,incontrolado,ia_v2,no,27.82,sorteo por grupo de origen
+700_F_1158022708_Fx4yAjNyNFlE0vuQxfq8OODP03c7TQBG_ST.mp4,fuego,fuego: 700_f_1158022708_fx4yajnynfle0vuqxfq8oodp03c7tqbg_st,entrenamiento,,incontrolado,incontrolado,ia_v2,no,24.06,sorteo por grupo de origen
+700_F_116913467_UYtcO2LTfQ6x9e4MT0UrdZWifPQvTran_ST.mp4,fuego,fuego: 700_f_116913467_uytco2ltfq6x9e4mt0urdzwifpqvtran_st,entrenamiento,,incontrolado,incontrolado,ia_v2,no,18.02,sorteo por grupo de origen
+700_F_1239014979_UTHkCtgcC7XjjHX8N49myYTiNqRVQOyv_ST.mp4,fuego,fuego: 700_f_1239014979_uthkctgcc7xjjhx8n49myytinqrvqoyv_st,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,41.84,sorteo por grupo de origen
+700_F_132088442_lOfQd3xmfkmAIo6HMIDV24KI91gwgIzH_ST.mp4,fuego,fuego: 700_f_132088442_lofqd3xmfkmaio6hmidv24ki91gwgizh_st,entrenamiento,,incontrolado,incontrolado,ia_v2,no,20.8,sorteo por grupo de origen
+700_F_1382848361_3LmmANtzQT3i2wPir3JZsKqhaztZm9DB_ST.mp4,fuego,fuego: 700_f_1382848361_3lmmantzqt3i2wpir3jzskqhaztzm9db_st,entrenamiento,,controlado,controlado,ia_v2,no,18.62,sorteo por grupo de origen
+700_F_1391338424_j2it1NPc5D7A8absKDO74MLjRAXuwiVt_ST.mp4,fuego,fuego: 700_f_1391338424_j2it1npc5d7a8abskdo74mljraxuwivt_st,entrenamiento,,incipiente,incipiente,ia_v2,no,35.07,sorteo por grupo de origen
+700_F_1441396320_LvNLVmqmHeULDThLiWvpStk8qMFx8rJz_ST.mp4,fuego,fuego: 700_f_1441396320_lvnlvmqmheuldthliwvpstk8qmfx8rjz_st,entrenamiento,,controlado,controlado,ia_v2,no,15.35,sorteo por grupo de origen
+700_F_1478629518_Bz9fGyb87CxgpJTmv5Rr0Y6A7jC5Gfo8_ST.mp4,fuego,fuego: 700_f_1478629518_bz9fgyb87cxgpjtmv5rr0y6a7jc5gfo8_st,entrenamiento,,incipiente,incipiente,ia_v2,no,33.78,sorteo por grupo de origen
+700_F_1525005259_XgUWZYdAsuzxoOVADvMJr9bZJThLasJ9_ST.mp4,fuego,fuego: 700_f_1525005259_xguwzydasuzxoovadvmjr9bzjthlasj9_st,entrenamiento,,controlado,controlado,ia_v2,no,10.92,sorteo por grupo de origen
+700_F_1633760735_BCo2PI5i8undF4IzKZA4u8JG5p9GBMhZ_ST.mp4,fuego,fuego: 700_f_1633760735_bco2pi5i8undf4izkza4u8jg5p9gbmhz_st,entrenamiento,,controlado,controlado,ia_v2,no,33.3,sorteo por grupo de origen
+700_F_1639650216_qAyiaUxSu2UmRHp2rk6BsVxotkyQpgny_ST.mp4,fuego,fuego: 700_f_1639650216_qayiauxsu2umrhp2rk6bsvxotkyqpgny_st,entrenamiento,,incontrolado,incontrolado,ia_v2,no,10.0,sorteo por grupo de origen
+700_F_168544436_3jmpH2jzrqnSU2OUi0C6rmtvmcfpjr6c_ST.mp4,fuego,fuego: 700_f_168544436_3jmph2jzrqnsu2oui0c6rmtvmcfpjr6c_st,entrenamiento,,incontrolado,incontrolado,ia_v2,no,15.0,sorteo por grupo de origen
+700_F_169627921_lFcw6AVtPMzjFYhsSU6GQzReB5JHMeJx_ST.mp4,fuego,fuego: 700_f_169627921_lfcw6avtpmzjfyhssu6gqzreb5jhmejx_st,entrenamiento,,controlado,controlado,ia_v2,no,23.68,sorteo por grupo de origen
+700_F_196699462_vgiDsQrfGVZf3F1GrDUvE16ZguhRzvWl_ST.mp4,fuego,fuego: 700_f_196699462_vgidsqrfgvzf3f1grduve16zguhrzvwl_st,entrenamiento,,controlado,controlado,ia_v2,no,20.92,sorteo por grupo de origen
+700_F_240428347_SnwKCLnRJvrwONFwN6TH2W4RZex0w6OF_ST.mp4,fuego,fuego: 700_f_240428347_snwkclnrjvrwonfwn6th2w4rzex0w6of_st,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,79.08,sorteo por grupo de origen
+700_F_268796224_OGMYkuh9sPEuZNf0dxHRQsEfruCQSV0h_ST.mp4,fuego,fuego: 700_f_268796224_ogmykuh9speuznf0dxhrqsefrucqsv0h_st,entrenamiento,,controlado,controlado,ia_v2,no,11.84,sorteo por grupo de origen
+700_F_274378603_baaTGa57kKZX2RGd9ZDCWxruUeFvant1_ST.mp4,fuego,fuego: 700_f_274378603_baatga57kkzx2rgd9zdcwxruuefvant1_st,entrenamiento,,controlado,controlado,ia_v2,no,11.44,sorteo por grupo de origen
+700_F_299931309_WiuF3uZrW4zfX6Ybae8ZqAXZ92DX4hxR_ST.mp4,fuego,fuego: 700_f_299931309_wiuf3uzrw4zfx6ybae8zqaxz92dx4hxr_st,entrenamiento,,incipiente,incipiente,ia_v2,no,45.92,sorteo por grupo de origen
+700_F_303646857_B4qS9hi3Y1rGZonkLr3sT91BAxFDkC1m_ST.mp4,fuego,fuego: 700_f_303646857_b4qs9hi3y1rgzonklr3st91baxfdkc1m_st,entrenamiento,,controlado,controlado,ia_v2,no,7.77,sorteo por grupo de origen
+700_F_554054730_kE1cv8dFUsi2PPmE7r9hJxTvM9DwymIw_ST.mp4,fuego,fuego: 700_f_554054730_ke1cv8dfusi2ppme7r9hjxtvm9dwymiw_st,entrenamiento,,controlado,controlado,ia_v2,no,23.42,sorteo por grupo de origen
+700_F_94850543_ObZuytBmIAKd4EkDXB6mxOt7OGHGjYwx_ST.mp4,fuego,fuego: 700_f_94850543_obzuytbmiakd4ekdxb6mxot7oghgjywx_st,entrenamiento,,incontrolado,incontrolado,ia_v2,no,17.52,sorteo por grupo de origen
+766602557.mp4,fuego,fuego: 766602557,entrenamiento,,controlado,controlado,ia_v2,no,63.13,sorteo por grupo de origen
+A FIRE IN THE DURANGO WALMART!!!!!! - Made with Clipchamp.mp4,fuego,fuego: a fire in the durango walmart!!!!!!,entrenamiento,,incipiente,incipiente,ia_v2,no,61.8,sorteo por grupo de origen
+Arrival Video_  Firefighters battle this fully involved house fire.mp4,fuego,fuego: arrival video_ firefighters battle this fully involved house fire,entrenamiento,,incontrolado,incontrolado,ia_v2,no,171.6,sorteo por grupo de origen
+Barn Burning 04 13 2014.mp4,fuego,fuego: barn burning 04 13 2014,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,498.93,sorteo por grupo de origen
+Bethel Island_ 2 Alarm Fire Destroys 3 Homes in Contra Costa County.mp4,fuego,fuego: bethel island_ 2 alarm fire destroys 3 homes in contra costa county,entrenamiento,,incontrolado,incontrolado,ia_v2,no,1083.6,sorteo por grupo de origen
+"CAR FIRE  EXPLOSION Wall Township, NJ 6_12_21.mp4",fuego,"fuego: car fire explosion wall township, nj 6_12_21",entrenamiento,,incontrolado,incontrolado,ia_v2,no,136.87,sorteo por grupo de origen
+Car Fire with Multiple Exposures (Jeep) Brick New Jersey 2_18_23.mp4,fuego,fuego: car fire with multiple exposures (jeep) brick new jersey 2_18_23,entrenamiento,,incontrolado,incontrolado,ia_v2,no,20.67,sorteo por grupo de origen
+"Early Video_ Firefighters make attack on this house fire in Whitehall, Pennsylvania.mp4",fuego,"fuego: early video_ firefighters make attack on this house fire in whitehall, pennsylvania",entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,66.27,sorteo por grupo de origen
+FLOODED HOUSE FIRE Hurricane Ida Manville New Jersey 9_2_21.mp4,fuego,fuego: flooded house fire hurricane ida manville new jersey 9_2_21,entrenamiento,,incontrolado,incontrolado,ia_v2,no,406.3,sorteo por grupo de origen
+Fire Engine Responding to Car fire with Pre-arrival viewer video.mp4,fuego,fuego: fire engine responding to car fire with pre,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,67.17,sorteo por grupo de origen
+"Fire at Union Terrace Elementary School in Allentown, Pennsylvania.mp4",fuego,"fuego: fire at union terrace elementary school in allentown, pennsylvania",entrenamiento,,controlado,controlado,ia_v2,no,16.63,sorteo por grupo de origen
+"Fully Involved Car Fire Point Pleasant Boro, NJ 8_14_21.mp4",fuego,"fuego: fully involved car fire point pleasant boro, nj 8_14_21",entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,137.97,sorteo por grupo de origen
+HFSC Home Security Camera Living Room Fire.mp4,fuego,fuego: hfsc home security camera living room fire,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,124.13,sorteo por grupo de origen
+Hier entstehen die meisten Brände_ Auf dem Herd!.mp4,fuego,fuego: hier entstehen die meisten brände_ auf dem herd!,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,54.97,sorteo por grupo de origen
+Lev med levende lys!.mp4,fuego,fuego: lev med levende lys!,entrenamiento,,controlado_a_incontrolado,incontrolado,ia_v2,no,84.93,sorteo por grupo de origen
+Nine minutes of house fire - Burning Victorian Dollhouse down! - Timelapse.mp4,fuego,fuego: nine minutes of house fire,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,373.27,sorteo por grupo de origen
+PRE-ARRIVAL AT FULLY INVOLVED HOUSE FIRE - SYOSSET NY.mp4,fuego,fuego: pre,entrenamiento,,incontrolado,incontrolado,ia_v2,no,202.97,sorteo por grupo de origen
+"PRE-ARRIVAL VIDEO_ Dumpster fire at the bakery in Whitehall, Pennsylvania.mp4",fuego,fuego: pre,entrenamiento,,incipiente,incipiente,ia_v2,no,23.1,sorteo por grupo de origen
+"PRE-ARRIVAL_  Sofa burning in living room, working fire signal transmitted in Whitehall, PA.mp4",fuego,fuego: pre,entrenamiento,,incipiente,incipiente,ia_v2,no,142.73,sorteo por grupo de origen
+"PRE-ARRIVAL_ Fully involved structure fire in Whitehall, Pennsylvania.mp4",fuego,fuego: pre,entrenamiento,,incontrolado,incontrolado,ia_v2,no,274.87,sorteo por grupo de origen
+Residential Sprinkler Fire Test with BS 9252 Fire Load.mp4,fuego,fuego: residential sprinkler fire test with bs 9252 fire load,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,113.43,sorteo por grupo de origen
+Roaring fire attacks barbies in a burning dollhouse.mp4,fuego,fuego: roaring fire attacks barbies in a burning dollhouse,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,848.83,sorteo por grupo de origen
+Selbstentzündung leinölgetränkter Lappen.mp4,fuego,fuego: selbstentzündung leinölgetränkter lappen,entrenamiento,,incipiente,incipiente,ia_v2,no,29.93,sorteo por grupo de origen
+This Can Create a House Inferno!.mp4,fuego,fuego: this can create a house inferno!,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,155.57,sorteo por grupo de origen
+VID_20230612_141522.mp4,fuego,fuego: vid_20230612_141522,entrenamiento,,incontrolado,incontrolado,ia_v2,no,7.17,sorteo por grupo de origen
+VID_20230612_141558.mp4,fuego,fuego: vid_20230612_141558,entrenamiento,,incontrolado,incontrolado,ia_v2,no,18.58,sorteo por grupo de origen
+VID_20230612_141759.mp4,fuego,fuego: vid_20230612_141759,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,50.45,sorteo por grupo de origen
+VID_20230612_143556.mp4,fuego,fuego: vid_20230612_143556,entrenamiento,,incipiente,incipiente,ia_v2,no,24.3,sorteo por grupo de origen
+VID_20230612_153055.mp4,fuego,fuego: vid_20230612_153055,entrenamiento,,incipiente,incipiente,ia_v2,no,7.19,sorteo por grupo de origen
+VID_20230612_153203.mp4,fuego,fuego: vid_20230612_153203,entrenamiento,,incipiente,incipiente,ia_v2,no,16.13,sorteo por grupo de origen
+"Van Fire Result of hitting dump truck on Route 22 in Whitehall, Pennsylvania.mp4",fuego,"fuego: van fire result of hitting dump truck on route 22 in whitehall, pennsylvania",entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,151.47,sorteo por grupo de origen
+Video shows Disney dragon catching fire during Fantasmic show.mp4,fuego,fuego: video shows disney dragon catching fire during fantasmic show,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,29.57,sorteo por grupo de origen
+Watch this Dollhouse go up in Flames! (FULL VIDEO)— Do Not Try At Home hobby craft.mp4,fuego,fuego: watch this dollhouse go up in flames! (full video)— do not try at home hobby craft,entrenamiento,,controlado_a_incontrolado,incontrolado,ia_v2,no,324.9,sorteo por grupo de origen
+Water Mist Fire Demonstration.mp4,fuego,fuego: water mist fire demonstration,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,214.83,sorteo por grupo de origen
+"Weehawken, NJ 6th Alarm Full Involved House Fire Multiple Mutual Aid Towns Operating at Scene.mp4",fuego,"fuego: weehawken, nj 6th alarm full involved house fire multiple mutual aid towns operating at scene",entrenamiento,,incontrolado,incontrolado,ia_v2,no,1203.63,sorteo por grupo de origen
+Ystafell wely ar dân _ Bedroom fire.mp4,fuego,fuego: ystafell wely ar dân _ bedroom fire,entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,165.33,sorteo por grupo de origen
+c58002ff-b4268116.mp4,fuego,fuego: c58002ff,entrenamiento,,controlado,controlado,ia_v2,no,15.08,sorteo por grupo de origen
+c890e84f-faf8aa86.mp4,fuego,fuego: c890e84f,entrenamiento,,controlado,controlado,ia_v2,no,29.29,sorteo por grupo de origen
+fire3.avi,fuego,fuego: fire3,entrenamiento,,controlado,controlado,ia_v2,no,17.33,sorteo por grupo de origen
+video (4309).mp4,fuego,fuego: video (4309),entrenamiento,,incipiente,incipiente,ia_v2,no,5.92,sorteo por grupo de origen
+videoplayback (11).mp4,fuego,fuego: videoplayback (11),entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,258.1,sorteo por grupo de origen
+videoplayback (13).mp4,fuego,fuego: videoplayback (13),entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,171.0,sorteo por grupo de origen
+videoplayback (14).mp4,fuego,fuego: videoplayback (14),entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,175.3,sorteo por grupo de origen
+videoplayback (16).mp4,fuego,fuego: videoplayback (16),entrenamiento,,controlado_a_incontrolado,incontrolado,ia_v2,no,276.13,sorteo por grupo de origen
+videoplayback (8).mp4,fuego,fuego: videoplayback (8),entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,25.03,sorteo por grupo de origen
+videoplayback (9).mp4,fuego,fuego: videoplayback (9),entrenamiento,,incipiente_a_incontrolado,incontrolado,ia_v2,no,194.77,sorteo por grupo de origen
+আর কতবার পুড়লে টনক নড়বে প্রশাসনের_ _ Bongo Bazar Fire _ Dhaka Fire News _ Somoy TV.mp4,fuego,fuego: আর কতবার পুড়লে টনক নড়বে প্রশাসনের_ _ bongo bazar fire _ dhaka fire news _ somoy tv,entrenamiento,,incontrolado,incontrolado,ia_v2,no,88.23,sorteo por grupo de origen
+1293332816_clip_001.mp4,sin_fuego,sin_fuego: 1293332816,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1436878288_clip_001.mp4,sin_fuego,sin_fuego: 1436878288,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1538943578_clip_001.mp4,sin_fuego,sin_fuego: 1538943578,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1544298679_clip_001.mp4,sin_fuego,sin_fuego: 1544298679,entrenamiento,,sin_fuego,sin_fuego,,no,7.08,sorteo por grupo de origen
+1574514010_clip_001.mp4,sin_fuego,sin_fuego: 1574514010,entrenamiento,,sin_fuego,sin_fuego,,no,7.79,sorteo por grupo de origen
+1665987753_clip_001.mp4,sin_fuego,sin_fuego: 1665987753,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1670819098_clip_001.mp4,sin_fuego,sin_fuego: 1670819098,entrenamiento,,sin_fuego,sin_fuego,,no,9.2,sorteo por grupo de origen
+1672675531_clip_001.mp4,sin_fuego,sin_fuego: 1672675531,entrenamiento,,sin_fuego,sin_fuego,,no,8.6,sorteo por grupo de origen
+1789133423_clip_003.mp4,sin_fuego,sin_fuego: 1789133423,entrenamiento,,sin_fuego,sin_fuego,,no,8.08,sorteo por grupo de origen
+1809735759_clip_002.mp4,sin_fuego,sin_fuego: 1809735759,entrenamiento,,sin_fuego,sin_fuego,,no,8.59,sorteo por grupo de origen
+1813305223_clip_003.mp4,sin_fuego,sin_fuego: 1813305223,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1816718678_clip_001.mp4,sin_fuego,sin_fuego: 1816718678,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1816720483_clip_001.mp4,sin_fuego,sin_fuego: 1816720483,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1816726074_clip_004.mp4,sin_fuego,sin_fuego: 1816726074,entrenamiento,,sin_fuego,sin_fuego,,no,1.32,sorteo por grupo de origen
+1816726571_clip_002.mp4,sin_fuego,sin_fuego: 1816726571,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1821467306_clip_001.mp4,sin_fuego,sin_fuego: 1821467306,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1822573158_clip_001.mp4,sin_fuego,sin_fuego: 1822573158,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1822573165_clip_002.mp4,sin_fuego,sin_fuego: 1822573165,entrenamiento,,sin_fuego,sin_fuego,,no,0.67,sorteo por grupo de origen
+1836217304_clip_001.mp4,sin_fuego,sin_fuego: 1836217304,entrenamiento,,sin_fuego,sin_fuego,,no,7.66,sorteo por grupo de origen
+1840955632_clip_001.mp4,sin_fuego,sin_fuego: 1840955632,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1857867343_clip_001.mp4,sin_fuego,sin_fuego: 1857867343,entrenamiento,,sin_fuego,sin_fuego,,no,9.6,sorteo por grupo de origen
+1869715703_clip_001.mp4,sin_fuego,sin_fuego: 1869715703,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1870284209_clip_003.mp4,sin_fuego,sin_fuego: 1870284209,entrenamiento,,sin_fuego,sin_fuego,,no,6.33,sorteo por grupo de origen
+1885952980_clip_002.mp4,sin_fuego,sin_fuego: 1885952980,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1894713129_clip_001.mp4,sin_fuego,sin_fuego: 1894713129,entrenamiento,,sin_fuego,sin_fuego,,no,8.1,sorteo por grupo de origen
+1898933216_clip_001.mp4,sin_fuego,sin_fuego: 1898933216,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1898955685_clip_001.mp4,sin_fuego,sin_fuego: 1898955685,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1902073305_clip_001.mp4,sin_fuego,sin_fuego: 1902073305,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1910972632_clip_002.mp4,sin_fuego,sin_fuego: 1910972632,entrenamiento,,sin_fuego,sin_fuego,,no,1.24,sorteo por grupo de origen
+1918731900_clip_001.mp4,sin_fuego,sin_fuego: 1918731900,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1926400076_clip_001.mp4,sin_fuego,sin_fuego: 1926400076,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1930250305_clip_001.mp4,sin_fuego,sin_fuego: 1930250305,entrenamiento,,sin_fuego,sin_fuego,,no,6.5,sorteo por grupo de origen
+1937610902_clip_002.mp4,sin_fuego,sin_fuego: 1937610902,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1938014527_clip_002.mp4,sin_fuego,sin_fuego: 1938014527,entrenamiento,,sin_fuego,sin_fuego,,no,5.6,sorteo por grupo de origen
+1938040412_clip_001.mp4,sin_fuego,sin_fuego: 1938040412,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1939445174_clip_002.mp4,sin_fuego,sin_fuego: 1939445174,entrenamiento,,sin_fuego,sin_fuego,,no,6.83,sorteo por grupo de origen
+1954213375_clip_003.mp4,sin_fuego,sin_fuego: 1954213375,entrenamiento,,sin_fuego,sin_fuego,,no,0.8,sorteo por grupo de origen
+1963266116_clip_001.mp4,sin_fuego,sin_fuego: 1963266116,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1966219354_clip_002.mp4,sin_fuego,sin_fuego: 1966219354,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1967435601_clip_001.mp4,sin_fuego,sin_fuego: 1967435601,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1969275268_clip_002.mp4,sin_fuego,sin_fuego: 1969275268,entrenamiento,,sin_fuego,sin_fuego,,no,4.13,sorteo por grupo de origen
+1969548129_clip_002.mp4,sin_fuego,sin_fuego: 1969548129,entrenamiento,,sin_fuego,sin_fuego,,no,2.1,sorteo por grupo de origen
+1975618525_clip_002.mp4,sin_fuego,sin_fuego: 1975618525,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1977816683_clip_002.mp4,sin_fuego,sin_fuego: 1977816683,entrenamiento,,sin_fuego,sin_fuego,,no,0.9,sorteo por grupo de origen
+1986069029_clip_002.mp4,sin_fuego,sin_fuego: 1986069029,entrenamiento,,sin_fuego,sin_fuego,,no,5.83,sorteo por grupo de origen
+1987601100_clip_004.mp4,sin_fuego,sin_fuego: 1987601100,entrenamiento,,sin_fuego,sin_fuego,,no,0.93,sorteo por grupo de origen
+1990517464_clip_001.mp4,sin_fuego,sin_fuego: 1990517464,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1993315804_clip_002.mp4,sin_fuego,sin_fuego: 1993315804,entrenamiento,,sin_fuego,sin_fuego,,no,4.84,sorteo por grupo de origen
+2004063129_clip_001.mp4,sin_fuego,sin_fuego: 2004063129,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2004063296_clip_002.mp4,sin_fuego,sin_fuego: 2004063296,entrenamiento,,sin_fuego,sin_fuego,,no,1.96,sorteo por grupo de origen
+2009042831_clip_002.mp4,sin_fuego,sin_fuego: 2009042831,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2009793021_clip_001.mp4,sin_fuego,sin_fuego: 2009793021,entrenamiento,,sin_fuego,sin_fuego,,no,5.52,sorteo por grupo de origen
+2037659842_clip_001.mp4,sin_fuego,sin_fuego: 2037659842,entrenamiento,,sin_fuego,sin_fuego,,no,6.08,sorteo por grupo de origen
+2043228253_clip_001.mp4,sin_fuego,sin_fuego: 2043228253,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2043543699_clip_002.mp4,sin_fuego,sin_fuego: 2043543699,entrenamiento,,sin_fuego,sin_fuego,,no,0.74,sorteo por grupo de origen
+2054011409_clip_002.mp4,sin_fuego,sin_fuego: 2054011409,entrenamiento,,sin_fuego,sin_fuego,,no,8.03,sorteo por grupo de origen
+2054149175_clip_001.mp4,sin_fuego,sin_fuego: 2054149175,entrenamiento,,sin_fuego,sin_fuego,,no,6.13,sorteo por grupo de origen
+2061002215_clip_001.mp4,sin_fuego,sin_fuego: 2061002215,entrenamiento,,sin_fuego,sin_fuego,,no,7.48,sorteo por grupo de origen
+2063323080_clip_001.mp4,sin_fuego,sin_fuego: 2063323080,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2075034409_clip_001.mp4,sin_fuego,sin_fuego: 2075034409,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2076069111_clip_002.mp4,sin_fuego,sin_fuego: 2076069111,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2078794133_clip_003.mp4,sin_fuego,sin_fuego: 2078794133,entrenamiento,,sin_fuego,sin_fuego,,no,3.79,sorteo por grupo de origen
+2078843978_clip_001.mp4,sin_fuego,sin_fuego: 2078843978,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2079517995_clip_002.mp4,sin_fuego,sin_fuego: 2079517995,entrenamiento,,sin_fuego,sin_fuego,,no,3.21,sorteo por grupo de origen
+2090018032_clip_004.mp4,sin_fuego,sin_fuego: 2090018032,entrenamiento,,sin_fuego,sin_fuego,,no,1.34,sorteo por grupo de origen
+2090940209_clip_003.mp4,sin_fuego,sin_fuego: 2090940209,entrenamiento,,sin_fuego,sin_fuego,,no,1.48,sorteo por grupo de origen
+2100262124_clip_002.mp4,sin_fuego,sin_fuego: 2100262124,entrenamiento,,sin_fuego,sin_fuego,,no,9.64,sorteo por grupo de origen
+2101459437_clip_001.mp4,sin_fuego,sin_fuego: 2101459437,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2102967422_clip_001.mp4,sin_fuego,sin_fuego: 2102967422,entrenamiento,,sin_fuego,sin_fuego,,no,7.96,sorteo por grupo de origen
+2106031540_clip_001.mp4,sin_fuego,sin_fuego: 2106031540,entrenamiento,,sin_fuego,sin_fuego,,no,6.77,sorteo por grupo de origen
+2107323763_clip_001.mp4,sin_fuego,sin_fuego: 2107323763,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2108216481_clip_002.mp4,sin_fuego,sin_fuego: 2108216481,entrenamiento,,sin_fuego,sin_fuego,,no,5.31,sorteo por grupo de origen
+2112190175_clip_001.mp4,sin_fuego,sin_fuego: 2112190175,entrenamiento,,sin_fuego,sin_fuego,,no,8.7,sorteo por grupo de origen
+2120221904_clip_002.mp4,sin_fuego,sin_fuego: 2120221904,entrenamiento,,sin_fuego,sin_fuego,,no,5.24,sorteo por grupo de origen
+2121370346_clip_001.mp4,sin_fuego,sin_fuego: 2121370346,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2130092125_clip_003.mp4,sin_fuego,sin_fuego: 2130092125,entrenamiento,,sin_fuego,sin_fuego,,no,6.59,sorteo por grupo de origen
+2155242383_clip_001.mp4,sin_fuego,sin_fuego: 2155242383,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2156948515_clip_003.mp4,sin_fuego,sin_fuego: 2156948515,entrenamiento,,sin_fuego,sin_fuego,,no,8.31,sorteo por grupo de origen
+2158265759_clip_001.mp4,sin_fuego,sin_fuego: 2158265759,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2164875628_clip_003.mp4,sin_fuego,sin_fuego: 2164875628,entrenamiento,,sin_fuego,sin_fuego,,no,6.76,sorteo por grupo de origen
+2169755323_clip_001.mp4,sin_fuego,sin_fuego: 2169755323,entrenamiento,,sin_fuego,sin_fuego,,no,9.55,sorteo por grupo de origen
+2169761320_clip_001.mp4,sin_fuego,sin_fuego: 2169761320,entrenamiento,,sin_fuego,sin_fuego,,no,8.07,sorteo por grupo de origen
+2169887692_clip_001.mp4,sin_fuego,sin_fuego: 2169887692,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2186341614_clip_002.mp4,sin_fuego,sin_fuego: 2186341614,entrenamiento,,sin_fuego,sin_fuego,,no,6.9,sorteo por grupo de origen
+2201027281_clip_001.mp4,sin_fuego,sin_fuego: 2201027281,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2234036166_clip_001.mp4,sin_fuego,sin_fuego: 2234036166,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2242511015_clip_001.mp4,sin_fuego,sin_fuego: 2242511015,entrenamiento,,sin_fuego,sin_fuego,,no,2.83,sorteo por grupo de origen
+2256624439_clip_001.mp4,sin_fuego,sin_fuego: 2256624439,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2260466241_clip_001.mp4,sin_fuego,sin_fuego: 2260466241,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2269398603_clip_001.mp4,sin_fuego,sin_fuego: 2269398603,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2291703274_clip_002.mp4,sin_fuego,sin_fuego: 2291703274,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2304168386_clip_004.mp4,sin_fuego,sin_fuego: 2304168386,entrenamiento,,sin_fuego,sin_fuego,,no,1.62,sorteo por grupo de origen
+2308934158_clip_002.mp4,sin_fuego,sin_fuego: 2308934158,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2315643272_clip_003.mp4,sin_fuego,sin_fuego: 2315643272,entrenamiento,,sin_fuego,sin_fuego,,no,0.8,sorteo por grupo de origen
+2320985904_clip_004.mp4,sin_fuego,sin_fuego: 2320985904,entrenamiento,,sin_fuego,sin_fuego,,no,3.96,sorteo por grupo de origen
+2325774921_clip_001.mp4,sin_fuego,sin_fuego: 2325774921,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2353388741_clip_004.mp4,sin_fuego,sin_fuego: 2353388741,entrenamiento,,sin_fuego,sin_fuego,,no,3.0,sorteo por grupo de origen
+2353905277_clip_002.mp4,sin_fuego,sin_fuego: 2353905277,entrenamiento,,sin_fuego,sin_fuego,,no,5.62,sorteo por grupo de origen
+2353914629_clip_002.mp4,sin_fuego,sin_fuego: 2353914629,entrenamiento,,sin_fuego,sin_fuego,,no,5.79,sorteo por grupo de origen
+2358649688_clip_001.mp4,sin_fuego,sin_fuego: 2358649688,entrenamiento,,sin_fuego,sin_fuego,,no,8.03,sorteo por grupo de origen
+2358650201_clip_001.mp4,sin_fuego,sin_fuego: 2358650201,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2381084078_clip_001.mp4,sin_fuego,sin_fuego: 2381084078,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2382573000_clip_001.mp4,sin_fuego,sin_fuego: 2382573000,entrenamiento,,sin_fuego,sin_fuego,,no,8.3,sorteo por grupo de origen
+2407203130_clip_001.mp4,sin_fuego,sin_fuego: 2407203130,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2408535865_clip_001.mp4,sin_fuego,sin_fuego: 2408535865,entrenamiento,,sin_fuego,sin_fuego,,no,9.08,sorteo por grupo de origen
+2474190034_clip_001.mp4,sin_fuego,sin_fuego: 2474190034,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2530181744_clip_001.mp4,sin_fuego,sin_fuego: 2530181744,entrenamiento,,sin_fuego,sin_fuego,,no,9.6,sorteo por grupo de origen
+2549288525_clip_001.mp4,sin_fuego,sin_fuego: 2549288525,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2568999255_clip_001.mp4,sin_fuego,sin_fuego: 2568999255,entrenamiento,,sin_fuego,sin_fuego,,no,7.44,sorteo por grupo de origen
+2569492996_clip_001.mp4,sin_fuego,sin_fuego: 2569492996,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2622439605_clip_001.mp4,sin_fuego,sin_fuego: 2622439605,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2624952607_clip_001.mp4,sin_fuego,sin_fuego: 2624952607,entrenamiento,,sin_fuego,sin_fuego,,no,6.23,sorteo por grupo de origen
+2737421439_clip_002.mp4,sin_fuego,sin_fuego: 2737421439,entrenamiento,,sin_fuego,sin_fuego,,no,2.76,sorteo por grupo de origen
+2760263871_clip_002.mp4,sin_fuego,sin_fuego: 2760263871,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2760269350_clip_001.mp4,sin_fuego,sin_fuego: 2760269350,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2796334863_clip_001.mp4,sin_fuego,sin_fuego: 2796334863,entrenamiento,,sin_fuego,sin_fuego,,no,6.52,sorteo por grupo de origen
+2869141067_clip_001.mp4,sin_fuego,sin_fuego: 2869141067,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2898158280_clip_002.mp4,sin_fuego,sin_fuego: 2898158280,entrenamiento,,sin_fuego,sin_fuego,,no,7.12,sorteo por grupo de origen
+2900155596_clip_002.mp4,sin_fuego,sin_fuego: 2900155596,entrenamiento,,sin_fuego,sin_fuego,,no,0.57,sorteo por grupo de origen
+636806611_clip_002.mp4,sin_fuego,sin_fuego: 636806611,entrenamiento,,sin_fuego,sin_fuego,,no,7.35,sorteo por grupo de origen
+fire16_clip_008.mp4,sin_fuego,sin_fuego: fire16,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+fire17_clip_007.mp4,sin_fuego,sin_fuego: fire17,entrenamiento,,sin_fuego,sin_fuego,,no,8.8,sorteo por grupo de origen
+fire20_clip_013.mp4,sin_fuego,sin_fuego: fire20,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+fire23_clip_044.mp4,sin_fuego,sin_fuego: fire23,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+fire24_clip_001.mp4,sin_fuego,sin_fuego: fire24,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+fire25_clip_001.mp4,sin_fuego,sin_fuego: fire25,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+fire26_clip_004.mp4,sin_fuego,sin_fuego: fire26,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+fire29_clip_004.mp4,sin_fuego,sin_fuego: fire29,entrenamiento,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+00e18d86-3389d8dc.mp4,fuego,fuego: 00e18d86,validacion,,controlado,controlado,ia_v1,no,50.0,sorteo por grupo de origen
+12741090_3840_2160_24fps.mp4,fuego,fuego: 12741090_3840_2160_24fps,validacion,,controlado,controlado,ia_v2,no,26.75,sorteo por grupo de origen
+12862954_3840_2160_24fps.mp4,fuego,fuego: 12862954_3840_2160_24fps,validacion,,incontrolado,incontrolado,ia_v1,no,28.24,sorteo por grupo de origen
+13058053_1920_1080_60fps.mp4,fuego,fuego: 13058053_1920_1080_60fps,validacion,,controlado,controlado,ia_v1,no,92.09,sorteo por grupo de origen
+13228967_3840_2160_30fps.mp4,fuego,fuego: 13228967_3840_2160_30fps,validacion,,incipiente_a_incontrolado,incontrolado,ia_v2,no,21.59,sorteo por grupo de origen
+13236252_3840_2160_24fps.mp4,fuego,fuego: 13236252_3840_2160_24fps,validacion,,controlado,controlado,ia_v2,no,31.11,sorteo por grupo de origen
+13269425_2160_3840_30fps.mp4,fuego,fuego: 13269425_2160_3840_30fps,validacion,,controlado,controlado,ia_v1,no,30.77,sorteo por grupo de origen
+13283131_3840_2160_24fps.mp4,fuego,fuego: 13283131_3840_2160_24fps,validacion,,controlado,controlado,ia_v2,no,18.85,sorteo por grupo de origen
+13526026_2160_3840_30fps.mp4,fuego,fuego: 13526026_2160_3840_30fps,validacion,,controlado,controlado,ia_v1,no,36.04,sorteo por grupo de origen
+13526056_3840_2160_30fps.mp4,fuego,fuego: 13526056_3840_2160_30fps,validacion,,controlado,controlado,ia_v1,no,32.03,sorteo por grupo de origen
+14294874_3840_2160_24fps.mp4,fuego,fuego: 14294874_3840_2160_24fps,validacion,,incontrolado,incontrolado,ia_v1,no,29.74,sorteo por grupo de origen
+14303925_1920_1080_60fps.mp4,fuego,fuego: 14303925_1920_1080_60fps,validacion,,controlado,controlado,ia_v1,no,38.64,sorteo por grupo de origen
+1686572328.mp4,fuego,fuego: 1686572328,validacion,,controlado,controlado,ia_v1,no,46.73,sorteo por grupo de origen
+1688384254.mp4,fuego,fuego: 1688384254,validacion,,controlado,controlado,ia_v1,no,27.84,sorteo por grupo de origen
+1725322201.mp4,fuego,fuego: 1725322201,validacion,,controlado,controlado,ia_v1,no,67.54,sorteo por grupo de origen
+18471085-uhd_3840_2160_24fps.mp4,fuego,fuego: 18471085,validacion,,controlado,controlado,ia_v1,no,38.71,sorteo por grupo de origen
+2003849960.mp4,fuego,fuego: 2003849960,validacion,,controlado,controlado,ia_v2,no,9.72,sorteo por grupo de origen
+2099424839.mp4,fuego,fuego: 2099424839,validacion,,controlado,controlado,ia_v1,no,32.4,sorteo por grupo de origen
+2141713331.mp4,fuego,fuego: 2141713331,validacion,,controlado,controlado,ia_v1,no,32.17,sorteo por grupo de origen
+2271869938.mp4,fuego,fuego: 2271869938,validacion,,controlado,controlado,ia_v1,no,31.33,sorteo por grupo de origen
+2310055998.mp4,fuego,fuego: 2310055998,validacion,,controlado,controlado,ia_v1,no,29.36,sorteo por grupo de origen
+2404423810.mp4,fuego,fuego: 2404423810,validacion,,controlado,controlado,ia_v1,no,29.76,sorteo por grupo de origen
+240_F_1218750731_uijoG8mwanE9uKO4SdHOOvux2t8TuMLF_ST.mp4,fuego,fuego: 240_f_1218750731_uijog8mwane9uko4sdhoovux2t8tumlf_st,validacion,,controlado,controlado,ia_v1,no,46.11,sorteo por grupo de origen
+240_F_1243984746_gQpLPCTtNSGl5scl9A5pnY0A583LVcx0_ST.mp4,fuego,fuego: 240_f_1243984746_gqplpcttnsgl5scl9a5pny0a583lvcx0_st,validacion,,incipiente,incipiente,ia_v2,no,7.34,sorteo por grupo de origen
+240_F_1258398128_wdEHAnXliPx1vRnP44BaQapSW09ozyEQ_ST.mp4,fuego,fuego: 240_f_1258398128_wdehanxlipx1vrnp44baqapsw09ozyeq_st,validacion,,controlado,controlado,ia_v2,no,16.02,sorteo por grupo de origen
+240_F_1670528410_XlsEbjHkmfGeuln5cbplT2e43f0Kl6VL_ST.mp4,fuego,fuego: 240_f_1670528410_xlsebjhkmfgeuln5cbplt2e43f0kl6vl_st,validacion,,incontrolado,incontrolado,ia_v1,no,40.61,sorteo por grupo de origen
+240_F_1684012672_rmM0wLx8MWfgwAFyUnW3KgJufZ27fi5y_ST.mp4,fuego,fuego: 240_f_1684012672_rmm0wlx8mwfgwafyunw3kgjufz27fi5y_st,validacion,,controlado,controlado,ia_v2,no,8.93,sorteo por grupo de origen
+700_F_1298765378_NgYYcN2YbzqhwIBChN9UqEkWGmr52PR8_ST.mp4,fuego,fuego: 700_f_1298765378_ngyycn2ybzqhwibchn9uqekwgmr52pr8_st,validacion,,incontrolado,incontrolado,ia_v2,no,42.91,sorteo por grupo de origen
+700_F_1308879404_Qa2AT58vnV4DZ3d5QumZwIkvmrzshaGo_ST.mp4,fuego,fuego: 700_f_1308879404_qa2at58vnv4dz3d5qumzwikvmrzshago_st,validacion,,controlado,controlado,ia_v2,no,6.3,sorteo por grupo de origen
+700_F_299409659_srZD4py1D8edfsV8gw0lyClArQjnEksw_ST.mp4,fuego,fuego: 700_f_299409659_srzd4py1d8edfsv8gw0lyclarqjneksw_st,validacion,,incontrolado,incontrolado,ia_v2,no,30.3,sorteo por grupo de origen
+700_F_303452063_DBcVYNLVswXUhWRri46wUIq1tKnt1lG5_ST.mp4,fuego,fuego: 700_f_303452063_dbcvynlvswxuhwrri46wuiq1tknt1lg5_st,validacion,,controlado,controlado,ia_v2,no,18.93,sorteo por grupo de origen
+700_F_554170114_8MT8ADwUbsqa9SoMZsAssdcOdP2vtXCS_ST.mp4,fuego,fuego: 700_f_554170114_8mt8adwubsqa9somzsassdcodp2vtxcs_st,validacion,,controlado,controlado,ia_v2,no,23.14,sorteo por grupo de origen
+AUTOBRAND LELYSTAD - BRANDWEER - UITRUK - PRIO 1.mp4,fuego,union: canal dutch firefighters,validacion,,incipiente,incipiente,ia_v2,no,55.5,sorteo por grupo de origen
+BRANDWEER - GROTE BRAND - PRIO1- DUTCH FIREFIGHTERS.mp4,fuego,union: canal dutch firefighters,validacion,,incontrolado,incontrolado,ia_v2,no,35.8,sorteo por grupo de origen
+BRANDWEER - UITRUK - PRIO 1 - 2 Auto totaal uitgebrand!!.mp4,fuego,union: canal dutch firefighters,validacion,,incipiente_a_incontrolado,incontrolado,ia_v2,no,144.2,sorteo por grupo de origen
+BRANDWEER - UITRUK - PRIO 1 - Woningbrand Pannetje op het Vuur.mp4,fuego,union: canal dutch firefighters,validacion,,incipiente,incipiente,ia_v2,no,16.2,sorteo por grupo de origen
+BRANDWEER - UITRUK - UItslaande brand in een havenmeesterwoning op Urk.mp4,fuego,union: canal dutch firefighters,validacion,,incontrolado,incontrolado,ia_v2,no,93.77,sorteo por grupo de origen
+BRANDWEER - WAT KOMT ER ALLEMAAL BIJ KIJKEN - OPLEIDING MANSCHAP A! Dutch Firefighters.mp4,fuego,union: canal dutch firefighters,validacion,,incipiente_a_incontrolado,incontrolado,ia_v2,no,47.27,sorteo por grupo de origen
+DUTCH FIREFIGHTERS  -  Prio 1 containerbrand (uitbreidingsgevaar). 9.mp4,fuego,union: canal dutch firefighters,validacion,,incipiente,incipiente,ia_v2,no,9.1,sorteo por grupo de origen
+DUTCH FIREFIGHTERS  - MANSCHAPPEN IN OPLEIDING ERVAREN WAT HITTE IS. 74.mp4,fuego,union: canal dutch firefighters,validacion,,controlado_a_incontrolado,incontrolado,ia_v2,no,314.8,sorteo por grupo de origen
+DUTCH FIREFIGHTERS -  CLUBHUIS BRAND AF. 15.mp4,fuego,union: canal dutch firefighters,validacion,,incontrolado,incontrolado,ia_v2,no,176.37,sorteo por grupo de origen
+DUTCH FIREFIGHTERS -  GROTE ZWARTE ROOKWOLKEN BOVEN DE STAD! 18.mp4,fuego,union: canal dutch firefighters,validacion,,incontrolado,incontrolado,ia_v2,no,184.57,sorteo por grupo de origen
+DUTCH FIREFIGHTERS -  SAFETY OFFICER - A DAY IN THE LIFE - USA.mp4,fuego,union: canal dutch firefighters,validacion,,incontrolado,incontrolado,ia_v2,no,126.63,sorteo por grupo de origen
+DUTCH FIREFIGHTERS -  VOERTUIGEN IN BRAND IN EEN PARKEERGARAGE  . 86.mp4,fuego,union: canal dutch firefighters,validacion,,incipiente_a_incontrolado,incontrolado,ia_v2,no,84.17,sorteo por grupo de origen
+FULLY INVOLVED CAR FIRE Point Pleasant Boro New Jersey 8_25_22.mp4,fuego,fuego: fully involved car fire point pleasant boro new jersey 8_25_22,validacion,,incontrolado,incontrolado,ia_v2,no,41.9,sorteo por grupo de origen
+ZEER GROTE BRAND - DOOR DE OGEN VAN DE BRANDWEERSTUDENT - NIEUW YOUTUBE KANAAL - DUTCH FIREFIGHTERS.mp4,fuego,union: canal dutch firefighters,validacion,,incontrolado,incontrolado,ia_v2,no,251.73,sorteo por grupo de origen
+videoplayback (10).mp4,fuego,fuego: videoplayback (10),validacion,,incipiente_a_incontrolado,incontrolado,ia_v2,no,208.93,sorteo por grupo de origen
+1805900101_clip_003.mp4,sin_fuego,sin_fuego: 1805900101,validacion,,sin_fuego,sin_fuego,,no,0.53,sorteo por grupo de origen
+1837920465_clip_002.mp4,sin_fuego,sin_fuego: 1837920465,validacion,,sin_fuego,sin_fuego,,no,3.0,sorteo por grupo de origen
+1858682988_clip_002.mp4,sin_fuego,sin_fuego: 1858682988,validacion,,sin_fuego,sin_fuego,,no,5.43,sorteo por grupo de origen
+1889932967_clip_002.mp4,sin_fuego,sin_fuego: 1889932967,validacion,,sin_fuego,sin_fuego,,no,3.33,sorteo por grupo de origen
+1926078486_clip_001.mp4,sin_fuego,sin_fuego: 1926078486,validacion,,sin_fuego,sin_fuego,,no,9.67,sorteo por grupo de origen
+1928797303_clip_002.mp4,sin_fuego,sin_fuego: 1928797303,validacion,,sin_fuego,sin_fuego,,no,7.92,sorteo por grupo de origen
+1939827211_clip_002.mp4,sin_fuego,sin_fuego: 1939827211,validacion,,sin_fuego,sin_fuego,,no,4.41,sorteo por grupo de origen
+1949776649_clip_002.mp4,sin_fuego,sin_fuego: 1949776649,validacion,,sin_fuego,sin_fuego,,no,8.69,sorteo por grupo de origen
+1971515077_clip_002.mp4,sin_fuego,sin_fuego: 1971515077,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1982232516_clip_001.mp4,sin_fuego,sin_fuego: 1982232516,validacion,,sin_fuego,sin_fuego,,no,5.76,sorteo por grupo de origen
+1987783159_clip_002.mp4,sin_fuego,sin_fuego: 1987783159,validacion,,sin_fuego,sin_fuego,,no,9.36,sorteo por grupo de origen
+2030845629_clip_003.mp4,sin_fuego,sin_fuego: 2030845629,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2049627162_clip_004.mp4,sin_fuego,sin_fuego: 2049627162,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2063096044_clip_002.mp4,sin_fuego,sin_fuego: 2063096044,validacion,,sin_fuego,sin_fuego,,no,5.0,sorteo por grupo de origen
+2072870801_clip_001.mp4,sin_fuego,sin_fuego: 2072870801,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2085469671_clip_002.mp4,sin_fuego,sin_fuego: 2085469671,validacion,,sin_fuego,sin_fuego,,no,9.6,sorteo por grupo de origen
+2101700800_clip_001.mp4,sin_fuego,sin_fuego: 2101700800,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2109604692_clip_002.mp4,sin_fuego,sin_fuego: 2109604692,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2189644186_clip_002.mp4,sin_fuego,sin_fuego: 2189644186,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2243676291_clip_001.mp4,sin_fuego,sin_fuego: 2243676291,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2309158029_clip_003.mp4,sin_fuego,sin_fuego: 2309158029,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2315641967_clip_003.mp4,sin_fuego,sin_fuego: 2315641967,validacion,,sin_fuego,sin_fuego,,no,1.6,sorteo por grupo de origen
+2325869394_clip_002.mp4,sin_fuego,sin_fuego: 2325869394,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2579050971_clip_002.mp4,sin_fuego,sin_fuego: 2579050971,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2626019001_clip_002.mp4,sin_fuego,sin_fuego: 2626019001,validacion,,sin_fuego,sin_fuego,,no,2.78,sorteo por grupo de origen
+2646261754_clip_001.mp4,sin_fuego,sin_fuego: 2646261754,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2659573218_clip_001.mp4,sin_fuego,sin_fuego: 2659573218,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+fire18_clip_006.mp4,sin_fuego,sin_fuego: fire18,validacion,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+11964989_3840_2160_24fps.mp4,fuego,fuego: 11964989_3840_2160_24fps,calibracion,,controlado,controlado,ia_v1,si,66.44,sorteo por grupo de origen
+12487581_1920_1080_30fps.mp4,fuego,fuego: 12487581_1920_1080_30fps,calibracion,,incipiente,incipiente,ia_v2,no,28.47,sorteo por grupo de origen
+12858009_3840_2160_24fps.mp4,fuego,fuego: 12858009_3840_2160_24fps,calibracion,,incontrolado,incontrolado,ia_v1,no,45.0,sorteo por grupo de origen
+13228831_3840_2160_30fps.mp4,fuego,fuego: 13228831_3840_2160_30fps,calibracion,,incipiente,incipiente,ia_v1,no,42.38,sorteo por grupo de origen
+13589177_1080_1920_30fps.mp4,fuego,fuego: 13589177_1080_1920_30fps,calibracion,,controlado,controlado,ia_v2,si,15.02,sorteo por grupo de origen
+14108027_1920_1080_60fps.mp4,fuego,fuego: 14108027_1920_1080_60fps,calibracion,,controlado,controlado,ia_v2,si,16.43,sorteo por grupo de origen
+14296616_3840_2160_24fps.mp4,fuego,fuego: 14296616_3840_2160_24fps,calibracion,,incontrolado,incontrolado,ia_v1,no,47.3,sorteo por grupo de origen
+14296770_3840_2160_24fps.mp4,fuego,fuego: 14296770_3840_2160_24fps,calibracion,,incontrolado,incontrolado,ia_v1,no,34.99,sorteo por grupo de origen
+14334657_3840_2160_50fps.mp4,fuego,fuego: 14334657_3840_2160_50fps,calibracion,,controlado,controlado,ia_v2,si,13.84,sorteo por grupo de origen
+1621561169.mp4,fuego,fuego: 1621561169,calibracion,,controlado,controlado,ia_v1,si,33.6,sorteo por grupo de origen
+1686569285.mp4,fuego,fuego: 1686569285,calibracion,,controlado,controlado,ia_v1,si,53.17,sorteo por grupo de origen
+17469008-uhd_3840_2160_30fps.mp4,fuego,fuego: 17469008,calibracion,,controlado,controlado,ia_v1,si,32.07,sorteo por grupo de origen
+1838133792.mp4,fuego,fuego: 1838133792,calibracion,,incontrolado,incontrolado,ia_v1,no,33.93,sorteo por grupo de origen
+1869958439.mp4,fuego,fuego: 1869958439,calibracion,,controlado,controlado,ia_v1,si,29.6,sorteo por grupo de origen
+19043665-hd_1080_1920_30fps.mp4,fuego,fuego: 19043665,calibracion,,controlado,controlado,ia_v2,si,79.0,sorteo por grupo de origen
+1942537629.mp4,fuego,fuego: 1942537629,calibracion,,controlado,controlado,ia_v1,si,38.04,sorteo por grupo de origen
+19909002-uhd_2160_3840_30fps.mp4,fuego,fuego: 19909002,calibracion,,controlado,controlado,ia_v1,si,27.36,sorteo por grupo de origen
+"2 ALARM CHRISTMAS Morning Structure Fire Wall, New Jersey 12_25_20 - Made with Clipchamp.mp4",fuego,"fuego: 2 alarm christmas morning structure fire wall, new jersey 12_25_20",calibracion,,incontrolado,incontrolado,ia_v1,no,92.43,sorteo por grupo de origen
+"2 Alarm Structure Fire Chadwick Beach_Lavallette, NJ 5_6_21.mp4",fuego,"fuego: 2 alarm structure fire chadwick beach_lavallette, nj 5_6_21",calibracion,,incontrolado,incontrolado,ia_v1,no,232.1,sorteo por grupo de origen
+2209954495.mp4,fuego,fuego: 2209954495,calibracion,,controlado,controlado,ia_v1,si,26.76,sorteo por grupo de origen
+2247298317.mp4,fuego,fuego: 2247298317,calibracion,,controlado,controlado,ia_v1,si,31.0,sorteo por grupo de origen
+2354874363.mp4,fuego,fuego: 2354874363,calibracion,,controlado,controlado,ia_v1,si,30.04,sorteo por grupo de origen
+240_F_1257268668_Bn7L8cDEEsbIrZWzdV5E4GwwgLTAEjLJ_ST.mp4,fuego,fuego: 240_f_1257268668_bn7l8cdeesbirzwzdv5e4gwwgltaejlj_st,calibracion,,controlado,controlado,ia_v1,si,27.38,sorteo por grupo de origen
+240_F_1414480677_vjX1k20OAVFdU1H9j8niAt4ZYsJHBMzn_ST.mp4,fuego,fuego: 240_f_1414480677_vjx1k20oavfdu1h9j8niat4zysjhbmzn_st,calibracion,,controlado,controlado,ia_v2,si,15.84,sorteo por grupo de origen
+240_F_1461420225_nEFIkSro7jIx1nSXMTPTlqNR1Am2kDwi_ST.mp4,fuego,fuego: 240_f_1461420225_nefiksro7jix1nsxmtptlqnr1am2kdwi_st,calibracion,,controlado,controlado,ia_v2,si,19.59,sorteo por grupo de origen
+240_F_1564660926_8dA66S6zpdd6dz8gJ0FfTyUMEFdMiXPB_ST.mp4,fuego,fuego: 240_f_1564660926_8da66s6zpdd6dz8gj0fftyumefdmixpb_st,calibracion,,controlado,controlado,ia_v1,si,59.83,sorteo por grupo de origen
+240_F_1719830397_RVM3JFxcKI1oEeKh8v6PcWvtDlFfw6RP_ST.mp4,fuego,fuego: 240_f_1719830397_rvm3jfxcki1oeekh8v6pcwvtdlffw6rp_st,calibracion,,controlado,controlado,ia_v2,si,22.32,sorteo por grupo de origen
+2507808973.mp4,fuego,fuego: 2507808973,calibracion,,controlado,controlado,ia_v1,si,60.0,sorteo por grupo de origen
+2509354628.mp4,fuego,fuego: 2509354628,calibracion,,controlado,controlado,ia_v2,si,18.12,sorteo por grupo de origen
+"3-ALARMS struck for this fire on North Lumber Street in Allentown, Pennsylvania.mp4",fuego,fuego: 3,calibracion,,incontrolado,incontrolado,ia_v2,no,213.6,sorteo por grupo de origen
+700_F_143288189_nYC8Ax1FpRh4jEXQPhStBOPnnHIDJ8hx_ST.mp4,fuego,fuego: 700_f_143288189_nyc8ax1fprh4jexqphstbopnnhidj8hx_st,calibracion,,incontrolado,incontrolado,ia_v2,no,29.26,sorteo por grupo de origen
+700_F_1494533358_eWzr9DLa4nOtv6IhBGmfbIY4rCYf1nur_ST.mp4,fuego,fuego: 700_f_1494533358_ewzr9dla4notv6ihbgmfbiy4rcyf1nur_st,calibracion,,controlado,controlado,ia_v2,si,19.97,sorteo por grupo de origen
+700_F_224012804_ERZxOezGEJonWS35gL82SxbbIUa63fd8_ST.mp4,fuego,fuego: 700_f_224012804_erzxoezgejonws35gl82sxbbiua63fd8_st,calibracion,,controlado,controlado,ia_v2,si,14.48,sorteo por grupo de origen
+700_F_267580326_5aivoDcrmOSWkDdHIrdthI6q0bwt8fK3_ST.mp4,fuego,fuego: 700_f_267580326_5aivodcrmoswkddhirdthi6q0bwt8fk3_st,calibracion,,controlado,controlado,ia_v2,si,18.08,sorteo por grupo de origen
+700_F_303452720_g6OKyDpIzVME6cABMY6Fk8YQMps4uhAQ_ST.mp4,fuego,fuego: 700_f_303452720_g6okydpizvme6cabmy6fk8yqmps4uhaq_st,calibracion,,incontrolado,incontrolado,ia_v2,no,14.31,sorteo por grupo de origen
+Box Alarm Structure Fire (HEAVY FIRE) Tinton Falls New Jersey 3_21_23.mp4,fuego,fuego: box alarm structure fire (heavy fire) tinton falls new jersey 3_21_23,calibracion,,incontrolado,incontrolado,ia_v2,no,262.7,sorteo por grupo de origen
+Brandgefahr durch Notebook-Akkus.mp4,fuego,fuego: brandgefahr durch notebook,calibracion,,incipiente_a_incontrolado,incontrolado,ia_v2,no,52.33,sorteo por grupo de origen
+"Garden State Parkway Fire (MAJOR SHUTDOWN) (ARSON) Brick, New Jersey 1_19_22.mp4",fuego,"fuego: garden state parkway fire (major shutdown) (arson) brick, new jersey 1_19_22",calibracion,,incontrolado,incontrolado,ia_v2,no,337.73,sorteo por grupo de origen
+Jeder dritte Brand entsteht durch Elektrizität.mp4,fuego,fuego: jeder dritte brand entsteht durch elektrizität,calibracion,,incipiente_a_incontrolado,incontrolado,ia_v2,no,21.27,sorteo por grupo de origen
+Large dollhouse burning down.mp4,fuego,fuego: large dollhouse burning down,calibracion,,controlado_a_incontrolado,incontrolado,ia_v2,no,1767.83,sorteo por grupo de origen
+VR Home Fire Demonstration - Sprinklered and Unsprinklered (room with sprinkler first).mp4,fuego,fuego: vr home fire demonstration,calibracion,,incipiente_a_incontrolado,incontrolado,ia_v2,no,131.43,sorteo por grupo de origen
+"WORKING SHED FIRE Point Pleasant Beach, New Jersey 8_26_21.mp4",fuego,"fuego: working shed fire point pleasant beach, new jersey 8_26_21",calibracion,,incipiente,incipiente,ia_v2,no,131.93,sorteo por grupo de origen
+f774d104-07fbfa79.mp4,fuego,fuego: f774d104,calibracion,,controlado,controlado,ia_v2,si,12.48,sorteo por grupo de origen
+fire1.avi,fuego,fuego: fire1,calibracion,,incipiente,incipiente,ia_v2,no,47.2,sorteo por grupo de origen
+videoplayback (4).mp4,fuego,fuego: videoplayback (4),calibracion,,incipiente_a_incontrolado,incontrolado,ia_v2,no,262.27,sorteo por grupo de origen
+1673111603_clip_001.mp4,sin_fuego,sin_fuego: 1673111603,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+1694723977_clip_001.mp4,sin_fuego,sin_fuego: 1694723977,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+1854996165_clip_002.mp4,sin_fuego,sin_fuego: 1854996165,calibracion,,sin_fuego,sin_fuego,,si,6.48,sorteo por grupo de origen
+1875389027_clip_001.mp4,sin_fuego,sin_fuego: 1875389027,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+1898989987_clip_001.mp4,sin_fuego,sin_fuego: 1898989987,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+1900034782_clip_003.mp4,sin_fuego,sin_fuego: 1900034782,calibracion,,sin_fuego,sin_fuego,,si,5.72,sorteo por grupo de origen
+1963220607_clip_001.mp4,sin_fuego,sin_fuego: 1963220607,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+1985886920_clip_001.mp4,sin_fuego,sin_fuego: 1985886920,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+1988242511_clip_001.mp4,sin_fuego,sin_fuego: 1988242511,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+2041260719_clip_001.mp4,sin_fuego,sin_fuego: 2041260719,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+2044498021_clip_003.mp4,sin_fuego,sin_fuego: 2044498021,calibracion,,sin_fuego,sin_fuego,,si,0.79,sorteo por grupo de origen
+2102770094_clip_003.mp4,sin_fuego,sin_fuego: 2102770094,calibracion,,sin_fuego,sin_fuego,,si,7.76,sorteo por grupo de origen
+2146952119_clip_001.mp4,sin_fuego,sin_fuego: 2146952119,calibracion,,sin_fuego,sin_fuego,,si,4.96,sorteo por grupo de origen
+2170734941_clip_001.mp4,sin_fuego,sin_fuego: 2170734941,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+2179898101_clip_001.mp4,sin_fuego,sin_fuego: 2179898101,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+2248965766_clip_001.mp4,sin_fuego,sin_fuego: 2248965766,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+2267741133_clip_001.mp4,sin_fuego,sin_fuego: 2267741133,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+2267768229_clip_004.mp4,sin_fuego,sin_fuego: 2267768229,calibracion,,sin_fuego,sin_fuego,,si,1.62,sorteo por grupo de origen
+2284899745_clip_001.mp4,sin_fuego,sin_fuego: 2284899745,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+2292846696_clip_003.mp4,sin_fuego,sin_fuego: 2292846696,calibracion,,sin_fuego,sin_fuego,,si,3.72,sorteo por grupo de origen
+2369098050_clip_001.mp4,sin_fuego,sin_fuego: 2369098050,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+2390413438_clip_003.mp4,sin_fuego,sin_fuego: 2390413438,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+2508983820_clip_003.mp4,sin_fuego,sin_fuego: 2508983820,calibracion,,sin_fuego,sin_fuego,,si,8.44,sorteo por grupo de origen
+2694410132_clip_001.mp4,sin_fuego,sin_fuego: 2694410132,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+fire21_clip_001.mp4,sin_fuego,sin_fuego: fire21,calibracion,,sin_fuego,sin_fuego,,si,8.3,sorteo por grupo de origen
+fire27_clip_004.mp4,sin_fuego,sin_fuego: fire27,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+fire28_clip_018.mp4,sin_fuego,sin_fuego: fire28,calibracion,,sin_fuego,sin_fuego,,si,10.0,sorteo por grupo de origen
+12021934_3840_2160_30fps.mp4,fuego,fuego: 12021934_3840_2160_30fps,prueba,prueba_humana,controlado,controlado,ia_v1,no,33.23,prueba_humana
+12220604_1080_1920_30fps.mp4,fuego,fuego: 12220604_1080_1920_30fps,prueba,prueba_humana,controlado,controlado,ia_v1,no,28.73,prueba_humana
+12399227_3840_2160_60fps.mp4,fuego,fuego: 12399227_3840_2160_60fps,prueba,prueba_humana,controlado_a_incipiente,incipiente,ia_v1,no,38.22,prueba_humana
+12588006_1920_1080_30fps.mp4,fuego,fuego: 12588006_1920_1080_30fps,prueba,prueba_humana,controlado,controlado,ia_v1,no,33.8,prueba_humana
+12799182_2160_3840_30fps.mp4,fuego,fuego: 12799182_2160_3840_30fps,prueba,prueba_humana,controlado,controlado,ia_v1,no,30.77,prueba_humana
+12857999_3840_2160_24fps.mp4,fuego,fuego: 12857999_3840_2160_24fps,prueba,prueba_humana,incipiente,incipiente,ia_v1,no,27.57,prueba_humana
+12858021_3840_2160_24fps.mp4,fuego,fuego: 12858021_3840_2160_24fps,prueba,prueba_humana,incontrolado,incontrolado,ia_v1,no,49.55,prueba_humana
+12858041_3840_2160_24fps.mp4,fuego,fuego: 12858041_3840_2160_24fps,prueba,prueba_humana,incontrolado,incontrolado,ia_v1,no,82.58,prueba_humana
+13229149_3840_2160_30fps.mp4,fuego,fuego: 13229149_3840_2160_30fps,prueba,prueba_humana,incipiente,incipiente,ia_v1,no,42.44,prueba_humana
+13557193_1920_1080_30fps.mp4,fuego,fuego: 13557193_1920_1080_30fps,prueba,prueba_humana,controlado,controlado,ia_v1,no,31.26,prueba_humana
+13871980_3840_2160_24fps.mp4,fuego,fuego: 13871980_3840_2160_24fps,prueba,prueba_cambios,controlado_a_incontrolado,incontrolado,ia_v2,no,18.69,prueba_cambios
+13877365_1920_1080_30fps.mp4,fuego,fuego: 13877365_1920_1080_30fps,prueba,prueba_humana,controlado,controlado,ia_v1,no,60.86,prueba_humana
+13877383_1920_1080_30fps.mp4,fuego,fuego: 13877383_1920_1080_30fps,prueba,prueba_humana,controlado,controlado,ia_v1,no,85.22,prueba_humana
+1394569023.mp4,fuego,fuego: 1394569023,prueba,prueba_humana,incontrolado,incontrolado,ia_v1,no,26.63,prueba_humana
+14035491_2048_1080_30fps.mp4,fuego,union: 14035491,prueba,prueba_humana,incipiente,incipiente,ia_v1,no,59.86,prueba_humana
+1414182400.mp4,fuego,fuego: 1414182400,prueba,prueba_humana,controlado,controlado,ia_v1,no,62.8,prueba_humana
+14196334_1080_1920_24fps.mp4,fuego,fuego: 14196334_1080_1920_24fps,prueba,prueba_humana,controlado,controlado,ia_v1,no,37.54,prueba_humana
+14234584_1920_1080_25fps.mp4,fuego,fuego: 14234584_1920_1080_25fps,prueba,prueba_humana,controlado,controlado,ia_v1,no,58.56,prueba_humana
+14294952_3840_2160_24fps.mp4,fuego,fuego: 14294952_3840_2160_24fps,prueba,prueba_humana,incontrolado,incontrolado,ia_v1,no,30.32,prueba_humana
+14296658_3840_2160_24fps.mp4,fuego,fuego: 14296658_3840_2160_24fps,prueba,prueba_humana,incontrolado,incontrolado,ia_v1,no,30.53,prueba_humana
+14296810_3840_2160_24fps.mp4,fuego,fuego: 14296810_3840_2160_24fps,prueba,prueba_humana,incontrolado,incontrolado,ia_v1,no,31.45,prueba_humana
+14297190_3840_2160_24fps.mp4,fuego,fuego: 14297190_3840_2160_24fps,prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,25.02,prueba_cambios
+14301887_3840_2160_24fps.mp4,fuego,fuego: 14301887_3840_2160_24fps,prueba,prueba_humana,incontrolado,incontrolado,ia_v1,no,33.49,prueba_humana
+1615312960.mp4,fuego,fuego: 1615312960,prueba,prueba_humana,controlado,controlado,ia_v1,no,31.7,prueba_humana
+1723634695.mp4,fuego,fuego: 1723634695,prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,36.1,prueba_cambios
+17647100-hd_1920_1080_30fps.mp4,fuego,fuego: 17647100,prueba,prueba_humana,controlado,controlado,ia_v1,no,33.07,prueba_humana
+1828453162.mp4,fuego,fuego: 1828453162,prueba,prueba_humana,controlado,controlado,ia_v1,no,26.6,prueba_humana
+18642729-uhd_3840_2160_60fps.mp4,fuego,fuego: 18642729,prueba,prueba_humana,controlado,controlado,ia_v1,no,28.51,prueba_humana
+18679025-uhd_3840_2160_24fps.mp4,fuego,fuego: 18679025,prueba,prueba_humana,controlado,controlado,ia_v1,no,35.58,prueba_humana
+1912593437.mp4,fuego,fuego: 1912593437,prueba,prueba_humana,controlado,controlado,ia_v1,no,27.53,prueba_humana
+1912650782.mp4,fuego,fuego: 1912650782,prueba,prueba_humana,controlado,controlado,ia_v1,no,73.6,prueba_humana
+19151618-hd_1920_1080_30fps.mp4,fuego,fuego: 19151618,prueba,prueba_humana,controlado,controlado,ia_v1,no,29.8,prueba_humana
+19997371-uhd_3840_2160_25fps.mp4,fuego,fuego: 19997371,prueba,prueba_humana,controlado,controlado,ia_v1,no,80.96,prueba_humana
+20248277-hd_1080_1920_30fps.mp4,fuego,fuego: 20248277,prueba,prueba_humana,controlado,controlado,ia_v1,no,40.51,prueba_humana
+2082620373.mp4,fuego,fuego: 2082620373,prueba,prueba_humana,controlado,controlado,ia_v1,no,30.0,prueba_humana
+2169023322.mp4,fuego,fuego: 2169023322,prueba,prueba_humana,controlado,controlado,ia_v1,no,34.68,prueba_humana
+2186966283.mp4,fuego,fuego: 2186966283,prueba,prueba_humana,controlado,controlado,ia_v1,no,31.07,prueba_humana
+2301425156.mp4,fuego,fuego: 2301425156,prueba,prueba_cambios,controlado,controlado,ia_v2,no,25.92,prueba_cambios
+2354872182.mp4,fuego,fuego: 2354872182,prueba,prueba_cambios,controlado,controlado,ia_v2,no,30.24,prueba_cambios
+2354874365.mp4,fuego,fuego: 2354874365,prueba,prueba_humana,controlado,controlado,ia_v1,no,30.16,prueba_humana
+240_F_1517927842_vASaXQOEdI9rVmaicu1bku5e4WOaWI6V_ST.mp4,fuego,fuego: 240_f_1517927842_vasaxqoedi9rvmaicu1bku5e4woawi6v_st,prueba,prueba_humana,controlado,controlado,ia_v1,no,41.71,prueba_humana
+240_F_1690312572_jyJg0E0eagoHHojnkltBotY0t6usFFKT_ST.mp4,fuego,fuego: 240_f_1690312572_jyjg0e0eagohhojnkltboty0t6usffkt_st,prueba,prueba_humana,controlado,controlado,ia_v1,no,28.4,prueba_humana
+240_F_1731074495_p3ZHLCvEldIW9WcHfZKHZogiWPhQ0kGi_ST.mp4,fuego,fuego: 240_f_1731074495_p3zhlcveldiw9wchfzkhzogiwphq0kgi_st,prueba,prueba_humana,incipiente,incipiente,ia_v1,no,59.2,prueba_humana
+240_F_220256858_4CzUzIYhuYzd6XstPkcFqdKlwGwOnfDi_ST.mp4,fuego,fuego: 240_f_220256858_4czuziyhuyzd6xstpkcfqdklwgwonfdi_st,prueba,prueba_humana,incontrolado,incontrolado,ia_v1,no,31.45,prueba_humana
+2513457021.mp4,fuego,fuego: 2513457021,prueba,prueba_humana,controlado,controlado,ia_v1,no,59.99,prueba_humana
+700_F_1193365801_Vq9ZwN74WallFA9y1947785GEEYilGqp_ST.mp4,fuego,fuego: 700_f_1193365801_vq9zwn74wallfa9y1947785geeyilgqp_st,prueba,prueba_cambios,incontrolado,incontrolado,ia_v2,no,13.54,prueba_cambios
+700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,fuego,fuego: 700_f_124207480_7ufkxkxrfnslhpxwevbvdbahs5ijrwjo_st,prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,6.61,prueba_cambios
+700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,fuego,fuego: 700_f_132088641_urj7fxf00koatxv1mngjebrqcxsmgfw1_st,prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,13.2,prueba_cambios
+700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,fuego,fuego: 700_f_1633820181_qwinmqtw57mmb3otqvnqutks6ymsbrhg_st,prueba,prueba_cambios,controlado_a_incipiente,incipiente,ia_v2,no,46.38,prueba_cambios
+700_F_199061911_W4h9LVdrne9VAzuLYrxuZAA68JuuaXHw_ST.mp4,fuego,fuego: 700_f_199061911_w4h9lvdrne9vazulyrxuzaa68juuaxhw_st,prueba,prueba_cambios,controlado,controlado,ia_v2,no,40.64,prueba_cambios
+April 2016 - Fire Investigation 1B - Milpitas CA.mp4,fuego,union: fire investigation milpitas,prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,137.47,prueba_cambios
+Box Alarm Structure Fire Bradley Beach 3_19_23.mp4,fuego,fuego: box alarm structure fire bradley beach 3_19_23,prueba,prueba_cambios,incipiente,incipiente,ia_v2,no,149.23,prueba_cambios
+Brandgefahren im Haushalt.mp4,fuego,fuego: brandgefahren im haushalt,prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,68.5,prueba_cambios
+Brannutvikling.mp4,fuego,fuego: brannutvikling,prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,148.93,prueba_cambios
+Brennende Akkus.mp4,fuego,fuego: brennende akkus,prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,83.6,prueba_cambios
+Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,fuego,fuego: brennender christbaum _ weihnachtsbaum → so schnell kann gehen,prueba,prueba_cambios,controlado_a_incontrolado,incontrolado,ia_v2,no,138.03,prueba_cambios
+Die Provinzial klärt auf – Brandursache Fettbrand.mp4,fuego,union: klart auf,prueba,prueba_cambios,controlado_a_incontrolado,incontrolado,ia_v2,no,129.0,prueba_cambios
+Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,fuego,union: fire investigation milpitas,prueba,prueba_cambios,controlado_a_incontrolado,incontrolado,ia_v2,no,152.1,prueba_cambios
+Har du en fungerande brandvarnare_.mp4,fuego,fuego: har du en fungerande brandvarnare_,prueba,prueba_cambios,controlado_a_incipiente,incipiente,ia_v2,no,28.5,prueba_cambios
+Launch of Fire Investigations by BRE and FIUK.mp4,fuego,fuego: launch of fire investigations by bre and fiuk,prueba,prueba_cambios,controlado_a_incontrolado,incontrolado,ia_v2,no,220.37,prueba_cambios
+VID_20230612_142839.mp4,fuego,fuego: vid_20230612_142839,prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,37.87,prueba_cambios
+Weihnachtsbaumbrände - sind vermeidbar.mp4,fuego,fuego: weihnachtsbaumbrände,prueba,prueba_cambios,controlado_a_incontrolado,incontrolado,ia_v2,no,182.53,prueba_cambios
+What Type Of Smoke Alarm Is Best For Your Home_.mp4,fuego,fuego: what type of smoke alarm is best for your home_,prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,11.57,prueba_cambios
+Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,fuego,fuego: wooden model ship battleship jean bart burning and sinking,prueba,prueba_cambios,controlado_a_incipiente,incipiente,ia_v2,no,363.87,prueba_cambios
+videoplayback (1).mp4,fuego,fuego: videoplayback (1),prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,259.7,prueba_cambios
+videoplayback (12).mp4,fuego,fuego: videoplayback (12),prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,184.83,prueba_cambios
+videoplayback (15).mp4,fuego,fuego: videoplayback (15),prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,143.53,prueba_cambios
+videoplayback (17).mp4,fuego,fuego: videoplayback (17),prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,53.03,prueba_cambios
+videoplayback (3).mp4,fuego,fuego: videoplayback (3),prueba,prueba_cambios,controlado_a_incipiente,incipiente,ia_v2,no,197.0,prueba_cambios
+videoplayback1.mp4,fuego,fuego: videoplayback1,prueba,prueba_cambios,incipiente_a_incontrolado,incontrolado,ia_v2,no,242.37,prueba_cambios
+1472777548_clip_002.mp4,sin_fuego,sin_fuego: 1472777548,prueba,,sin_fuego,sin_fuego,,no,5.25,sorteo por grupo de origen
+1574509648_clip_001.mp4,sin_fuego,sin_fuego: 1574509648,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1678575757_clip_001.mp4,sin_fuego,sin_fuego: 1678575757,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1694496253_clip_002.mp4,sin_fuego,sin_fuego: 1694496253,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1752004413_clip_001.mp4,sin_fuego,sin_fuego: 1752004413,prueba,,sin_fuego,sin_fuego,,no,5.34,sorteo por grupo de origen
+1775016078_clip_001.mp4,sin_fuego,sin_fuego: 1775016078,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1811207949_clip_002.mp4,sin_fuego,sin_fuego: 1811207949,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1812355101_clip_002.mp4,sin_fuego,sin_fuego: 1812355101,prueba,,sin_fuego,sin_fuego,,no,0.69,sorteo por grupo de origen
+1821074717_clip_002.mp4,sin_fuego,sin_fuego: 1821074717,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1829848176_clip_001.mp4,sin_fuego,sin_fuego: 1829848176,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1873108433_clip_002.mp4,sin_fuego,sin_fuego: 1873108433,prueba,,sin_fuego,sin_fuego,,no,5.61,sorteo por grupo de origen
+1886008150_clip_001.mp4,sin_fuego,sin_fuego: 1886008150,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1946578184_clip_001.mp4,sin_fuego,sin_fuego: 1946578184,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+1947818681_clip_003.mp4,sin_fuego,sin_fuego: 1947818681,prueba,,sin_fuego,sin_fuego,,no,4.24,sorteo por grupo de origen
+1949778887_clip_003.mp4,sin_fuego,sin_fuego: 1949778887,prueba,,sin_fuego,sin_fuego,,no,6.0,sorteo por grupo de origen
+1985318571_clip_001.mp4,sin_fuego,sin_fuego: 1985318571,prueba,,sin_fuego,sin_fuego,,no,6.24,sorteo por grupo de origen
+2009788448_clip_002.mp4,sin_fuego,sin_fuego: 2009788448,prueba,,sin_fuego,sin_fuego,,no,9.84,sorteo por grupo de origen
+2082664874_clip_003.mp4,sin_fuego,sin_fuego: 2082664874,prueba,,sin_fuego,sin_fuego,,no,2.72,sorteo por grupo de origen
+2084180921_clip_001.mp4,sin_fuego,sin_fuego: 2084180921,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2096400209_clip_002.mp4,sin_fuego,sin_fuego: 2096400209,prueba,,sin_fuego,sin_fuego,,no,9.79,sorteo por grupo de origen
+2098177791_clip_003.mp4,sin_fuego,sin_fuego: 2098177791,prueba,,sin_fuego,sin_fuego,,no,1.92,sorteo por grupo de origen
+2169895657_clip_001.mp4,sin_fuego,sin_fuego: 2169895657,prueba,,sin_fuego,sin_fuego,,no,9.83,sorteo por grupo de origen
+2236155513_clip_003.mp4,sin_fuego,sin_fuego: 2236155513,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2304171822_clip_003.mp4,sin_fuego,sin_fuego: 2304171822,prueba,,sin_fuego,sin_fuego,,no,6.66,sorteo por grupo de origen
+2348799771_clip_002.mp4,sin_fuego,sin_fuego: 2348799771,prueba,,sin_fuego,sin_fuego,,no,9.96,sorteo por grupo de origen
+2394951246_clip_001.mp4,sin_fuego,sin_fuego: 2394951246,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2498257180_clip_001.mp4,sin_fuego,sin_fuego: 2498257180,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2622440344_clip_001.mp4,sin_fuego,sin_fuego: 2622440344,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+2682086818_clip_002.mp4,sin_fuego,sin_fuego: 2682086818,prueba,,sin_fuego,sin_fuego,,no,0.17,sorteo por grupo de origen
+fire15_clip_002.mp4,sin_fuego,sin_fuego: fire15,prueba,,sin_fuego,sin_fuego,,no,6.2,sorteo por grupo de origen
+fire19_clip_001.mp4,sin_fuego,sin_fuego: fire19,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+fire22_clip_013.mp4,sin_fuego,sin_fuego: fire22,prueba,,sin_fuego,sin_fuego,,no,10.0,sorteo por grupo de origen
+14035541_2048_1080_30fps.mp4,fuego,fuego: 14035541_2048_1080_30fps,fuera,,descartado,descartado,ia_v1,no,59.63,descartado por la ia
+14296658_3840_2160_24fps - Copy.mp4,fuego,fuego: 14296658_3840_2160_24fps,fuera,,incontrolado,incontrolado,ia_v1,no,30.53,duplicado exacto (excluidos.csv)
+19539603-hd_1920_1080_30fps.mp4,fuego,fuego: 19539603,fuera,,descartado,descartado,ia_v1,no,51.43,descartado por la ia
+2016 April - Fire Investigation 1B - Milpitas CA.mp4,fuego,union: fire investigation milpitas,fuera,,incipiente_a_incontrolado,incontrolado,ia_v2,no,277.97,mismo origen que un video de prueba
+240_F_1127423393_SkYvCwswz8CN5OGhVUABadvMxKqWBRg9_ST.mp4,fuego,fuego: 240_f_1127423393_skyvcwswz8cn5oghvuabadvmxkqwbrg9_st,fuera,,descartado,descartado,ia_v2,no,30.0,descartado por la ia
+240_F_1564726580_ud86crnXW8Ye7CsKMejMN9XEwAae9ygL_ST.mp4,fuego,union: 14035491,fuera,,controlado,controlado,ia_v1,no,59.86,mismo origen que un video de prueba
+700_F_1623872802_4LtdWtd26rIt1HXjOpyqheHprGXjcJ6X_ST.mp4,fuego,fuego: 700_f_1623872802_4ltdwtd26rit1hxjopyqhehprgxjcj6x_st,fuera,,descartado,descartado,ia_v2,no,7.97,descartado por la ia
+Die Hamburger Feuerkasse klärt auf – Brandgefahr E-Zigaretten.mp4,fuego,union: klart auf,fuera,,incipiente,incipiente,ia_v2,no,23.17,mismo origen que un video de prueba
+Die Hamburger Feuerkasse klärt auf – Brandgefahr Hoverboards.mp4,fuego,union: klart auf,fuera,,incipiente_a_incontrolado,incontrolado,ia_v2,no,55.77,mismo origen que un video de prueba
+Living room fires with and without a fire sprinkler (Timecode).mp4,fuego,fuego: living room fires with and without a fire sprinkler (timecode),fuera,,descartado,descartado,ia_v2,no,107.93,descartado por la ia
+March 2016 - Fire Investigation 1A - Milpitas CA.mp4,fuego,union: fire investigation milpitas,fuera,,incipiente_a_incontrolado,incontrolado,ia_v2,no,234.5,mismo origen que un video de prueba
+videoplayback (5).mp4,fuego,fuego: videoplayback (5),fuera,,descartado,descartado,ia_v2,no,111.8,descartado por la ia

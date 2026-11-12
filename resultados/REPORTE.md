@@ -1201,3 +1201,155 @@ Error = instante de la IA menos instante del humano.
 - `resultados/validacion_cambios.md` (nuevo).
 - `etiquetas.csv` (30 filas nuevas del anotador `aleCa_cambios`).
 - `resultados/tiempos_etiquetado.csv` (nuevo, lo escribe `etiquetar_v3.py`).
+
+## Fase B del 80 %, paso 8: revision de las diferencias entre el humano y la IA (2026-11-12)
+
+Fecha: 2026-11-12. Rama: `avance-80`. Script nuevo: `revisar_cambios.py`. Script modificado a pedido del usuario: `etiquetar_v3.py` (opcion `--revisar`).
+
+### Que se hizo
+
+- `revisar_cambios.py` compara las etiquetas de `aleCa_cambios` con `resultados/etiquetas_ia_v2.csv` en los 29 videos no descartados de `resultados/prueba_cambios.csv` y genera una hoja de comparacion por cada video con alguna diferencia: nivel inicial distinto, un cambio que marca solo uno, o un instante con mas de 5 s de diferencia (`--umbral_s 5`).
+- Cada hoja lleva arriba el nivel inicial, los instantes y el tramo util de cada uno y el motivo de la IA, y una fila de 4 fotogramas por diferencia, cada uno con su tiempo real y quien marco ese instante:
+  - instante que difiere: instante del humano, instante de la IA y 2 puntos intermedios;
+  - cambio que marca solo uno: un punto antes, el instante marcado, un punto despues y el final del tramo util;
+  - nivel inicial distinto: 4 fotogramas desde el inicio del tramo util comun hasta el primer cambio marcado por cualquiera de los dos.
+- `etiquetar_v3.py --revisar`: modo de solo lectura. Muestra en la linea de tiempo dos bandas (humano e IA) con sus marcas en colores distintos y una leyenda arriba con los niveles, los instantes y el motivo de la IA. No llama a `guardar_etiquetas` ni a `registrar_tiempo`; las teclas de etiquetar y de guardar no hacen nada. Tecla nueva `m`: ir a la siguiente marca. Solo abre videos que el anotador ya etiqueto, para no romper el etiquetado a ciegas. No se combina con `--ciego`.
+- **No se modifico ninguna etiqueta.** SHA-256 de `etiquetas.csv`, `resultados/etiquetas_ia_v2.csv`, `resultados/etiquetas_ia.csv` y `resultados/tiempos_etiquetado.csv` identicos antes y despues.
+- **El modo `--ciego` de `etiquetar_v3.py` no cambio de comportamiento.** Se corrio la misma sesion simulada (42 teclas y clics sobre 3 videos, con las funciones de ventana de OpenCV reemplazadas) en la version anterior y en la nueva: las 42 imagenes dibujadas son identicas pixel a pixel y las filas escritas en las etiquetas y en los tiempos son iguales. En el codigo de ese modo solo cambio la organizacion: el dibujo del fotograma, de la banda de niveles y de los segundos paso a las funciones `cuadro`, `banda` y `segundos`, y la busqueda de videos a `buscar_videos`.
+
+### Comandos
+
+```
+python revisar_cambios.py
+python etiquetar_v3.py --anotador aleCa_cambios --lista resultados/revision_cambios.csv --revisar
+```
+
+### Numeros
+
+- Videos comparados: 29 (1 descartado por el humano). Con alguna diferencia: 23. Coinciden en todo: 6.
+- Con un instante que difiere mas de 5 s: 14 videos (14 instantes). Solo con cambios marcados por uno: 8. Solo con nivel inicial distinto: 1.
+- Nivel inicial distinto: 8 videos. Cambios marcados por uno solo: 14.
+- La tabla completa, ordenada por la diferencia mas grande, esta en `resultados/revision_cambios.md`.
+
+### Decisiones
+
+- Las hojas no se versionan ni se publican: llevan fotogramas con marcas de agua y 4 videos `700_F_*`.
+- Las etiquetas humanas no se modifican despues de la comparacion. La revision sirve para entender la diferencia de criterio, no para corregir etiquetas.
+
+### Archivos
+
+- `revisar_cambios.py` (nuevo).
+- `etiquetar_v3.py` (opcion `--revisar`).
+- `resultados/revision_cambios.md` (tabla de los 29 videos).
+- `resultados/revision_cambios.csv` (los 23 videos con diferencias, en orden; sirve como `--lista`).
+- `runs_fuego/revision_cambios/` (23 hojas, no versionadas).
+
+## Fase B del 80 %, paso 8: nivel segundo a segundo (2026-11-12)
+
+- `validar_cambios.py` tiene una seccion nueva (6) en `resultados/validacion_cambios.md`; las secciones 1 a 5 quedaron identicas. Parametros nuevos: `--paso_s 1` y `--margen_s 5`.
+- Tramo util comun: del mayor de los dos inicios al menor de los dos fines; un inicio o fin vacio es el inicio o el fin del video.
+- **2 911 s comparados en 29 videos. Mismo nivel en 1 707 s (58.6 %). Kappa ponderado lineal por segundo: 0.426.** Las muestras de un mismo video no son independientes.
+- La IA pone un nivel mayor que el humano en 1 101 s (37.8 %) y un nivel menor en 103 s (3.5 %).
+- Acuerdo por video: media 62.1 %, mediana 64.3 %; 5 de 29 videos con 90 % o mas.
+
+| humano / IA (s) | controlado | incipiente | incontrolado | total |
+|---|---|---|---|---|
+| controlado | 220 | 289 | 0 | 509 |
+| incipiente | 89 | 951 | 812 | 1852 |
+| incontrolado | 0 | 14 | 536 | 550 |
+| total | 309 | 1254 | 1348 | 2911 |
+
+- **De las 8 diferencias de nivel inicial, 0 se explican porque los tramos utiles empiezan en instantes distintos.** En el inicio del tramo comun los dos niveles siguen siendo distintos en las 8. En 1 (la tostadora) coinciden antes de 5 s; en `Brennender Christbaum` a los 5.1 s; en 1 no coinciden nunca.
+- `resultados/revision_cambios_notas.csv` creado con `n, video, causa, nota` (23 filas, `causa` y `nota` vacias). Lo llena el usuario: A = la IA se adelanto, B = el humano se atraso, C = ambiguo, D = no es una diferencia real.
+- `.codex/` ya estaba en `.gitignore`.
+
+## Fase C del 80 %, pasos 9 a 11: riesgo continuo, particion por origen y secuencias (2026-11-12)
+
+Fecha: 2026-11-12. Rama: `avance-80`. Scripts nuevos: `casi_duplicados.py`, `particion.py`, `secuencias.py`.
+
+### Decisiones del usuario (2026-11-12)
+
+- Entrenamiento, validacion y calibracion usan solo etiquetas de la IA; el usuario no etiqueta mas videos. Las tablas de metas llevan la columna `fuente` (`ia`, `humano` o `dataset` para los videos sin fuego).
+- En la prueba, todas las metricas se reportan contra las dos referencias (humano e IA). Para el tiempo de alerta temprana la referencia principal es la IA, porque los instantes humanos tienden a ser tardios.
+- Riesgo continuo (paso 9): escalon 0 (controlado o sin fuego), 0.5 (incipiente), 1 (incontrolado).
+- 15 % de los 215 videos sin fuego reservados para la prueba, por origen, semilla 42.
+- Las trayectorias heredan el nivel de la escena. Las detecciones falsas en videos sin fuego son controlado, riesgo 0 y tau enmascarado.
+- Tramo util: un inicio o un fin vacio significa el inicio o el fin del video.
+
+### Paso 10: particion por origen
+
+- **Grupos de origen:** origen de `metadatos_videos.csv` normalizado (sin espacios sobrantes, en minusculas) mas las uniones manuales de `resultados/particion/uniones.csv` (22 videos en 4 grupos):
+  - serie Fire Investigation de Milpitas (4 videos, 2 de ellos en la prueba);
+  - `14035491` (prueba) y `240_F_1564726580` (mismo clip con otra resolucion y marca de agua);
+  - serie "klart auf" (1 en la prueba y 2 fuera);
+  - canal Dutch Firefighters (13 videos, ninguno en la prueba).
+- **Casi duplicados:** `casi_duplicados.py` compara las fotos de las tiras (`tiras/` y `tiras_v2/`) con una huella de 64 bits. De 27 pares candidatos, revisados a ojo por Claude, solo 2 son reales: la copia ya excluida y el par de `14035491`. Los demas son escenas distintas con fondo oscuro. Solo cubre los videos de fuego.
+- **Etiquetas de la IA:** `ia_v2` donde existe y `ia_v1` en los videos que no pasaron por la segunda fase (columna `version_ia`).
+- **Prueba:** los 40 de `prueba_humana.csv`, los 30 de `prueba_cambios.csv` y 32 sin fuego.
+- **Fuera de todo conjunto (12):** 6 descartados por la IA, 1 duplicado exacto y 5 del mismo origen que un video de prueba.
+- **Resto:** sorteo por grupo de origen dentro de cada tipo, 70 / 15 / 15, del tipo mas escaso al mas comun, asignando cada grupo al conjunto con mas deficit.
+- Comprobado: ningun grupo de origen esta en dos conjuntos.
+
+| Tipo segun la IA | Entrenamiento | Validacion | Calibracion | Prueba | Fuera |
+|---|---|---|---|---|---|
+| sin fuego | 128 | 28 | 27 | 32 | 0 |
+| controlado | 116 | 25 | 25 | 30 | 1 |
+| incipiente | 20 | 4 | 4 | 5 | 1 |
+| incontrolado | 54 | 12 | 11 | 9 | 1 |
+| controlado a incipiente | 0 | 0 | 0 | 5 | 0 |
+| controlado a incontrolado | 3 | 1 | 1 | 6 | 0 |
+| incipiente a incontrolado | 22 | 5 | 4 | 15 | 3 |
+| descartado | 0 | 0 | 0 | 0 | 6 |
+| total | 343 | 75 | 72 | 102 | 12 |
+
+- En calibracion cuentan para el umbral conformal 52 videos (27 sin fuego y 25 controlados), columna `calibra_umbral`.
+- `metas.csv`: 662 filas (377 `ia`, 215 `dataset`, 70 `humano`). Los 70 de prueba tienen dos filas. La columna `valida` dice si la fila humana valida cambios (los 30) o solo el nivel inicial (los 40).
+
+### Paso 11: secuencias por trayectoria
+
+- Una secuencia por video, tramo y trayectoria de fuego, desde `runs_fuego/descriptores_v2_noche/descriptores.csv`.
+- Por muestra: `x` (13 descriptores normalizados), `c` (contexto `s_k, rot, tx, ty, inliers, dt` normalizado), `dt` y `t` sin normalizar, `nivel`, `riesgo`, `mascara` (dentro del tramo util), `tau` en segundos y `tau_mascara`.
+- `tau_mascara`: 0 sin tau; 1 el video pasa a incontrolado (reglas por tramo de `cortes.estado_tramos`); 2 el video empieza en incontrolado (tau 0). Asi se puede entrenar con o sin el caso 2.
+- En la prueba van ademas `nivel_humano`, `riesgo_humano`, `mascara_humano`, `tau_humano`, `tau_mascara_humano` y `seq_ref_humano` (1 solo nivel inicial, 2 cambios, 3 descartado por el humano, 4 clase del dataset).
+- Normalizacion (recorte p1 y p99 y estandarizacion) ajustada solo con entrenamiento: 323 877 filas de 214 videos.
+- Se descartan las trayectorias de menos de 10 muestras (`--min_muestras 10`, 1 s), igual que el criterio de d13.
+- Ventanas de 300 muestras con paso de 150 (`ventanas`: secuencia, inicio, fin); las secuencias completas tambien quedan guardadas.
+
+| Conjunto | Videos | Con trayectorias | Trayectorias | Cortas descartadas | Muestras | Ventanas |
+|---|---|---|---|---|---|---|
+| entrenamiento | 343 | 214 | 5 135 | 6 153 | 323 877 | 5 486 |
+| validacion | 75 | 48 | 683 | 1 438 | 35 545 | 713 |
+| calibracion | 72 | 45 | 792 | 1 017 | 71 179 | 927 |
+| prueba | 102 | 68 | 1 150 | 1 176 | 76 877 | 1 207 |
+
+| Conjunto | Escena controlado (s) | Escena incipiente (s) | Escena incontrolado (s) | Videos que pasan a incontrolado | Muestras controlado | Muestras incipiente | Muestras incontrolado |
+|---|---|---|---|---|---|---|---|
+| entrenamiento | 4 134 | 2 255 | 11 026 | 25 | 50 338 | 29 313 | 237 236 |
+| validacion | 1 031 | 304 | 1 420 | 6 | 12 988 | 3 129 | 19 256 |
+| calibracion | 936 | 1 056 | 2 524 | 5 | 11 926 | 12 865 | 45 834 |
+| prueba | 1 462 | 1 494 | 1 745 | 21 | 15 256 | 24 573 | 36 236 |
+
+### Comandos
+
+```
+python casi_duplicados.py
+python particion.py
+python secuencias.py
+```
+
+### Limitaciones que se declaran
+
+- **Desbalance:** en entrenamiento el 75 % de las muestras de trayectoria son de incontrolado (los incendios grandes tienen muchas trayectorias) y solo 25 videos pasan a incontrolado. Hay que ponderar la perdida o muestrear por video.
+- **No hay ningun video de controlado a incipiente fuera de la prueba:** ese cambio no se ve en entrenamiento.
+- Solo 7 videos sin fuego tienen trayectorias de 1 s o mas (5 en entrenamiento, 1 en validacion, 1 en calibracion, 0 en la prueba). El FPR por video se mide igual: un video sin trayectorias tiene riesgo 0.
+- En la prueba, las metricas temporales contra el humano salen solo de los 29 videos con cambios validados; los 40 de `prueba_humana.csv` solo validan el nivel inicial.
+- Las etiquetas son por escena y todas las trayectorias las heredan.
+- La union de series y canales es manual y conservadora; `casi_duplicados.py` no cubre los videos sin fuego.
+
+### Archivos
+
+- `casi_duplicados.py`, `particion.py`, `secuencias.py` (nuevos); `validar_cambios.py` (seccion 6).
+- `resultados/particion/`: `uniones.csv`, `casi_duplicados.csv`, `origenes.csv`, `particion.csv`, `metas.csv`, `resumen.md`.
+- `resultados/secuencias/`: `indice.csv`, `videos.csv`, `resumen.md`, `normalizacion.json`, `normalizacion_contexto.json`.
+- `runs_fuego/secuencias/`: `entrenamiento.npz`, `validacion.npz`, `calibracion.npz`, `prueba.npz` (17 MB, no versionados).
+- `resultados/revision_cambios_notas.csv` (lo llena el usuario).
