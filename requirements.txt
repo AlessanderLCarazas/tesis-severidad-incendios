@@ -7,3 +7,4 @@ numpy==1.26.4
 matplotlib==3.9.2
 Pillow==10.1.0
 lap==0.5.14
+ncps==1.0.1

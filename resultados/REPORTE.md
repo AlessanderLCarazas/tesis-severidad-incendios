@@ -1353,3 +1353,99 @@ python secuencias.py
 - `resultados/secuencias/`: `indice.csv`, `videos.csv`, `resumen.md`, `normalizacion.json`, `normalizacion_contexto.json`.
 - `runs_fuego/secuencias/`: `entrenamiento.npz`, `validacion.npz`, `calibracion.npz`, `prueba.npz` (17 MB, no versionados).
 - `resultados/revision_cambios_notas.csv` (lo llena el usuario).
+
+## Fase D del 80 %, pasos 12 a 14: compuerta + CfC, GRU y LSTM (2026-11-12)
+
+Fecha: 2026-11-12. Rama: `avance-80`. Scripts nuevos: `modelo_temporal.py`, `entrenar_temporal.py`, `figura_modelos.py`, `hojas_casi_duplicados.py`. **El conjunto de prueba no se uso.**
+
+### Decisiones del usuario (2026-11-12)
+
+- Aceptadas las decisiones de la fase C (etiquetas v1 donde no hay v2, uniones manuales, descarte de trayectorias de menos de 1 s, reparto 70/15/15 de los videos sin fuego, ventanas de 300 con paso 150).
+- Los videos que empiezan en incontrolado (`tau_mascara = 2`) no entran en la perdida de tau; si en las de nivel y riesgo.
+
+### Que se hizo
+
+- **Hojas de casi duplicados:** `hojas_casi_duplicados.py` arma una hoja por cada uno de los 27 pares candidatos en `runs_fuego/casi_duplicados/` (6 fotos de cada video, uno sobre otro, e `indice.csv`), para que el usuario confirme la revision.
+- **Normalizacion:** las estadisticas de recorte y estandarizacion de los descriptores y del contexto las calcula `secuencias.py` solo con el entrenamiento de la particion nueva (323 877 filas de 214 videos; `resultados/secuencias/normalizacion.json` y `normalizacion_contexto.json`). No venian de la fase A: alli solo se hizo un ensayo y no quedo ningun archivo de estadisticas.
+- **Modelo (`modelo_temporal.py`):**
+  - compuerta `u_tilde = u * sigmoid(W c + b)`, con `c = [s_k, rot, tx, ty, inliers, dt_k]` normalizado;
+  - CfC de 64 unidades con la celda `ncps.torch.CfCCell` (valores por defecto de `ncps`: una capa de 128 en el backbone);
+  - tres salidas: CORAL con K = 3 (un peso compartido y 2 sesgos), riesgo con sigmoide y entropia cruzada binaria contra 0 / 0.5 / 1, y `log(1 + tau)` con Huber donde `tau_mascara = 1`;
+  - ponderacion de Kendall: suma de `exp(-s_i) L_i + s_i` con tres `s_i` aprendidos.
+- **Comparacion:** GRU y LSTM de 64 unidades con la misma compuerta, las mismas salidas y perdidas, y el intervalo de tiempo como entrada extra.
+- **Dos diferencias con el pedido, que se declaran:**
+  - `ncps.torch.CfC` (version 1.0.1) falla con lotes de mas de una secuencia cuando se le pasan `timespans` (aplana el intervalo a un vector que no coincide con las 64 unidades). Se usa su celda `CfCCell` con el bucle temporal propio; el calculo es el mismo.
+  - El intervalo que recibe el modelo (`timespans` en el CfC, entrada extra en GRU y LSTM) es el tiempo real entre dos muestras consecutivas de la trayectoria. En el 96.1 % de los pasos es igual a `dt_k`; en el 3.9 % la trayectoria no fue detectada en algun fotograma y el intervalo es mayor (hasta 3.2 s).
+- **Muestreo:** cada lote son 32 ventanas; para cada una se elige un video al azar con la misma probabilidad (214 videos de entrenamiento con trayectorias) y despues una ventana de ese video. Una epoca son 172 lotes.
+- **Pesos de la perdida de nivel:** `1 / (3 f_k)` con la frecuencia esperada de cada nivel bajo ese muestreo (media 1 sobre las muestras) y tope 5.
+
+| Nivel | Frecuencia con el muestreo por video | Peso |
+|---|---|---|
+| controlado | 0.567 | 0.587 |
+| incipiente | 0.113 | 2.944 |
+| incontrolado | 0.319 | 1.044 |
+
+- **Entrenamiento:** semilla 42, AdamW (1e-3, weight decay 1e-4), recorte de gradiente 1.0, hasta 60 epocas, paciencia 10.
+- **Eleccion de la mejor epoca:** F1 macro del nivel de escena por segundo en validacion, con las secuencias completas. El nivel de la escena en un segundo es el maximo de las trayectorias con muestras en ese segundo; si no hay ninguna trayectoria, el sistema da controlado. Solo cuentan los 47 videos de fuego de validacion, dentro del tramo util (2 757 s).
+
+### Comandos
+
+```
+python hojas_casi_duplicados.py
+python entrenar_temporal.py --modelo gru
+python entrenar_temporal.py --modelo lstm
+python entrenar_temporal.py --modelo cfc
+python figura_modelos.py
+```
+
+### Numeros (validacion, mejor epoca de cada modelo, una sola semilla)
+
+| Modelo | Parametros | s por epoca | Epocas corridas | Mejor epoca | F1 macro escena | Exactitud escena | F1 macro muestra | Exactitud muestra | MAE de tau (s) |
+|---|---|---|---|---|---|---|---|---|---|
+| CfC | 43 298 | 96.1 | 18 | 8 | 0.513 | 0.610 | 0.546 | 0.657 | 49.9 |
+| GRU | 15 650 | 3.0 | 16 | 6 | 0.516 | 0.615 | 0.539 | 0.667 | 32.6 |
+| LSTM | 20 770 | 3.0 | 26 | 16 | 0.526 | 0.567 | 0.535 | 0.591 | 36.6 |
+
+- El MAE de tau se mide en las muestras de trayectoria anteriores al cambio a incontrolado (6 videos de validacion).
+- F1 por nivel de escena (controlado, incipiente, incontrolado): CfC 0.637, 0.169, 0.732; GRU 0.643, 0.161, 0.744; LSTM 0.591, 0.303, 0.683.
+
+Matriz de confusion por segundo de escena (filas: etiqueta de la IA; columnas: modelo):
+
+| Modelo | Real | controlado | incipiente | incontrolado |
+|---|---|---|---|---|
+| CfC | controlado | 746 | 226 | 61 |
+| CfC | incipiente | 214 | 68 | 21 |
+| CfC | incontrolado | 348 | 206 | 867 |
+| GRU | controlado | 763 | 231 | 39 |
+| GRU | incipiente | 234 | 65 | 4 |
+| GRU | incontrolado | 345 | 209 | 867 |
+| LSTM | controlado | 608 | 361 | 64 |
+| LSTM | incipiente | 116 | 181 | 6 |
+| LSTM | incontrolado | 300 | 348 | 773 |
+
+### Lectura de los resultados
+
+- **Los tres modelos quedan empatados y con un resultado bajo: F1 macro de escena entre 0.51 y 0.53.** La diferencia entre ellos (0.013) es menor que la variacion de un mismo modelo entre epocas (de 0.46 a 0.53), con una sola semilla y 47 videos. No se puede decir que uno sea mejor.
+- **El F1 de validacion no mejora con el entrenamiento.** La perdida de entrenamiento baja (de 2.3 a 0.6 - 1.4) y la de validacion sube despues de la epoca 12: hay sobreajuste. La mejor epoca se elige sobre una curva casi plana, asi que esa eleccion es en buena parte ruido.
+- **El nivel incipiente casi no se reconoce** (F1 de 0.16 a 0.30). Es el nivel con menos datos (303 s en validacion) y el de frontera.
+- **Parte del error no es del modelo temporal:** 378 de los 2 757 s de escena (13.7 %) no tienen ninguna trayectoria de fuego de 1 s o mas, y la regla les asigna controlado. De esos, 265 son de incontrolado: el 18.6 % de los segundos de incontrolado (265 de 1 421) se pierden antes del modelo, y explican la mayor parte de los 300 a 348 s de incontrolado clasificados como controlado.
+- El CfC tarda 32 veces mas por epoca (bucle en Python sobre 300 pasos) y tiene mas parametros (43 298 contra 15 650 y 20 770) con el mismo tamano oculto.
+
+### Limitaciones que se declaran
+
+- Una sola semilla; la comparacion con 5 semillas es del 100 %.
+- Validacion pequena: 47 videos de fuego, solo 6 con cambio a incontrolado.
+- Etiquetas de la IA, por escena, heredadas por todas las trayectorias.
+- No se ajusto ningun hiperparametro.
+
+### Pendiente de decision del usuario antes de la fase E
+
+- Con F1 de 0.51 a 0.53 y sobreajuste, conviene revisar el entrenamiento antes de calibrar: regularizacion (dropout, menos unidades), parada por perdida de validacion, y que hacer con los segundos sin trayectoria (por ejemplo, mantener el ultimo nivel durante unos segundos o bajar el minimo de 1 s).
+
+### Archivos
+
+- `modelo_temporal.py`, `entrenar_temporal.py`, `figura_modelos.py`, `hojas_casi_duplicados.py` (nuevos).
+- `requirements.txt`: se agrego `ncps==1.0.1` (instalado con `pip install ncps --no-deps`).
+- `resultados/modelos/`: `comparacion.md`, `curvas.png` y, por modelo, `historial.csv` y `metricas.json`.
+- `runs_fuego/modelos/<modelo>/mejor.pt` y `registro_<modelo>.txt` (no versionados).
+- `runs_fuego/casi_duplicados/` (27 hojas, no versionadas).
