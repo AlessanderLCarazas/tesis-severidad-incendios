@@ -1509,3 +1509,112 @@ Cada segundo va a una sola causa, en este orden: corte, trayectorias cortas, hum
 
 - `diagnostico_escena.py` (nuevo).
 - `resultados/diagnostico/diagnostico.md` y `diagnostico.json`.
+
+## Fase D, segunda version: modelo temporal a nivel de escena (2026-11-12)
+
+Fecha: 2026-11-12. Rama: `avance-80`. Scripts nuevos: `escena.py`, `modelo_escena.py`, `entrenar_escena.py`, `comparar_escena.py`. **La prueba no se uso.** El modelo por trayectoria (`modelo_temporal.py`, `entrenar_temporal.py`, `resultados/modelos/`) se conserva sin cambios como primera version.
+
+### Decisiones del usuario (2026-11-12)
+
+- El modelo temporal pasa a nivel de escena; ya no hay herencia de la etiqueta de la escena en cada trayectoria.
+- Casi duplicados: el usuario reviso las 27 hojas y no hay mas pares que unir, aparte de la copia exacta (ya excluida) y el par de `14035491` (ya unido). **La particion no cambia.**
+
+### Vector de escena (`escena.py`)
+
+- Una secuencia por video y tramo (se reinicia en cada corte), a 10 fps, con **todos** los fotogramas procesados.
+- 34 valores por fotograma: maximo y media de los 13 descriptores sobre las trayectorias de fuego vivas (tambien las de menos de 1 s), numero de trayectorias, numero con edad de al menos 1 s, edad de la mas antigua, numero de cajas de fuego y de humo, area total de fuego y de humo, y la bandera `sin_trayectoria` (con los agregados en 0).
+- Metas por fotograma: nivel, riesgo y tau de la escena, con las mismas mascaras (`tau_mascara = 2` no entra en la perdida de tau).
+- Normalizacion (recorte p1 y p99 y estandarizacion) solo con entrenamiento: 189 291 fotogramas de 337 videos.
+- **Con los datos guardados, y lo que eso implica:**
+  - las marcas de tiempo de los fotogramas sin trayectoria no estaban guardadas; se interpolan con el indice del fotograma (donde si hay marca real, difiere de 0.1 k en 0.03 s como maximo);
+  - el contexto de camara de esos fotogramas tampoco: se usa la identidad y la ultima proporcion de inliers conocida;
+  - las detecciones por fotograma salen de `curvas/` (YOLO a 5 fps, confianza 0.25): cada fotograma toma la ultima medida anterior;
+  - los 215 clips sin fuego no tenian curva: se corrio `preanotar.py` solo sobre ellos (36 min de video, unos 8 min de proceso; `runs_fuego/curvas_sin_fuego/`). No se reentreno nada;
+  - tener las detecciones exactas a 10 fps y confianza 0.1, con marcas y camara de todos los fotogramas, exige repetir la corrida de descriptores de los 603 videos: unas 6 h. No se corrio.
+- 10 clips sin fuego de menos de 1 s (2 a 9 fotogramas) no forman secuencia: 6 de entrenamiento, 1 de validacion, 1 de calibracion y 2 de prueba.
+
+| Conjunto | Videos | Secuencias | Fotogramas | Controlado | Incipiente | Incontrolado | Sin trayectoria | Ventanas |
+|---|---|---|---|---|---|---|---|---|
+| entrenamiento | 337 | 460 | 189 291 | 51 252 | 22 555 | 110 304 | 34 488 | 1 267 |
+| validacion | 74 | 110 | 30 301 | 12 498 | 3 041 | 14 199 | 6 496 | 208 |
+| calibracion | 71 | 82 | 48 375 | 11 651 | 10 565 | 25 244 | 7 092 | 311 |
+| prueba | 100 | 140 | 51 075 | 17 130 | 14 950 | 17 464 | 9 104 | 328 |
+
+### Modelos y entrenamiento
+
+- Misma compuerta con el contexto de camara y dt; CfC (`CfCCell`) con el intervalo real entre fotogramas; GRU y LSTM con dt como entrada; mismas tres salidas y ponderacion de Kendall.
+- Dropout 0.2 en la entrada (despues de la compuerta) y antes de las salidas; AdamW con tasa 3e-4 y descenso coseno, weight decay 1e-3; lotes de 32 ventanas; recorte 1.0; hasta 60 epocas, paciencia 10.
+- Muestreo por video: 337 videos de entrenamiento, **incluidos 122 sin fuego** (ahora tienen secuencia aunque no tengan trayectorias). Una epoca son 40 lotes.
+- Frecuencia de niveles con ese muestreo: controlado 0.617, incipiente 0.116, incontrolado 0.268. Pesos: 0.541, 2.879 y 1.246.
+- Mejor epoca: F1 macro de escena por segundo en validacion, suavizado con la media de la epoca anterior, la propia y la siguiente. El nivel de un segundo es el mas votado entre sus fotogramas.
+- Semillas: GRU y LSTM tardan menos de 1 min, asi que van con 42, 43 y 44. **El CfC tarda 11 min (22 s por epoca), asi que solo va con la 42.**
+
+### Numeros en validacion (2 757 s de escena de 47 videos de fuego; media +- desviacion entre semillas)
+
+| Estimador | Corridas | F1 macro | F1 con trayectoria | F1 sin trayectoria | F1 controlado | F1 incipiente | F1 incontrolado | Exactitud | Kappa lineal | MAE tau (s) | Cambios de nivel por video |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| CfC de escena | 1 | 0.493 | 0.512 | 0.363 | 0.698 | 0.029 | 0.752 | 0.679 | 0.499 | 43.6 | 4.0 |
+| GRU de escena | 3 | 0.556 +- 0.019 | 0.579 +- 0.017 | 0.405 +- 0.042 | 0.725 +- 0.018 | 0.133 +- 0.033 | 0.809 +- 0.014 | 0.710 +- 0.015 | 0.582 +- 0.024 | 42.4 +- 1.4 | 4.5 |
+| LSTM de escena | 3 | 0.526 +- 0.018 | 0.548 +- 0.013 | 0.379 +- 0.053 | 0.723 +- 0.024 | 0.069 +- 0.054 | 0.787 +- 0.035 | 0.704 +- 0.026 | 0.557 +- 0.050 | 44.0 +- 3.4 | 4.9 |
+| regresion logistica (sin tiempo) | 1 | 0.480 | 0.508 | 0.287 | 0.465 | 0.285 | 0.690 | 0.513 | 0.355 | - | 12.8 |
+| gradient boosting (sin tiempo) | 1 | 0.608 | 0.632 | 0.417 | 0.600 | 0.425 | 0.798 | 0.664 | 0.506 | - | 13.0 |
+| clase mayoritaria | 1 | 0.227 | 0.218 | 0.275 | 0.000 | 0.000 | 0.680 | 0.515 | 0.000 | - | 0.0 |
+
+- Cambios de nivel por video segun la etiqueta: 0.13.
+- "Con trayectoria": 2 379 s con alguna trayectoria de 1 s o mas; "sin trayectoria": 378 s.
+- Las referencias usan el mismo vector de escena promediado por segundo (18 433 s de entrenamiento, pesos por clase balanceados).
+
+| Estimador | Exactitud con trayectoria | Kappa con trayectoria | Exactitud sin trayectoria | Kappa sin trayectoria |
+|---|---|---|---|---|
+| CfC de escena | 0.704 | 0.541 | 0.526 | 0.269 |
+| GRU de escena | 0.736 +- 0.013 | 0.628 +- 0.016 | 0.547 +- 0.045 | 0.326 +- 0.061 |
+| LSTM de escena | 0.731 +- 0.017 | 0.605 +- 0.034 | 0.536 +- 0.096 | 0.299 +- 0.116 |
+| regresion logistica | 0.540 | 0.426 | 0.344 | 0.131 |
+| gradient boosting | 0.686 | 0.557 | 0.532 | 0.276 |
+
+| Modelo | Semilla | Parametros | s por epoca | Epocas corridas | Mejor epoca | F1 macro | Kappa |
+|---|---|---|---|---|---|---|---|
+| CfC | 42 | 46 133 | 21.9 | 28 | 17 | 0.493 | 0.499 |
+| GRU | 42 | 19 829 | 0.8 | 60 | 50 | 0.552 | 0.568 |
+| GRU | 43 | 19 829 | 0.8 | 36 | 25 | 0.534 | 0.562 |
+| GRU | 44 | 19 829 | 0.8 | 48 | 37 | 0.581 | 0.615 |
+| LSTM | 42 | 26 293 | 0.8 | 27 | 16 | 0.529 | 0.503 |
+| LSTM | 43 | 26 293 | 0.7 | 19 | 8 | 0.503 | 0.543 |
+| LSTM | 44 | 26 293 | 0.7 | 27 | 16 | 0.547 | 0.624 |
+
+Primera version (por trayectoria, semilla 42), mismos segundos: CfC F1 0.513, exactitud 0.610, kappa 0.461; GRU 0.516, 0.615, 0.477; LSTM 0.526, 0.567, 0.419.
+
+Las matrices de confusion estan en `resultados/modelos_escena/comparacion.md` y las curvas en `resultados/modelos_escena/curvas.png`.
+
+### Lectura de los resultados
+
+- **El paso a escena mejora la exactitud y el kappa.** GRU: exactitud de 0.615 a 0.710 y kappa de 0.477 a 0.582. En los segundos con trayectoria el kappa llega a 0.628.
+- **El F1 macro mejora poco (GRU 0.556) porque el nivel incipiente casi desaparece** (F1 0.13 en GRU, 0.07 en LSTM, 0.03 en CfC). Los modelos temporales mandan el incipiente a controlado (777 de 909 s en las tres corridas de GRU).
+- **El gradient boosting sin tiempo sigue teniendo el mejor F1 macro (0.608)** gracias al incipiente (0.425), pero con menos exactitud (0.664) y kappa (0.506) que el GRU, y cambia de nivel 13 veces por video.
+- **Todos cambian de nivel muchas mas veces que la etiqueta** (4 a 5 por video los temporales, 13 las referencias, contra 0.13). Eso lo debe corregir la histeresis de la fase E.
+- **El CfC queda por debajo del GRU** (F1 0.493 contra 0.556 +- 0.019; kappa 0.499 contra 0.582 +- 0.024), con una sola semilla y 28 epocas. Es el resultado contrario a la hipotesis de la tesis y hay que reportarlo asi o investigarlo.
+- **Los segundos sin trayectoria siguen siendo los peores** (kappa 0.27 a 0.33), aunque ahora el modelo los ve.
+- El MAE de tau (42 a 44 s) no mejora; solo 6 videos de validacion tienen cambio a incontrolado. No es comparable con el de la primera version, que se media por muestra de trayectoria.
+
+### Limitaciones que se declaran
+
+- CfC con una sola semilla; GRU y LSTM con tres. Validacion de 47 videos.
+- Las detecciones por fotograma vienen de 5 fps y confianza 0.25, y los fotogramas sin trayectoria no tienen marca de tiempo ni contexto de camara propios.
+- No se ajustaron hiperparametros mas alla de los pedidos.
+
+### Comandos
+
+```
+python preanotar.py --seleccion resultados/cortes/lista_non_fire.csv --videos real_video/real_video/non_fire --salida <temporal> --curvas runs_fuego/curvas_sin_fuego
+python escena.py
+python entrenar_escena.py --modelo gru --semilla 42
+python comparar_escena.py
+```
+
+### Archivos
+
+- `escena.py`, `modelo_escena.py`, `entrenar_escena.py`, `comparar_escena.py` (nuevos).
+- `requirements.txt`: se agregaron `scikit-learn==1.7.0` y `pandas==2.2.3` (ya estaban instalados y los usan `secuencias.py`, `escena.py` y las referencias).
+- `resultados/escena/`: `resumen.md`, `videos.csv`, `normalizacion.json`, `normalizacion_contexto.json`.
+- `resultados/modelos_escena/`: `comparacion.md`, `curvas.png`, `referencias.json` y, por corrida, `historial.csv` y `metricas.json`.
+- No versionados: `runs_fuego/escena/*.npz`, `runs_fuego/modelos_escena/<modelo>_s<semilla>/mejor.pt`, `runs_fuego/curvas_sin_fuego/`.

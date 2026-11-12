@@ -1,0 +1,593 @@
+conjunto,archivo,clase,tipo,fotogramas,tramos,secuencias,sin_trayectoria,con_curva,s_controlado,s_incipiente,s_incontrolado
+validacion,00e18d86-3389d8dc.mp4,fuego,controlado,500,1,1,2,si,49.97,0.0,0.0
+entrenamiento,11925055_1920_1080_25fps.mp4,fuego,incontrolado,142,1,1,0,si,0.0,0.0,14.12
+entrenamiento,11954238_3840_2160_25fps.mp4,fuego,controlado,369,1,1,17,si,35.24,0.0,0.0
+calibracion,11964989_3840_2160_24fps.mp4,fuego,controlado,665,1,1,2,si,66.4,0.0,0.0
+prueba,12021934_3840_2160_30fps.mp4,fuego,controlado,333,1,1,23,si,33.2,0.0,0.0
+entrenamiento,12151479_2160_3840_60fps.mp4,fuego,controlado,160,1,1,34,si,15.9,0.0,0.0
+entrenamiento,12218199_3114_1440_30fps.mp4,fuego,controlado,106,1,1,25,si,10.58,0.0,0.0
+prueba,12220604_1080_1920_30fps.mp4,fuego,controlado,277,1,1,0,si,27.43,0.0,0.0
+entrenamiento,12364337_3840_2160_24fps.mp4,fuego,incontrolado,276,1,1,0,si,0.0,0.0,27.49
+entrenamiento,12364450_3840_2160_24fps.mp4,fuego,incontrolado,381,1,1,0,si,0.0,0.0,38.0
+prueba,12399227_3840_2160_60fps.mp4,fuego,controlado_a_incipiente,383,1,1,7,si,8.29,29.91,0.0
+entrenamiento,12399285_3840_2160_60fps.mp4,fuego,incipiente,526,1,1,119,si,0.0,50.3,0.0
+entrenamiento,12487517_1920_1080_30fps.mp4,fuego,incontrolado,77,1,1,4,si,0.0,0.0,7.67
+calibracion,12487581_1920_1080_30fps.mp4,fuego,incipiente,285,1,1,1,si,0.0,28.43,0.0
+entrenamiento,12529455_3840_2160_30fps.mp4,fuego,controlado,324,1,1,21,si,32.3,0.0,0.0
+prueba,12588006_1920_1080_30fps.mp4,fuego,controlado,338,1,1,0,si,33.77,0.0,0.0
+entrenamiento,12740891_2160_3840_24fps.mp4,fuego,controlado,358,1,1,0,si,35.71,0.0,0.0
+validacion,12741090_3840_2160_24fps.mp4,fuego,controlado,268,1,1,34,si,26.71,0.0,0.0
+entrenamiento,12768368_1920_1080_50fps.mp4,fuego,controlado,305,1,1,0,si,30.42,0.0,0.0
+entrenamiento,12795413_1920_1080_30fps.mp4,fuego,controlado,264,1,1,28,si,23.54,0.0,0.0
+prueba,12799182_2160_3840_30fps.mp4,fuego,controlado,308,1,1,135,si,30.73,0.0,0.0
+prueba,12857999_3840_2160_24fps.mp4,fuego,incipiente,276,1,1,0,si,0.0,27.53,0.0
+calibracion,12858009_3840_2160_24fps.mp4,fuego,incontrolado,450,1,1,0,si,0.0,0.0,44.96
+entrenamiento,12858015_3840_2160_24fps.mp4,fuego,incontrolado,286,1,1,0,si,0.0,0.0,28.57
+prueba,12858021_3840_2160_24fps.mp4,fuego,incontrolado,496,1,1,0,si,0.0,0.0,49.51
+prueba,12858041_3840_2160_24fps.mp4,fuego,incontrolado,826,1,1,0,si,0.0,0.0,82.54
+validacion,12862954_3840_2160_24fps.mp4,fuego,incontrolado,283,1,1,0,si,0.0,0.0,28.2
+entrenamiento,1293332816_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,13058053_1920_1080_60fps.mp4,fuego,controlado,921,1,1,1,si,92.08,0.0,0.0
+entrenamiento,13129273_1920_1080_30fps.mp4,fuego,controlado,354,8,8,326,si,32.27,0.0,0.0
+calibracion,13228831_3840_2160_30fps.mp4,fuego,incipiente,424,1,1,0,si,0.0,42.34,0.0
+validacion,13228967_3840_2160_30fps.mp4,fuego,incipiente_a_incontrolado,216,1,1,0,si,0.0,16.05,5.5
+prueba,13229149_3840_2160_30fps.mp4,fuego,incipiente,425,1,1,0,si,0.0,42.41,0.0
+validacion,13236252_3840_2160_24fps.mp4,fuego,controlado,311,1,1,0,si,31.07,0.0,0.0
+entrenamiento,13256420_1080_1920_30fps.mp4,fuego,controlado,425,1,1,0,si,42.43,0.0,0.0
+validacion,13269425_2160_3840_30fps.mp4,fuego,controlado,308,1,1,23,si,30.73,0.0,0.0
+entrenamiento,13283125_2160_3840_24fps.mp4,fuego,controlado,280,1,1,0,si,27.9,0.0,0.0
+validacion,13283131_3840_2160_24fps.mp4,fuego,controlado,189,1,1,1,si,18.81,0.0,0.0
+entrenamiento,13301362_3840_2160_24fps.mp4,fuego,incontrolado,334,1,1,0,si,0.0,0.0,33.37
+entrenamiento,13341367_2160_3840_24fps.mp4,fuego,controlado,283,1,1,0,si,28.24,0.0,0.0
+entrenamiento,13444160_3840_2160_24fps.mp4,fuego,controlado,442,1,1,159,si,44.17,0.0,0.0
+entrenamiento,13444309_3840_2160_24fps.mp4,fuego,controlado,606,1,1,0,si,60.5,0.0,0.0
+validacion,13526026_2160_3840_30fps.mp4,fuego,controlado,361,1,1,26,si,36.0,0.0,0.0
+validacion,13526056_3840_2160_30fps.mp4,fuego,controlado,321,1,1,0,si,32.0,0.0,0.0
+prueba,13557193_1920_1080_30fps.mp4,fuego,controlado,313,1,1,14,si,31.23,0.0,0.0
+entrenamiento,13567986_1920_1080_25fps.mp4,fuego,controlado,429,1,1,429,si,42.87,0.0,0.0
+calibracion,13589177_1080_1920_30fps.mp4,fuego,controlado,150,1,1,22,si,14.98,0.0,0.0
+entrenamiento,13626662_1080_1920_30fps.mp4,fuego,controlado,105,1,1,67,si,10.47,0.0,0.0
+entrenamiento,13636149_1920_1080_25fps.mp4,fuego,controlado,294,1,1,37,si,29.32,0.0,0.0
+prueba,13871980_3840_2160_24fps.mp4,fuego,controlado_a_incontrolado,187,1,1,9,si,5.13,7.55,5.96
+prueba,13877365_1920_1080_30fps.mp4,fuego,controlado,609,1,1,0,si,60.83,0.0,0.0
+prueba,13877383_1920_1080_30fps.mp4,fuego,controlado,853,1,1,0,si,85.19,0.0,0.0
+entrenamiento,13879991_1920_1080_24fps.mp4,fuego,controlado,216,1,1,136,si,21.52,0.0,0.0
+prueba,1394569023.mp4,fuego,incontrolado,267,1,1,0,si,0.0,0.0,26.6
+prueba,14035491_2048_1080_30fps.mp4,fuego,incipiente,599,1,1,22,si,0.0,59.83,0.0
+calibracion,14108027_1920_1080_60fps.mp4,fuego,controlado,165,1,1,91,si,16.42,0.0,0.0
+prueba,1414182400.mp4,fuego,controlado,628,1,1,0,si,62.76,0.0,0.0
+prueba,14196334_1080_1920_24fps.mp4,fuego,controlado,376,1,1,376,si,37.5,0.0,0.0
+prueba,14234584_1920_1080_25fps.mp4,fuego,controlado,586,1,1,0,si,58.52,0.0,0.0
+entrenamiento,14283144_1080_1920_30fps.mp4,fuego,controlado,296,1,1,296,si,29.5,0.0,0.0
+validacion,14294874_3840_2160_24fps.mp4,fuego,incontrolado,298,1,1,0,si,0.0,0.0,29.7
+entrenamiento,14294880_3840_2160_24fps.mp4,fuego,incontrolado,273,1,1,0,si,0.0,0.0,27.19
+entrenamiento,14294945_3840_2160_24fps.mp4,fuego,incontrolado,304,1,1,0,si,0.0,0.0,30.28
+prueba,14294952_3840_2160_24fps.mp4,fuego,incontrolado,304,1,1,0,si,0.0,0.0,30.28
+entrenamiento,14294964_3840_2160_24fps.mp4,fuego,incontrolado,367,1,1,0,si,0.0,0.0,36.66
+entrenamiento,14294970_3840_2160_24fps.mp4,fuego,incontrolado,453,1,1,0,si,0.0,0.0,45.25
+calibracion,14296616_3840_2160_24fps.mp4,fuego,incontrolado,473,1,1,0,si,0.0,0.0,47.26
+prueba,14296658_3840_2160_24fps.mp4,fuego,incontrolado,306,1,1,0,si,0.0,0.0,30.49
+entrenamiento,14296665_3840_2160_24fps.mp4,fuego,incontrolado,387,1,1,0,si,0.0,0.0,38.66
+entrenamiento,14296688_3840_2160_24fps.mp4,fuego,incontrolado,150,1,1,0,si,0.0,0.0,14.93
+entrenamiento,14296742_3840_2160_24fps.mp4,fuego,incontrolado,318,1,1,0,si,0.0,0.0,31.7
+calibracion,14296770_3840_2160_24fps.mp4,fuego,incontrolado,350,1,1,0,si,0.0,0.0,34.95
+prueba,14296810_3840_2160_24fps.mp4,fuego,incontrolado,315,1,1,0,si,0.0,0.0,31.41
+entrenamiento,14296820_3840_2160_24fps.mp4,fuego,incontrolado,306,1,1,0,si,0.0,0.0,30.53
+prueba,14297190_3840_2160_24fps.mp4,fuego,incipiente_a_incontrolado,251,1,1,0,si,0.0,19.1,5.88
+entrenamiento,14297196_3840_2160_24fps.mp4,fuego,incontrolado,288,1,1,0,si,0.0,0.0,28.74
+prueba,14301887_3840_2160_24fps.mp4,fuego,incontrolado,335,1,1,0,si,0.0,0.0,33.45
+entrenamiento,14302124_2160_3840_24fps.mp4,fuego,incontrolado,264,1,1,0,si,0.0,0.0,26.32
+entrenamiento,14302214_2160_3840_24fps.mp4,fuego,incontrolado,328,1,1,0,si,0.0,0.0,32.74
+validacion,14303925_1920_1080_60fps.mp4,fuego,controlado,387,1,1,0,si,38.62,0.0,0.0
+calibracion,14334657_3840_2160_50fps.mp4,fuego,controlado,139,1,1,53,si,13.52,0.0,0.0
+entrenamiento,1436878288_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,14402042_3840_2160_32fps.mp4,fuego,controlado,115,1,1,7,si,11.46,0.0,0.0
+entrenamiento,14422167_1080_1920_60fps.mp4,fuego,controlado,271,1,1,40,si,26.99,0.0,0.0
+prueba,1472777548_clip_002.mp4,sin_fuego,sin_fuego,53,1,1,44,si,0.0,0.0,0.0
+entrenamiento,1538943578_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1544298679_clip_001.mp4,sin_fuego,sin_fuego,71,1,1,71,si,0.0,0.0,0.0
+entrenamiento,1547094614.mp4,fuego,controlado,289,1,1,157,si,28.8,0.0,0.0
+entrenamiento,1547543338.mp4,fuego,controlado,613,1,1,1,si,61.19,0.0,0.0
+prueba,1574509648_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1574514010_clip_001.mp4,sin_fuego,sin_fuego,78,1,1,78,si,0.0,0.0,0.0
+prueba,1615312960.mp4,fuego,controlado,317,1,1,0,si,31.67,0.0,0.0
+calibracion,1621561169.mp4,fuego,controlado,336,1,1,0,si,33.57,0.0,0.0
+entrenamiento,16357295-uhd_2160_3840_30fps.mp4,fuego,controlado,347,1,1,0,si,34.6,0.0,0.0
+entrenamiento,1663828248.mp4,fuego,controlado,248,1,1,0,si,24.72,0.0,0.0
+entrenamiento,1665987753_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,16696555-uhd_3816_1600_24fps.mp4,fuego,controlado,89,1,1,0,si,8.88,0.0,0.0
+entrenamiento,1670819098_clip_001.mp4,sin_fuego,sin_fuego,92,1,1,92,si,0.0,0.0,0.0
+entrenamiento,1672675531_clip_001.mp4,sin_fuego,sin_fuego,86,1,1,86,si,0.0,0.0,0.0
+calibracion,1673111603_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,1678575757_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,1686569285.mp4,fuego,controlado,532,1,1,0,si,53.13,0.0,0.0
+validacion,1686572328.mp4,fuego,controlado,468,1,1,1,si,46.7,0.0,0.0
+validacion,1688384254.mp4,fuego,controlado,279,1,1,0,si,27.8,0.0,0.0
+prueba,1694496253_clip_002.mp4,sin_fuego,sin_fuego,100,3,2,100,si,0.0,0.0,0.0
+calibracion,1694723977_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,17203524-uhd_3840_2160_24fps.mp4,fuego,controlado,624,1,1,0,si,62.31,0.0,0.0
+entrenamiento,1721250124.mp4,fuego,controlado,372,1,1,0,si,37.17,0.0,0.0
+entrenamiento,1721256861.mp4,fuego,controlado,607,1,1,0,si,60.67,0.0,0.0
+prueba,1723634695.mp4,fuego,incipiente_a_incontrolado,361,1,1,1,si,0.0,32.23,3.84
+validacion,1725322201.mp4,fuego,controlado,676,1,1,16,si,67.5,0.0,0.0
+entrenamiento,1736034241.mp4,fuego,controlado,301,1,1,0,si,30.0,0.0,0.0
+entrenamiento,1736034247.mp4,fuego,controlado,302,1,1,20,si,30.12,0.0,0.0
+entrenamiento,1736035292.mp4,fuego,controlado,300,1,1,0,si,29.92,0.0,0.0
+entrenamiento,1736035945.mp4,fuego,controlado,407,1,1,0,si,40.58,0.0,0.0
+calibracion,17469008-uhd_3840_2160_30fps.mp4,fuego,controlado,321,1,1,321,si,32.03,0.0,0.0
+entrenamiento,1748530614.mp4,fuego,controlado,295,1,1,4,si,29.44,0.0,0.0
+entrenamiento,1748775209.mp4,fuego,controlado,175,1,1,25,si,17.44,0.0,0.0
+entrenamiento,1749180198.mp4,fuego,controlado,199,1,1,102,si,19.84,0.0,0.0
+prueba,1752004413_clip_001.mp4,sin_fuego,sin_fuego,54,1,1,54,si,0.0,0.0,0.0
+entrenamiento,17638026-uhd_3840_2160_30fps.mp4,fuego,controlado,331,1,1,195,si,33.0,0.0,0.0
+entrenamiento,1763937212.mp4,fuego,controlado,394,1,1,0,si,39.3,0.0,0.0
+prueba,17647100-hd_1920_1080_30fps.mp4,fuego,controlado,331,3,2,297,si,30.13,0.0,0.0
+entrenamiento,17717812-uhd_4096_2160_60fps.mp4,fuego,incontrolado,406,1,1,1,si,0.0,0.0,40.52
+prueba,1775016078_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1789133423_clip_003.mp4,sin_fuego,sin_fuego,81,1,1,81,si,0.0,0.0,0.0
+validacion,1805900101_clip_003.mp4,sin_fuego,sin_fuego,6,1,0,6,si,0.0,0.0,0.0
+entrenamiento,18084807-uhd_3840_2160_60fps.mp4,fuego,controlado,346,1,1,0,si,34.52,0.0,0.0
+entrenamiento,1809735759_clip_002.mp4,sin_fuego,sin_fuego,86,1,1,86,si,0.0,0.0,0.0
+prueba,1811207949_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,1812355101_clip_002.mp4,sin_fuego,sin_fuego,7,1,0,7,si,0.0,0.0,0.0
+entrenamiento,1813305223_clip_003.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,18153408-hd_1920_1080_30fps.mp4,fuego,controlado,496,1,1,496,si,49.5,0.0,0.0
+entrenamiento,1816718678_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1816720483_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1816726074_clip_004.mp4,sin_fuego,sin_fuego,14,1,1,14,si,0.0,0.0,0.0
+entrenamiento,1816726571_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,1821074717_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1821467306_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1822573158_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1822573165_clip_002.mp4,sin_fuego,sin_fuego,7,1,0,7,si,0.0,0.0,0.0
+entrenamiento,1826780011.mp4,fuego,controlado,157,1,1,27,si,15.67,0.0,0.0
+entrenamiento,18270789-hd_1080_1920_30fps.mp4,fuego,controlado,235,1,1,143,si,23.42,0.0,0.0
+entrenamiento,1827393730.mp4,fuego,controlado,599,1,1,315,si,59.79,0.0,0.0
+prueba,1828453162.mp4,fuego,controlado,266,1,1,81,si,26.56,0.0,0.0
+entrenamiento,1829206645.mp4,fuego,controlado,317,1,1,274,si,31.62,0.0,0.0
+entrenamiento,18295463-uhd_3840_2160_60fps.mp4,fuego,controlado,243,1,1,2,si,24.24,0.0,0.0
+prueba,1829848176_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1836217304_clip_001.mp4,sin_fuego,sin_fuego,77,1,1,77,si,0.0,0.0,0.0
+entrenamiento,1837064838.mp4,fuego,controlado,458,1,1,0,si,45.73,0.0,0.0
+validacion,1837920465_clip_002.mp4,sin_fuego,sin_fuego,30,1,1,30,si,0.0,0.0,0.0
+calibracion,1838133792.mp4,fuego,incontrolado,340,1,1,77,si,0.0,0.0,33.9
+entrenamiento,1840955632_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,18471085-uhd_3840_2160_24fps.mp4,fuego,controlado,387,1,1,27,si,36.96,0.0,0.0
+calibracion,1854996165_clip_002.mp4,sin_fuego,sin_fuego,65,1,1,65,si,0.0,0.0,0.0
+entrenamiento,1857867343_clip_001.mp4,sin_fuego,sin_fuego,96,1,1,96,si,0.0,0.0,0.0
+validacion,1858682988_clip_002.mp4,sin_fuego,sin_fuego,55,1,1,55,si,0.0,0.0,0.0
+entrenamiento,1862436323.mp4,fuego,controlado,778,1,1,0,si,77.71,0.0,0.0
+prueba,18642729-uhd_3840_2160_60fps.mp4,fuego,controlado,286,1,1,0,si,28.5,0.0,0.0
+entrenamiento,18679022-uhd_3840_2160_24fps.mp4,fuego,controlado,611,1,1,5,si,61.02,0.0,0.0
+prueba,18679025-uhd_3840_2160_24fps.mp4,fuego,controlado,356,1,1,290,si,33.95,0.0,0.0
+entrenamiento,18679026-uhd_3840_2160_24fps.mp4,fuego,controlado,611,1,1,473,si,61.02,0.0,0.0
+entrenamiento,1869715703_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,1869958439.mp4,fuego,controlado,296,1,1,0,si,29.57,0.0,0.0
+entrenamiento,1870284209_clip_003.mp4,sin_fuego,sin_fuego,64,1,1,64,si,0.0,0.0,0.0
+prueba,1873108433_clip_002.mp4,sin_fuego,sin_fuego,56,1,1,56,si,0.0,0.0,0.0
+calibracion,1875389027_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1885952980_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,1886008150_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,1889932967_clip_002.mp4,sin_fuego,sin_fuego,34,1,1,34,si,0.0,0.0,0.0
+entrenamiento,1894713129_clip_001.mp4,sin_fuego,sin_fuego,81,1,1,81,si,0.0,0.0,0.0
+entrenamiento,1898933216_clip_001.mp4,sin_fuego,sin_fuego,100,2,1,100,si,0.0,0.0,0.0
+entrenamiento,1898955685_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,1898989987_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,1900034782_clip_003.mp4,sin_fuego,sin_fuego,58,1,1,58,si,0.0,0.0,0.0
+entrenamiento,1902073305_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,19027422-hd_1920_1080_30fps.mp4,fuego,controlado,1195,1,1,811,si,114.18,0.0,0.0
+calibracion,19043665-hd_1080_1920_30fps.mp4,fuego,controlado,790,1,1,18,si,78.97,0.0,0.0
+entrenamiento,1908609497.mp4,fuego,controlado,90,1,1,57,si,8.92,0.0,0.0
+entrenamiento,1910972632_clip_002.mp4,sin_fuego,sin_fuego,13,1,1,13,si,0.0,0.0,0.0
+prueba,1912593437.mp4,fuego,controlado,276,1,1,48,si,27.49,0.0,0.0
+prueba,1912650782.mp4,fuego,controlado,736,1,1,0,si,73.57,0.0,0.0
+prueba,19151618-hd_1920_1080_30fps.mp4,fuego,controlado,298,1,1,1,si,29.76,0.0,0.0
+entrenamiento,1918731900_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,1926078486_clip_001.mp4,sin_fuego,sin_fuego,97,1,1,97,si,0.0,0.0,0.0
+entrenamiento,1926400076_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,70,si,0.0,0.0,0.0
+validacion,1928797303_clip_002.mp4,sin_fuego,sin_fuego,79,1,1,79,si,0.0,0.0,0.0
+entrenamiento,1930250305_clip_001.mp4,sin_fuego,sin_fuego,65,1,1,65,si,0.0,0.0,0.0
+entrenamiento,1937610902_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1938014527_clip_002.mp4,sin_fuego,sin_fuego,56,1,1,56,si,0.0,0.0,0.0
+entrenamiento,1938040412_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1939445174_clip_002.mp4,sin_fuego,sin_fuego,69,1,1,69,si,0.0,0.0,0.0
+validacion,1939827211_clip_002.mp4,sin_fuego,sin_fuego,44,1,1,44,si,0.0,0.0,0.0
+calibracion,1942537629.mp4,fuego,controlado,381,1,1,14,si,38.0,0.0,0.0
+prueba,1946578184_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,1947818681_clip_003.mp4,sin_fuego,sin_fuego,43,1,1,43,si,0.0,0.0,0.0
+validacion,1949776649_clip_002.mp4,sin_fuego,sin_fuego,87,1,1,87,si,0.0,0.0,0.0
+prueba,1949778887_clip_003.mp4,sin_fuego,sin_fuego,60,1,1,60,si,0.0,0.0,0.0
+entrenamiento,19537505-uhd_3840_2160_24fps.mp4,fuego,controlado,87,1,1,51,si,8.59,0.0,0.0
+entrenamiento,1954213375_clip_003.mp4,sin_fuego,sin_fuego,8,1,0,8,si,0.0,0.0,0.0
+calibracion,1963220607_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,65,si,0.0,0.0,0.0
+entrenamiento,1963266116_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1966219354_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1967435601_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1969275268_clip_002.mp4,sin_fuego,sin_fuego,42,1,1,42,si,0.0,0.0,0.0
+entrenamiento,1969548129_clip_002.mp4,sin_fuego,sin_fuego,21,1,1,21,si,0.0,0.0,0.0
+validacion,1971515077_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1974202055.mp4,fuego,controlado,389,1,1,3,si,38.8,0.0,0.0
+entrenamiento,1975618525_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1977816683_clip_002.mp4,sin_fuego,sin_fuego,9,1,0,9,si,0.0,0.0,0.0
+validacion,1982232516_clip_001.mp4,sin_fuego,sin_fuego,58,1,1,58,si,0.0,0.0,0.0
+prueba,1985318571_clip_001.mp4,sin_fuego,sin_fuego,63,1,1,63,si,0.0,0.0,0.0
+calibracion,1985886920_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1986069029_clip_002.mp4,sin_fuego,sin_fuego,59,1,1,59,si,0.0,0.0,0.0
+entrenamiento,1987601100_clip_004.mp4,sin_fuego,sin_fuego,10,1,1,10,si,0.0,0.0,0.0
+validacion,1987783159_clip_002.mp4,sin_fuego,sin_fuego,94,1,1,94,si,0.0,0.0,0.0
+calibracion,1988242511_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,1990517464_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,19909002-uhd_2160_3840_30fps.mp4,fuego,controlado,274,1,1,0,si,27.33,0.0,0.0
+entrenamiento,1993315804_clip_002.mp4,sin_fuego,sin_fuego,49,1,1,49,si,0.0,0.0,0.0
+prueba,19997371-uhd_3840_2160_25fps.mp4,fuego,controlado,810,1,1,21,si,80.92,0.0,0.0
+calibracion,"2 ALARM CHRISTMAS Morning Structure Fire Wall, New Jersey 12_25_20 - Made with Clipchamp.mp4",fuego,incontrolado,925,1,1,84,si,0.0,0.0,88.37
+entrenamiento,"2 ALARM FULLY INVOLVED Structure Fire Brick, New Jersey 1_24_22.mp4",fuego,incontrolado,2367,1,1,254,si,0.0,0.0,216.5
+entrenamiento,"2 ALARM Fatal STRUCTURE FIRE Keyport, New Jersey 12_30_21 - Made with Clipchamp.mp4",fuego,incontrolado,7941,7,7,2242,si,0.0,0.0,794.07
+entrenamiento,2 ALARM STRUCTURE FIRE Jackson New Jersey 6_14_22.mp4,fuego,incontrolado,3302,2,2,192,si,0.0,0.0,330.1
+entrenamiento,2 ALARM STRUCTURE FIRE Lakewood New Jersey 4_15_22.mp4,fuego,incontrolado,7229,8,8,2352,si,0.0,0.0,691.4
+entrenamiento,"2 Alarm FULLY INVOLVED Commercial Structure Fire Lakewood, NJ 6_20_21.mp4",fuego,incontrolado,8015,4,4,281,si,0.0,0.0,731.7
+entrenamiento,2 Alarm Six Story Occupied Structure Fire Bradly Beach New Jersey 6_5_22.mp4,fuego,incontrolado,845,1,1,414,si,0.0,0.0,84.43
+calibracion,"2 Alarm Structure Fire Chadwick Beach_Lavallette, NJ 5_6_21.mp4",fuego,incontrolado,2321,2,2,146,si,0.0,0.0,232.07
+validacion,2003849960.mp4,fuego,controlado,97,1,1,70,si,9.68,0.0,0.0
+entrenamiento,2004063129_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2004063296_clip_002.mp4,sin_fuego,sin_fuego,20,1,1,20,si,0.0,0.0,0.0
+entrenamiento,2009042831_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,2009788448_clip_002.mp4,sin_fuego,sin_fuego,99,1,1,99,si,0.0,0.0,0.0
+entrenamiento,2009793021_clip_001.mp4,sin_fuego,sin_fuego,56,1,1,56,si,0.0,0.0,0.0
+entrenamiento,2018240130.mp4,fuego,controlado,573,1,1,138,si,57.23,0.0,0.0
+prueba,20248277-hd_1080_1920_30fps.mp4,fuego,controlado,405,1,1,0,si,40.47,0.0,0.0
+entrenamiento,2024990948.mp4,fuego,controlado,359,1,1,17,si,35.84,0.0,0.0
+validacion,2030845629_clip_003.mp4,sin_fuego,sin_fuego,100,1,1,0,si,0.0,0.0,0.0
+entrenamiento,2037659842_clip_001.mp4,sin_fuego,sin_fuego,61,1,1,61,si,0.0,0.0,0.0
+entrenamiento,2037724049.mp4,fuego,controlado,649,1,1,0,si,64.88,0.0,0.0
+entrenamiento,20385584-uhd_2160_3840_50fps.mp4,fuego,controlado,588,1,1,4,si,58.78,0.0,0.0
+calibracion,2041260719_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2043228253_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2043543699_clip_002.mp4,sin_fuego,sin_fuego,8,1,0,8,si,0.0,0.0,0.0
+calibracion,2044498021_clip_003.mp4,sin_fuego,sin_fuego,8,1,0,8,si,0.0,0.0,0.0
+validacion,2049627162_clip_004.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2054011409_clip_002.mp4,sin_fuego,sin_fuego,81,1,1,2,si,0.0,0.0,0.0
+entrenamiento,2054149175_clip_001.mp4,sin_fuego,sin_fuego,62,1,1,62,si,0.0,0.0,0.0
+entrenamiento,2059427371.mp4,fuego,controlado,606,1,1,0,si,60.57,0.0,0.0
+entrenamiento,2061002215_clip_001.mp4,sin_fuego,sin_fuego,75,1,1,75,si,0.0,0.0,0.0
+validacion,2063096044_clip_002.mp4,sin_fuego,sin_fuego,50,1,1,50,si,0.0,0.0,0.0
+entrenamiento,2063323080_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,2072870801_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2075034409_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2076069111_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,54,si,0.0,0.0,0.0
+entrenamiento,2078778617.mp4,fuego,controlado,182,1,1,0,si,18.08,0.0,0.0
+entrenamiento,2078792487.mp4,fuego,controlado,689,1,1,52,si,68.88,0.0,0.0
+entrenamiento,2078794133_clip_003.mp4,sin_fuego,sin_fuego,38,1,1,38,si,0.0,0.0,0.0
+entrenamiento,2078843978_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2079517995_clip_002.mp4,sin_fuego,sin_fuego,32,1,1,32,si,0.0,0.0,0.0
+prueba,2082620373.mp4,fuego,controlado,300,1,1,0,si,29.96,0.0,0.0
+prueba,2082664874_clip_003.mp4,sin_fuego,sin_fuego,28,1,1,28,si,0.0,0.0,0.0
+prueba,2084180921_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,2085469671_clip_002.mp4,sin_fuego,sin_fuego,96,1,1,96,si,0.0,0.0,0.0
+entrenamiento,2086190162.mp4,fuego,incontrolado,653,1,1,17,si,0.0,0.0,65.23
+entrenamiento,2090018032_clip_004.mp4,sin_fuego,sin_fuego,14,1,1,14,si,0.0,0.0,0.0
+entrenamiento,2090940209_clip_003.mp4,sin_fuego,sin_fuego,15,1,1,15,si,0.0,0.0,0.0
+prueba,2096400209_clip_002.mp4,sin_fuego,sin_fuego,98,1,1,98,si,0.0,0.0,0.0
+prueba,2098177791_clip_003.mp4,sin_fuego,sin_fuego,19,1,1,19,si,0.0,0.0,0.0
+validacion,2099424839.mp4,fuego,controlado,324,1,1,221,si,9.83,0.0,0.0
+entrenamiento,2100262124_clip_002.mp4,sin_fuego,sin_fuego,97,1,1,87,si,0.0,0.0,0.0
+entrenamiento,2101459437_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,2101700800_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,2102770094_clip_003.mp4,sin_fuego,sin_fuego,78,1,1,78,si,0.0,0.0,0.0
+entrenamiento,2102967422_clip_001.mp4,sin_fuego,sin_fuego,80,1,1,80,si,0.0,0.0,0.0
+entrenamiento,2106031540_clip_001.mp4,sin_fuego,sin_fuego,68,1,1,68,si,0.0,0.0,0.0
+entrenamiento,2107323763_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2108216481_clip_002.mp4,sin_fuego,sin_fuego,53,1,1,53,si,0.0,0.0,0.0
+validacion,2109604692_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2112190175_clip_001.mp4,sin_fuego,sin_fuego,87,1,1,87,si,0.0,0.0,0.0
+entrenamiento,2114417383.mp4,fuego,controlado,404,1,1,0,si,40.34,0.0,0.0
+entrenamiento,2114417414.mp4,fuego,controlado,323,1,1,0,si,32.27,0.0,0.0
+entrenamiento,2120221904_clip_002.mp4,sin_fuego,sin_fuego,53,1,1,53,si,0.0,0.0,0.0
+entrenamiento,2121370346_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2130092125_clip_003.mp4,sin_fuego,sin_fuego,66,1,1,66,si,0.0,0.0,0.0
+validacion,2141713331.mp4,fuego,controlado,322,1,1,5,si,32.13,0.0,0.0
+calibracion,2146952119_clip_001.mp4,sin_fuego,sin_fuego,50,1,1,50,si,0.0,0.0,0.0
+entrenamiento,2155242383_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2156948515_clip_003.mp4,sin_fuego,sin_fuego,83,1,1,83,si,0.0,0.0,0.0
+entrenamiento,2158265759_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2162671193.mp4,fuego,controlado,332,1,1,25,si,33.17,0.0,0.0
+entrenamiento,2164875628_clip_003.mp4,sin_fuego,sin_fuego,68,1,1,68,si,0.0,0.0,0.0
+prueba,2169023322.mp4,fuego,controlado,347,1,1,76,si,34.64,0.0,0.0
+entrenamiento,2169755323_clip_001.mp4,sin_fuego,sin_fuego,96,1,1,96,si,0.0,0.0,0.0
+entrenamiento,2169761320_clip_001.mp4,sin_fuego,sin_fuego,81,1,1,81,si,0.0,0.0,0.0
+entrenamiento,2169887692_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,2169895657_clip_001.mp4,sin_fuego,sin_fuego,99,1,1,99,si,0.0,0.0,0.0
+calibracion,2170734941_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,2179898101_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2186206037.mp4,fuego,controlado,181,1,1,104,si,18.04,0.0,0.0
+entrenamiento,2186322958.mp4,fuego,controlado,1724,1,1,1313,si,172.29,0.0,0.0
+entrenamiento,2186341614_clip_002.mp4,sin_fuego,sin_fuego,69,1,1,66,si,0.0,0.0,0.0
+prueba,2186966283.mp4,fuego,controlado,311,1,1,0,si,31.03,0.0,0.0
+validacion,2189644186_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2194433740.mp4,fuego,controlado,359,1,1,327,si,35.84,0.0,0.0
+entrenamiento,2201027281_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2204708015.mp4,fuego,controlado,311,1,1,0,si,31.0,0.0,0.0
+calibracion,2209954495.mp4,fuego,controlado,268,1,1,0,si,26.72,0.0,0.0
+entrenamiento,2217410215.mp4,fuego,controlado,601,1,1,0,si,60.0,0.0,0.0
+entrenamiento,2227024176.mp4,fuego,incontrolado,540,1,1,0,si,0.0,0.0,53.96
+entrenamiento,2234036166_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,2236155513_clip_003.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2242511015_clip_001.mp4,sin_fuego,sin_fuego,29,1,1,29,si,0.0,0.0,0.0
+validacion,2243676291_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,95,si,0.0,0.0,0.0
+entrenamiento,2246574559.mp4,fuego,controlado,310,1,1,2,si,30.96,0.0,0.0
+entrenamiento,2247269160.mp4,fuego,controlado,208,1,1,18,si,20.75,0.0,0.0
+calibracion,2247298317.mp4,fuego,controlado,310,1,1,0,si,30.96,0.0,0.0
+calibracion,2248965766_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2255851286.mp4,fuego,controlado,1194,1,1,0,si,119.37,0.0,0.0
+entrenamiento,2256624439_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2260466241_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,2267741133_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,2267768229_clip_004.mp4,sin_fuego,sin_fuego,17,1,1,17,si,0.0,0.0,0.0
+entrenamiento,2269398603_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,2271869938.mp4,fuego,controlado,314,2,1,275,si,27.21,0.0,0.0
+entrenamiento,2281473103.mp4,fuego,controlado,262,1,1,0,si,26.16,0.0,0.0
+calibracion,2284899745_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2291703274_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,2292846696_clip_003.mp4,sin_fuego,sin_fuego,38,1,1,38,si,0.0,0.0,0.0
+prueba,2301425156.mp4,fuego,controlado,259,1,1,11,si,25.88,0.0,0.0
+entrenamiento,2304168386_clip_004.mp4,sin_fuego,sin_fuego,17,1,1,16,si,0.0,0.0,0.0
+prueba,2304171822_clip_003.mp4,sin_fuego,sin_fuego,67,1,1,67,si,0.0,0.0,0.0
+entrenamiento,2308934158_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,2309158029_clip_003.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2310023304.mp4,fuego,controlado,353,1,1,0,si,35.28,0.0,0.0
+entrenamiento,2310050739.mp4,fuego,controlado,262,1,1,0,si,26.16,0.0,0.0
+validacion,2310055998.mp4,fuego,controlado,294,1,1,0,si,29.32,0.0,0.0
+entrenamiento,2310056129.mp4,fuego,controlado,281,1,1,6,si,28.0,0.0,0.0
+validacion,2315641967_clip_003.mp4,sin_fuego,sin_fuego,16,1,1,8,si,0.0,0.0,0.0
+entrenamiento,2315643272_clip_003.mp4,sin_fuego,sin_fuego,8,1,0,8,si,0.0,0.0,0.0
+entrenamiento,2320985904_clip_004.mp4,sin_fuego,sin_fuego,40,1,1,40,si,0.0,0.0,0.0
+entrenamiento,2325774921_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,2325869394_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,2348799771_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2353388741_clip_004.mp4,sin_fuego,sin_fuego,30,1,1,30,si,0.0,0.0,0.0
+entrenamiento,2353905277_clip_002.mp4,sin_fuego,sin_fuego,57,1,1,57,si,0.0,0.0,0.0
+entrenamiento,2353914629_clip_002.mp4,sin_fuego,sin_fuego,58,1,1,58,si,0.0,0.0,0.0
+entrenamiento,2354872168.mp4,fuego,controlado,304,1,1,0,si,30.36,0.0,0.0
+prueba,2354872182.mp4,fuego,controlado,303,1,1,0,si,30.2,0.0,0.0
+calibracion,2354874363.mp4,fuego,controlado,301,1,1,0,si,30.0,0.0,0.0
+prueba,2354874365.mp4,fuego,controlado,302,1,1,0,si,30.12,0.0,0.0
+entrenamiento,2358649688_clip_001.mp4,sin_fuego,sin_fuego,81,1,1,81,si,0.0,0.0,0.0
+entrenamiento,2358650201_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,2369098050_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2381084078_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2382573000_clip_001.mp4,sin_fuego,sin_fuego,83,3,2,81,si,0.0,0.0,0.0
+calibracion,2390413438_clip_003.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2391434472.mp4,fuego,controlado,322,1,1,0,si,32.16,0.0,0.0
+entrenamiento,2392243950.mp4,fuego,controlado,262,1,1,27,si,26.12,0.0,0.0
+entrenamiento,2392279700.mp4,fuego,controlado,289,1,1,95,si,28.84,0.0,0.0
+prueba,2394951246_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2400196463.mp4,fuego,controlado,565,1,1,13,si,56.48,0.0,0.0
+validacion,2404423810.mp4,fuego,controlado,298,1,1,35,si,29.73,0.0,0.0
+entrenamiento,2407203130_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2407878924.mp4,fuego,controlado,175,1,1,1,si,17.48,0.0,0.0
+entrenamiento,2408535865_clip_001.mp4,sin_fuego,sin_fuego,91,1,1,91,si,0.0,0.0,0.0
+entrenamiento,240_F_1054378251_vyV2FY6G1JrluQEDiwBUFH61XfbM7S3v_ST.mp4,fuego,controlado,277,1,1,3,si,27.6,0.0,0.0
+entrenamiento,240_F_1144752010_6rb9kcEBhPn5eBW0YX5wC4g5US8J1W2z_ST.mp4,fuego,incontrolado,424,1,1,0,si,0.0,0.0,42.37
+entrenamiento,240_F_1173797793_KsDoyD9HaN4fBsfq2FOGOxiSDqhf5mD9_ST.mp4,fuego,controlado,290,1,1,6,si,28.9,0.0,0.0
+validacion,240_F_1218750731_uijoG8mwanE9uKO4SdHOOvux2t8TuMLF_ST.mp4,fuego,controlado,461,1,1,12,si,46.08,0.0,0.0
+entrenamiento,240_F_1231264814_5OlEdixj2oxA6qbdUeGXkrofN0LoMUHT_ST.mp4,fuego,incipiente,279,1,1,0,si,0.0,27.88,0.0
+entrenamiento,240_F_1238741685_0xAv4eqbTOkvpWEu2GclQ02AWdPDGJWE_ST.mp4,fuego,incontrolado,626,1,1,0,si,0.0,0.0,62.52
+validacion,240_F_1243984746_gQpLPCTtNSGl5scl9A5pnY0A583LVcx0_ST.mp4,fuego,incipiente,74,1,1,13,si,0.0,7.31,0.0
+calibracion,240_F_1257268668_Bn7L8cDEEsbIrZWzdV5E4GwwgLTAEjLJ_ST.mp4,fuego,controlado,274,1,1,2,si,27.36,0.0,0.0
+validacion,240_F_1258398128_wdEHAnXliPx1vRnP44BaQapSW09ozyEQ_ST.mp4,fuego,controlado,160,1,1,75,si,15.97,0.0,0.0
+entrenamiento,240_F_1258580149_YoxIbUXjD8OekO23bshkOIEVUc8Ypsc4_ST.mp4,fuego,controlado,420,1,1,390,si,41.91,0.0,0.0
+entrenamiento,240_F_1269892566_L2h8wg4LZgyJAe8cwKHnbEedDmhwynin_ST.mp4,fuego,controlado,266,1,1,18,si,26.52,0.0,0.0
+entrenamiento,240_F_1277999664_arzGGYINgjia51a0uZ9JcAEnRn7O7djy_ST.mp4,fuego,controlado,362,1,1,0,si,36.1,0.0,0.0
+entrenamiento,240_F_1279001095_boRvjgpw4Nqq6OjwKWioh6NiXcWGKUoI_ST.mp4,fuego,controlado,326,1,1,1,si,32.53,0.0,0.0
+calibracion,240_F_1414480677_vjX1k20OAVFdU1H9j8niAt4ZYsJHBMzn_ST.mp4,fuego,controlado,159,1,1,3,si,15.8,0.0,0.0
+entrenamiento,240_F_1423397833_DYXXpUYFOnbRYvgFCNZe9T9Ubevejqdd_ST.mp4,fuego,incipiente,428,1,1,0,si,0.0,42.74,0.0
+calibracion,240_F_1461420225_nEFIkSro7jIx1nSXMTPTlqNR1Am2kDwi_ST.mp4,fuego,controlado,196,1,1,2,si,19.55,0.0,0.0
+entrenamiento,240_F_1463123095_V6CyYXt141TtVuqOlVG3L2tvC4Ctgxzd_ST.mp4,fuego,controlado,271,1,1,189,si,27.02,0.0,0.0
+entrenamiento,240_F_1494990722_OLg702646JyrNnd3QsiOWR4fGD3sprvC_ST.mp4,fuego,controlado,372,1,1,25,si,33.9,0.0,0.0
+entrenamiento,240_F_1499570074_4PoLc3WicY9UonDzAQC2OKcjGZ2zNWeB_ST.mp4,fuego,controlado,88,1,1,52,si,8.54,0.0,0.0
+prueba,240_F_1517927842_vASaXQOEdI9rVmaicu1bku5e4WOaWI6V_ST.mp4,fuego,controlado,417,1,1,294,si,41.67,0.0,0.0
+entrenamiento,240_F_1518542191_iHSnv4JpmStk3zq4kKDafkRTf1PKnJYk_ST.mp4,fuego,incipiente,273,1,1,152,si,0.0,24.33,0.0
+entrenamiento,240_F_1518544931_W48iXY0n7jqvls6uCGlLbVVyv4HLVudq_ST.mp4,fuego,incipiente,308,1,1,251,si,0.0,16.02,0.0
+entrenamiento,240_F_1561101979_lDJLxObdPkMF2Ps2bSyEH1x5AFJByAsb_ST.mp4,fuego,incipiente,129,1,1,14,si,0.0,9.84,0.0
+entrenamiento,240_F_1564561096_DzPmRSh590mRXEQFIgFri5VTPYnsgzCp_ST.mp4,fuego,controlado,533,1,1,163,si,53.22,0.0,0.0
+entrenamiento,240_F_1564583668_XBo7NJR1dNRGq6fmjpYuUOLno0WWyQrV_ST.mp4,fuego,incipiente,422,1,1,2,si,0.0,42.11,0.0
+calibracion,240_F_1564660926_8dA66S6zpdd6dz8gJ0FfTyUMEFdMiXPB_ST.mp4,fuego,controlado,599,1,1,442,si,33.8,0.0,0.0
+entrenamiento,240_F_1574350608_l0yP8G0EjfigfkiYw1FaQrSX5DPXywEO_ST.mp4,fuego,controlado,293,1,1,244,si,29.2,0.0,0.0
+entrenamiento,240_F_1576088520_EZ9YsImp0nG5iWMdFfbktAcp43iccmO0_ST.mp4,fuego,incontrolado,329,1,1,119,si,0.0,0.0,32.87
+validacion,240_F_1670528410_XlsEbjHkmfGeuln5cbplT2e43f0Kl6VL_ST.mp4,fuego,incontrolado,406,1,1,0,si,0.0,0.0,40.57
+validacion,240_F_1684012672_rmM0wLx8MWfgwAFyUnW3KgJufZ27fi5y_ST.mp4,fuego,controlado,90,1,1,0,si,8.92,0.0,0.0
+prueba,240_F_1690312572_jyJg0E0eagoHHojnkltBotY0t6usFFKT_ST.mp4,fuego,controlado,284,1,1,221,si,28.36,0.0,0.0
+entrenamiento,240_F_1714614304_v1ZCZNLkJhGsJk2S3466RmrVK0fgVw7A_ST.mp4,fuego,incontrolado,169,1,1,0,si,0.0,0.0,16.84
+entrenamiento,240_F_1716069728_kLX5ztEtNPu0uLUNmSpxAofX9uqDZkIa_ST.mp4,fuego,incipiente,318,1,1,2,si,0.0,31.72,0.0
+calibracion,240_F_1719830397_RVM3JFxcKI1oEeKh8v6PcWvtDlFfw6RP_ST.mp4,fuego,controlado,224,1,1,27,si,22.29,0.0,0.0
+prueba,240_F_1731074495_p3ZHLCvEldIW9WcHfZKHZogiWPhQ0kGi_ST.mp4,fuego,incipiente,592,1,1,19,si,0.0,59.16,0.0
+entrenamiento,240_F_1731085669_l3n6zjPjppIyW6UOr3oihsOXPO8O04oT_ST.mp4,fuego,incipiente,338,1,1,25,si,0.0,33.72,0.0
+entrenamiento,240_F_1735655681_pTyPr0KLjIg3vG6BCfyzokPM3pPYMI5B_ST.mp4,fuego,incontrolado,118,1,1,0,si,0.0,0.0,11.71
+prueba,240_F_220256858_4CzUzIYhuYzd6XstPkcFqdKlwGwOnfDi_ST.mp4,fuego,incontrolado,315,1,1,2,si,0.0,0.0,31.41
+entrenamiento,240_F_230141811_3JblicgBRYtd1WEc0wfPeb6ONWBK99H3_ST.mp4,fuego,incontrolado,213,1,1,0,si,0.0,0.0,21.19
+entrenamiento,240_F_384597062_s7Kn77dSH7dkYj2sJPhi0xKZTozS9mvs_ST.mp4,fuego,controlado,290,1,1,0,si,28.96,0.0,0.0
+entrenamiento,2412493264.mp4,fuego,controlado,412,1,1,0,si,41.08,0.0,0.0
+entrenamiento,2412513552.mp4,fuego,incontrolado,1031,1,1,221,si,0.0,0.0,103.06
+entrenamiento,2451511630.mp4,fuego,controlado,73,1,1,12,si,7.27,0.0,0.0
+entrenamiento,2474190034_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,2498257180_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,2507808973.mp4,fuego,controlado,600,1,1,6,si,59.96,0.0,0.0
+calibracion,2508983820_clip_003.mp4,sin_fuego,sin_fuego,85,1,1,85,si,0.0,0.0,0.0
+calibracion,2509354628.mp4,fuego,controlado,182,1,1,54,si,18.08,0.0,0.0
+prueba,2513457021.mp4,fuego,controlado,600,1,1,207,si,41.74,0.0,0.0
+entrenamiento,2530181744_clip_001.mp4,sin_fuego,sin_fuego,96,1,1,96,si,0.0,0.0,0.0
+entrenamiento,2549288525_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2559134823.mp4,fuego,controlado,234,1,1,126,si,23.29,0.0,0.0
+entrenamiento,2568999255_clip_001.mp4,sin_fuego,sin_fuego,75,3,3,75,si,0.0,0.0,0.0
+entrenamiento,2569492996_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,2579050971_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2622439605_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,2622440344_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2624952607_clip_001.mp4,sin_fuego,sin_fuego,63,1,1,63,si,0.0,0.0,0.0
+validacion,2626019001_clip_002.mp4,sin_fuego,sin_fuego,28,1,1,28,si,0.0,0.0,0.0
+validacion,2646261754_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+validacion,2659573218_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2678243083.mp4,fuego,controlado,63,1,1,2,si,6.2,0.0,0.0
+prueba,2682086818_clip_002.mp4,sin_fuego,sin_fuego,2,1,0,2,si,0.0,0.0,0.0
+calibracion,2694410132_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2737421439_clip_002.mp4,sin_fuego,sin_fuego,28,1,1,28,si,0.0,0.0,0.0
+entrenamiento,2760263871_clip_002.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2760269350_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,91,si,0.0,0.0,0.0
+entrenamiento,2793307319.mp4,fuego,incontrolado,146,1,1,1,si,0.0,0.0,14.58
+entrenamiento,2796334863_clip_001.mp4,sin_fuego,sin_fuego,66,1,1,66,si,0.0,0.0,0.0
+entrenamiento,2869141067_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,2898158280_clip_002.mp4,sin_fuego,sin_fuego,72,1,1,72,si,0.0,0.0,0.0
+entrenamiento,2900155596_clip_002.mp4,sin_fuego,sin_fuego,6,1,0,6,si,0.0,0.0,0.0
+entrenamiento,3 ALARM STRUCTURE FIRE Toms River New Jersey (No Injuries) 12_2_22.mp4,fuego,incontrolado,7579,13,13,854,si,0.0,0.0,741.73
+calibracion,"3-ALARMS struck for this fire on North Lumber Street in Allentown, Pennsylvania.mp4",fuego,incontrolado,2136,3,2,499,si,0.0,0.0,209.0
+entrenamiento,3078370702.mp4,fuego,controlado,704,1,1,32,si,70.29,0.0,0.0
+entrenamiento,624108572.mp4,fuego,controlado,208,1,1,0,si,20.69,0.0,0.0
+entrenamiento,627970766.mp4,fuego,controlado,348,1,1,1,si,34.72,0.0,0.0
+entrenamiento,636806611_clip_002.mp4,sin_fuego,sin_fuego,74,1,1,74,si,0.0,0.0,0.0
+entrenamiento,674129286.mp4,fuego,controlado,115,1,1,1,si,11.41,0.0,0.0
+entrenamiento,700_F_1041577763_6yEesz6dNyBq6J3mtOu5McGPp4GVLb0Z_ST.mp4,fuego,controlado,187,1,1,29,si,18.65,0.0,0.0
+entrenamiento,700_F_1052896794_1I83ghYusc2d70Ve0NXVPZERnLE6TFGk_ST.mp4,fuego,incontrolado,510,1,1,0,si,0.0,0.0,50.88
+entrenamiento,700_F_105649331_qogS7qGVXbGYAwpaKAkCP72jbkWaBo6s_ST.mp4,fuego,incontrolado,278,1,1,0,si,0.0,0.0,27.78
+entrenamiento,700_F_1158022708_Fx4yAjNyNFlE0vuQxfq8OODP03c7TQBG_ST.mp4,fuego,incontrolado,241,1,1,0,si,0.0,0.0,24.02
+entrenamiento,700_F_116913467_UYtcO2LTfQ6x9e4MT0UrdZWifPQvTran_ST.mp4,fuego,incontrolado,180,1,1,0,si,0.0,0.0,17.98
+prueba,700_F_1193365801_Vq9ZwN74WallFA9y1947785GEEYilGqp_ST.mp4,fuego,incontrolado,136,1,1,0,si,0.0,0.0,13.5
+entrenamiento,700_F_1239014979_UTHkCtgcC7XjjHX8N49myYTiNqRVQOyv_ST.mp4,fuego,incipiente_a_incontrolado,419,1,1,5,si,0.0,33.8,8.01
+prueba,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,fuego,incipiente_a_incontrolado,66,1,1,0,si,0.0,2.77,3.8
+validacion,700_F_1298765378_NgYYcN2YbzqhwIBChN9UqEkWGmr52PR8_ST.mp4,fuego,incontrolado,429,1,1,0,si,0.0,0.0,42.88
+validacion,700_F_1308879404_Qa2AT58vnV4DZ3d5QumZwIkvmrzshaGo_ST.mp4,fuego,controlado,63,1,1,8,si,6.27,0.0,0.0
+entrenamiento,700_F_132088442_lOfQd3xmfkmAIo6HMIDV24KI91gwgIzH_ST.mp4,fuego,incontrolado,208,1,1,0,si,0.0,0.0,20.76
+prueba,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,fuego,incipiente_a_incontrolado,132,1,1,0,si,0.0,10.64,2.52
+entrenamiento,700_F_1382848361_3LmmANtzQT3i2wPir3JZsKqhaztZm9DB_ST.mp4,fuego,controlado,187,1,1,29,si,18.22,0.0,0.0
+entrenamiento,700_F_1391338424_j2it1NPc5D7A8absKDO74MLjRAXuwiVt_ST.mp4,fuego,incipiente,351,1,1,37,si,0.0,24.62,0.0
+calibracion,700_F_143288189_nYC8Ax1FpRh4jEXQPhStBOPnnHIDJ8hx_ST.mp4,fuego,incontrolado,293,1,1,0,si,0.0,0.0,29.23
+entrenamiento,700_F_1441396320_LvNLVmqmHeULDThLiWvpStk8qMFx8rJz_ST.mp4,fuego,controlado,154,1,1,0,si,15.31,0.0,0.0
+entrenamiento,700_F_1478629518_Bz9fGyb87CxgpJTmv5Rr0Y6A7jC5Gfo8_ST.mp4,fuego,incipiente,338,1,1,68,si,0.0,28.7,0.0
+calibracion,700_F_1494533358_eWzr9DLa4nOtv6IhBGmfbIY4rCYf1nur_ST.mp4,fuego,controlado,200,1,1,75,si,19.93,0.0,0.0
+entrenamiento,700_F_1525005259_XgUWZYdAsuzxoOVADvMJr9bZJThLasJ9_ST.mp4,fuego,controlado,110,1,1,45,si,10.88,0.0,0.0
+entrenamiento,700_F_1633760735_BCo2PI5i8undF4IzKZA4u8JG5p9GBMhZ_ST.mp4,fuego,controlado,333,1,1,67,si,33.27,0.0,0.0
+prueba,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,fuego,controlado_a_incipiente,464,1,1,41,si,25.63,20.72,0.0
+entrenamiento,700_F_1639650216_qAyiaUxSu2UmRHp2rk6BsVxotkyQpgny_ST.mp4,fuego,incontrolado,100,1,1,22,si,0.0,0.0,9.96
+entrenamiento,700_F_168544436_3jmpH2jzrqnSU2OUi0C6rmtvmcfpjr6c_ST.mp4,fuego,incontrolado,150,1,1,20,si,0.0,0.0,14.96
+entrenamiento,700_F_169627921_lFcw6AVtPMzjFYhsSU6GQzReB5JHMeJx_ST.mp4,fuego,controlado,237,1,1,26,si,23.64,0.0,0.0
+entrenamiento,700_F_196699462_vgiDsQrfGVZf3F1GrDUvE16ZguhRzvWl_ST.mp4,fuego,controlado,209,1,1,126,si,20.88,0.0,0.0
+prueba,700_F_199061911_W4h9LVdrne9VAzuLYrxuZAA68JuuaXHw_ST.mp4,fuego,controlado,407,1,1,0,si,40.61,0.0,0.0
+calibracion,700_F_224012804_ERZxOezGEJonWS35gL82SxbbIUa63fd8_ST.mp4,fuego,controlado,145,1,1,0,si,14.44,0.0,0.0
+entrenamiento,700_F_240428347_SnwKCLnRJvrwONFwN6TH2W4RZex0w6OF_ST.mp4,fuego,incipiente_a_incontrolado,791,1,1,0,si,0.0,10.05,68.99
+calibracion,700_F_267580326_5aivoDcrmOSWkDdHIrdthI6q0bwt8fK3_ST.mp4,fuego,controlado,181,1,1,108,si,18.04,0.0,0.0
+entrenamiento,700_F_268796224_OGMYkuh9sPEuZNf0dxHRQsEfruCQSV0h_ST.mp4,fuego,controlado,119,1,1,0,si,11.8,0.0,0.0
+entrenamiento,700_F_274378603_baaTGa57kKZX2RGd9ZDCWxruUeFvant1_ST.mp4,fuego,controlado,115,1,1,0,si,11.41,0.0,0.0
+validacion,700_F_299409659_srZD4py1D8edfsV8gw0lyClArQjnEksw_ST.mp4,fuego,incontrolado,303,1,1,0,si,0.0,0.0,30.26
+entrenamiento,700_F_299931309_WiuF3uZrW4zfX6Ybae8ZqAXZ92DX4hxR_ST.mp4,fuego,incipiente,459,1,1,0,si,0.0,45.88,0.0
+validacion,700_F_303452063_DBcVYNLVswXUhWRri46wUIq1tKnt1lG5_ST.mp4,fuego,controlado,190,1,1,111,si,18.9,0.0,0.0
+calibracion,700_F_303452720_g6OKyDpIzVME6cABMY6Fk8YQMps4uhAQ_ST.mp4,fuego,incontrolado,143,1,1,39,si,0.0,0.0,14.28
+entrenamiento,700_F_303646857_B4qS9hi3Y1rGZonkLr3sT91BAxFDkC1m_ST.mp4,fuego,controlado,78,1,1,39,si,7.73,0.0,0.0
+entrenamiento,700_F_554054730_kE1cv8dFUsi2PPmE7r9hJxTvM9DwymIw_ST.mp4,fuego,controlado,235,1,1,53,si,23.41,0.0,0.0
+validacion,700_F_554170114_8MT8ADwUbsqa9SoMZsAssdcOdP2vtXCS_ST.mp4,fuego,controlado,232,1,1,48,si,23.12,0.0,0.0
+entrenamiento,700_F_94850543_ObZuytBmIAKd4EkDXB6mxOt7OGHGjYwx_ST.mp4,fuego,incontrolado,176,1,1,3,si,0.0,0.0,17.48
+entrenamiento,766602557.mp4,fuego,controlado,632,1,1,6,si,63.1,0.0,0.0
+entrenamiento,A FIRE IN THE DURANGO WALMART!!!!!! - Made with Clipchamp.mp4,fuego,incipiente,618,1,1,42,si,0.0,61.77,0.0
+validacion,AUTOBRAND LELYSTAD - BRANDWEER - UITRUK - PRIO 1.mp4,fuego,incipiente,555,2,2,181,si,0.0,54.27,0.0
+prueba,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,fuego,incipiente_a_incontrolado,1375,1,1,143,si,0.0,46.8,90.63
+entrenamiento,Arrival Video_  Firefighters battle this fully involved house fire.mp4,fuego,incontrolado,1716,1,1,503,si,0.0,0.0,167.9
+validacion,BRANDWEER - GROTE BRAND - PRIO1- DUTCH FIREFIGHTERS.mp4,fuego,incontrolado,358,1,1,61,si,0.0,0.0,34.27
+validacion,BRANDWEER - UITRUK - PRIO 1 - 2 Auto totaal uitgebrand!!.mp4,fuego,incipiente_a_incontrolado,1442,2,2,631,si,0.0,6.1,134.97
+validacion,BRANDWEER - UITRUK - PRIO 1 - Woningbrand Pannetje op het Vuur.mp4,fuego,incipiente,162,5,4,82,si,0.0,15.8,0.0
+validacion,BRANDWEER - UITRUK - UItslaande brand in een havenmeesterwoning op Urk.mp4,fuego,incontrolado,938,2,2,99,si,0.0,0.0,91.73
+validacion,BRANDWEER - WAT KOMT ER ALLEMAAL BIJ KIJKEN - OPLEIDING MANSCHAP A! Dutch Firefighters.mp4,fuego,incipiente_a_incontrolado,473,2,2,1,si,0.0,16.07,30.13
+entrenamiento,Barn Burning 04 13 2014.mp4,fuego,incipiente_a_incontrolado,4990,1,1,99,si,0.0,43.3,455.6
+entrenamiento,Bethel Island_ 2 Alarm Fire Destroys 3 Homes in Contra Costa County.mp4,fuego,incontrolado,10836,3,3,688,si,0.0,0.0,1060.5
+calibracion,Box Alarm Structure Fire (HEAVY FIRE) Tinton Falls New Jersey 3_21_23.mp4,fuego,incontrolado,2627,1,1,51,si,0.0,0.0,262.67
+prueba,Box Alarm Structure Fire Bradley Beach 3_19_23.mp4,fuego,incipiente,1493,4,3,356,si,0.0,146.0,0.0
+calibracion,Brandgefahr durch Notebook-Akkus.mp4,fuego,incipiente_a_incontrolado,524,2,2,83,si,0.0,33.1,15.87
+prueba,Brandgefahren im Haushalt.mp4,fuego,incipiente_a_incontrolado,685,3,3,351,si,0.0,24.27,44.2
+prueba,Brannutvikling.mp4,fuego,incipiente_a_incontrolado,1490,4,3,58,si,0.0,47.5,98.2
+prueba,Brennende Akkus.mp4,fuego,incipiente_a_incontrolado,836,6,5,187,si,0.0,5.67,76.1
+prueba,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,fuego,controlado_a_incontrolado,1381,1,1,711,si,46.53,3.9,61.13
+entrenamiento,"CAR FIRE  EXPLOSION Wall Township, NJ 6_12_21.mp4",fuego,incontrolado,1369,1,1,440,si,0.0,0.0,136.83
+entrenamiento,Car Fire with Multiple Exposures (Jeep) Brick New Jersey 2_18_23.mp4,fuego,incontrolado,207,1,1,16,si,0.0,0.0,20.63
+validacion,DUTCH FIREFIGHTERS  -  Prio 1 containerbrand (uitbreidingsgevaar). 9.mp4,fuego,incipiente,91,1,1,51,si,0.0,8.1,0.0
+validacion,DUTCH FIREFIGHTERS  - MANSCHAPPEN IN OPLEIDING ERVAREN WAT HITTE IS. 74.mp4,fuego,controlado_a_incontrolado,3148,3,3,292,si,239.2,0.0,75.57
+validacion,DUTCH FIREFIGHTERS -  CLUBHUIS BRAND AF. 15.mp4,fuego,incontrolado,1764,20,19,487,si,0.0,0.0,176.33
+validacion,DUTCH FIREFIGHTERS -  GROTE ZWARTE ROOKWOLKEN BOVEN DE STAD! 18.mp4,fuego,incontrolado,1846,2,2,227,si,0.0,0.0,180.6
+validacion,DUTCH FIREFIGHTERS -  SAFETY OFFICER - A DAY IN THE LIFE - USA.mp4,fuego,incontrolado,1267,2,2,387,si,0.0,0.0,126.6
+validacion,DUTCH FIREFIGHTERS -  VOERTUIGEN IN BRAND IN EEN PARKEERGARAGE  . 86.mp4,fuego,incipiente_a_incontrolado,842,3,3,235,si,0.0,26.7,52.06
+prueba,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,fuego,controlado_a_incontrolado,1290,7,7,164,si,25.34,3.96,94.17
+entrenamiento,"Early Video_ Firefighters make attack on this house fire in Whitehall, Pennsylvania.mp4",fuego,incipiente_a_incontrolado,663,1,1,22,si,0.0,35.87,30.36
+entrenamiento,FLOODED HOUSE FIRE Hurricane Ida Manville New Jersey 9_2_21.mp4,fuego,incontrolado,4063,1,1,451,si,0.0,0.0,406.27
+validacion,FULLY INVOLVED CAR FIRE Point Pleasant Boro New Jersey 8_25_22.mp4,fuego,incontrolado,419,1,1,9,si,0.0,0.0,41.87
+entrenamiento,Fire Engine Responding to Car fire with Pre-arrival viewer video.mp4,fuego,incipiente_a_incontrolado,672,2,2,39,si,0.0,59.53,6.17
+prueba,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,fuego,controlado_a_incontrolado,1521,2,2,28,si,2.0,64.57,82.23
+entrenamiento,"Fire at Union Terrace Elementary School in Allentown, Pennsylvania.mp4",fuego,controlado,167,1,1,16,si,16.23,0.0,0.0
+entrenamiento,"Fully Involved Car Fire Point Pleasant Boro, NJ 8_14_21.mp4",fuego,incipiente_a_incontrolado,1380,3,3,24,si,0.0,14.2,120.77
+calibracion,"Garden State Parkway Fire (MAJOR SHUTDOWN) (ARSON) Brick, New Jersey 1_19_22.mp4",fuego,incontrolado,3378,6,6,625,si,0.0,0.0,330.5
+entrenamiento,HFSC Home Security Camera Living Room Fire.mp4,fuego,incipiente_a_incontrolado,1242,3,3,319,si,0.0,23.73,47.54
+prueba,Har du en fungerande brandvarnare_.mp4,fuego,controlado_a_incipiente,285,3,3,62,si,16.33,12.14,0.0
+entrenamiento,Hier entstehen die meisten Brände_ Auf dem Herd!.mp4,fuego,incipiente_a_incontrolado,550,6,5,68,si,0.0,16.33,37.4
+calibracion,Jeder dritte Brand entsteht durch Elektrizität.mp4,fuego,incipiente_a_incontrolado,213,1,1,63,si,0.0,9.03,6.34
+calibracion,Large dollhouse burning down.mp4,fuego,controlado_a_incontrolado,17679,1,1,637,si,182.73,606.8,978.27
+prueba,Launch of Fire Investigations by BRE and FIUK.mp4,fuego,controlado_a_incontrolado,2204,1,1,247,si,27.1,36.83,151.7
+entrenamiento,Lev med levende lys!.mp4,fuego,controlado_a_incontrolado,850,13,13,134,si,7.53,23.0,52.54
+entrenamiento,Nine minutes of house fire - Burning Victorian Dollhouse down! - Timelapse.mp4,fuego,incipiente_a_incontrolado,3733,2,2,739,si,0.0,9.0,332.47
+entrenamiento,PRE-ARRIVAL AT FULLY INVOLVED HOUSE FIRE - SYOSSET NY.mp4,fuego,incontrolado,2030,1,1,47,si,0.0,0.0,202.93
+entrenamiento,"PRE-ARRIVAL VIDEO_ Dumpster fire at the bakery in Whitehall, Pennsylvania.mp4",fuego,incipiente,231,1,1,144,si,0.0,22.1,0.0
+entrenamiento,"PRE-ARRIVAL_  Sofa burning in living room, working fire signal transmitted in Whitehall, PA.mp4",fuego,incipiente,1428,1,1,198,si,0.0,139.63,0.0
+entrenamiento,"PRE-ARRIVAL_ Fully involved structure fire in Whitehall, Pennsylvania.mp4",fuego,incontrolado,2749,4,4,64,si,0.0,0.0,274.83
+entrenamiento,Residential Sprinkler Fire Test with BS 9252 Fire Load.mp4,fuego,incipiente_a_incontrolado,1135,1,1,14,si,0.0,101.33,4.84
+entrenamiento,Roaring fire attacks barbies in a burning dollhouse.mp4,fuego,incipiente_a_incontrolado,8489,2,1,818,si,0.0,296.8,515.9
+entrenamiento,Selbstentzündung leinölgetränkter Lappen.mp4,fuego,incipiente,300,2,2,70,si,0.0,27.37,0.0
+entrenamiento,This Can Create a House Inferno!.mp4,fuego,incipiente_a_incontrolado,1556,27,26,110,si,0.0,13.17,135.73
+entrenamiento,VID_20230612_141522.mp4,fuego,incontrolado,72,1,1,5,si,0.0,0.0,7.13
+entrenamiento,VID_20230612_141558.mp4,fuego,incontrolado,186,1,1,1,si,0.0,0.0,18.15
+entrenamiento,VID_20230612_141759.mp4,fuego,incipiente_a_incontrolado,505,1,1,309,si,0.0,22.51,10.73
+prueba,VID_20230612_142839.mp4,fuego,incipiente_a_incontrolado,379,1,1,8,si,0.0,20.9,16.93
+entrenamiento,VID_20230612_143556.mp4,fuego,incipiente,243,1,1,0,si,0.0,24.27,0.0
+entrenamiento,VID_20230612_153055.mp4,fuego,incipiente,72,1,1,0,si,0.0,7.16,0.0
+entrenamiento,VID_20230612_153203.mp4,fuego,incipiente,162,1,1,0,si,0.0,16.1,0.0
+calibracion,VR Home Fire Demonstration - Sprinklered and Unsprinklered (room with sprinkler first).mp4,fuego,incipiente_a_incontrolado,1315,2,2,269,si,0.0,58.56,44.87
+entrenamiento,"Van Fire Result of hitting dump truck on Route 22 in Whitehall, Pennsylvania.mp4",fuego,incipiente_a_incontrolado,1515,1,1,84,si,0.0,39.5,111.93
+entrenamiento,Video shows Disney dragon catching fire during Fantasmic show.mp4,fuego,incipiente_a_incontrolado,296,1,1,2,si,0.0,16.93,12.6
+calibracion,"WORKING SHED FIRE Point Pleasant Beach, New Jersey 8_26_21.mp4",fuego,incipiente,1320,1,1,105,si,0.0,126.27,0.0
+entrenamiento,Watch this Dollhouse go up in Flames! (FULL VIDEO)— Do Not Try At Home hobby craft.mp4,fuego,controlado_a_incontrolado,3249,1,1,806,si,72.1,93.77,159.0
+entrenamiento,Water Mist Fire Demonstration.mp4,fuego,incipiente_a_incontrolado,2149,1,1,214,si,0.0,80.63,129.57
+entrenamiento,"Weehawken, NJ 6th Alarm Full Involved House Fire Multiple Mutual Aid Towns Operating at Scene.mp4",fuego,incontrolado,12037,6,6,288,si,0.0,0.0,1203.6
+prueba,Weihnachtsbaumbrände - sind vermeidbar.mp4,fuego,controlado_a_incontrolado,1826,5,5,381,si,58.17,20.93,99.5
+prueba,What Type Of Smoke Alarm Is Best For Your Home_.mp4,fuego,incipiente_a_incontrolado,116,4,4,12,si,0.0,3.67,7.36
+prueba,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,fuego,controlado_a_incipiente,3639,12,12,392,si,15.34,333.0,0.0
+entrenamiento,Ystafell wely ar dân _ Bedroom fire.mp4,fuego,incipiente_a_incontrolado,1654,7,7,190,si,0.0,47.9,113.9
+validacion,ZEER GROTE BRAND - DOOR DE OGEN VAN DE BRANDWEERSTUDENT - NIEUW YOUTUBE KANAAL - DUTCH FIREFIGHTERS.mp4,fuego,incontrolado,2518,6,6,600,si,0.0,0.0,251.7
+entrenamiento,c58002ff-b4268116.mp4,fuego,controlado,151,1,1,55,si,15.04,0.0,0.0
+entrenamiento,c890e84f-faf8aa86.mp4,fuego,controlado,293,1,1,6,si,29.25,0.0,0.0
+calibracion,f774d104-07fbfa79.mp4,fuego,controlado,125,1,1,0,si,12.44,0.0,0.0
+calibracion,fire1.avi,fuego,incipiente,472,1,1,229,si,0.0,46.13,0.0
+prueba,fire15_clip_002.mp4,sin_fuego,sin_fuego,62,1,1,62,si,0.0,0.0,0.0
+entrenamiento,fire16_clip_008.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,fire17_clip_007.mp4,sin_fuego,sin_fuego,88,1,1,88,si,0.0,0.0,0.0
+validacion,fire18_clip_006.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+prueba,fire19_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,fire20_clip_013.mp4,sin_fuego,sin_fuego,90,1,1,90,si,0.0,0.0,0.0
+calibracion,fire21_clip_001.mp4,sin_fuego,sin_fuego,83,1,1,83,si,0.0,0.0,0.0
+prueba,fire22_clip_013.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,fire23_clip_044.mp4,sin_fuego,sin_fuego,70,1,1,70,si,0.0,0.0,0.0
+entrenamiento,fire24_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,67,si,0.0,0.0,0.0
+entrenamiento,fire25_clip_001.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,fire26_clip_004.mp4,sin_fuego,sin_fuego,70,1,1,70,si,0.0,0.0,0.0
+calibracion,fire27_clip_004.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+calibracion,fire28_clip_018.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,fire29_clip_004.mp4,sin_fuego,sin_fuego,100,1,1,100,si,0.0,0.0,0.0
+entrenamiento,fire3.avi,fuego,controlado,174,1,1,0,si,17.27,0.0,0.0
+entrenamiento,video (4309).mp4,fuego,incipiente,60,1,1,6,si,0.0,5.88,0.0
+prueba,videoplayback (1).mp4,fuego,incipiente_a_incontrolado,2597,1,1,450,si,0.0,77.37,171.26
+validacion,videoplayback (10).mp4,fuego,incipiente_a_incontrolado,2090,1,1,99,si,0.0,153.34,46.66
+entrenamiento,videoplayback (11).mp4,fuego,incipiente_a_incontrolado,2581,3,3,158,si,0.0,76.2,126.97
+prueba,videoplayback (12).mp4,fuego,incipiente_a_incontrolado,1849,2,2,211,si,0.0,51.13,129.77
+entrenamiento,videoplayback (13).mp4,fuego,incipiente_a_incontrolado,1710,4,4,361,si,0.0,126.24,30.2
+entrenamiento,videoplayback (14).mp4,fuego,incipiente_a_incontrolado,1753,4,4,230,si,0.0,137.4,34.13
+prueba,videoplayback (15).mp4,fuego,incipiente_a_incontrolado,1436,1,1,429,si,0.0,67.16,39.7
+entrenamiento,videoplayback (16).mp4,fuego,controlado_a_incontrolado,2762,1,1,501,si,29.37,176.23,29.4
+prueba,videoplayback (17).mp4,fuego,incipiente_a_incontrolado,531,1,1,132,si,0.0,8.1,38.14
+prueba,videoplayback (3).mp4,fuego,controlado_a_incipiente,1970,1,1,34,si,34.0,158.77,0.0
+calibracion,videoplayback (4).mp4,fuego,incipiente_a_incontrolado,2623,3,3,705,si,0.0,105.43,151.2
+entrenamiento,videoplayback (8).mp4,fuego,incipiente_a_incontrolado,251,2,1,75,si,0.0,9.56,8.54
+entrenamiento,videoplayback (9).mp4,fuego,incipiente_a_incontrolado,1948,11,10,169,si,0.0,65.54,125.06
+prueba,videoplayback1.mp4,fuego,incipiente_a_incontrolado,2424,1,1,74,si,0.0,49.6,192.73
+entrenamiento,আর কতবার পুড়লে টনক নড়বে প্রশাসনের_ _ Bongo Bazar Fire _ Dhaka Fire News _ Somoy TV.mp4,fuego,incontrolado,883,4,4,85,si,0.0,0.0,88.2
