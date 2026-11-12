@@ -9,6 +9,7 @@ archivo,anotador,nivel_inicial,t_incipiente,t_incontrolado,t_inicio_util,t_fin_u
 12858041_3840_2160_24fps.mp4,aleCa,incipiente,,,,,0,2026-11-04 20:54:40
 13229149_3840_2160_30fps.mp4,aleCa,incontrolado,,,,,0,2026-11-04 20:52:19
 13557193_1920_1080_30fps.mp4,aleCa,controlado,,,,,0,2026-11-04 20:55:11
+13871980_3840_2160_24fps.mp4,aleCa_cambios,incipiente,,,0.0,,0,2026-11-11 22:07:58
 13877365_1920_1080_30fps.mp4,aleCa,controlado,,,,,0,2026-11-04 20:54:42
 13877383_1920_1080_30fps.mp4,aleCa,controlado,,,,,0,2026-11-04 20:55:26
 1394569023.mp4,aleCa,incontrolado,,,,,0,2026-11-04 20:54:30
@@ -19,8 +20,10 @@ archivo,anotador,nivel_inicial,t_incipiente,t_incontrolado,t_inicio_util,t_fin_u
 14294952_3840_2160_24fps.mp4,aleCa,incontrolado,,,,,0,2026-11-04 20:54:38
 14296658_3840_2160_24fps.mp4,aleCa,incontrolado,,,,,0,2026-11-04 20:54:32
 14296810_3840_2160_24fps.mp4,aleCa,incipiente,,,,,0,2026-11-04 20:52:13
+14297190_3840_2160_24fps.mp4,aleCa_cambios,incipiente,,,0.08,24.98,0,2026-11-11 22:05:35
 14301887_3840_2160_24fps.mp4,aleCa,incontrolado,,,,,0,2026-11-04 20:54:41
 1615312960.mp4,aleCa,controlado,,,,,0,2026-11-04 20:55:03
+1723634695.mp4,aleCa_cambios,incipiente,,27.06,0.1,36.07,0,2026-11-11 22:05:06
 17647100-hd_1920_1080_30fps.mp4,aleCa,controlado,,,,,0,2026-11-04 20:54:17
 1828453162.mp4,aleCa,controlado,,,,,0,2026-11-04 20:53:28
 18642729-uhd_3840_2160_60fps.mp4,aleCa,incipiente,,,,,0,2026-11-04 20:54:22
@@ -33,9 +36,36 @@ archivo,anotador,nivel_inicial,t_incipiente,t_incontrolado,t_inicio_util,t_fin_u
 2082620373.mp4,aleCa,controlado,,,,,0,2026-11-04 20:54:51
 2169023322.mp4,aleCa,controlado,,,,,0,2026-11-04 20:54:28
 2186966283.mp4,aleCa,controlado,,,,,0,2026-11-04 20:54:49
+2301425156.mp4,aleCa_cambios,controlado,,,0.16,25.88,0,2026-11-11 19:37:02
+2354872182.mp4,aleCa_cambios,controlado,,,0.0,30.2,0,2026-11-11 19:37:11
 2354874365.mp4,aleCa,incipiente,,,,,0,2026-11-04 20:52:24
 240_F_1517927842_vASaXQOEdI9rVmaicu1bku5e4WOaWI6V_ST.mp4,aleCa,controlado,,,,,0,2026-11-04 20:55:20
 240_F_1690312572_jyJg0E0eagoHHojnkltBotY0t6usFFKT_ST.mp4,aleCa,controlado,,,,,0,2026-11-04 20:52:32
 240_F_1731074495_p3ZHLCvEldIW9WcHfZKHZogiWPhQ0kGi_ST.mp4,aleCa,incipiente,,,,,0,2026-11-04 20:54:26
 240_F_220256858_4CzUzIYhuYzd6XstPkcFqdKlwGwOnfDi_ST.mp4,aleCa,incontrolado,,,,,0,2026-11-04 20:53:23
 2513457021.mp4,aleCa,controlado,,,,,0,2026-11-04 20:55:09
+700_F_1193365801_Vq9ZwN74WallFA9y1947785GEEYilGqp_ST.mp4,aleCa_cambios,incipiente,,,,,0,2026-11-11 19:45:18
+700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,aleCa_cambios,incipiente,,,0.0,6.57,0,2026-11-11 19:50:58
+700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,aleCa_cambios,incipiente,,9.2,0.12,13.16,0,2026-11-11 22:08:13
+700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,aleCa_cambios,controlado,,,,,0,2026-11-11 19:40:07
+700_F_199061911_W4h9LVdrne9VAzuLYrxuZAA68JuuaXHw_ST.mp4,aleCa_cambios,controlado,,,0.17,40.61,0,2026-11-11 19:43:50
+April 2016 - Fire Investigation 1B - Milpitas CA.mp4,aleCa_cambios,incipiente,,96.5,0.37,135.43,0,2026-11-11 19:43:19
+Box Alarm Structure Fire Bradley Beach 3_19_23.mp4,aleCa_cambios,incipiente,,,0.83,149.2,0,2026-11-11 22:05:25
+Brandgefahren im Haushalt.mp4,aleCa_cambios,incipiente,,,0.2,65.93,0,2026-11-11 19:45:14
+Brannutvikling.mp4,aleCa_cambios,incipiente,,115.0,0.27,147.9,0,2026-11-11 19:46:11
+Brennende Akkus.mp4,aleCa_cambios,incipiente,,,0.23,,1,2026-11-11 19:43:59
+Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,aleCa_cambios,incipiente,,94.07,64.9,137.63,0,2026-11-11 19:44:28
+Die Provinzial klärt auf – Brandursache Fettbrand.mp4,aleCa_cambios,controlado,27.77,107.0,0.17,128.97,0,2026-11-11 19:45:55
+Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,aleCa_cambios,incipiente,,114.97,0.2,152.03,0,2026-11-11 19:40:02
+Har du en fungerande brandvarnare_.mp4,aleCa_cambios,incipiente,,20.53,0.13,27.33,0,2026-11-11 22:06:10
+Launch of Fire Investigations by BRE and FIUK.mp4,aleCa_cambios,incipiente,,198.83,,220.33,0,2026-11-11 19:51:46
+VID_20230612_142839.mp4,aleCa_cambios,incipiente,,,0.2,37.77,0,2026-11-11 22:07:23
+Weihnachtsbaumbrände - sind vermeidbar.mp4,aleCa_cambios,controlado,61.77,118.9,0.5,182.5,0,2026-11-11 19:51:28
+What Type Of Smoke Alarm Is Best For Your Home_.mp4,aleCa_cambios,incipiente,,4.33,0.03,8.93,0,2026-11-11 19:42:57
+Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,aleCa_cambios,controlado,263.77,,1.53,351.27,0,2026-11-11 22:07:16
+videoplayback (1).mp4,aleCa_cambios,incipiente,,255.4,5.37,259.67,0,2026-11-11 19:38:26
+videoplayback (12).mp4,aleCa_cambios,incipiente,,111.23,0.4,,0,2026-11-11 19:43:38
+videoplayback (15).mp4,aleCa_cambios,incipiente,,113.53,1.17,141.1,0,2026-11-11 19:42:23
+videoplayback (17).mp4,aleCa_cambios,incipiente,,33.87,9.63,53.0,0,2026-11-11 19:36:51
+videoplayback (3).mp4,aleCa_cambios,incipiente,,,0.0,196.43,0,2026-11-11 19:46:27
+videoplayback1.mp4,aleCa_cambios,controlado,24.97,73.43,0.1,242.33,0,2026-11-11 18:38:43

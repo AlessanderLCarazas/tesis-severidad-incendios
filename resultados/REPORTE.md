@@ -1095,3 +1095,109 @@ Fecha: 2026-11-06. Rama: `avance-80`. Script nuevo: `etiquetar_ia_v2.py`. Prompt
 - Los 30 videos de `resultados/prueba_cambios.csv` y los 40 de `resultados/prueba_humana.csv` son prueba.
 - **Los videos que compartan origen con cualquiera de esos 70 tampoco entran en entrenamiento, validacion ni calibracion.**
 - El origen se toma ya normalizado y agrupado (ver "Pendiente para el paso 10" en el paso 6).
+
+## Fase B del 80 %, paso 8: validacion humana de los cambios de nivel (2026-11-11)
+
+Fecha: 2026-11-11. Rama: `avance-80`. Script nuevo: `validar_cambios.py` (importa `leer`, `num` y `kappa` de `comparar_etiquetas.py`, que no se modifica).
+
+### Que se hizo
+
+- El usuario etiqueto a ciegas los 30 videos de `resultados/prueba_cambios.csv` con `python etiquetar_v3.py --anotador aleCa_cambios --lista resultados/prueba_cambios.csv --ciego`. Las 30 filas estan en `etiquetas.csv`; las 40 filas de `aleCa` quedaron iguales.
+- `validar_cambios.py` compara esas etiquetas con `resultados/etiquetas_ia_v2.csv` y escribe `resultados/validacion_cambios.md` (tablas completas, video por video).
+- **No se modifico ninguna etiqueta.** Se comprobo con SHA-256 antes y despues: `etiquetas.csv`, `resultados/etiquetas_ia_v2.csv`, `resultados/etiquetas_ia.csv` y `resultados/tiempos_etiquetado.csv` quedaron identicos.
+- El humano descarto 1 video (`Brennende Akkus.mp4`; la IA lo deja en incipiente con cambio a incontrolado en 5.67 s). Los cambios, los instantes y el tramo util se comparan en los otros 29.
+
+### Comando
+
+```
+python validar_cambios.py
+```
+
+Parametros: `--anotador aleCa_cambios`, `--lista resultados/prueba_cambios.csv`, `--ia resultados/etiquetas_ia_v2.csv`, `--pausa_s 1000` (un video abierto mas de 1 000 s se cuenta como pausa).
+
+### Numeros
+
+**Nivel inicial**
+
+| Videos | Acuerdo | Kappa ponderado lineal |
+|---|---|---|
+| los 30 | 22 de 30 (73.3 %) | 0.469 |
+| sin el descartado (29) | 21 de 29 (72.4 %) | 0.460 |
+
+- De los 8 desacuerdos, en 6 la IA pone controlado y el humano incipiente; en 1 la IA pone incipiente y el humano controlado; en 1 la IA pone incontrolado y el humano incipiente.
+- El humano no uso incontrolado como nivel inicial en ningun video (8 controlado, 22 incipiente). La IA: 13 controlado, 16 incipiente, 1 incontrolado.
+
+**Deteccion de cambios (29 videos)**
+
+| Cambio | Ambos | Solo la IA | Solo el humano | Ninguno |
+|---|---|---|---|---|
+| a incipiente | 3 | 7 | 1 | 18 |
+| a incontrolado | 15 | 5 | 1 | 8 |
+| algun cambio en el video | 17 | 7 | 0 | 5 |
+
+- De los 24 videos no descartados con cambio segun la IA, el humano marca algun cambio en 17 (71 %) y ninguno en 7.
+- De los 7 cambios a incipiente que marca solo la IA, en 6 el humano ya puso incipiente como nivel inicial: es el mismo desacuerdo del nivel inicial, no un cambio inventado.
+- **Los 5 videos sin cambio segun la IA: el humano tampoco marca cambio en ninguno.** En 4 coincide ademas el nivel inicial. La IA no perdio ningun cambio en esta muestra (son solo 5 videos).
+
+**Error en segundos cuando ambos marcan el mismo cambio (18 instantes)**
+
+Error = instante de la IA menos instante del humano.
+
+| Grupo | Instantes | Mediana del error absoluto | Media del error absoluto | Mediana con signo | Dentro de 1 s | Dentro de 2 s | Dentro de 5 s | La IA marca antes |
+|---|---|---|---|---|---|---|---|---|
+| todos | 18 | 31.8 s | 54.2 s | -31.8 s | 2 | 3 | 4 | 15 |
+| a incipiente | 3 | 3.6 s | 81.5 s | -3.6 s | 1 | 1 | 2 | 2 |
+| a incontrolado | 15 | 39.8 s | 48.8 s | -39.8 s | 1 | 2 | 2 | 13 |
+| origen: pasada 2 (tira densa) | 11 | 39.8 s | 60.0 s | -39.8 s | 1 | 1 | 2 | 10 |
+| origen: pasada 1 (fotos separadas 1 s o menos) | 3 | 1.4 s | 2.4 s | +1.4 s | 1 | 2 | 2 | 1 |
+| origen: pasada 1 (la pasada 2 no ve el cambio) | 4 | 61.9 s | 77.3 s | -61.9 s | 0 | 0 | 0 | 4 |
+
+- Los 3 instantes de la pasada 1 vienen de videos de 12 a 36 s, asi que su error esta acotado por la duracion. No sirven para decir que la pasada 1 es mas precisa que la pasada 2.
+- Los instantes de la pasada 2 vienen de videos de 53 a 364 s (mediana de 152 s).
+- Error maximo: 240.7 s (cambio a incipiente en un video de 364 s).
+
+**Tramo util (diferencia = humano menos IA)**
+
+| Extremo | Videos | Mediana de la diferencia absoluta | Media de la diferencia absoluta | Dentro de 1 s | Dentro de 2 s | Dentro de 5 s | Dentro de una foto de la pasada 1 |
+|---|---|---|---|---|---|---|---|
+| inicio | 26 | 0.18 s | 3.73 s | 20 | 20 | 22 | 23 |
+| fin | 25 | 2.10 s | 1.99 s | 10 | 12 | 24 | 16 |
+
+- El humano dejo vacio el inicio util en 3 videos y el fin util en 4 (de 29).
+- Las diferencias grandes del inicio son 3 videos: +41.4 s, -32.4 s y +7.4 s.
+
+**Tiempo de etiquetado (`resultados/tiempos_etiquetado.csv`)**
+
+- Tiempo total con la ventana abierta: 215.8 min. Dos videos estuvieron abiertos 3 488 s y 8 000 s (pausas con la ventana abierta).
+- **Sin esos dos: 24.4 min en 28 videos** (mediana de 20.6 s por video, media de 52.2 s, de 4.8 s a 382.7 s). Esos 28 videos duran 51.7 min.
+- **En 22 de los 28 la ventana estuvo abierta menos tiempo que la duracion del video** (mediana de tiempo abierto entre duracion: 0.29). Esos videos no se vieron completos a velocidad normal; se recorrieron con saltos o con la linea de tiempo.
+- De los 15 videos con cambio del humano y sin pausa, 11 estan en ese caso.
+- 18 de los 30 videos tienen una sola reproduccion.
+- Sesion: primer guardado a las 18:38:43 y ultimo a las 22:08:13.
+
+### Lectura de los resultados
+
+- **Los niveles coinciden de forma moderada** (73 %, kappa 0.47) y la IA no pierde cambios en los videos que dejo sin cambio.
+- **Los instantes no coinciden.** La mediana del error es de 32 s y solo 4 de 18 quedan dentro de 5 s. El desacuerdo es sistematico: en 13 de 15 cambios a incontrolado la IA marca antes que el humano, con una mediana de 40 s.
+- **No es un problema de resolucion.** La pasada 2 usa una foto cada 0.5 s y aun asi su mediana es de 40 s. Es una diferencia de criterio: la IA llama incontrolado a un estado que el humano todavia considera incipiente. Coincide con los otros dos resultados: la IA pone controlado al inicio en 6 videos donde el humano pone incipiente, y marca un cambio a incontrolado en 5 videos que el humano deja en incipiente.
+- **Las 12 respuestas de "no se ve el cambio" de la pasada 2 eran una senal valida:** los 4 instantes de ese grupo que se pudieron comparar tienen el peor error (mediana de 62 s, ninguno dentro de 5 s).
+
+### Limitaciones que se declaran
+
+- Un solo anotador humano y 18 instantes comparados (solo 3 a incipiente).
+- La lista tiene un tope de 300 s por video en tres de los cuatro estratos.
+- El protocolo pedia reproducir cada video. El registro de tiempos muestra que 22 de 28 videos no se vieron completos, asi que el instante humano tampoco es una referencia exacta. Con estos datos no se puede decir cual de los dos instantes es el correcto; solo que difieren.
+- Las etiquetas humanas no se modifican despues de esta comparacion.
+
+### Consecuencias para la Fase C (pendiente de decision del usuario)
+
+- El tiempo al peligro (`tau = t_inc - t`) y los segmentos se entrenarian con los instantes de la IA y se evaluarian con los del humano. Con un adelanto mediano de 40 s en el cambio a incontrolado, el MAE de `tau` y el error de los cambios tendrian ese piso aunque el modelo fuera perfecto.
+- El mismo adelanto haria que la alerta parezca mas anticipada frente a la etiqueta humana (EWT inflado). Hay que declararlo o corregirlo.
+- Opciones: (1) mantener el protocolo (entrenar con la IA, probar con el humano) y declarar el sesgo; (2) que el humano etiquete tambien los videos de entrenamiento con cambio (39 llegan a incontrolado desde otro nivel); (3) reportar las metricas de prueba contra las dos referencias, humano e IA.
+
+### Archivos
+
+- `validar_cambios.py` (nuevo).
+- `resultados/validacion_cambios.md` (nuevo).
+- `etiquetas.csv` (30 filas nuevas del anotador `aleCa_cambios`).
+- `resultados/tiempos_etiquetado.csv` (nuevo, lo escribe `etiquetar_v3.py`).
