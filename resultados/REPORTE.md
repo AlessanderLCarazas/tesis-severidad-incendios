@@ -1618,3 +1618,59 @@ python comparar_escena.py
 - `resultados/escena/`: `resumen.md`, `videos.csv`, `normalizacion.json`, `normalizacion_contexto.json`.
 - `resultados/modelos_escena/`: `comparacion.md`, `curvas.png`, `referencias.json` y, por corrida, `historial.csv` y `metricas.json`.
 - No versionados: `runs_fuego/escena/*.npz`, `runs_fuego/modelos_escena/<modelo>_s<semilla>/mejor.pt`, `runs_fuego/curvas_sin_fuego/`.
+
+## Vector de escena desde el propio pipeline: `descriptores_v3.py` y `vector_escena.py` (2026-11-12)
+
+Fecha: 2026-11-12. Rama: `avance-80`. Scripts nuevos: `descriptores_v3.py`, `vector_escena.py`, `escena_v2.py`, `probar_vector_escena.py`. No se borro ni se sobrescribio nada anterior: `descriptores.py`, `descriptores_v2.py`, `escena.py`, `runs_fuego/descriptores_v2_noche/`, `runs_fuego/escena/` y los modelos quedan como estaban.
+
+### Que se hizo
+
+- **`descriptores_v3.py`:** misma corrida que `descriptores_v2.py` (mismo detector, seguimiento `dt_tope2_cmc`, camara, cortes y `DescriptoresV2`), y ademas escribe `fotogramas.csv` con una fila por **cada fotograma procesado**: `k`, marca real `t`, `dt`, `tramo`, contexto de camara (`s_k, rot, tx, ty, inliers, valido`), numero de trayectorias y las detecciones que entran al seguimiento (confianza 0.1): numero de cajas, area total (union en una grilla de 64x36) y confianza maxima de fuego y de humo. Guarda tambien los mismos conteos y areas filtrados a confianza 0.25.
+  - Todo va a una carpeta propia (`--salida`, por defecto `runs_fuego/descriptores_v3`): `descriptores.csv`, `fotogramas.csv`, `cortes.csv`, `resumen.csv` y `procesados.csv`. No toca `resultados/cortes/`.
+  - Deja fuera los videos de `resultados/excluidos.csv` (603 videos de los 604 de `lista_noche.csv`).
+  - **Se retoma sola:** al arrancar lee `procesados.csv`, salta los videos ya hechos y quita de los CSV las filas de un video que hubiera quedado a medias. No hay opcion que sobrescriba; para empezar de cero hay que usar otra carpeta.
+- **`vector_escena.py`:** clase `VectorEscena` con `paso(t, trayectorias, detecciones)`, que devuelve los 34 valores de un fotograma y guarda el nacimiento de cada trayectoria; `reiniciar()` en cada corte. La usan igual el entrenamiento (`vectores_video`, desde los CSV) y el sistema en vivo (fotograma a fotograma). Redondea como los CSV para que los dos caminos den el mismo numero.
+- **`escena_v2.py`:** arma las secuencias de escena desde la carpeta de `descriptores_v3.py` con esa clase, sin `curvas/`, sin interpolar marcas y con el contexto de camara real. Salida en `runs_fuego/escena_v2/` y `resultados/escena_v2/`.
+
+### Prueba con 5 videos (`python probar_vector_escena.py`)
+
+Lista en `resultados/vector_escena/videos_prueba.csv`: 3 de fuego (uno con un corte, uno con huecos sin trayectoria, uno normal) y 2 sin fuego (uno con falsos del detector). Ninguno es del conjunto de prueba.
+
+| Video | Fotogramas | Filas de descriptores (noche / v3) | Filas distintas | Diferencia maxima de los 29 agregados | Diferencia maxima de la marca de tiempo |
+|---|---|---|---|---|---|
+| videoplayback (8).mp4 | 251 | 375 / 375 | 0 | 2e-16 | 0.000 s |
+| 2451511630.mp4 | 73 | 80 / 80 | 0 | 6e-17 | 0.000 s |
+| fire3.avi | 174 | 444 / 444 | 0 | 2e-16 | 0.000 s |
+| 2030845629_clip_003.mp4 | 100 | 142 / 142 | 0 | 0 | 0.000 s |
+| 1293332816_clip_001.mp4 | 100 | 0 / 0 | 0 | 0 | 0.020 s |
+
+- **Los descriptores por trayectoria de v3 son identicos a los de la corrida de la noche**, y los agregados, el numero de trayectorias, la edad y la bandera `sin_trayectoria` coinciden en los 5 videos.
+- **Contexto de camara:** en los fotogramas sin trayectoria el vector anterior ponia la identidad; con los datos reales, 166 de 187 de esos fotogramas tienen movimiento de camara distinto de la identidad.
+- **Detecciones (699 fotogramas), anterior (`curvas/`, 5 fps, confianza 0.25) contra las del seguimiento:**
+
+| Valor | Media anterior | Media a confianza 0.1 | Fotogramas distintos | Media a confianza 0.25 | Fotogramas distintos a 0.25 |
+|---|---|---|---|---|---|
+| cajas de fuego | 1.61 | 2.80 | 49.0 % | 1.63 | 11.7 % |
+| cajas de humo | 0.077 | 0.148 | 6.7 % | 0.079 | 1.0 % |
+| area de fuego | 0.051 | 0.077 | 39.5 % | 0.051 | 13.9 % |
+| area de humo | 0.034 | 0.040 | 9.0 % | 0.034 | 3.6 % |
+
+  - La diferencia viene casi toda del umbral de confianza (0.1 contra 0.25): a 0.25 las medias coinciden y solo cambia del 1 al 14 % de los fotogramas, por el paso de 5 a 10 fps. A 0.1 hay un 74 % mas de cajas de fuego y un 52 % mas de area.
+  - Como estas 4 columnas cambian de escala, **los modelos de escena hay que reentrenarlos con `escena_v2`**; los pesos actuales no sirven con el vector nuevo.
+- **Retomar tras un corte:** se quito de `procesados.csv` el ultimo video y se trunco la ultima linea de `descriptores.csv`; al volver a correr, quito 344 filas incompletas, reproceso los 2 videos pendientes y los 4 CSV quedaron identicos byte a byte a los de la corrida sin corte.
+
+### Comando de la corrida completa (la lanza el usuario)
+
+```
+python descriptores_v3.py
+```
+
+- 603 videos, salida en `runs_fuego/descriptores_v3/`. Tiempo estimado: unas 6.5 h (la corrida de la noche tardo 6.13 h con el mismo detector y seguimiento).
+- Si se corta, se repite el mismo comando y sigue donde quedo.
+- Al terminar: `python escena_v2.py`.
+
+### Archivos
+
+- `descriptores_v3.py`, `vector_escena.py`, `escena_v2.py`, `probar_vector_escena.py` (nuevos).
+- `resultados/vector_escena/videos_prueba.csv` y `comparacion.md`.
+- `runs_fuego/descriptores_v3_prueba/` (los 5 videos, no versionado).
