@@ -1449,3 +1449,63 @@ Matriz de confusion por segundo de escena (filas: etiqueta de la IA; columnas: m
 - `resultados/modelos/`: `comparacion.md`, `curvas.png` y, por modelo, `historial.csv` y `metricas.json`.
 - `runs_fuego/modelos/<modelo>/mejor.pt` y `registro_<modelo>.txt` (no versionados).
 - `runs_fuego/casi_duplicados/` (27 hojas, no versionadas).
+
+## Diagnostico antes de la fase E (2026-11-12)
+
+Fecha: 2026-11-12. Rama: `avance-80`. Script nuevo: `diagnostico_escena.py` (`python diagnostico_escena.py`). No cambia el modelo, no reentrena los modelos temporales y no usa la prueba. Detalle en `resultados/diagnostico/diagnostico.md`.
+
+### 1. Los 378 s de validacion sin ninguna trayectoria de 1 s o mas
+
+Cada segundo va a una sola causa, en este orden: corte, trayectorias cortas, humo, sin deteccion, otra. Las detecciones de humo y de fuego sin trayectoria salen de `curvas/` (YOLO a 5 fps, confianza 0.25), no del seguimiento (confianza 0.1).
+
+| Causa | Controlado (s) | Incipiente (s) | Incontrolado (s) | Total (s) | En huecos de 3 s o menos |
+|---|---|---|---|---|---|
+| dentro de los 3 s posteriores a un corte | 0 | 9 | 25 | 34 | 19 |
+| solo trayectorias de fuego de menos de 1 s | 32 | 16 | 165 | 213 | 50 |
+| solo detecciones de humo | 13 | 0 | 12 | 25 | 3 |
+| sin ninguna deteccion | 9 | 6 | 12 | 27 | 0 |
+| otra: deteccion de fuego que no forma trayectoria | 20 | 8 | 51 | 79 | 17 |
+| total | 74 | 39 | 265 | 378 | 89 |
+
+- **El 56 % (213 de 378) tiene fuego seguido, pero en trayectorias de menos de 1 s que se descartan.** Sumando los 30 s posteriores a un corte que tambien las tienen, son 243 (64 %).
+- Solo 27 s (7 %) no tienen ninguna deteccion.
+- Solo 89 s (24 %) estan en huecos de 3 s o menos entre segundos con trayectoria (75 de incontrolado). Mantener el ultimo nivel 3 s recuperaria como mucho esos; el resto son rachas largas.
+
+### 2 y 3. Referencias sin modelo temporal y kappa contra la IA
+
+- Vector por segundo de escena: maximo y media de cada descriptor sobre las trayectorias vivas y numero de trayectorias (27 valores). Entrenadas con 15 680 s de entrenamiento, pesos por clase balanceados, semilla 42. Los segundos sin trayectoria cuentan como controlado, igual que en los modelos temporales.
+
+| Estimador | F1 macro escena | Exactitud escena | Kappa lineal | F1 controlado | F1 incipiente | F1 incontrolado |
+|---|---|---|---|---|---|---|
+| gradient boosting (sin tiempo) | 0.590 | 0.634 | 0.429 | 0.602 | 0.440 | 0.727 |
+| regresion logistica (sin tiempo) | 0.526 | 0.563 | 0.396 | 0.570 | 0.332 | 0.676 |
+| LSTM | 0.526 | 0.567 | 0.419 | 0.591 | 0.303 | 0.683 |
+| GRU | 0.516 | 0.615 | 0.477 | 0.643 | 0.161 | 0.744 |
+| CfC | 0.513 | 0.610 | 0.461 | 0.637 | 0.169 | 0.732 |
+| clase mayoritaria | 0.227 | 0.515 | 0.000 | 0.000 | 0.000 | 0.680 |
+
+- **Los modelos temporales no superan a una referencia sin tiempo.** El gradient boosting sobre agregados por segundo da F1 0.590, contra 0.513 a 0.526 de los tres modelos temporales; la regresion logistica iguala al LSTM.
+- La ventaja de las referencias esta en el incipiente (F1 0.44 y 0.33 contra 0.16 a 0.30). En kappa lineal GRU y CfC quedan arriba (0.477 y 0.461) porque sus errores son mas entre niveles vecinos.
+- Solo en los 2 379 s con trayectoria: gradient boosting F1 0.649, exactitud 0.703, kappa 0.574; regresion logistica 0.582, 0.621, 0.532. Ese es el orden de lo que permiten hoy los descriptores con etiquetas de la IA.
+- **Kappa de los modelos contra la IA (0.40 a 0.48) frente al kappa humano contra IA (0.426):** estan en el mismo rango. No son los mismos videos (29 de la prueba de cambios contra 47 de validacion), asi que es una referencia, no una comparacion directa.
+- Diferencias de protocolo que se declaran: las referencias ven cada segundo con el mismo peso (sin muestreo por video), no se ajustaron hiperparametros, y es una sola semilla.
+
+### 4. Ruido de la herencia (entrenamiento)
+
+| Nivel | Segundos con trayectoria | Mediana de trayectorias vivas | Percentil 90 | Segundos con mas de una | Trayectorias con area menor a un cuarto de la mayor |
+|---|---|---|---|---|---|
+| controlado | 3 322 | 1 | 4 | 49.4 % | 25.5 % |
+| incipiente | 2 075 | 1 | 3 | 46.3 % | 18.0 % |
+| incontrolado | 10 260 | 2 | 6 | 65.0 % | 41.5 % |
+
+- En incontrolado, el 41.5 % de las trayectorias-segundo son regiones con menos de un cuarto del area de la mayor del mismo segundo, y todas heredan la etiqueta incontrolado. El modelo por trayectoria recibe muchas regiones pequenas etiquetadas con el nivel de la escena.
+
+### Lectura
+
+- El problema principal no es el tipo de red recurrente. Son (a) la etiqueta por escena heredada por cada trayectoria, que las referencias evitan al agregar por segundo, y (b) los segundos sin trayectoria de 1 s, que salen sobre todo de trayectorias cortas descartadas.
+- Pendiente de decision del usuario: como cambiar la entrada o la etiqueta del modelo temporal antes de la fase E.
+
+### Archivos
+
+- `diagnostico_escena.py` (nuevo).
+- `resultados/diagnostico/diagnostico.md` y `diagnostico.json`.
