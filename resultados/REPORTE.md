@@ -2158,3 +2158,141 @@ Tiempo medio por etapa (ms por fotograma procesado): lectura 4.30, YOLO 24.36, c
 ### Archivos
 
 `resultados/prueba/`: `resumen.md` (todas las tablas), `metricas.json`, `cambios.csv`, `alerta.csv`, `controlado_a_incipiente.csv`, `segmentos/` (segmentos `(t_inicio, t_fin, nivel)` de cada corrida), `velocidad.md`, `velocidad.json`. La salida de consola de la evaluacion esta en `runs_fuego/evaluar_prueba_salida.txt` (no se versiona).
+
+## Analisis descriptivo de la prueba (2026-11-13)
+
+`python analisis_prueba.py` (script nuevo). No cambia nada ni decide nada: repite la inferencia con la configuracion congelada (diferencia de F1 con `resultados/prueba/metricas.json`: 0) y desglosa los mismos resultados. Salida completa en `resultados/prueba/analisis.md`.
+
+### a. Por subconjunto, referencia de la IA
+
+| subconjunto | segundos (controlado / incipiente / incontrolado) | modelo | F1 macro | F1 controlado | F1 incipiente | F1 incontrolado | exactitud | kappa lineal | mAP tIoU 0.5 |
+|---|---|---|---|---|---|---|---|---|---|
+| 40 al azar (`prueba_humana`) | 1112 / 219 / 315 | GRU | 0.541 +- 0.013 | 0.703 | 0.153 | 0.766 | 0.629 | 0.455 | 0.502 |
+| 40 al azar | | CfC | 0.538 +- 0.028 | 0.678 | 0.184 | 0.753 | 0.612 | 0.418 | 0.444 |
+| 40 al azar | | gradient boosting | 0.489 | 0.663 | 0.184 | 0.618 | 0.591 | 0.329 | 0.407 |
+| 30 con cambios (`prueba_cambios`) | 352 / 1277 / 1428 | GRU | 0.435 +- 0.005 | 0.306 | 0.437 | 0.563 | 0.467 | 0.221 | 0.159 |
+| 30 con cambios | | CfC | 0.387 +- 0.013 | 0.308 | 0.271 | 0.582 | 0.406 | 0.241 | 0.110 |
+| 30 con cambios | | gradient boosting | 0.381 | 0.323 | 0.218 | 0.600 | 0.415 | 0.233 | 0.112 |
+
+- En los 40 al azar la GRU y el CfC empatan en F1 macro (0.541 y 0.538); la ventaja de la GRU en los 70 viene de los 30 con cambios (0.435 contra 0.387), por el incipiente.
+- Los 30 con cambios son mucho mas dificiles (F1 macro de 0.38 a 0.44, mAP de 0.11 a 0.16) y aportan el 65 % de los segundos de la prueba.
+
+### b. Proporcion de niveles por segundo
+
+| conjunto | referencia | videos de fuego | segundos | controlado | incipiente | incontrolado |
+|---|---|---|---|---|---|---|
+| entrenamiento | IA | 215 | 17 421 | 23.7 % | 13.0 % | 63.3 % |
+| validacion | IA | 47 | 2 757 | 37.5 % | 11.0 % | 51.5 % |
+| calibracion | IA | 45 | 4 515 | 20.7 % | 23.4 % | 55.9 % |
+| prueba | IA | 70 | 4 703 | 31.1 % | 31.8 % | 37.1 % |
+| prueba, solo los 40 al azar | IA | 40 | 1 646 | 67.6 % | 13.3 % | 19.1 % |
+| prueba, solo los 30 con cambios | IA | 30 | 3 057 | 11.5 % | 41.8 % | 46.7 % |
+| prueba | humana | 69 | 4 669 | 33.3 % | 49.1 % | 17.6 % |
+| prueba, solo los 40 al azar | humana | 40 | 1 674 | 61.9 % | 23.5 % | 14.6 % |
+| prueba, solo los 29 con cambios | humana | 29 | 2 995 | 17.4 % | 63.3 % | 19.3 % |
+
+- La prueba tiene casi el triple de incipiente que validacion (31.8 % contra 11.0 %) y que entrenamiento (13.0 %), porque los 30 videos con cambios se eligieron entre los candidatos con crecimiento. El incipiente es el nivel que peor resuelven todos los modelos, asi que parte de la caida de validacion a prueba es por composicion.
+- Segun el humano el incipiente es casi la mitad de la prueba (49.1 %) y el incontrolado solo el 17.6 %.
+
+### c. Intervalo binomial del 95 % de las falsas alarmas (alfa 0.10, Clopper-Pearson, por corrida)
+
+| corrida | sin fuego | IC 95 % | controlados (IA) | IC 95 % | controlados (humana) | IC 95 % |
+|---|---|---|---|---|---|---|
+| cfc_s42 | 0 de 32 | 0.0 a 10.9 % | 5 de 30 (16.7 %) | 5.6 a 34.7 % | 4 de 29 (13.8 %) | 3.9 a 31.7 % |
+| cfc_s43 | 0 de 32 | 0.0 a 10.9 % | 6 de 30 (20.0 %) | 7.7 a 38.6 % | 4 de 29 (13.8 %) | 3.9 a 31.7 % |
+| cfc_s44 | 0 de 32 | 0.0 a 10.9 % | 10 de 30 (33.3 %) | 17.3 a 52.8 % | 8 de 29 (27.6 %) | 12.7 a 47.2 % |
+| gru_s42 | 0 de 32 | 0.0 a 10.9 % | 8 de 30 (26.7 %) | 12.3 a 45.9 % | 6 de 29 (20.7 %) | 8.0 a 39.7 % |
+| gru_s43 | 0 de 32 | 0.0 a 10.9 % | 6 de 30 (20.0 %) | 7.7 a 38.6 % | 5 de 29 (17.2 %) | 5.8 a 35.8 % |
+| gru_s44 | 0 de 32 | 0.0 a 10.9 % | 6 de 30 (20.0 %) | 7.7 a 38.6 % | 7 de 29 (24.1 %) | 10.3 a 43.5 % |
+| lstm_s42 | 0 de 32 | 0.0 a 10.9 % | 5 de 30 (16.7 %) | 5.6 a 34.7 % | 5 de 29 (17.2 %) | 5.8 a 35.8 % |
+| lstm_s43 | 0 de 32 | 0.0 a 10.9 % | 10 de 30 (33.3 %) | 17.3 a 52.8 % | 8 de 29 (27.6 %) | 12.7 a 47.2 % |
+| lstm_s44 | 0 de 32 | 0.0 a 10.9 % | 6 de 30 (20.0 %) | 7.7 a 38.6 % | 7 de 29 (24.1 %) | 10.3 a 43.5 % |
+| gradient boosting | 1 de 32 (3.1 %) | 0.1 a 16.2 % | 8 de 30 (26.7 %) | 12.3 a 45.9 % | 6 de 29 (20.7 %) | 8.0 a 39.7 % |
+| regresion logistica | 0 de 32 | 0.0 a 10.9 % | 3 de 30 (10.0 %) | 2.1 a 26.5 % | 2 de 29 (6.9 %) | 0.8 a 22.8 % |
+
+- Sin fuego: con 0 de 32 la tasa real puede llegar al 10.9 %.
+- Controlados: el 10 % nominal queda dentro del intervalo en 6 de las 9 corridas de los modelos temporales contra la IA (todas menos `cfc_s44`, `gru_s42` y `lstm_s43`) y en 5 de 9 contra la humana. Con unos 30 videos solo se puede afirmar que la tasa supera el 10 % en esas corridas, no en general.
+
+### d. Bootstrap de videos del mAP promedio con tIoU 0.5
+
+| referencia | videos | modelo | mAP | IC 95 % |
+|---|---|---|---|---|
+| IA | 70 | GRU | 0.299 +- 0.023 | 0.219 a 0.400 |
+| IA | 70 | CfC | 0.216 +- 0.039 | 0.151 a 0.303 |
+| IA | 70 | gradient boosting | 0.204 | 0.140 a 0.305 |
+| humana | 29 | GRU | 0.136 +- 0.015 | 0.071 a 0.290 |
+| humana | 29 | CfC | 0.103 +- 0.048 | 0.066 a 0.199 |
+| humana | 29 | gradient boosting | 0.125 | 0.066 a 0.257 |
+
+Diferencia pareada GRU - CfC: +0.083 (IC 95 % de +0.002 a +0.162; positiva en el 97.9 % de los remuestreos) contra la IA; +0.033 (de -0.076 a +0.186; 68.9 %) contra la humana. Contra la IA es la unica diferencia entre modelos cuyo intervalo no incluye el cero, y por muy poco.
+
+## Plan del experimento de robustez (registrado el 2026-11-13, antes de correr nada)
+
+La configuracion sigue congelada (`resultados/configuracion_final.json`). Todo lo que sigue se decide aqui, antes de ver resultados.
+
+### Parte 1: modelos tal como estan
+
+1. **Fotogramas quitados en la entrada.** Se corre de nuevo `descriptores_v3.py` solo sobre los 102 videos de prueba (`resultados/robustez/lista_prueba.csv`), con `--quitar 0.25`, `0.50` y `0.75` y `--semilla 42` (cada fotograma muestreado, salvo el primero, se quita con esa probabilidad; la semilla efectiva es 42 + crc32 del nombre). Todo lo demas igual que en la corrida completa. Salidas: `runs_fuego/robustez/quitar_25`, `quitar_50` y `quitar_75`. La corrida la lanza el usuario.
+2. **Evaluacion sin reentrenar ni recalibrar.** Con cada salida se arma el vector de escena con el mismo codigo (`escena_v2.vectores_carpeta` y `VectorEscena`, detecciones a confianza 0.25, edad minima de 1 s) y la normalizacion congelada (`resultados/escena_v2/normalizacion*.json`). Se descartan los tramos de menos de 10 fotogramas, como siempre. Se evaluan los 9 modelos temporales congelados, el gradient boosting y la regresion logistica, con los mismos pesos, umbrales de CORAL en 0.5, histeresis de 2 s y los umbrales conformales congelados (alfa 0.10). Metricas, contra las dos referencias: F1 macro y kappa del nivel por segundo, falsas alarmas por video (sin fuego y controlados) y adelanto de la alerta (EWT mediana y videos con alerta antes del cambio). Se reporta el valor y la caida respecto a la prueba completa.
+   - Control: el mismo script aplicado a la corrida completa (`runs_fuego/descriptores_v3`, sin quitar) debe reproducir los numeros de la fase F.
+   - Efecto conocido de antemano: la normalizacion congelada recorta `dt` del contexto al percentil 99 de entrenamiento, asi que con fotogramas quitados esa entrada se satura; el `dt` real si llega al modelo como intervalo (CfC) o como entrada (GRU y LSTM).
+3. **Camara movil contra camara fija.** Con las predicciones de la fase F (sin correr nada nuevo). Movimiento por fotograma = norma de la traslacion (en fraccion del fotograma) + 0.5 (|s - 1| + |rotacion|), con la similitud ya guardada en `runs_fuego/descriptores_v3/fotogramas.csv`; puntaje del video = media por fotograma x 10 (fraccion del fotograma por segundo). **Camara movil si el puntaje es >= 0.01 (1 % del fotograma por segundo); fija si es menor.** El umbral se eligio mirando solo la distribucion del puntaje en los 102 videos de prueba (mediana 0.018, cuartiles 0.005 y 0.054), sin ver resultados de modelos por grupo. Se comparan los modelos en cada grupo con las mismas metricas.
+
+### Parte 2: reentrenamiento con fotogramas quitados (decidida desde ahora, igual para los tres modelos)
+
+- Se reentrenan CfC, GRU y LSTM, cada uno con su configuracion congelada (CfC y LSTM: peso simple, tasa 1e-3; GRU: doble peso al incipiente, tasa 3e-3; riesgo en escalon; 60 epocas; semillas 42, 43 y 44; CfC en CPU). Lo unico que cambia es el aumento de datos.
+- **Aumento:** en cada ventana de entrenamiento se sortea una fraccion q uniforme entre 0 y 0.75 y cada fotograma de la ventana, salvo el primero, se quita con probabilidad q (el mismo mecanismo que `LectorVideo`). El `dt` de cada fotograma que queda es el tiempo transcurrido desde el anterior que quedo; la columna `dt` del contexto se recalcula con la normalizacion congelada. Las etiquetas (nivel, riesgo, tau) son las de los fotogramas que quedan. Es una aproximacion: los descriptores se calcularon con todos los fotogramas.
+- La epoca se elige igual que antes: F1 macro de escena suavizado en la validacion completa (sin quitar fotogramas). La normalizacion no cambia.
+- **Fase E:** se vuelve a calibrar el umbral conformal de cada modelo nuevo con los 52 videos de calibracion sin fuego o controlados, completos (alfa 0.10 y 0.05); umbrales de CORAL en 0.5, histeresis de 2 s y factor de desactivacion 0.8 sin cambios.
+- **Evaluacion:** en la prueba completa y en las tres fracciones, con las mismas metricas de la parte 1, comparando con los modelos congelados. El gradient boosting y la regresion logistica no se reentrenan.
+- Los modelos congelados siguen siendo el resultado principal; los de la parte 2 se guardan aparte (`runs_fuego/modelos_robustos/`, `resultados/robustez/`) y se reportan como experimento de robustez.
+- La parte 2 se corre despues de la parte 1.
+
+### Adenda al plan de robustez (2026-11-13, antes de cualquier resultado de las partes 1.1, 1.2 y 2)
+
+Se agrega antes de que exista ningun resultado con fotogramas quitados (la corrida de `descriptores_v3.py` sobre las fracciones aun no se lanza):
+
+- **Medida secundaria.** Con 75 % quitado, un segundo queda sin ningun fotograma con probabilidad 0.75^10 = 5.6 % (0.1 % con 50 %). La regla de la fase F lo cuenta como controlado. Ademas de la medida principal (la de la fase F), se reportan F1 macro y kappa con el segundo sin fotogramas tomando el ultimo nivel decidido, que es lo que muestra el sistema en vivo, y el numero de segundos sin fotogramas.
+- **Descripcion de cada fraccion:** fotogramas procesados, cortes de escena detectados, videos con corte, tramos cortos descartados, y dt mediano y percentil 95.
+- **Implementacion de la parte 2** (`entrenar_robusto.py`, `robustez_parte2.py`):
+  - el aumento usa un generador aleatorio propio (semilla `[s, 1]`), asi que el sorteo de ventanas es el mismo que en los modelos congelados;
+  - la columna dt del contexto solo se recalcula en los fotogramas cuyo anterior se quito; con 0 % quitado el lote es identico al original (verificado);
+  - el dt recalculado coincide con la diferencia de marcas de tiempo (error maximo de 6e-6 s);
+  - la recalibracion usa el mismo codigo que la fase E congelada (`fase_e_elegida.py`);
+  - los hiperparametros de cada modelo se leen de `configuracion_final.json`.
+- **Control de la parte 1** (`evaluar_robustez.py`): aplicado a la corrida completa (`runs_fuego/descriptores_v3`), reproduce la fase F con diferencia 0 en F1, kappa, falsas alarmas y adelanto, con las dos referencias. Si el control no pasa, el script no evalua las fracciones.
+
+### Resultado de la parte 1.3: camara movil contra camara fija (2026-11-13)
+
+`python analisis_prueba.py --partes camara`. Usa las predicciones de la fase F (configuracion congelada) y el criterio registrado en el plan (camara movil si el puntaje es >= 0.01). Salida en `resultados/prueba/camara.md` y la clasificacion de cada video en `resultados/prueba/camara_videos.csv`.
+
+- 59 videos con camara movil y 43 con camara fija. De fuego: 39 y 31; sin fuego: 20 y 12.
+- Segundos por nivel segun la IA: fija 888 / 718 / 775, movil 576 / 778 / 968 (controlado / incipiente / incontrolado).
+
+F1 macro (kappa lineal) del nivel por segundo:
+
+| modelo | IA, camara fija (31) | IA, camara movil (39) | humana, camara fija (30) | humana, camara movil (39) |
+|---|---|---|---|---|
+| CfC | 0.470 +- 0.023 (0.317) | 0.438 +- 0.027 (0.294) | 0.534 +- 0.028 (0.416) | 0.403 +- 0.022 (0.244) |
+| GRU | 0.556 +- 0.026 (0.404) | 0.476 +- 0.049 (0.298) | 0.548 +- 0.023 (0.394) | 0.458 +- 0.038 (0.262) |
+| LSTM | 0.444 +- 0.050 (0.274) | 0.472 +- 0.010 (0.342) | 0.473 +- 0.029 (0.348) | 0.429 +- 0.014 (0.294) |
+| gradient boosting | 0.402 (0.190) | 0.472 (0.355) | 0.499 (0.316) | 0.404 (0.283) |
+| regresion logistica | 0.435 (0.233) | 0.556 (0.376) | 0.551 (0.370) | 0.512 (0.353) |
+
+Alerta con alfa 0.10:
+
+| camara | modelo | falsas alarmas sin fuego | falsas alarmas en controlados (IA) | EWT mediana, IA (s) | antes del cambio, IA | EWT mediana, humana (s) | antes del cambio, humana |
+|---|---|---|---|---|---|---|---|
+| fija | CfC | 0 de 12 | 0.167 (de 18) | -42.5 | 0.7 de 7 | +18.1 | 3.7 de 6 |
+| fija | GRU | 0 de 12 | 0.148 (de 18) | -23.0 | 0.7 de 7 | +3.7 | 3.7 de 6 |
+| fija | LSTM | 0 de 12 | 0.167 (de 18) | -35.4 | 1.0 de 7 | +29.8 | 3.7 de 6 |
+| fija | gradient boosting | 0 de 12 | 0.167 (de 18) | -18.8 | 2 de 7 | +13.1 | 4 de 6 |
+| movil | CfC | 0 de 20 | 0.333 (de 12) | +10.3 | 7.7 de 14 | +36.5 | 8.7 de 10 |
+| movil | GRU | 0 de 20 | 0.333 (de 12) | +9.2 | 7.7 de 14 | +38.6 | 7.7 de 10 |
+| movil | LSTM | 0 de 20 | 0.333 (de 12) | +9.7 | 8.0 de 14 | +29.5 | 7.0 de 10 |
+| movil | gradient boosting | 0.05 (1 de 20) | 0.417 (de 12) | +11.2 | 10 de 14 | +60.0 | 9 de 10 |
+
+Lectura:
+- La GRU y el CfC empeoran con camara movil con las dos referencias (GRU de 0.556 a 0.476 contra la IA y de 0.548 a 0.458 contra la humana). Contra la IA, la LSTM, el gradient boosting y la regresion logistica mejoran con camara movil; contra la humana empeoran todos.
+- Las falsas alarmas en controlados se duplican con camara movil (33 % de 12 contra 15 a 17 % de 18), aunque con muy pocos videos.
+- La alerta llega antes del cambio en los videos con camara movil y despues en los de camara fija. Los grupos no difieren solo en la camara. Segun la IA, los de camara movil tienen mas incontrolado (42 % de los segundos contra 33 %) y menos controlado (25 % contra 37 %; 12 videos controlados contra 18). Por eso la comparacion es descriptiva y no aisla el efecto de la camara.
