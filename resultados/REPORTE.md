@@ -1270,7 +1270,7 @@ Fecha: 2026-11-12. Rama: `avance-80`. Scripts nuevos: `casi_duplicados.py`, `par
 ### Decisiones del usuario (2026-11-12)
 
 - Entrenamiento, validacion y calibracion usan solo etiquetas de la IA; el usuario no etiqueta mas videos. Las tablas de metas llevan la columna `fuente` (`ia`, `humano` o `dataset` para los videos sin fuego).
-- En la prueba, todas las metricas se reportan contra las dos referencias (humano e IA). Para el tiempo de alerta temprana la referencia principal es la IA, porque los instantes humanos tienden a ser tardios.
+- En la prueba, todas las metricas se reportan contra las dos referencias (humano e IA). **Correccion del 2026-11-13:** aqui decia que para la alerta temprana la referencia principal era la IA porque los instantes humanos tienden a ser tardios. No se sostiene: en la revision de las 23 diferencias (`resultados/revision_cambios_notas.csv`) la IA tuvo razon en 13 y el humano en 10, asi que ninguna referencia es superior. En la prueba las dos referencias pesan igual, tambien para el adelanto de la alerta.
 - Riesgo continuo (paso 9): escalon 0 (controlado o sin fuego), 0.5 (incipiente), 1 (incontrolado).
 - 15 % de los 215 videos sin fuego reservados para la prueba, por origen, semilla 42.
 - Las trayectorias heredan el nivel de la escena. Las detecciones falsas en videos sin fuego son controlado, riesgo 0 y tau enmascarado.
@@ -1988,3 +1988,173 @@ Lectura:
 `resultados/configuracion_final.json` (sobrescrito): por modelo, configuracion elegida, tasa, pesos de nivel, meta de riesgo (escalon), intervalo (dt en segundos), la prueba de la unidad de tiempo del CfC y el F1 de cada configuracion; decision (umbrales 0.5, histeresis 2 s, alfa 0.10 y 0.05, factor de desactivacion 0.8); por corrida, semilla, mejor epoca, umbral conformal, ruta y SHA-256 de los pesos. Pesos: CfC y LSTM en `runs_fuego/modelos_escena_v2/final/`, GRU en `runs_fuego/modelos_final/final/`, referencias en `runs_fuego/modelos_final/referencias/`. Despues de esto no se cambia nada antes de la prueba.
 
 Archivos generados: `resultados/modelos_final/eleccion.json`, `resultados/modelos_final/cfc_dt/`, `resultados/fase_e_elegida/` (`resumen.md`, un `.json` por corrida, `segmentos/`, `cfc_dt/`), `resultados/configuracion_final.json`.
+
+## Fase F: evaluacion en la prueba, velocidad y demo (2026-11-13)
+
+La prueba se evaluo **una sola vez**, con la configuracion congelada en `resultados/configuracion_final.json` (CfC y LSTM con la configuracion A, GRU con la B; umbral 0.5, histeresis de 2 s, alerta con alfa 0.10). Antes de correrla, `evaluar_prueba.py` se ensayo en validacion y reprodujo exactamente los numeros de la fase E congelada. No se cambio nada despues de ver la prueba. `evaluar_prueba.py` se niega a correr de nuevo si ya existe `resultados/prueba/metricas.json`, y comprueba el SHA-256 de cada archivo de pesos contra la configuracion.
+
+Scripts nuevos: `evaluar_prueba.py` y `sistema.py` (sistema en vivo: clases `Sistema` y `ModeloEnVivo`, modos `fps`, `demo` y `verificar`). No se modifico ningun script anterior.
+
+Comandos:
+
+```
+python evaluar_prueba.py
+python sistema.py --modo fps
+python sistema.py --modo demo --corridas gru_s42 --archivos 19151618 12487581 --nombres vela basural --titulos "sistema completo (gru): vela" "sistema completo (gru): basural"
+```
+
+Correccion previa (punto 0): en la seccion de decisiones del 2026-11-12 se corrigio la frase que daba a la IA como referencia principal para la alerta. En la revision de las 23 diferencias la IA tuvo razon en 13 y el humano en 10; ninguna referencia es superior y las dos pesan igual.
+
+### Videos y definiciones
+
+- Prueba: 70 videos de fuego con referencia de la IA, 69 con referencia humana y 32 sin fuego. De los 69, 29 tienen tramo util y cambios marcados reproduciendo el video (`prueba_cambios`; el humano descarto 1 de los 30) y 40 tienen un solo nivel para todo el video (`prueba_humana`, etiquetados con la tira).
+- Contra la referencia humana, el nivel por segundo usa los 69; la localizacion, los cambios, el tiempo al peligro y el adelanto usan solo los 29.
+- Nivel por segundo: nivel final, mayoria de los fotogramas del segundo, dentro del tramo util de la referencia. Un segundo sin fotogramas cuenta como controlado.
+- Clase mayoritaria: incontrolado (la mas frecuente por segundo en entrenamiento). No tiene alerta.
+- mAP: segmentos de la referencia y del modelo construidos desde el nivel por segundo, por nivel; puntuacion de un segmento = probabilidad media de su nivel (en CORAL, P(controlado) = 1 - p1, P(incontrolado) = min(p1, p2), P(incipiente) = p1 - P(incontrolado)); AP con interpolacion de todos los puntos.
+- Cambios: un cambio a un nivel esta detectado si el nivel final del modelo cruza hacia ese nivel o mas dentro del tramo util; el error es el cruce mas cercano menos el instante de la referencia. Cambios de mas = transiciones del modelo no emparejadas.
+- Bootstrap: 1000 remuestreos de videos, semilla 42; en los modelos con 3 semillas se promedia la metrica de las semillas dentro de cada remuestreo; las diferencias usan los mismos remuestreos.
+- Estas definiciones las fije yo antes de correr la prueba; no son parametros ajustados.
+
+### a. Nivel por segundo (nivel final)
+
+Referencia de la IA (70 videos, 4 703 s):
+
+| modelo | F1 macro | IC 95 % | F1 controlado | F1 incipiente | F1 incontrolado | exactitud | kappa lineal | IC 95 % | cambios por video |
+|---|---|---|---|---|---|---|---|---|---|
+| CfC | 0.460 +- 0.002 | 0.393 a 0.522 | 0.507 | 0.252 | 0.621 | 0.478 | 0.319 +- 0.036 | 0.183 a 0.442 | 2.35 |
+| GRU | 0.519 +- 0.009 | 0.433 a 0.603 | 0.561 | 0.386 | 0.609 | 0.524 | 0.371 +- 0.029 | 0.225 a 0.516 | 1.79 |
+| LSTM | 0.460 +- 0.021 | 0.396 a 0.526 | 0.536 | 0.232 | 0.611 | 0.491 | 0.323 +- 0.022 | 0.204 a 0.438 | 2.83 |
+| gradient boosting | 0.442 | 0.368 a 0.525 | 0.510 | 0.212 | 0.605 | 0.476 | 0.292 | 0.178 a 0.413 | 3.11 |
+| regresion logistica | 0.491 | 0.407 a 0.570 | 0.475 | 0.387 | 0.610 | 0.490 | 0.311 | 0.158 a 0.449 | 2.86 |
+| clase mayoritaria | 0.180 | 0.135 a 0.219 | 0.000 | 0.000 | 0.541 | 0.371 | 0.000 | - | 0.00 |
+
+Referencia humana (69 videos, 4 669 s):
+
+| modelo | F1 macro | IC 95 % | F1 controlado | F1 incipiente | F1 incontrolado | exactitud | kappa lineal | IC 95 % |
+|---|---|---|---|---|---|---|---|---|
+| CfC | 0.475 +- 0.022 | 0.410 a 0.540 | 0.587 | 0.328 | 0.510 | 0.477 | 0.345 +- 0.057 | 0.241 a 0.449 |
+| GRU | 0.497 +- 0.019 | 0.416 a 0.579 | 0.570 | 0.419 | 0.504 | 0.492 | 0.352 +- 0.040 | 0.238 a 0.472 |
+| LSTM | 0.460 +- 0.007 | 0.391 a 0.528 | 0.607 | 0.282 | 0.493 | 0.475 | 0.340 +- 0.013 | 0.244 a 0.440 |
+| gradient boosting | 0.451 | 0.362 a 0.531 | 0.597 | 0.293 | 0.463 | 0.461 | 0.320 | 0.218 a 0.426 |
+| regresion logistica | 0.527 | 0.433 a 0.604 | 0.567 | 0.475 | 0.540 | 0.523 | 0.365 | 0.220 a 0.485 |
+| clase mayoritaria | 0.100 | 0.064 a 0.138 | 0.001 | 0.000 | 0.299 | 0.176 | 0.000 | - |
+
+Solo los 29 videos humanos con cambios marcados: CfC 0.428 +- 0.018 (kappa 0.293), GRU 0.446 +- 0.026 (0.269), LSTM 0.405 +- 0.026 (0.286), gradient boosting 0.429 (0.306), regresion logistica 0.525 (0.353).
+
+Diferencias pareadas (bootstrap):
+
+| diferencia | referencia | F1 macro | IC 95 % | kappa | IC 95 % |
+|---|---|---|---|---|---|
+| GRU - CfC | IA | +0.059 | -0.006 a +0.128 | +0.052 | -0.038 a +0.153 |
+| GRU - gradient boosting | IA | +0.077 | -0.008 a +0.151 | +0.079 | -0.054 a +0.207 |
+| GRU - CfC | humana | +0.023 | -0.037 a +0.088 | +0.007 | -0.078 a +0.094 |
+| GRU - gradient boosting | humana | +0.046 | -0.039 a +0.137 | +0.032 | -0.084 a +0.158 |
+
+Las matrices de confusion de cada modelo contra cada referencia estan en `resultados/prueba/resumen.md`.
+
+### b. Localizacion temporal (mAP de segmentos, promedio de los tres niveles)
+
+| modelo | IA, tIoU 0.3 | IA, 0.5 | IA, 0.7 | humana (29), tIoU 0.3 | humana, 0.5 | humana, 0.7 |
+|---|---|---|---|---|---|---|
+| CfC | 0.289 +- 0.033 | 0.216 +- 0.039 | 0.159 +- 0.036 | 0.187 +- 0.040 | 0.103 +- 0.048 | 0.044 +- 0.033 |
+| GRU | 0.403 +- 0.023 | 0.299 +- 0.023 | 0.235 +- 0.006 | 0.296 +- 0.038 | 0.136 +- 0.015 | 0.066 +- 0.037 |
+| LSTM | 0.329 +- 0.018 | 0.258 +- 0.022 | 0.194 +- 0.022 | 0.218 +- 0.026 | 0.120 +- 0.032 | 0.042 +- 0.009 |
+| gradient boosting | 0.246 | 0.204 | 0.130 | 0.193 | 0.125 | 0.028 |
+| regresion logistica | 0.277 | 0.204 | 0.147 | 0.172 | 0.069 | 0.021 |
+| clase mayoritaria | 0.116 | 0.091 | 0.043 | 0.035 | 0.006 | 0.000 |
+
+Por nivel (en `resumen.md`): el AP del incipiente es el mas bajo en todos (GRU, referencia de la IA: 0.207 / 0.060 / 0.015).
+
+### c. Cambios de nivel
+
+Cambio a incontrolado:
+
+| modelo | IA: detectados de 21 | mediana del error absoluto (s) | mediana con signo (s) | dentro de 10 s | no llega | humana: detectados de 16 | mediana del error absoluto (s) | mediana con signo (s) | dentro de 10 s | no llega |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CfC | 14.3 | 16.9 | +16.5 | 4.0 | 5.0 | 12.7 | 13.6 | -5.1 | 6.3 | 2.3 |
+| GRU | 16.0 | 27.8 | +11.2 | 5.0 | 5.0 | 13.7 | 17.5 | -0.5 | 4.0 | 2.0 |
+| LSTM | 15.7 | 17.4 | +14.3 | 5.3 | 5.3 | 13.3 | 17.6 | -6.8 | 4.7 | 2.7 |
+| gradient boosting | 19 | 8.3 | +4.2 | 10 | 0 | 14 | 4.8 | -3.1 | 9 | 1 |
+| regresion logistica | 15 | 12.9 | +12.9 | 5 | 5 | 13 | 7.4 | -6.7 | 8 | 2 |
+
+Cambio a incipiente (11 segun la IA, 4 segun el humano): GRU detecta 6.7 de 11 con mediana de 4.2 s y en 4.3 ya estaba en incipiente o mas desde el inicio; CfC 8.0 de 11 (11.6 s); LSTM 9.0 (14.8 s); gradient boosting 10 (9.3 s); regresion logistica 9 (16.5 s).
+
+Cambios de mas por video (referencia de la IA / humana): CfC 2.17 / 3.98, GRU 1.51 / 2.32, LSTM 2.53 / 4.41, gradient boosting 2.71 / 5.10, regresion logistica 2.53 / 5.07.
+
+Los 4 videos con paso de controlado a incipiente (instante del primer paso del modelo a incipiente o mas; semillas 42 / 43 / 44):
+
+| video | IA | humano | CfC | GRU | LSTM | gradient boosting | regresion logistica |
+|---|---|---|---|---|---|---|---|
+| 1. `700_F_1633820181...` | controlado, incipiente en 25.6 s | controlado, sin cambio | desde el inicio (3) | desde el inicio (3) | desde el inicio (3) | 14.5 | desde el inicio |
+| 2. `Har du en fungerande brandvarnare_` | controlado, incipiente en 16.3 s | incipiente, incontrolado en 20.5 s | 18.7 / nunca / desde el inicio | desde el inicio (3) | desde el inicio (3) | desde el inicio | desde el inicio |
+| 3. `Wooden Model Ship Battleship Jean Bart...` | controlado, incipiente en 23.1 s | controlado, incipiente en 263.8 s | 17.0 / 251.9 / 108.3 | desde el inicio (3) | desde el inicio / 130.3 / desde el inicio | 4.5 | 4.5 |
+| 4. `videoplayback (3)` | controlado, incipiente en 34.0 s | incipiente, sin cambio | 47.0 / 35.7 / desde el inicio | desde el inicio (3) | desde el inicio (3) | 8.5 | desde el inicio |
+
+En los 4 la GRU marca incipiente o mas desde el inicio con las 3 semillas: no detecta el paso de controlado a incipiente. El humano y la IA solo coinciden en que hay ese cambio en 1 de los 4 (y difieren en 240 s).
+
+### d. Tiempo al peligro (MAE de tau antes del cambio, en segundos)
+
+| modelo | referencia de la IA (21 videos, 5 802 fotogramas) | referencia humana (16 videos, 10 293 fotogramas) |
+|---|---|---|
+| CfC | 18.9 +- 1.2 | 63.4 +- 2.8 |
+| GRU | 25.7 +- 2.3 | 58.4 +- 0.7 |
+| LSTM | 20.1 +- 1.9 | 60.1 +- 2.3 |
+| constante (mediana de tau en entrenamiento, 52.7 s) | 30.4 | 48.1 |
+
+Contra la referencia de la IA los tres modelos mejoran a la constante; contra la humana quedan peor que la constante.
+
+### e. Alerta con alfa 0.10
+
+| modelo | falsas alarmas sin fuego (de 32) | falsas alarmas en controlados, IA (de 30) | en controlados, humana (de 29) | propagacion con alerta, IA (de 40) | EWT mediana, IA (s) [cuartiles] | antes del cambio, IA (de 21) | sin alerta, IA | EWT mediana, humana (s) [cuartiles] | antes del cambio, humana (de 16) | sin alerta, humana |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CfC | 0.000 | 0.233 +- 0.072 | 0.184 | 0.700 | +0.7 +- 3.8 [-34.1, +14.2] | 8.3 | 4.0 | +23.6 +- 8.7 [+4.0, +69.5] | 12.3 | 2.0 |
+| GRU | 0.000 | 0.222 +- 0.031 | 0.207 | 0.750 | -2.7 +- 10.6 [-29.5, +14.4] | 8.3 | 3.3 | +20.5 +- 11.7 [-0.1, +67.1] | 11.3 | 1.3 |
+| LSTM | 0.000 | 0.233 +- 0.072 | 0.230 | 0.708 | +4.4 +- 4.7 [-39.7, +14.0] | 9.0 | 4.7 | +29.7 +- 4.0 [+1.6, +69.6] | 10.7 | 2.3 |
+| gradient boosting | 0.031 (1 de 32) | 0.267 | 0.207 | 0.775 | +3.8 [-15.8, +16.3] | 12 | 1 | +26.6 [+3.6, +94.5] | 13 | 1 |
+| regresion logistica | 0.000 | 0.100 | 0.069 | 0.675 | -10.5 [-51.3, +1.7] | 5 | 5 | +13.2 [-3.3, +48.4] | 10 | 2 |
+
+Alfa 0.05 (aparte): sin falsas alarmas en videos sin fuego; en controlados 2 a 9 % (IA); EWT mediana contra la IA de -9.6 s (CfC), -32.1 s (GRU) y -14.8 s (LSTM), con 9 a 13 de 21 videos sin alerta. Tabla completa en `resumen.md`.
+
+### Lectura de la prueba
+
+- **Todos los modelos bajan respecto a validacion**: GRU de 0.641 a 0.519 de F1 macro (kappa de 0.615 a 0.371), CfC de 0.536 a 0.460, LSTM de 0.548 a 0.460, gradient boosting de 0.653 a 0.442. La regresion logistica no baja (0.479 a 0.491).
+- **La GRU es el mejor modelo contra la referencia de la IA** (F1 macro, kappa y mAP), pero ninguna diferencia pareada es significativa: los intervalos de GRU - CfC y GRU - gradient boosting incluyen el cero con las dos referencias.
+- **Contra la referencia humana, la regresion logistica tiene el mejor F1 macro** (0.527 contra 0.497 de la GRU); los intervalos se solapan.
+- **El CfC no supera a la GRU** en nivel ni en localizacion con ninguna referencia; si tiene el menor MAE de tau contra la IA (18.9 s).
+- **Localizacion:** la GRU tiene el mejor mAP en los tres umbrales y con las dos referencias (0.299 con tIoU 0.5 contra la IA; 0.136 contra la humana). Contra la humana todos los valores son bajos.
+- **Cambios:** el gradient boosting localiza mejor el cambio a incontrolado (mediana de 8.3 s y 4.8 s) que los modelos temporales (14 a 28 s), a costa de mas cambios de mas. Los modelos temporales no alcanzan el incontrolado en unos 5 de 21 videos.
+- **Alerta:** ninguna falsa alarma en los 32 videos sin fuego con los modelos temporales. En controlados la tasa es de 18 a 23 %, el doble del 10 % nominal: la garantia conformal no se cumple en la prueba para los controlados (el umbral se calibro con 52 videos, mezcla de sin fuego y controlados).
+- **El adelanto depende de la referencia:** contra la IA la alerta llega alrededor del cambio (mediana de -2.7 a +4.4 s; antes del cambio en 8 a 9 de 21); contra el humano llega antes (mediana de +20 a +30 s; antes en 11 a 12 de 16), porque los instantes humanos son mas tardios. Como ninguna referencia es superior, el adelanto real queda entre los dos valores.
+- **Tiempo al peligro:** contra la referencia humana los modelos son peores que predecir una constante; el tau se entreno con los instantes de la IA.
+- Limitaciones: un solo anotador humano, 29 videos con cambios humanos, 21 y 16 videos para el adelanto, y la referencia de entrenamiento es la de la IA.
+
+### Velocidad del sistema completo en vivo
+
+`sistema.py --modo fps`: 5 videos de prueba al azar (semilla 42), fotograma a fotograma con `VectorEscena`, YOLOv8s en GPU y modelo temporal en CPU (un paso por fotograma). Antes se verifico en 3 videos de validacion que el sistema en vivo reproduce los datos guardados: el vector de escena y el contexto coinciden exactamente (diferencia 0), las salidas del modelo paso a paso difieren en menos de 1e-6 de la inferencia por lotes, y el nivel y la alerta incrementales son iguales.
+
+| video | resolucion | fps de la fuente | fotogramas | fps con GRU | fps con CfC | tiempo real |
+|---|---|---|---|---|---|---|
+| 1. `Brandgefahren im Haushalt` | 1920x1080 | 30 | 685 | 17.4 | 17.4 | 1.74x |
+| 2. `14035491_2048_1080_30fps` | 2048x1080 | 29.97 | 599 | 11.1 | 11.2 | 1.11x |
+| 3. `12588006_1920_1080_30fps` | 1920x1080 | 30 | 338 | 13.9 | 13.9 | 1.39x |
+| 4. `fire19_clip_001` | 320x240 | 10 | 100 | 48.3 | 48.5 | 4.78x |
+| 5. `1828453162` | 640x360 | 25 | 266 | 37.0 | 37.2 | 3.69x |
+| **todos** | | | 1 988 | **15.7** | **15.7** | 1.56x |
+
+Tiempo medio por etapa (ms por fotograma procesado): lectura 4.30, YOLO 24.36, camara y cortes 32.88, seguimiento 1.01, descriptores 0.32, vector de escena 0.24, modelo 0.63 (GRU) o 0.46 (CfC), decision 0.01.
+
+- El sistema funciona en tiempo real (muestrea a 10 fps y procesa 15.7 por segundo de media; 11.1 en el peor video).
+- El costo esta en el movimiento de camara (52 %) y en YOLO (38 %); el modelo temporal es menos del 1 %, asi que GRU y CfC dan los mismos fps.
+- YOLO tarda aqui 24 ms por fotograma y no los 8.2 ms del detector solo, porque incluye el redimensionado de fotogramas de 1080p y la llamada por imagen.
+
+### Demo
+
+`runs_fuego/demo/sistema_vela.mp4` (16.9 MB) y `runs_fuego/demo/sistema_basural.mp4` (26.9 MB): GRU (semilla 42) con el sistema en vivo; cajas de fuego y humo, nivel, riesgo y alerta superpuestos, y un panel con la curva de riesgo, el umbral, la linea de niveles y la banda de alerta. No se publicaron ni se copiaron a `docs/`.
+
+- Vela (`19151618`, 298 fotogramas): controlado en 275 fotogramas e incipiente en los primeros 23 (unos 2.3 s de arranque); riesgo maximo 0.279; sin alerta. Este video esta en la prueba.
+- Basural (`12487581`, 285 fotogramas): incipiente 112 fotogramas e incontrolado 173; riesgo maximo 0.999; alerta desde los 7.1 s. La IA lo etiqueto como incipiente sin cambio; esta en calibracion (no entra en el umbral conformal).
+
+### Archivos
+
+`resultados/prueba/`: `resumen.md` (todas las tablas), `metricas.json`, `cambios.csv`, `alerta.csv`, `controlado_a_incipiente.csv`, `segmentos/` (segmentos `(t_inicio, t_fin, nivel)` de cada corrida), `velocidad.md`, `velocidad.json`. La salida de consola de la evaluacion esta en `runs_fuego/evaluar_prueba_salida.txt` (no se versiona).

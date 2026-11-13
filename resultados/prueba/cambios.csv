@@ -1,0 +1,625 @@
+corrida,referencia,archivo,a_nivel,t_real,t_modelo,error_s,estado
+cfc_s42,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,,,no_llega
+cfc_s42,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,,,desde_el_inicio
+cfc_s42,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,,,desde_el_inicio
+cfc_s42,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,2.002,-17.098,detectado
+cfc_s42,ia,1723634695.mp4,incontrolado,32.23,,,desde_el_inicio
+cfc_s42,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,,,no_llega
+cfc_s42,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,7.6,-3.04,detectado
+cfc_s42,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,19.686,-5.944,detectado
+cfc_s42,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,40.2,-6.6,detectado
+cfc_s42,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,46.8,22.53,detectado
+cfc_s42,ia,Brannutvikling.mp4,incontrolado,47.5,113.4,65.9,detectado
+cfc_s42,ia,Brennende Akkus.mp4,incontrolado,5.67,,,no_llega
+cfc_s42,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,79.8,9.8,detectado
+cfc_s42,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,127.8,53.9,detectado
+cfc_s42,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,18.6,-9.47,detectado
+cfc_s42,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,39.8,7.77,detectado
+cfc_s42,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,29.5,27.5,detectado
+cfc_s42,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,86.7,20.13,detectado
+cfc_s42,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,18.7,2.37,detectado
+cfc_s42,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,37.4,10.3,detectado
+cfc_s42,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,176.2,112.27,detectado
+cfc_s42,ia,VID_20230612_142839.mp4,incontrolado,20.9,,,no_llega
+cfc_s42,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,24.0,-34.17,detectado
+cfc_s42,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,139.7,60.6,detectado
+cfc_s42,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,,,no_llega
+cfc_s42,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,28.8,5.73,detectado
+cfc_s42,ia,videoplayback (1).mp4,incontrolado,82.87,128.0,45.13,detectado
+cfc_s42,ia,videoplayback (12).mp4,incontrolado,55.03,70.9,15.87,detectado
+cfc_s42,ia,videoplayback (15).mp4,incontrolado,100.73,114.6,13.87,detectado
+cfc_s42,ia,videoplayback (17).mp4,incontrolado,10.33,5.6,-4.73,detectado
+cfc_s42,ia,videoplayback (3).mp4,incipiente,34.0,47.0,13.0,detectado
+cfc_s42,ia,videoplayback1.mp4,incontrolado,49.6,54.5,4.9,detectado
+cfc_s42,humano,1723634695.mp4,incontrolado,27.06,,,desde_el_inicio
+cfc_s42,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,7.6,-1.6,detectado
+cfc_s42,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,40.2,-56.3,detectado
+cfc_s42,humano,Brannutvikling.mp4,incontrolado,115.0,113.4,-1.6,detectado
+cfc_s42,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,127.8,33.73,detectado
+cfc_s42,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,18.6,-9.17,detectado
+cfc_s42,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,103.8,-3.2,detectado
+cfc_s42,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,86.7,-28.27,detectado
+cfc_s42,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,no_llega
+cfc_s42,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,176.2,-22.63,detectado
+cfc_s42,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,24.0,-37.77,detectado
+cfc_s42,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,139.7,20.8,detectado
+cfc_s42,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,,,no_llega
+cfc_s42,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,250.3,-13.47,detectado
+cfc_s42,humano,videoplayback (1).mp4,incontrolado,255.4,128.0,-127.4,detectado
+cfc_s42,humano,videoplayback (12).mp4,incontrolado,111.23,70.9,-40.33,detectado
+cfc_s42,humano,videoplayback (15).mp4,incontrolado,113.53,114.6,1.07,detectado
+cfc_s42,humano,videoplayback (17).mp4,incontrolado,33.87,24.4,-9.47,detectado
+cfc_s42,humano,videoplayback1.mp4,incipiente,24.97,34.8,9.83,detectado
+cfc_s42,humano,videoplayback1.mp4,incontrolado,73.43,54.5,-18.93,detectado
+cfc_s43,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,,,no_llega
+cfc_s43,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,,,desde_el_inicio
+cfc_s43,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,13.013,0.333,detectado
+cfc_s43,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,11.386,-7.714,detectado
+cfc_s43,ia,1723634695.mp4,incontrolado,32.23,,,desde_el_inicio
+cfc_s43,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,,,no_llega
+cfc_s43,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,8.08,-2.56,detectado
+cfc_s43,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,29.796,4.166,detectado
+cfc_s43,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,39.2,-7.6,detectado
+cfc_s43,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,,,no_llega
+cfc_s43,ia,Brannutvikling.mp4,incontrolado,47.5,117.9,70.4,detectado
+cfc_s43,ia,Brennende Akkus.mp4,incontrolado,5.67,,,no_llega
+cfc_s43,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,85.2,15.2,detectado
+cfc_s43,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,89.9,16.0,detectado
+cfc_s43,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,31.9,3.83,detectado
+cfc_s43,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,37.1,5.07,detectado
+cfc_s43,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,29.0,27.0,detectado
+cfc_s43,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,78.5,11.93,detectado
+cfc_s43,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,,,no_llega
+cfc_s43,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,65.3,38.2,detectado
+cfc_s43,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,193.9,129.97,detectado
+cfc_s43,ia,VID_20230612_142839.mp4,incontrolado,20.9,,,no_llega
+cfc_s43,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,61.9,3.73,detectado
+cfc_s43,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,111.6,32.5,detectado
+cfc_s43,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,,,no_llega
+cfc_s43,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,251.9,228.83,detectado
+cfc_s43,ia,videoplayback (1).mp4,incontrolado,82.87,131.9,49.03,detectado
+cfc_s43,ia,videoplayback (12).mp4,incontrolado,55.03,68.1,13.07,detectado
+cfc_s43,ia,videoplayback (15).mp4,incontrolado,100.73,116.1,15.37,detectado
+cfc_s43,ia,videoplayback (17).mp4,incontrolado,10.33,31.4,21.07,detectado
+cfc_s43,ia,videoplayback (3).mp4,incipiente,34.0,35.7,1.7,detectado
+cfc_s43,ia,videoplayback1.mp4,incontrolado,49.6,108.7,59.1,detectado
+cfc_s43,humano,1723634695.mp4,incontrolado,27.06,,,desde_el_inicio
+cfc_s43,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,8.08,-1.12,detectado
+cfc_s43,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,39.2,-57.3,detectado
+cfc_s43,humano,Brannutvikling.mp4,incontrolado,115.0,117.9,2.9,detectado
+cfc_s43,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,89.9,-4.17,detectado
+cfc_s43,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,31.9,4.13,detectado
+cfc_s43,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,113.5,6.5,detectado
+cfc_s43,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,78.5,-36.47,detectado
+cfc_s43,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,no_llega
+cfc_s43,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,193.9,-4.93,detectado
+cfc_s43,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,61.9,0.13,detectado
+cfc_s43,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,111.6,-7.3,detectado
+cfc_s43,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,,,no_llega
+cfc_s43,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,251.9,-11.87,detectado
+cfc_s43,humano,videoplayback (1).mp4,incontrolado,255.4,131.9,-123.5,detectado
+cfc_s43,humano,videoplayback (12).mp4,incontrolado,111.23,122.0,10.77,detectado
+cfc_s43,humano,videoplayback (15).mp4,incontrolado,113.53,116.1,2.57,detectado
+cfc_s43,humano,videoplayback (17).mp4,incontrolado,33.87,31.4,-2.47,detectado
+cfc_s43,humano,videoplayback1.mp4,incipiente,24.97,39.7,14.73,detectado
+cfc_s43,humano,videoplayback1.mp4,incontrolado,73.43,108.7,35.27,detectado
+cfc_s44,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,,,desde_el_inicio
+cfc_s44,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,,,desde_el_inicio
+cfc_s44,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,,,desde_el_inicio
+cfc_s44,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,7.508,-11.592,detectado
+cfc_s44,ia,1723634695.mp4,incontrolado,32.23,,,desde_el_inicio
+cfc_s44,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,,,no_llega
+cfc_s44,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,,,no_llega
+cfc_s44,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,,,desde_el_inicio
+cfc_s44,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,39.3,-7.5,detectado
+cfc_s44,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,,,no_llega
+cfc_s44,ia,Brannutvikling.mp4,incontrolado,47.5,114.1,66.6,detectado
+cfc_s44,ia,Brennende Akkus.mp4,incontrolado,5.67,,,no_llega
+cfc_s44,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,85.2,15.2,detectado
+cfc_s44,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,127.3,53.4,detectado
+cfc_s44,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,33.9,5.83,detectado
+cfc_s44,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,56.3,24.27,detectado
+cfc_s44,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,39.5,37.5,detectado
+cfc_s44,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,78.3,11.73,detectado
+cfc_s44,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,,,desde_el_inicio
+cfc_s44,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,133.5,106.4,detectado
+cfc_s44,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,176.0,112.07,detectado
+cfc_s44,ia,VID_20230612_142839.mp4,incontrolado,20.9,,,no_llega
+cfc_s44,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,61.9,3.73,detectado
+cfc_s44,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,112.8,33.7,detectado
+cfc_s44,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,,,no_llega
+cfc_s44,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,108.3,85.23,detectado
+cfc_s44,ia,videoplayback (1).mp4,incontrolado,82.87,134.6,51.73,detectado
+cfc_s44,ia,videoplayback (12).mp4,incontrolado,55.03,73.3,18.27,detectado
+cfc_s44,ia,videoplayback (15).mp4,incontrolado,100.73,113.8,13.07,detectado
+cfc_s44,ia,videoplayback (17).mp4,incontrolado,10.33,24.3,13.97,detectado
+cfc_s44,ia,videoplayback (3).mp4,incipiente,34.0,36.0,2.0,detectado
+cfc_s44,ia,videoplayback1.mp4,incontrolado,49.6,52.9,3.3,detectado
+cfc_s44,humano,1723634695.mp4,incontrolado,27.06,,,desde_el_inicio
+cfc_s44,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,,,no_llega
+cfc_s44,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,39.3,-57.2,detectado
+cfc_s44,humano,Brannutvikling.mp4,incontrolado,115.0,114.1,-0.9,detectado
+cfc_s44,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,127.3,33.23,detectado
+cfc_s44,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,33.9,6.13,detectado
+cfc_s44,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,113.4,6.4,detectado
+cfc_s44,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,78.3,-36.67,detectado
+cfc_s44,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,no_llega
+cfc_s44,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,176.0,-22.83,detectado
+cfc_s44,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,61.9,0.13,detectado
+cfc_s44,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,112.8,-6.1,detectado
+cfc_s44,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,,,no_llega
+cfc_s44,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,230.1,-33.67,detectado
+cfc_s44,humano,videoplayback (1).mp4,incontrolado,255.4,134.6,-120.8,detectado
+cfc_s44,humano,videoplayback (12).mp4,incontrolado,111.23,121.0,9.77,detectado
+cfc_s44,humano,videoplayback (15).mp4,incontrolado,113.53,113.8,0.27,detectado
+cfc_s44,humano,videoplayback (17).mp4,incontrolado,33.87,24.3,-9.57,detectado
+cfc_s44,humano,videoplayback1.mp4,incipiente,24.97,32.2,7.23,detectado
+cfc_s44,humano,videoplayback1.mp4,incontrolado,73.43,90.7,17.27,detectado
+gru_s42,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,,,desde_el_inicio
+gru_s42,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,,,desde_el_inicio
+gru_s42,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,17.517,4.837,detectado
+gru_s42,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,8.217,-10.883,detectado
+gru_s42,ia,1723634695.mp4,incontrolado,32.23,3.203,-29.027,detectado
+gru_s42,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,,,no_llega
+gru_s42,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,7.88,-2.76,detectado
+gru_s42,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,,,desde_el_inicio
+gru_s42,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,39.4,-7.4,detectado
+gru_s42,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,,,no_llega
+gru_s42,ia,Brannutvikling.mp4,incontrolado,47.5,114.7,67.2,detectado
+gru_s42,ia,Brennende Akkus.mp4,incontrolado,5.67,,,no_llega
+gru_s42,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,72.5,2.5,detectado
+gru_s42,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,93.5,19.6,detectado
+gru_s42,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,29.4,1.33,detectado
+gru_s42,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,72.6,40.57,detectado
+gru_s42,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,,,desde_el_inicio
+gru_s42,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,39.6,-26.97,detectado
+gru_s42,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,14.8,-1.53,detectado
+gru_s42,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,26.6,-0.5,detectado
+gru_s42,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,215.5,151.57,detectado
+gru_s42,ia,VID_20230612_142839.mp4,incontrolado,20.9,28.8,7.9,detectado
+gru_s42,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,61.9,3.73,detectado
+gru_s42,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,12.3,-66.8,detectado
+gru_s42,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,,,no_llega
+gru_s42,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,16.5,-6.57,detectado
+gru_s42,ia,videoplayback (1).mp4,incontrolado,82.87,136.7,53.83,detectado
+gru_s42,ia,videoplayback (12).mp4,incontrolado,55.03,7.2,-47.83,detectado
+gru_s42,ia,videoplayback (15).mp4,incontrolado,100.73,127.8,27.07,detectado
+gru_s42,ia,videoplayback (17).mp4,incontrolado,10.33,3.9,-6.43,detectado
+gru_s42,ia,videoplayback (3).mp4,incipiente,34.0,53.5,19.5,detectado
+gru_s42,ia,videoplayback1.mp4,incontrolado,49.6,57.5,7.9,detectado
+gru_s42,humano,1723634695.mp4,incontrolado,27.06,3.203,-23.857,detectado
+gru_s42,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,7.88,-1.32,detectado
+gru_s42,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,39.4,-57.1,detectado
+gru_s42,humano,Brannutvikling.mp4,incontrolado,115.0,114.7,-0.3,detectado
+gru_s42,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,93.5,-0.57,detectado
+gru_s42,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,29.4,1.63,detectado
+gru_s42,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,108.8,1.8,detectado
+gru_s42,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,39.6,-75.37,detectado
+gru_s42,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,no_llega
+gru_s42,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,215.5,16.67,detectado
+gru_s42,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,61.9,0.13,detectado
+gru_s42,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,12.3,-106.6,detectado
+gru_s42,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,,,no_llega
+gru_s42,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,279.7,15.93,detectado
+gru_s42,humano,videoplayback (1).mp4,incontrolado,255.4,136.7,-118.7,detectado
+gru_s42,humano,videoplayback (12).mp4,incontrolado,111.23,177.8,66.57,detectado
+gru_s42,humano,videoplayback (15).mp4,incontrolado,113.53,127.8,14.27,detectado
+gru_s42,humano,videoplayback (17).mp4,incontrolado,33.87,,,desde_el_inicio
+gru_s42,humano,videoplayback1.mp4,incipiente,24.97,,,desde_el_inicio
+gru_s42,humano,videoplayback1.mp4,incontrolado,73.43,57.5,-15.93,detectado
+gru_s43,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,,,desde_el_inicio
+gru_s43,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,,,desde_el_inicio
+gru_s43,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,,,no_llega
+gru_s43,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,15.015,-4.085,detectado
+gru_s43,ia,1723634695.mp4,incontrolado,32.23,3.704,-28.526,detectado
+gru_s43,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,,,no_llega
+gru_s43,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,10.0,-0.64,detectado
+gru_s43,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,,,desde_el_inicio
+gru_s43,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,6.5,-40.3,detectado
+gru_s43,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,,,no_llega
+gru_s43,ia,Brannutvikling.mp4,incontrolado,47.5,129.3,81.8,detectado
+gru_s43,ia,Brennende Akkus.mp4,incontrolado,5.67,70.4,64.73,detectado
+gru_s43,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,72.5,2.5,detectado
+gru_s43,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,91.3,17.4,detectado
+gru_s43,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,17.2,-10.87,detectado
+gru_s43,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,104.2,72.17,detectado
+gru_s43,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,,,desde_el_inicio
+gru_s43,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,39.7,-26.87,detectado
+gru_s43,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,15.1,-1.23,detectado
+gru_s43,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,135.5,108.4,detectado
+gru_s43,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,195.2,131.27,detectado
+gru_s43,ia,VID_20230612_142839.mp4,incontrolado,20.9,,,no_llega
+gru_s43,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,62.0,3.83,detectado
+gru_s43,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,113.1,34.0,detectado
+gru_s43,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,8.7,5.03,detectado
+gru_s43,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,16.7,-6.37,detectado
+gru_s43,ia,videoplayback (1).mp4,incontrolado,82.87,131.1,48.23,detectado
+gru_s43,ia,videoplayback (12).mp4,incontrolado,55.03,48.9,-6.13,detectado
+gru_s43,ia,videoplayback (15).mp4,incontrolado,100.73,125.9,25.17,detectado
+gru_s43,ia,videoplayback (17).mp4,incontrolado,10.33,14.6,4.27,detectado
+gru_s43,ia,videoplayback (3).mp4,incipiente,34.0,,,desde_el_inicio
+gru_s43,ia,videoplayback1.mp4,incontrolado,49.6,85.6,36.0,detectado
+gru_s43,humano,1723634695.mp4,incontrolado,27.06,3.704,-23.356,detectado
+gru_s43,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,10.0,0.8,detectado
+gru_s43,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,6.5,-90.0,detectado
+gru_s43,humano,Brannutvikling.mp4,incontrolado,115.0,129.3,14.3,detectado
+gru_s43,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,91.3,-2.77,detectado
+gru_s43,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,17.2,-10.57,detectado
+gru_s43,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,104.2,-2.8,detectado
+gru_s43,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,39.7,-75.27,detectado
+gru_s43,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,no_llega
+gru_s43,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,195.2,-3.63,detectado
+gru_s43,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,62.0,0.23,detectado
+gru_s43,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,113.1,-5.8,detectado
+gru_s43,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,8.7,4.37,detectado
+gru_s43,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,279.7,15.93,detectado
+gru_s43,humano,videoplayback (1).mp4,incontrolado,255.4,131.1,-124.3,detectado
+gru_s43,humano,videoplayback (12).mp4,incontrolado,111.23,143.8,32.57,detectado
+gru_s43,humano,videoplayback (15).mp4,incontrolado,113.53,125.9,12.37,detectado
+gru_s43,humano,videoplayback (17).mp4,incontrolado,33.87,14.6,-19.27,detectado
+gru_s43,humano,videoplayback1.mp4,incipiente,24.97,,,desde_el_inicio
+gru_s43,humano,videoplayback1.mp4,incontrolado,73.43,85.6,12.17,detectado
+gru_s44,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,13.297,5.007,detectado
+gru_s44,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,,,desde_el_inicio
+gru_s44,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,,,no_llega
+gru_s44,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,14.807,-4.293,detectado
+gru_s44,ia,1723634695.mp4,incontrolado,32.23,3.403,-28.827,detectado
+gru_s44,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,,,no_llega
+gru_s44,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,,,no_llega
+gru_s44,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,,,desde_el_inicio
+gru_s44,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,40.8,-6.0,detectado
+gru_s44,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,,,no_llega
+gru_s44,ia,Brannutvikling.mp4,incontrolado,47.5,123.1,75.6,detectado
+gru_s44,ia,Brennende Akkus.mp4,incontrolado,5.67,,,no_llega
+gru_s44,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,72.5,2.5,detectado
+gru_s44,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,83.4,9.5,detectado
+gru_s44,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,17.2,-10.87,detectado
+gru_s44,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,56.4,24.37,detectado
+gru_s44,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,,,desde_el_inicio
+gru_s44,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,39.6,-26.97,detectado
+gru_s44,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,15.0,-1.33,detectado
+gru_s44,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,211.2,184.1,detectado
+gru_s44,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,,,no_llega
+gru_s44,ia,VID_20230612_142839.mp4,incontrolado,20.9,33.9,13.0,detectado
+gru_s44,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,18.9,-39.27,detectado
+gru_s44,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,150.1,71.0,detectado
+gru_s44,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,,,no_llega
+gru_s44,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,22.4,-0.67,detectado
+gru_s44,ia,videoplayback (1).mp4,incontrolado,82.87,132.8,49.93,detectado
+gru_s44,ia,videoplayback (12).mp4,incontrolado,55.03,8.1,-46.93,detectado
+gru_s44,ia,videoplayback (15).mp4,incontrolado,100.73,132.5,31.77,detectado
+gru_s44,ia,videoplayback (17).mp4,incontrolado,10.33,16.8,6.47,detectado
+gru_s44,ia,videoplayback (3).mp4,incipiente,34.0,,,desde_el_inicio
+gru_s44,ia,videoplayback1.mp4,incontrolado,49.6,96.9,47.3,detectado
+gru_s44,humano,1723634695.mp4,incontrolado,27.06,3.403,-23.657,detectado
+gru_s44,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,,,no_llega
+gru_s44,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,40.8,-55.7,detectado
+gru_s44,humano,Brannutvikling.mp4,incontrolado,115.0,123.1,8.1,detectado
+gru_s44,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,83.4,-10.67,detectado
+gru_s44,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,17.2,-10.57,detectado
+gru_s44,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,109.7,2.7,detectado
+gru_s44,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,39.6,-75.37,detectado
+gru_s44,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,no_llega
+gru_s44,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,216.9,18.07,detectado
+gru_s44,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,18.9,-42.87,detectado
+gru_s44,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,150.1,31.2,detectado
+gru_s44,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,,,no_llega
+gru_s44,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,279.7,15.93,detectado
+gru_s44,humano,videoplayback (1).mp4,incontrolado,255.4,132.8,-122.6,detectado
+gru_s44,humano,videoplayback (12).mp4,incontrolado,111.23,158.3,47.07,detectado
+gru_s44,humano,videoplayback (15).mp4,incontrolado,113.53,132.5,18.97,detectado
+gru_s44,humano,videoplayback (17).mp4,incontrolado,33.87,16.8,-17.07,detectado
+gru_s44,humano,videoplayback1.mp4,incipiente,24.97,,,desde_el_inicio
+gru_s44,humano,videoplayback1.mp4,incontrolado,73.43,96.9,23.47,detectado
+lstm_s42,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,,,desde_el_inicio
+lstm_s42,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,11.011,5.881,detectado
+lstm_s42,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,12.888,0.208,detectado
+lstm_s42,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,7.299,-11.801,detectado
+lstm_s42,ia,1723634695.mp4,incontrolado,32.23,11.512,-20.718,detectado
+lstm_s42,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,,,no_llega
+lstm_s42,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,8.4,-2.24,detectado
+lstm_s42,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,,,desde_el_inicio
+lstm_s42,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,49.6,2.8,detectado
+lstm_s42,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,,,no_llega
+lstm_s42,ia,Brannutvikling.mp4,incontrolado,47.5,118.2,70.7,detectado
+lstm_s42,ia,Brennende Akkus.mp4,incontrolado,5.67,,,no_llega
+lstm_s42,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,85.2,15.2,detectado
+lstm_s42,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,132.8,58.9,detectado
+lstm_s42,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,18.8,-9.27,detectado
+lstm_s42,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,120.6,88.57,detectado
+lstm_s42,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,39.6,37.6,detectado
+lstm_s42,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,92.1,25.53,detectado
+lstm_s42,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,,,desde_el_inicio
+lstm_s42,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,155.6,128.5,detectado
+lstm_s42,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,188.6,124.67,detectado
+lstm_s42,ia,VID_20230612_142839.mp4,incontrolado,20.9,34.1,13.2,detectado
+lstm_s42,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,110.5,52.33,detectado
+lstm_s42,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,,,no_llega
+lstm_s42,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,,,no_llega
+lstm_s42,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,229.8,206.73,detectado
+lstm_s42,ia,videoplayback (1).mp4,incontrolado,82.87,132.1,49.23,detectado
+lstm_s42,ia,videoplayback (12).mp4,incontrolado,55.03,84.4,29.37,detectado
+lstm_s42,ia,videoplayback (15).mp4,incontrolado,100.73,127.5,26.77,detectado
+lstm_s42,ia,videoplayback (17).mp4,incontrolado,10.33,,,no_llega
+lstm_s42,ia,videoplayback (3).mp4,incipiente,34.0,40.4,6.4,detectado
+lstm_s42,ia,videoplayback1.mp4,incontrolado,49.6,55.4,5.8,detectado
+lstm_s42,humano,1723634695.mp4,incontrolado,27.06,11.512,-15.548,detectado
+lstm_s42,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,8.4,-0.8,detectado
+lstm_s42,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,49.6,-46.9,detectado
+lstm_s42,humano,Brannutvikling.mp4,incontrolado,115.0,118.2,3.2,detectado
+lstm_s42,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,132.8,38.73,detectado
+lstm_s42,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,18.8,-8.97,detectado
+lstm_s42,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,120.6,13.6,detectado
+lstm_s42,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,92.1,-22.87,detectado
+lstm_s42,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,no_llega
+lstm_s42,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,188.6,-10.23,detectado
+lstm_s42,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,110.5,48.73,detectado
+lstm_s42,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,,,no_llega
+lstm_s42,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,,,no_llega
+lstm_s42,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,285.2,21.43,detectado
+lstm_s42,humano,videoplayback (1).mp4,incontrolado,255.4,132.1,-123.3,detectado
+lstm_s42,humano,videoplayback (12).mp4,incontrolado,111.23,105.0,-6.23,detectado
+lstm_s42,humano,videoplayback (15).mp4,incontrolado,113.53,127.5,13.97,detectado
+lstm_s42,humano,videoplayback (17).mp4,incontrolado,33.87,,,no_llega
+lstm_s42,humano,videoplayback1.mp4,incipiente,24.97,54.9,29.93,detectado
+lstm_s42,humano,videoplayback1.mp4,incontrolado,73.43,55.4,-18.03,detectado
+lstm_s43,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,10.394,2.104,detectado
+lstm_s43,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,12.888,7.758,detectado
+lstm_s43,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,14.514,1.834,detectado
+lstm_s43,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,8.217,-10.883,detectado
+lstm_s43,ia,1723634695.mp4,incontrolado,32.23,3.403,-28.827,detectado
+lstm_s43,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,,,no_llega
+lstm_s43,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,7.6,-3.04,detectado
+lstm_s43,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,23.79,-1.84,detectado
+lstm_s43,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,39.6,-7.2,detectado
+lstm_s43,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,,,no_llega
+lstm_s43,ia,Brannutvikling.mp4,incontrolado,47.5,115.8,68.3,detectado
+lstm_s43,ia,Brennende Akkus.mp4,incontrolado,5.67,,,no_llega
+lstm_s43,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,81.0,11.0,detectado
+lstm_s43,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,130.2,56.3,detectado
+lstm_s43,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,31.9,3.83,detectado
+lstm_s43,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,37.0,4.97,detectado
+lstm_s43,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,29.3,27.3,detectado
+lstm_s43,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,80.2,13.63,detectado
+lstm_s43,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,22.0,5.67,detectado
+lstm_s43,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,14.3,-12.8,detectado
+lstm_s43,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,135.7,71.77,detectado
+lstm_s43,ia,VID_20230612_142839.mp4,incontrolado,20.9,,,no_llega
+lstm_s43,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,25.6,-32.57,detectado
+lstm_s43,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,141.5,62.4,detectado
+lstm_s43,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,,,no_llega
+lstm_s43,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,130.3,107.23,detectado
+lstm_s43,ia,videoplayback (1).mp4,incontrolado,82.87,82.0,-0.87,detectado
+lstm_s43,ia,videoplayback (12).mp4,incontrolado,55.03,73.5,18.47,detectado
+lstm_s43,ia,videoplayback (15).mp4,incontrolado,100.73,116.2,15.47,detectado
+lstm_s43,ia,videoplayback (17).mp4,incontrolado,10.33,11.0,0.67,detectado
+lstm_s43,ia,videoplayback (3).mp4,incipiente,34.0,36.2,2.2,detectado
+lstm_s43,ia,videoplayback1.mp4,incontrolado,49.6,55.1,5.5,detectado
+lstm_s43,humano,1723634695.mp4,incontrolado,27.06,3.403,-23.657,detectado
+lstm_s43,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,7.6,-1.6,detectado
+lstm_s43,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,39.6,-56.9,detectado
+lstm_s43,humano,Brannutvikling.mp4,incontrolado,115.0,115.8,0.8,detectado
+lstm_s43,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,130.2,36.13,detectado
+lstm_s43,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,31.9,4.13,detectado
+lstm_s43,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,107.3,0.3,detectado
+lstm_s43,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,80.2,-34.77,detectado
+lstm_s43,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,no_llega
+lstm_s43,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,135.7,-63.13,detectado
+lstm_s43,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,25.6,-36.17,detectado
+lstm_s43,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,141.5,22.6,detectado
+lstm_s43,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,,,no_llega
+lstm_s43,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,279.7,15.93,detectado
+lstm_s43,humano,videoplayback (1).mp4,incontrolado,255.4,82.0,-173.4,detectado
+lstm_s43,humano,videoplayback (12).mp4,incontrolado,111.23,109.8,-1.43,detectado
+lstm_s43,humano,videoplayback (15).mp4,incontrolado,113.53,116.2,2.67,detectado
+lstm_s43,humano,videoplayback (17).mp4,incontrolado,33.87,24.8,-9.07,detectado
+lstm_s43,humano,videoplayback1.mp4,incipiente,24.97,35.9,10.93,detectado
+lstm_s43,humano,videoplayback1.mp4,incontrolado,73.43,55.1,-18.33,detectado
+lstm_s44,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,,,desde_el_inicio
+lstm_s44,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,,,desde_el_inicio
+lstm_s44,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,12.888,0.208,detectado
+lstm_s44,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,7.215,-11.885,detectado
+lstm_s44,ia,1723634695.mp4,incontrolado,32.23,9.009,-23.221,detectado
+lstm_s44,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,,,no_llega
+lstm_s44,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,4.48,-6.16,detectado
+lstm_s44,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,21.188,-4.442,detectado
+lstm_s44,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,57.5,10.7,detectado
+lstm_s44,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,,,no_llega
+lstm_s44,ia,Brannutvikling.mp4,incontrolado,47.5,117.1,69.6,detectado
+lstm_s44,ia,Brennende Akkus.mp4,incontrolado,5.67,,,no_llega
+lstm_s44,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,103.1,33.1,detectado
+lstm_s44,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,133.8,59.9,detectado
+lstm_s44,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,34.1,6.03,detectado
+lstm_s44,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,37.1,5.07,detectado
+lstm_s44,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,29.3,27.3,detectado
+lstm_s44,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,80.1,13.53,detectado
+lstm_s44,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,,,desde_el_inicio
+lstm_s44,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,41.4,14.3,detectado
+lstm_s44,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,170.8,106.87,detectado
+lstm_s44,ia,VID_20230612_142839.mp4,incontrolado,20.9,,,no_llega
+lstm_s44,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,62.8,4.63,detectado
+lstm_s44,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,145.0,65.9,detectado
+lstm_s44,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,,,no_llega
+lstm_s44,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,118.5,95.43,detectado
+lstm_s44,ia,videoplayback (1).mp4,incontrolado,82.87,131.4,48.53,detectado
+lstm_s44,ia,videoplayback (12).mp4,incontrolado,55.03,86.6,31.57,detectado
+lstm_s44,ia,videoplayback (15).mp4,incontrolado,100.73,116.1,15.37,detectado
+lstm_s44,ia,videoplayback (17).mp4,incontrolado,10.33,10.7,0.37,detectado
+lstm_s44,ia,videoplayback (3).mp4,incipiente,34.0,36.1,2.1,detectado
+lstm_s44,ia,videoplayback1.mp4,incontrolado,49.6,55.2,5.6,detectado
+lstm_s44,humano,1723634695.mp4,incontrolado,27.06,9.009,-18.051,detectado
+lstm_s44,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,4.48,-4.72,detectado
+lstm_s44,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,57.5,-39.0,detectado
+lstm_s44,humano,Brannutvikling.mp4,incontrolado,115.0,117.1,2.1,detectado
+lstm_s44,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,133.8,39.73,detectado
+lstm_s44,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,34.1,6.33,detectado
+lstm_s44,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,104.9,-2.1,detectado
+lstm_s44,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,80.1,-34.87,detectado
+lstm_s44,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,no_llega
+lstm_s44,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,189.7,-9.13,detectado
+lstm_s44,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,62.8,1.03,detectado
+lstm_s44,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,145.0,26.1,detectado
+lstm_s44,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,,,no_llega
+lstm_s44,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,281.7,17.93,detectado
+lstm_s44,humano,videoplayback (1).mp4,incontrolado,255.4,131.4,-124.0,detectado
+lstm_s44,humano,videoplayback (12).mp4,incontrolado,111.23,122.6,11.37,detectado
+lstm_s44,humano,videoplayback (15).mp4,incontrolado,113.53,116.1,2.57,detectado
+lstm_s44,humano,videoplayback (17).mp4,incontrolado,33.87,16.7,-17.17,detectado
+lstm_s44,humano,videoplayback1.mp4,incipiente,24.97,36.0,11.03,detectado
+lstm_s44,humano,videoplayback1.mp4,incontrolado,73.43,55.2,-18.23,detectado
+gradient boosting,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,,,desde_el_inicio
+gradient boosting,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,18.5,13.37,detectado
+gradient boosting,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,8.5,-4.18,detectado
+gradient boosting,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,,,desde_el_inicio
+gradient boosting,ia,1723634695.mp4,incontrolado,32.23,,,desde_el_inicio
+gradient boosting,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,5.5,2.73,detectado
+gradient boosting,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,5.5,-5.14,detectado
+gradient boosting,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,14.5,-11.13,detectado
+gradient boosting,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,38.5,-8.3,detectado
+gradient boosting,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,27.5,3.23,detectado
+gradient boosting,ia,Brannutvikling.mp4,incontrolado,47.5,103.5,56.0,detectado
+gradient boosting,ia,Brennende Akkus.mp4,incontrolado,5.67,25.5,19.83,detectado
+gradient boosting,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,91.5,21.5,detectado
+gradient boosting,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,91.5,17.6,detectado
+gradient boosting,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,34.5,6.43,detectado
+gradient boosting,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,18.5,-13.53,detectado
+gradient boosting,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,39.5,37.5,detectado
+gradient boosting,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,77.5,10.93,detectado
+gradient boosting,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,18.5,2.17,detectado
+gradient boosting,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,34.5,7.4,detectado
+gradient boosting,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,134.5,70.57,detectado
+gradient boosting,ia,VID_20230612_142839.mp4,incontrolado,20.9,14.5,-6.4,detectado
+gradient boosting,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,58.5,0.33,detectado
+gradient boosting,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,102.5,23.4,detectado
+gradient boosting,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,3.5,-0.17,detectado
+gradient boosting,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,50.5,27.43,detectado
+gradient boosting,ia,videoplayback (1).mp4,incontrolado,82.87,132.5,49.63,detectado
+gradient boosting,ia,videoplayback (12).mp4,incontrolado,55.03,56.5,1.47,detectado
+gradient boosting,ia,videoplayback (15).mp4,incontrolado,100.73,116.5,15.77,detectado
+gradient boosting,ia,videoplayback (17).mp4,incontrolado,10.33,14.5,4.17,detectado
+gradient boosting,ia,videoplayback (3).mp4,incipiente,34.0,36.5,2.5,detectado
+gradient boosting,ia,videoplayback1.mp4,incontrolado,49.6,54.5,4.9,detectado
+gradient boosting,humano,1723634695.mp4,incontrolado,27.06,,,desde_el_inicio
+gradient boosting,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,5.5,-3.7,detectado
+gradient boosting,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,76.5,-20.0,detectado
+gradient boosting,humano,Brannutvikling.mp4,incontrolado,115.0,110.5,-4.5,detectado
+gradient boosting,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,91.5,-2.57,detectado
+gradient boosting,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,34.5,6.73,detectado
+gradient boosting,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,104.5,-2.5,detectado
+gradient boosting,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,77.5,-37.47,detectado
+gradient boosting,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,no_llega
+gradient boosting,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,191.5,-7.33,detectado
+gradient boosting,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,58.5,-3.27,detectado
+gradient boosting,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,120.5,1.6,detectado
+gradient boosting,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,3.5,-0.83,detectado
+gradient boosting,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,271.5,7.73,detectado
+gradient boosting,humano,videoplayback (1).mp4,incontrolado,255.4,207.5,-47.9,detectado
+gradient boosting,humano,videoplayback (12).mp4,incontrolado,111.23,56.5,-54.73,detectado
+gradient boosting,humano,videoplayback (15).mp4,incontrolado,113.53,116.5,2.97,detectado
+gradient boosting,humano,videoplayback (17).mp4,incontrolado,33.87,45.5,11.63,detectado
+gradient boosting,humano,videoplayback1.mp4,incipiente,24.97,34.5,9.53,detectado
+gradient boosting,humano,videoplayback1.mp4,incontrolado,73.43,78.5,5.07,detectado
+regresion logistica,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,,,no_llega
+regresion logistica,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,,,desde_el_inicio
+regresion logistica,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,11.5,-1.18,detectado
+regresion logistica,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,6.5,-12.6,detectado
+regresion logistica,ia,1723634695.mp4,incontrolado,32.23,,,desde_el_inicio
+regresion logistica,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,,,no_llega
+regresion logistica,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,6.5,-4.14,detectado
+regresion logistica,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,13.5,-12.13,detectado
+regresion logistica,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,53.5,6.7,detectado
+regresion logistica,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,,,no_llega
+regresion logistica,ia,Brannutvikling.mp4,incontrolado,47.5,112.5,65.0,detectado
+regresion logistica,ia,Brennende Akkus.mp4,incontrolado,5.67,,,no_llega
+regresion logistica,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,86.5,16.5,detectado
+regresion logistica,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,86.5,12.6,detectado
+regresion logistica,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,28.5,0.43,detectado
+regresion logistica,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,56.5,24.47,detectado
+regresion logistica,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,77.5,75.5,detectado
+regresion logistica,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,79.5,12.93,detectado
+regresion logistica,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,18.5,2.17,detectado
+regresion logistica,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,29.5,2.4,detectado
+regresion logistica,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,176.5,112.57,detectado
+regresion logistica,ia,VID_20230612_142839.mp4,incontrolado,20.9,,,no_llega
+regresion logistica,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,39.5,-18.67,detectado
+regresion logistica,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,111.5,32.4,detectado
+regresion logistica,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,,,no_llega
+regresion logistica,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,74.5,51.43,detectado
+regresion logistica,ia,videoplayback (1).mp4,incontrolado,82.87,130.5,47.63,detectado
+regresion logistica,ia,videoplayback (12).mp4,incontrolado,55.03,56.5,1.47,detectado
+regresion logistica,ia,videoplayback (15).mp4,incontrolado,100.73,120.5,19.77,detectado
+regresion logistica,ia,videoplayback (17).mp4,incontrolado,10.33,28.5,18.17,detectado
+regresion logistica,ia,videoplayback (3).mp4,incipiente,34.0,6.5,-27.5,detectado
+regresion logistica,ia,videoplayback1.mp4,incontrolado,49.6,55.5,5.9,detectado
+regresion logistica,humano,1723634695.mp4,incontrolado,27.06,,,desde_el_inicio
+regresion logistica,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,6.5,-2.7,detectado
+regresion logistica,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,81.5,-15.0,detectado
+regresion logistica,humano,Brannutvikling.mp4,incontrolado,115.0,112.5,-2.5,detectado
+regresion logistica,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,86.5,-7.57,detectado
+regresion logistica,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,28.5,0.73,detectado
+regresion logistica,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,119.5,12.5,detectado
+regresion logistica,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,79.5,-35.47,detectado
+regresion logistica,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,no_llega
+regresion logistica,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,188.5,-10.33,detectado
+regresion logistica,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,39.5,-22.27,detectado
+regresion logistica,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,111.5,-7.4,detectado
+regresion logistica,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,,,no_llega
+regresion logistica,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,266.5,2.73,detectado
+regresion logistica,humano,videoplayback (1).mp4,incontrolado,255.4,207.5,-47.9,detectado
+regresion logistica,humano,videoplayback (12).mp4,incontrolado,111.23,104.5,-6.73,detectado
+regresion logistica,humano,videoplayback (15).mp4,incontrolado,113.53,120.5,6.97,detectado
+regresion logistica,humano,videoplayback (17).mp4,incontrolado,33.87,28.5,-5.37,detectado
+regresion logistica,humano,videoplayback1.mp4,incipiente,24.97,16.5,-8.47,detectado
+regresion logistica,humano,videoplayback1.mp4,incontrolado,73.43,79.5,6.07,detectado
+clase mayoritaria,ia,12399227_3840_2160_60fps.mp4,incipiente,8.29,,,desde_el_inicio
+clase mayoritaria,ia,13871980_3840_2160_24fps.mp4,incipiente,5.13,,,desde_el_inicio
+clase mayoritaria,ia,13871980_3840_2160_24fps.mp4,incontrolado,12.68,,,desde_el_inicio
+clase mayoritaria,ia,14297190_3840_2160_24fps.mp4,incontrolado,19.1,,,desde_el_inicio
+clase mayoritaria,ia,1723634695.mp4,incontrolado,32.23,,,desde_el_inicio
+clase mayoritaria,ia,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,incontrolado,2.77,,,desde_el_inicio
+clase mayoritaria,ia,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,10.64,,,desde_el_inicio
+clase mayoritaria,ia,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,incipiente,25.63,,,desde_el_inicio
+clase mayoritaria,ia,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,46.8,,,desde_el_inicio
+clase mayoritaria,ia,Brandgefahren im Haushalt.mp4,incontrolado,24.27,,,desde_el_inicio
+clase mayoritaria,ia,Brannutvikling.mp4,incontrolado,47.5,,,desde_el_inicio
+clase mayoritaria,ia,Brennende Akkus.mp4,incontrolado,5.67,,,desde_el_inicio
+clase mayoritaria,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incipiente,70.0,,,desde_el_inicio
+clase mayoritaria,ia,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,73.9,,,desde_el_inicio
+clase mayoritaria,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,28.07,,,desde_el_inicio
+clase mayoritaria,ia,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,32.03,,,desde_el_inicio
+clase mayoritaria,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incipiente,2.0,,,desde_el_inicio
+clase mayoritaria,ia,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,66.57,,,desde_el_inicio
+clase mayoritaria,ia,Har du en fungerande brandvarnare_.mp4,incipiente,16.33,,,desde_el_inicio
+clase mayoritaria,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incipiente,27.1,,,desde_el_inicio
+clase mayoritaria,ia,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,63.93,,,desde_el_inicio
+clase mayoritaria,ia,VID_20230612_142839.mp4,incontrolado,20.9,,,desde_el_inicio
+clase mayoritaria,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,58.17,,,desde_el_inicio
+clase mayoritaria,ia,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,79.1,,,desde_el_inicio
+clase mayoritaria,ia,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,3.67,,,desde_el_inicio
+clase mayoritaria,ia,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,23.07,,,desde_el_inicio
+clase mayoritaria,ia,videoplayback (1).mp4,incontrolado,82.87,,,desde_el_inicio
+clase mayoritaria,ia,videoplayback (12).mp4,incontrolado,55.03,,,desde_el_inicio
+clase mayoritaria,ia,videoplayback (15).mp4,incontrolado,100.73,,,desde_el_inicio
+clase mayoritaria,ia,videoplayback (17).mp4,incontrolado,10.33,,,desde_el_inicio
+clase mayoritaria,ia,videoplayback (3).mp4,incipiente,34.0,,,desde_el_inicio
+clase mayoritaria,ia,videoplayback1.mp4,incontrolado,49.6,,,desde_el_inicio
+clase mayoritaria,humano,1723634695.mp4,incontrolado,27.06,,,desde_el_inicio
+clase mayoritaria,humano,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,incontrolado,9.2,,,desde_el_inicio
+clase mayoritaria,humano,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,incontrolado,96.5,,,desde_el_inicio
+clase mayoritaria,humano,Brannutvikling.mp4,incontrolado,115.0,,,desde_el_inicio
+clase mayoritaria,humano,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,incontrolado,94.07,,,desde_el_inicio
+clase mayoritaria,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incipiente,27.77,,,desde_el_inicio
+clase mayoritaria,humano,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,incontrolado,107.0,,,desde_el_inicio
+clase mayoritaria,humano,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,incontrolado,114.97,,,desde_el_inicio
+clase mayoritaria,humano,Har du en fungerande brandvarnare_.mp4,incontrolado,20.53,,,desde_el_inicio
+clase mayoritaria,humano,Launch of Fire Investigations by BRE and FIUK.mp4,incontrolado,198.83,,,desde_el_inicio
+clase mayoritaria,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incipiente,61.77,,,desde_el_inicio
+clase mayoritaria,humano,Weihnachtsbaumbrände - sind vermeidbar.mp4,incontrolado,118.9,,,desde_el_inicio
+clase mayoritaria,humano,What Type Of Smoke Alarm Is Best For Your Home_.mp4,incontrolado,4.33,,,desde_el_inicio
+clase mayoritaria,humano,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,incipiente,263.77,,,desde_el_inicio
+clase mayoritaria,humano,videoplayback (1).mp4,incontrolado,255.4,,,desde_el_inicio
+clase mayoritaria,humano,videoplayback (12).mp4,incontrolado,111.23,,,desde_el_inicio
+clase mayoritaria,humano,videoplayback (15).mp4,incontrolado,113.53,,,desde_el_inicio
+clase mayoritaria,humano,videoplayback (17).mp4,incontrolado,33.87,,,desde_el_inicio
+clase mayoritaria,humano,videoplayback1.mp4,incipiente,24.97,,,desde_el_inicio
+clase mayoritaria,humano,videoplayback1.mp4,incontrolado,73.43,,,desde_el_inicio

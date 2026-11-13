@@ -1,0 +1,49 @@
+corrida,modelo,archivo,cruce
+cfc_s42,cfc,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,desde el inicio
+cfc_s42,cfc,Har du en fungerande brandvarnare_.mp4,18.7
+cfc_s42,cfc,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,17.0
+cfc_s42,cfc,videoplayback (3).mp4,47.0
+cfc_s43,cfc,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,desde el inicio
+cfc_s43,cfc,Har du en fungerande brandvarnare_.mp4,nunca
+cfc_s43,cfc,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,251.9
+cfc_s43,cfc,videoplayback (3).mp4,35.7
+cfc_s44,cfc,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,desde el inicio
+cfc_s44,cfc,Har du en fungerande brandvarnare_.mp4,desde el inicio
+cfc_s44,cfc,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,108.3
+cfc_s44,cfc,videoplayback (3).mp4,desde el inicio
+gru_s42,gru,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,desde el inicio
+gru_s42,gru,Har du en fungerande brandvarnare_.mp4,desde el inicio
+gru_s42,gru,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,desde el inicio
+gru_s42,gru,videoplayback (3).mp4,desde el inicio
+gru_s43,gru,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,desde el inicio
+gru_s43,gru,Har du en fungerande brandvarnare_.mp4,desde el inicio
+gru_s43,gru,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,desde el inicio
+gru_s43,gru,videoplayback (3).mp4,desde el inicio
+gru_s44,gru,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,desde el inicio
+gru_s44,gru,Har du en fungerande brandvarnare_.mp4,desde el inicio
+gru_s44,gru,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,desde el inicio
+gru_s44,gru,videoplayback (3).mp4,desde el inicio
+lstm_s42,lstm,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,desde el inicio
+lstm_s42,lstm,Har du en fungerande brandvarnare_.mp4,desde el inicio
+lstm_s42,lstm,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,desde el inicio
+lstm_s42,lstm,videoplayback (3).mp4,desde el inicio
+lstm_s43,lstm,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,desde el inicio
+lstm_s43,lstm,Har du en fungerande brandvarnare_.mp4,desde el inicio
+lstm_s43,lstm,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,130.3
+lstm_s43,lstm,videoplayback (3).mp4,desde el inicio
+lstm_s44,lstm,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,desde el inicio
+lstm_s44,lstm,Har du en fungerande brandvarnare_.mp4,desde el inicio
+lstm_s44,lstm,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,desde el inicio
+lstm_s44,lstm,videoplayback (3).mp4,desde el inicio
+gradient boosting,gradient boosting,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,14.5
+gradient boosting,gradient boosting,Har du en fungerande brandvarnare_.mp4,desde el inicio
+gradient boosting,gradient boosting,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,4.5
+gradient boosting,gradient boosting,videoplayback (3).mp4,8.5
+regresion logistica,regresion logistica,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,desde el inicio
+regresion logistica,regresion logistica,Har du en fungerande brandvarnare_.mp4,desde el inicio
+regresion logistica,regresion logistica,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,4.5
+regresion logistica,regresion logistica,videoplayback (3).mp4,desde el inicio
+clase mayoritaria,clase mayoritaria,700_F_1633820181_qwiNmqTW57MMB3OTqVnQuTKS6YMSBRHG_ST.mp4,desde el inicio
+clase mayoritaria,clase mayoritaria,Har du en fungerande brandvarnare_.mp4,desde el inicio
+clase mayoritaria,clase mayoritaria,Wooden Model Ship Battleship Jean Bart Burning And Sinking.mp4,desde el inicio
+clase mayoritaria,clase mayoritaria,videoplayback (3).mp4,desde el inicio

@@ -1,0 +1,815 @@
+corrida,referencia,alfa,archivo,t_incontrolado,t_alerta,ewt_s
+cfc_s42,ia,0.1,13871980_3840_2160_24fps.mp4,12.68,0.208,12.472
+cfc_s42,ia,0.1,14297190_3840_2160_24fps.mp4,19.1,1.084,18.016
+cfc_s42,ia,0.1,1723634695.mp4,32.23,0.1,32.13
+cfc_s42,ia,0.1,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+cfc_s42,ia,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,6.0,4.64
+cfc_s42,ia,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,38.3,8.5
+cfc_s42,ia,0.1,Brandgefahren im Haushalt.mp4,24.27,47.1,-22.83
+cfc_s42,ia,0.1,Brannutvikling.mp4,47.5,111.6,-64.1
+cfc_s42,ia,0.1,Brennende Akkus.mp4,5.67,,
+cfc_s42,ia,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,126.6,-52.7
+cfc_s42,ia,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,17.2,14.83
+cfc_s42,ia,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,30.8,35.77
+cfc_s42,ia,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,174.4,-110.47
+cfc_s42,ia,0.1,VID_20230612_142839.mp4,20.9,,
+cfc_s42,ia,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,138.5,-59.4
+cfc_s42,ia,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+cfc_s42,ia,0.1,videoplayback (1).mp4,82.87,129.2,-46.33
+cfc_s42,ia,0.1,videoplayback (12).mp4,55.03,9.6,45.43
+cfc_s42,ia,0.1,videoplayback (15).mp4,100.73,112.9,-12.17
+cfc_s42,ia,0.1,videoplayback (17).mp4,10.33,23.2,-12.87
+cfc_s42,ia,0.1,videoplayback1.mp4,49.6,35.1,14.5
+cfc_s42,ia,0.05,13871980_3840_2160_24fps.mp4,12.68,,
+cfc_s42,ia,0.05,14297190_3840_2160_24fps.mp4,19.1,,
+cfc_s42,ia,0.05,1723634695.mp4,32.23,4.805,27.425
+cfc_s42,ia,0.05,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+cfc_s42,ia,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,,
+cfc_s42,ia,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,53.3,-6.5
+cfc_s42,ia,0.05,Brandgefahren im Haushalt.mp4,24.27,,
+cfc_s42,ia,0.05,Brannutvikling.mp4,47.5,,
+cfc_s42,ia,0.05,Brennende Akkus.mp4,5.67,,
+cfc_s42,ia,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,,
+cfc_s42,ia,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,,
+cfc_s42,ia,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,145.9,-79.33
+cfc_s42,ia,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,,
+cfc_s42,ia,0.05,VID_20230612_142839.mp4,20.9,,
+cfc_s42,ia,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,,
+cfc_s42,ia,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+cfc_s42,ia,0.05,videoplayback (1).mp4,82.87,,
+cfc_s42,ia,0.05,videoplayback (12).mp4,55.03,,
+cfc_s42,ia,0.05,videoplayback (15).mp4,100.73,,
+cfc_s42,ia,0.05,videoplayback (17).mp4,10.33,,
+cfc_s42,ia,0.05,videoplayback1.mp4,49.6,60.0,-10.4
+cfc_s42,humano,0.1,1723634695.mp4,27.06,0.1,26.96
+cfc_s42,humano,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,6.0,3.2
+cfc_s42,humano,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,38.3,58.2
+cfc_s42,humano,0.1,Brannutvikling.mp4,115.0,111.6,3.4
+cfc_s42,humano,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,126.6,-32.53
+cfc_s42,humano,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,17.2,89.8
+cfc_s42,humano,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,30.8,84.17
+cfc_s42,humano,0.1,Har du en fungerande brandvarnare_.mp4,20.53,,
+cfc_s42,humano,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,174.4,24.43
+cfc_s42,humano,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,138.5,-19.6
+cfc_s42,humano,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+cfc_s42,humano,0.1,videoplayback (1).mp4,255.4,129.2,126.2
+cfc_s42,humano,0.1,videoplayback (12).mp4,111.23,9.6,101.63
+cfc_s42,humano,0.1,videoplayback (15).mp4,113.53,112.9,0.63
+cfc_s42,humano,0.1,videoplayback (17).mp4,33.87,23.2,10.67
+cfc_s42,humano,0.1,videoplayback1.mp4,73.43,35.1,38.33
+cfc_s42,humano,0.05,1723634695.mp4,27.06,4.805,22.255
+cfc_s42,humano,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,,
+cfc_s42,humano,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,53.3,43.2
+cfc_s42,humano,0.05,Brannutvikling.mp4,115.0,,
+cfc_s42,humano,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,,
+cfc_s42,humano,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,,
+cfc_s42,humano,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,145.9,-30.93
+cfc_s42,humano,0.05,Har du en fungerande brandvarnare_.mp4,20.53,,
+cfc_s42,humano,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,,
+cfc_s42,humano,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,,
+cfc_s42,humano,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+cfc_s42,humano,0.05,videoplayback (1).mp4,255.4,,
+cfc_s42,humano,0.05,videoplayback (12).mp4,111.23,,
+cfc_s42,humano,0.05,videoplayback (15).mp4,113.53,,
+cfc_s42,humano,0.05,videoplayback (17).mp4,33.87,,
+cfc_s42,humano,0.05,videoplayback1.mp4,73.43,60.0,13.43
+cfc_s43,ia,0.1,13871980_3840_2160_24fps.mp4,12.68,0.0,12.68
+cfc_s43,ia,0.1,14297190_3840_2160_24fps.mp4,19.1,5.714,13.386
+cfc_s43,ia,0.1,1723634695.mp4,32.23,0.0,32.23
+cfc_s43,ia,0.1,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+cfc_s43,ia,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,6.2,4.44
+cfc_s43,ia,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,37.3,9.5
+cfc_s43,ia,0.1,Brandgefahren im Haushalt.mp4,24.27,,
+cfc_s43,ia,0.1,Brannutvikling.mp4,47.5,112.9,-65.4
+cfc_s43,ia,0.1,Brennende Akkus.mp4,5.67,,
+cfc_s43,ia,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,88.6,-14.7
+cfc_s43,ia,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,16.8,15.23
+cfc_s43,ia,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,27.7,38.87
+cfc_s43,ia,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,190.9,-126.97
+cfc_s43,ia,0.1,VID_20230612_142839.mp4,20.9,,
+cfc_s43,ia,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,110.3,-31.2
+cfc_s43,ia,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+cfc_s43,ia,0.1,videoplayback (1).mp4,82.87,130.1,-47.23
+cfc_s43,ia,0.1,videoplayback (12).mp4,55.03,55.8,-0.77
+cfc_s43,ia,0.1,videoplayback (15).mp4,100.73,114.2,-13.47
+cfc_s43,ia,0.1,videoplayback (17).mp4,10.33,18.4,-8.07
+cfc_s43,ia,0.1,videoplayback1.mp4,49.6,93.3,-43.7
+cfc_s43,ia,0.05,13871980_3840_2160_24fps.mp4,12.68,,
+cfc_s43,ia,0.05,14297190_3840_2160_24fps.mp4,19.1,12.22,6.88
+cfc_s43,ia,0.05,1723634695.mp4,32.23,4.605,27.625
+cfc_s43,ia,0.05,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+cfc_s43,ia,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,,
+cfc_s43,ia,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,84.1,-37.3
+cfc_s43,ia,0.05,Brandgefahren im Haushalt.mp4,24.27,,
+cfc_s43,ia,0.05,Brannutvikling.mp4,47.5,,
+cfc_s43,ia,0.05,Brennende Akkus.mp4,5.67,,
+cfc_s43,ia,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,,
+cfc_s43,ia,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,,
+cfc_s43,ia,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,45.4,21.17
+cfc_s43,ia,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,193.2,-129.27
+cfc_s43,ia,0.05,VID_20230612_142839.mp4,20.9,,
+cfc_s43,ia,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,,
+cfc_s43,ia,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+cfc_s43,ia,0.05,videoplayback (1).mp4,82.87,,
+cfc_s43,ia,0.05,videoplayback (12).mp4,55.03,73.7,-18.67
+cfc_s43,ia,0.05,videoplayback (15).mp4,100.73,,
+cfc_s43,ia,0.05,videoplayback (17).mp4,10.33,,
+cfc_s43,ia,0.05,videoplayback1.mp4,49.6,107.5,-57.9
+cfc_s43,humano,0.1,1723634695.mp4,27.06,0.0,27.06
+cfc_s43,humano,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,6.2,3.0
+cfc_s43,humano,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,37.3,59.2
+cfc_s43,humano,0.1,Brannutvikling.mp4,115.0,112.9,2.1
+cfc_s43,humano,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,88.6,5.47
+cfc_s43,humano,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,16.8,90.2
+cfc_s43,humano,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,27.7,87.27
+cfc_s43,humano,0.1,Har du en fungerande brandvarnare_.mp4,20.53,,
+cfc_s43,humano,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,190.9,7.93
+cfc_s43,humano,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,110.3,8.6
+cfc_s43,humano,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+cfc_s43,humano,0.1,videoplayback (1).mp4,255.4,130.1,125.3
+cfc_s43,humano,0.1,videoplayback (12).mp4,111.23,55.8,55.43
+cfc_s43,humano,0.1,videoplayback (15).mp4,113.53,114.2,-0.67
+cfc_s43,humano,0.1,videoplayback (17).mp4,33.87,18.4,15.47
+cfc_s43,humano,0.1,videoplayback1.mp4,73.43,93.3,-19.87
+cfc_s43,humano,0.05,1723634695.mp4,27.06,4.605,22.455
+cfc_s43,humano,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,,
+cfc_s43,humano,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,84.1,12.4
+cfc_s43,humano,0.05,Brannutvikling.mp4,115.0,,
+cfc_s43,humano,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,,
+cfc_s43,humano,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,,
+cfc_s43,humano,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,45.4,69.57
+cfc_s43,humano,0.05,Har du en fungerande brandvarnare_.mp4,20.53,,
+cfc_s43,humano,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,193.2,5.63
+cfc_s43,humano,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,,
+cfc_s43,humano,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+cfc_s43,humano,0.05,videoplayback (1).mp4,255.4,,
+cfc_s43,humano,0.05,videoplayback (12).mp4,111.23,73.7,37.53
+cfc_s43,humano,0.05,videoplayback (15).mp4,113.53,,
+cfc_s43,humano,0.05,videoplayback (17).mp4,33.87,,
+cfc_s43,humano,0.05,videoplayback1.mp4,73.43,107.5,-34.07
+cfc_s44,ia,0.1,13871980_3840_2160_24fps.mp4,12.68,0.083,12.597
+cfc_s44,ia,0.1,14297190_3840_2160_24fps.mp4,19.1,4.087,15.013
+cfc_s44,ia,0.1,1723634695.mp4,32.23,0.0,32.23
+cfc_s44,ia,0.1,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+cfc_s44,ia,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,6.2,4.44
+cfc_s44,ia,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,37.5,9.3
+cfc_s44,ia,0.1,Brandgefahren im Haushalt.mp4,24.27,,
+cfc_s44,ia,0.1,Brannutvikling.mp4,47.5,112.3,-64.8
+cfc_s44,ia,0.1,Brennende Akkus.mp4,5.67,29.7,-24.03
+cfc_s44,ia,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,125.4,-51.5
+cfc_s44,ia,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,17.1,14.93
+cfc_s44,ia,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,37.9,28.67
+cfc_s44,ia,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,174.5,-110.57
+cfc_s44,ia,0.1,VID_20230612_142839.mp4,20.9,34.8,-13.9
+cfc_s44,ia,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,21.2,57.9
+cfc_s44,ia,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+cfc_s44,ia,0.1,videoplayback (1).mp4,82.87,133.5,-50.63
+cfc_s44,ia,0.1,videoplayback (12).mp4,55.03,55.8,-0.77
+cfc_s44,ia,0.1,videoplayback (15).mp4,100.73,111.9,-11.17
+cfc_s44,ia,0.1,videoplayback (17).mp4,10.33,22.8,-12.47
+cfc_s44,ia,0.1,videoplayback1.mp4,49.6,34.6,15.0
+cfc_s44,ia,0.05,13871980_3840_2160_24fps.mp4,12.68,0.083,12.597
+cfc_s44,ia,0.05,14297190_3840_2160_24fps.mp4,19.1,6.506,12.594
+cfc_s44,ia,0.05,1723634695.mp4,32.23,0.1,32.13
+cfc_s44,ia,0.05,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+cfc_s44,ia,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,6.8,3.84
+cfc_s44,ia,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,37.5,9.3
+cfc_s44,ia,0.05,Brandgefahren im Haushalt.mp4,24.27,,
+cfc_s44,ia,0.05,Brannutvikling.mp4,47.5,112.4,-64.9
+cfc_s44,ia,0.05,Brennende Akkus.mp4,5.67,,
+cfc_s44,ia,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,125.5,-51.6
+cfc_s44,ia,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,17.2,14.83
+cfc_s44,ia,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,37.9,28.67
+cfc_s44,ia,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,174.7,-110.77
+cfc_s44,ia,0.05,VID_20230612_142839.mp4,20.9,,
+cfc_s44,ia,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,111.4,-32.3
+cfc_s44,ia,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+cfc_s44,ia,0.05,videoplayback (1).mp4,82.87,133.9,-51.03
+cfc_s44,ia,0.05,videoplayback (12).mp4,55.03,62.1,-7.07
+cfc_s44,ia,0.05,videoplayback (15).mp4,100.73,112.5,-11.77
+cfc_s44,ia,0.05,videoplayback (17).mp4,10.33,23.3,-12.97
+cfc_s44,ia,0.05,videoplayback1.mp4,49.6,34.9,14.7
+cfc_s44,humano,0.1,1723634695.mp4,27.06,0.0,27.06
+cfc_s44,humano,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,6.2,3.0
+cfc_s44,humano,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,37.5,59.0
+cfc_s44,humano,0.1,Brannutvikling.mp4,115.0,112.3,2.7
+cfc_s44,humano,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,125.4,-31.33
+cfc_s44,humano,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,17.1,89.9
+cfc_s44,humano,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,37.9,77.07
+cfc_s44,humano,0.1,Har du en fungerande brandvarnare_.mp4,20.53,,
+cfc_s44,humano,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,174.5,24.33
+cfc_s44,humano,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,21.2,97.7
+cfc_s44,humano,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+cfc_s44,humano,0.1,videoplayback (1).mp4,255.4,133.5,121.9
+cfc_s44,humano,0.1,videoplayback (12).mp4,111.23,55.8,55.43
+cfc_s44,humano,0.1,videoplayback (15).mp4,113.53,111.9,1.63
+cfc_s44,humano,0.1,videoplayback (17).mp4,33.87,22.8,11.07
+cfc_s44,humano,0.1,videoplayback1.mp4,73.43,34.6,38.83
+cfc_s44,humano,0.05,1723634695.mp4,27.06,0.1,26.96
+cfc_s44,humano,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,6.8,2.4
+cfc_s44,humano,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,37.5,59.0
+cfc_s44,humano,0.05,Brannutvikling.mp4,115.0,112.4,2.6
+cfc_s44,humano,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,125.5,-31.43
+cfc_s44,humano,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,17.2,89.8
+cfc_s44,humano,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,37.9,77.07
+cfc_s44,humano,0.05,Har du en fungerande brandvarnare_.mp4,20.53,,
+cfc_s44,humano,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,174.7,24.13
+cfc_s44,humano,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,111.4,7.5
+cfc_s44,humano,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+cfc_s44,humano,0.05,videoplayback (1).mp4,255.4,133.9,121.5
+cfc_s44,humano,0.05,videoplayback (12).mp4,111.23,62.1,49.13
+cfc_s44,humano,0.05,videoplayback (15).mp4,113.53,112.5,1.03
+cfc_s44,humano,0.05,videoplayback (17).mp4,33.87,23.3,10.57
+cfc_s44,humano,0.05,videoplayback1.mp4,73.43,34.9,38.53
+gru_s42,ia,0.1,13871980_3840_2160_24fps.mp4,12.68,0.083,12.597
+gru_s42,ia,0.1,14297190_3840_2160_24fps.mp4,19.1,0.417,18.683
+gru_s42,ia,0.1,1723634695.mp4,32.23,0.1,32.13
+gru_s42,ia,0.1,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,3.503,-0.733
+gru_s42,ia,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,1.52,9.12
+gru_s42,ia,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,8.7,38.1
+gru_s42,ia,0.1,Brandgefahren im Haushalt.mp4,24.27,,
+gru_s42,ia,0.1,Brannutvikling.mp4,47.5,111.1,-63.6
+gru_s42,ia,0.1,Brennende Akkus.mp4,5.67,,
+gru_s42,ia,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,91.2,-17.3
+gru_s42,ia,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,55.9,-23.87
+gru_s42,ia,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,33.3,33.27
+gru_s42,ia,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,210.8,-146.87
+gru_s42,ia,0.1,VID_20230612_142839.mp4,20.9,23.7,-2.8
+gru_s42,ia,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,10.0,69.1
+gru_s42,ia,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,2.8,0.87
+gru_s42,ia,0.1,videoplayback (1).mp4,82.87,133.8,-50.93
+gru_s42,ia,0.1,videoplayback (12).mp4,55.03,2.5,52.53
+gru_s42,ia,0.1,videoplayback (15).mp4,100.73,112.9,-12.17
+gru_s42,ia,0.1,videoplayback (17).mp4,10.33,0.7,9.63
+gru_s42,ia,0.1,videoplayback1.mp4,49.6,34.1,15.5
+gru_s42,ia,0.05,13871980_3840_2160_24fps.mp4,12.68,,
+gru_s42,ia,0.05,14297190_3840_2160_24fps.mp4,19.1,13.889,5.211
+gru_s42,ia,0.05,1723634695.mp4,32.23,11.011,21.219
+gru_s42,ia,0.05,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+gru_s42,ia,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,8.08,2.56
+gru_s42,ia,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,52.1,-5.3
+gru_s42,ia,0.05,Brandgefahren im Haushalt.mp4,24.27,,
+gru_s42,ia,0.05,Brannutvikling.mp4,47.5,127.3,-79.8
+gru_s42,ia,0.05,Brennende Akkus.mp4,5.67,,
+gru_s42,ia,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,,
+gru_s42,ia,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,118.9,-86.87
+gru_s42,ia,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,46.0,20.57
+gru_s42,ia,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,,
+gru_s42,ia,0.05,VID_20230612_142839.mp4,20.9,,
+gru_s42,ia,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,,
+gru_s42,ia,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+gru_s42,ia,0.05,videoplayback (1).mp4,82.87,242.3,-159.43
+gru_s42,ia,0.05,videoplayback (12).mp4,55.03,74.0,-18.97
+gru_s42,ia,0.05,videoplayback (15).mp4,100.73,,
+gru_s42,ia,0.05,videoplayback (17).mp4,10.33,30.6,-20.27
+gru_s42,ia,0.05,videoplayback1.mp4,49.6,114.2,-64.6
+gru_s42,humano,0.1,1723634695.mp4,27.06,0.1,26.96
+gru_s42,humano,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,1.52,7.68
+gru_s42,humano,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,8.7,87.8
+gru_s42,humano,0.1,Brannutvikling.mp4,115.0,111.1,3.9
+gru_s42,humano,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,91.2,2.87
+gru_s42,humano,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,55.9,51.1
+gru_s42,humano,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,33.3,81.67
+gru_s42,humano,0.1,Har du en fungerande brandvarnare_.mp4,20.53,,
+gru_s42,humano,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,210.8,-11.97
+gru_s42,humano,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,10.0,108.9
+gru_s42,humano,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,2.8,1.53
+gru_s42,humano,0.1,videoplayback (1).mp4,255.4,133.8,121.6
+gru_s42,humano,0.1,videoplayback (12).mp4,111.23,2.5,108.73
+gru_s42,humano,0.1,videoplayback (15).mp4,113.53,112.9,0.63
+gru_s42,humano,0.1,videoplayback (17).mp4,33.87,0.7,33.17
+gru_s42,humano,0.1,videoplayback1.mp4,73.43,34.1,39.33
+gru_s42,humano,0.05,1723634695.mp4,27.06,11.011,16.049
+gru_s42,humano,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,8.08,1.12
+gru_s42,humano,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,52.1,44.4
+gru_s42,humano,0.05,Brannutvikling.mp4,115.0,127.3,-12.3
+gru_s42,humano,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,,
+gru_s42,humano,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,118.9,-11.9
+gru_s42,humano,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,46.0,68.97
+gru_s42,humano,0.05,Har du en fungerande brandvarnare_.mp4,20.53,,
+gru_s42,humano,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,,
+gru_s42,humano,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,,
+gru_s42,humano,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+gru_s42,humano,0.05,videoplayback (1).mp4,255.4,242.3,13.1
+gru_s42,humano,0.05,videoplayback (12).mp4,111.23,74.0,37.23
+gru_s42,humano,0.05,videoplayback (15).mp4,113.53,,
+gru_s42,humano,0.05,videoplayback (17).mp4,33.87,30.6,3.27
+gru_s42,humano,0.05,videoplayback1.mp4,73.43,114.2,-40.77
+gru_s43,ia,0.1,13871980_3840_2160_24fps.mp4,12.68,,
+gru_s43,ia,0.1,14297190_3840_2160_24fps.mp4,19.1,13.18,5.92
+gru_s43,ia,0.1,1723634695.mp4,32.23,0.3,31.93
+gru_s43,ia,0.1,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+gru_s43,ia,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,8.68,1.96
+gru_s43,ia,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,5.9,40.9
+gru_s43,ia,0.1,Brandgefahren im Haushalt.mp4,24.27,,
+gru_s43,ia,0.1,Brannutvikling.mp4,47.5,127.6,-80.1
+gru_s43,ia,0.1,Brennende Akkus.mp4,5.67,68.6,-62.93
+gru_s43,ia,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,90.4,-16.5
+gru_s43,ia,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,103.9,-71.87
+gru_s43,ia,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,38.7,27.87
+gru_s43,ia,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,193.9,-129.97
+gru_s43,ia,0.1,VID_20230612_142839.mp4,20.9,,
+gru_s43,ia,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,111.6,-32.5
+gru_s43,ia,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,7.0,-3.33
+gru_s43,ia,0.1,videoplayback (1).mp4,82.87,129.5,-46.63
+gru_s43,ia,0.1,videoplayback (12).mp4,55.03,52.2,2.83
+gru_s43,ia,0.1,videoplayback (15).mp4,100.73,125.4,-24.67
+gru_s43,ia,0.1,videoplayback (17).mp4,10.33,13.6,-3.27
+gru_s43,ia,0.1,videoplayback1.mp4,49.6,88.3,-38.7
+gru_s43,ia,0.05,13871980_3840_2160_24fps.mp4,12.68,,
+gru_s43,ia,0.05,14297190_3840_2160_24fps.mp4,19.1,13.68,5.42
+gru_s43,ia,0.05,1723634695.mp4,32.23,10.711,21.519
+gru_s43,ia,0.05,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+gru_s43,ia,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,,
+gru_s43,ia,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,37.4,9.4
+gru_s43,ia,0.05,Brandgefahren im Haushalt.mp4,24.27,,
+gru_s43,ia,0.05,Brannutvikling.mp4,47.5,129.0,-81.5
+gru_s43,ia,0.05,Brennende Akkus.mp4,5.67,,
+gru_s43,ia,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,104.0,-30.1
+gru_s43,ia,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,118.3,-86.27
+gru_s43,ia,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,43.2,23.37
+gru_s43,ia,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,204.6,-140.67
+gru_s43,ia,0.05,VID_20230612_142839.mp4,20.9,,
+gru_s43,ia,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,129.9,-50.8
+gru_s43,ia,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+gru_s43,ia,0.05,videoplayback (1).mp4,82.87,131.3,-48.43
+gru_s43,ia,0.05,videoplayback (12).mp4,55.03,67.8,-12.77
+gru_s43,ia,0.05,videoplayback (15).mp4,100.73,128.7,-27.97
+gru_s43,ia,0.05,videoplayback (17).mp4,10.33,19.1,-8.77
+gru_s43,ia,0.05,videoplayback1.mp4,49.6,97.0,-47.4
+gru_s43,humano,0.1,1723634695.mp4,27.06,0.3,26.76
+gru_s43,humano,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,8.68,0.52
+gru_s43,humano,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,5.9,90.6
+gru_s43,humano,0.1,Brannutvikling.mp4,115.0,127.6,-12.6
+gru_s43,humano,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,90.4,3.67
+gru_s43,humano,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,103.9,3.1
+gru_s43,humano,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,38.7,76.27
+gru_s43,humano,0.1,Har du en fungerande brandvarnare_.mp4,20.53,,
+gru_s43,humano,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,193.9,4.93
+gru_s43,humano,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,111.6,7.3
+gru_s43,humano,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,7.0,-2.67
+gru_s43,humano,0.1,videoplayback (1).mp4,255.4,129.5,125.9
+gru_s43,humano,0.1,videoplayback (12).mp4,111.23,52.2,59.03
+gru_s43,humano,0.1,videoplayback (15).mp4,113.53,125.4,-11.87
+gru_s43,humano,0.1,videoplayback (17).mp4,33.87,13.6,20.27
+gru_s43,humano,0.1,videoplayback1.mp4,73.43,88.3,-14.87
+gru_s43,humano,0.05,1723634695.mp4,27.06,10.711,16.349
+gru_s43,humano,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,,
+gru_s43,humano,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,37.4,59.1
+gru_s43,humano,0.05,Brannutvikling.mp4,115.0,129.0,-14.0
+gru_s43,humano,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,104.0,-9.93
+gru_s43,humano,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,118.3,-11.3
+gru_s43,humano,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,43.2,71.77
+gru_s43,humano,0.05,Har du en fungerande brandvarnare_.mp4,20.53,,
+gru_s43,humano,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,204.6,-5.77
+gru_s43,humano,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,129.9,-11.0
+gru_s43,humano,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+gru_s43,humano,0.05,videoplayback (1).mp4,255.4,131.3,124.1
+gru_s43,humano,0.05,videoplayback (12).mp4,111.23,67.8,43.43
+gru_s43,humano,0.05,videoplayback (15).mp4,113.53,128.7,-15.17
+gru_s43,humano,0.05,videoplayback (17).mp4,33.87,19.1,14.77
+gru_s43,humano,0.05,videoplayback1.mp4,73.43,97.0,-23.57
+gru_s44,ia,0.1,13871980_3840_2160_24fps.mp4,12.68,0.083,12.597
+gru_s44,ia,0.1,14297190_3840_2160_24fps.mp4,19.1,0.292,18.808
+gru_s44,ia,0.1,1723634695.mp4,32.23,0.1,32.13
+gru_s44,ia,0.1,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+gru_s44,ia,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,,
+gru_s44,ia,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,38.6,8.2
+gru_s44,ia,0.1,Brandgefahren im Haushalt.mp4,24.27,,
+gru_s44,ia,0.1,Brannutvikling.mp4,47.5,116.3,-68.8
+gru_s44,ia,0.1,Brennende Akkus.mp4,5.67,,
+gru_s44,ia,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,74.6,-0.7
+gru_s44,ia,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,17.2,14.83
+gru_s44,ia,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,36.0,30.57
+gru_s44,ia,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,214.4,-150.47
+gru_s44,ia,0.1,VID_20230612_142839.mp4,20.9,23.2,-2.3
+gru_s44,ia,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,147.5,-68.4
+gru_s44,ia,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,7.3,-3.63
+gru_s44,ia,0.1,videoplayback (1).mp4,82.87,127.3,-44.43
+gru_s44,ia,0.1,videoplayback (12).mp4,55.03,4.5,50.53
+gru_s44,ia,0.1,videoplayback (15).mp4,100.73,128.0,-27.27
+gru_s44,ia,0.1,videoplayback (17).mp4,10.33,2.9,7.43
+gru_s44,ia,0.1,videoplayback1.mp4,49.6,53.6,-4.0
+gru_s44,ia,0.05,13871980_3840_2160_24fps.mp4,12.68,,
+gru_s44,ia,0.05,14297190_3840_2160_24fps.mp4,19.1,15.098,4.002
+gru_s44,ia,0.05,1723634695.mp4,32.23,11.912,20.318
+gru_s44,ia,0.05,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+gru_s44,ia,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,,
+gru_s44,ia,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,43.2,3.6
+gru_s44,ia,0.05,Brandgefahren im Haushalt.mp4,24.27,,
+gru_s44,ia,0.05,Brannutvikling.mp4,47.5,141.1,-93.6
+gru_s44,ia,0.05,Brennende Akkus.mp4,5.67,,
+gru_s44,ia,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,129.1,-55.2
+gru_s44,ia,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,119.6,-87.57
+gru_s44,ia,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,46.5,20.07
+gru_s44,ia,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,,
+gru_s44,ia,0.05,VID_20230612_142839.mp4,20.9,,
+gru_s44,ia,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,179.5,-100.4
+gru_s44,ia,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+gru_s44,ia,0.05,videoplayback (1).mp4,82.87,157.1,-74.23
+gru_s44,ia,0.05,videoplayback (12).mp4,55.03,71.3,-16.27
+gru_s44,ia,0.05,videoplayback (15).mp4,100.73,,
+gru_s44,ia,0.05,videoplayback (17).mp4,10.33,51.5,-41.17
+gru_s44,ia,0.05,videoplayback1.mp4,49.6,117.4,-67.8
+gru_s44,humano,0.1,1723634695.mp4,27.06,0.1,26.96
+gru_s44,humano,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,,
+gru_s44,humano,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,38.6,57.9
+gru_s44,humano,0.1,Brannutvikling.mp4,115.0,116.3,-1.3
+gru_s44,humano,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,74.6,19.47
+gru_s44,humano,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,17.2,89.8
+gru_s44,humano,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,36.0,78.97
+gru_s44,humano,0.1,Har du en fungerande brandvarnare_.mp4,20.53,,
+gru_s44,humano,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,214.4,-15.57
+gru_s44,humano,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,147.5,-28.6
+gru_s44,humano,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,7.3,-2.97
+gru_s44,humano,0.1,videoplayback (1).mp4,255.4,127.3,128.1
+gru_s44,humano,0.1,videoplayback (12).mp4,111.23,4.5,106.73
+gru_s44,humano,0.1,videoplayback (15).mp4,113.53,128.0,-14.47
+gru_s44,humano,0.1,videoplayback (17).mp4,33.87,2.9,30.97
+gru_s44,humano,0.1,videoplayback1.mp4,73.43,53.6,19.83
+gru_s44,humano,0.05,1723634695.mp4,27.06,11.912,15.148
+gru_s44,humano,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,,
+gru_s44,humano,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,43.2,53.3
+gru_s44,humano,0.05,Brannutvikling.mp4,115.0,141.1,-26.1
+gru_s44,humano,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,129.1,-35.03
+gru_s44,humano,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,119.6,-12.6
+gru_s44,humano,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,46.5,68.47
+gru_s44,humano,0.05,Har du en fungerande brandvarnare_.mp4,20.53,,
+gru_s44,humano,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,,
+gru_s44,humano,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,179.5,-60.6
+gru_s44,humano,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+gru_s44,humano,0.05,videoplayback (1).mp4,255.4,157.1,98.3
+gru_s44,humano,0.05,videoplayback (12).mp4,111.23,71.3,39.93
+gru_s44,humano,0.05,videoplayback (15).mp4,113.53,,
+gru_s44,humano,0.05,videoplayback (17).mp4,33.87,51.5,-17.63
+gru_s44,humano,0.05,videoplayback1.mp4,73.43,117.4,-43.97
+lstm_s42,ia,0.1,13871980_3840_2160_24fps.mp4,12.68,0.208,12.472
+lstm_s42,ia,0.1,14297190_3840_2160_24fps.mp4,19.1,0.292,18.808
+lstm_s42,ia,0.1,1723634695.mp4,32.23,0.0,32.23
+lstm_s42,ia,0.1,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+lstm_s42,ia,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,6.68,3.96
+lstm_s42,ia,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,38.3,8.5
+lstm_s42,ia,0.1,Brandgefahren im Haushalt.mp4,24.27,,
+lstm_s42,ia,0.1,Brannutvikling.mp4,47.5,116.4,-68.9
+lstm_s42,ia,0.1,Brennende Akkus.mp4,5.67,,
+lstm_s42,ia,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,131.1,-57.2
+lstm_s42,ia,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,118.6,-86.57
+lstm_s42,ia,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,39.0,27.57
+lstm_s42,ia,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,174.4,-110.47
+lstm_s42,ia,0.1,VID_20230612_142839.mp4,20.9,31.4,-10.5
+lstm_s42,ia,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,,
+lstm_s42,ia,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+lstm_s42,ia,0.1,videoplayback (1).mp4,82.87,130.2,-47.33
+lstm_s42,ia,0.1,videoplayback (12).mp4,55.03,55.8,-0.77
+lstm_s42,ia,0.1,videoplayback (15).mp4,100.73,114.3,-13.57
+lstm_s42,ia,0.1,videoplayback (17).mp4,10.33,3.0,7.33
+lstm_s42,ia,0.1,videoplayback1.mp4,49.6,53.4,-3.8
+lstm_s42,ia,0.05,13871980_3840_2160_24fps.mp4,12.68,,
+lstm_s42,ia,0.05,14297190_3840_2160_24fps.mp4,19.1,15.182,3.918
+lstm_s42,ia,0.05,1723634695.mp4,32.23,28.695,3.535
+lstm_s42,ia,0.05,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+lstm_s42,ia,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,,
+lstm_s42,ia,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,61.0,-14.2
+lstm_s42,ia,0.05,Brandgefahren im Haushalt.mp4,24.27,,
+lstm_s42,ia,0.05,Brannutvikling.mp4,47.5,127.1,-79.6
+lstm_s42,ia,0.05,Brennende Akkus.mp4,5.67,,
+lstm_s42,ia,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,,
+lstm_s42,ia,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,121.8,-89.77
+lstm_s42,ia,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,43.3,23.27
+lstm_s42,ia,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,193.8,-129.87
+lstm_s42,ia,0.05,VID_20230612_142839.mp4,20.9,,
+lstm_s42,ia,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,,
+lstm_s42,ia,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+lstm_s42,ia,0.05,videoplayback (1).mp4,82.87,,
+lstm_s42,ia,0.05,videoplayback (12).mp4,55.03,87.9,-32.87
+lstm_s42,ia,0.05,videoplayback (15).mp4,100.73,,
+lstm_s42,ia,0.05,videoplayback (17).mp4,10.33,,
+lstm_s42,ia,0.05,videoplayback1.mp4,49.6,56.1,-6.5
+lstm_s42,humano,0.1,1723634695.mp4,27.06,0.0,27.06
+lstm_s42,humano,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,6.68,2.52
+lstm_s42,humano,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,38.3,58.2
+lstm_s42,humano,0.1,Brannutvikling.mp4,115.0,116.4,-1.4
+lstm_s42,humano,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,131.1,-37.03
+lstm_s42,humano,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,118.6,-11.6
+lstm_s42,humano,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,39.0,75.97
+lstm_s42,humano,0.1,Har du en fungerande brandvarnare_.mp4,20.53,,
+lstm_s42,humano,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,174.4,24.43
+lstm_s42,humano,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,,
+lstm_s42,humano,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+lstm_s42,humano,0.1,videoplayback (1).mp4,255.4,130.2,125.2
+lstm_s42,humano,0.1,videoplayback (12).mp4,111.23,55.8,55.43
+lstm_s42,humano,0.1,videoplayback (15).mp4,113.53,114.3,-0.77
+lstm_s42,humano,0.1,videoplayback (17).mp4,33.87,3.0,30.87
+lstm_s42,humano,0.1,videoplayback1.mp4,73.43,53.4,20.03
+lstm_s42,humano,0.05,1723634695.mp4,27.06,28.695,-1.635
+lstm_s42,humano,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,,
+lstm_s42,humano,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,61.0,35.5
+lstm_s42,humano,0.05,Brannutvikling.mp4,115.0,127.1,-12.1
+lstm_s42,humano,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,,
+lstm_s42,humano,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,121.8,-14.8
+lstm_s42,humano,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,43.3,71.67
+lstm_s42,humano,0.05,Har du en fungerande brandvarnare_.mp4,20.53,,
+lstm_s42,humano,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,193.8,5.03
+lstm_s42,humano,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,,
+lstm_s42,humano,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+lstm_s42,humano,0.05,videoplayback (1).mp4,255.4,,
+lstm_s42,humano,0.05,videoplayback (12).mp4,111.23,87.9,23.33
+lstm_s42,humano,0.05,videoplayback (15).mp4,113.53,,
+lstm_s42,humano,0.05,videoplayback (17).mp4,33.87,,
+lstm_s42,humano,0.05,videoplayback1.mp4,73.43,56.1,17.33
+lstm_s43,ia,0.1,13871980_3840_2160_24fps.mp4,12.68,1.084,11.596
+lstm_s43,ia,0.1,14297190_3840_2160_24fps.mp4,19.1,6.799,12.301
+lstm_s43,ia,0.1,1723634695.mp4,32.23,0.2,32.03
+lstm_s43,ia,0.1,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+lstm_s43,ia,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,1.52,9.12
+lstm_s43,ia,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,6.0,40.8
+lstm_s43,ia,0.1,Brandgefahren im Haushalt.mp4,24.27,,
+lstm_s43,ia,0.1,Brannutvikling.mp4,47.5,113.0,-65.5
+lstm_s43,ia,0.1,Brennende Akkus.mp4,5.67,,
+lstm_s43,ia,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,128.3,-54.4
+lstm_s43,ia,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,35.3,-3.27
+lstm_s43,ia,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,38.2,28.37
+lstm_s43,ia,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,135.9,-71.97
+lstm_s43,ia,0.1,VID_20230612_142839.mp4,20.9,,
+lstm_s43,ia,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,140.0,-60.9
+lstm_s43,ia,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+lstm_s43,ia,0.1,videoplayback (1).mp4,82.87,80.6,2.27
+lstm_s43,ia,0.1,videoplayback (12).mp4,55.03,10.2,44.83
+lstm_s43,ia,0.1,videoplayback (15).mp4,100.73,113.0,-12.27
+lstm_s43,ia,0.1,videoplayback (17).mp4,10.33,4.2,6.13
+lstm_s43,ia,0.1,videoplayback1.mp4,49.6,35.0,14.6
+lstm_s43,ia,0.05,13871980_3840_2160_24fps.mp4,12.68,,
+lstm_s43,ia,0.05,14297190_3840_2160_24fps.mp4,19.1,12.095,7.005
+lstm_s43,ia,0.05,1723634695.mp4,32.23,17.684,14.546
+lstm_s43,ia,0.05,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+lstm_s43,ia,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,,
+lstm_s43,ia,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,85.1,-38.3
+lstm_s43,ia,0.05,Brandgefahren im Haushalt.mp4,24.27,,
+lstm_s43,ia,0.05,Brannutvikling.mp4,47.5,,
+lstm_s43,ia,0.05,Brennende Akkus.mp4,5.67,,
+lstm_s43,ia,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,,
+lstm_s43,ia,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,,
+lstm_s43,ia,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,46.6,19.97
+lstm_s43,ia,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,193.2,-129.27
+lstm_s43,ia,0.05,VID_20230612_142839.mp4,20.9,,
+lstm_s43,ia,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,,
+lstm_s43,ia,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+lstm_s43,ia,0.05,videoplayback (1).mp4,82.87,,
+lstm_s43,ia,0.05,videoplayback (12).mp4,55.03,75.4,-20.37
+lstm_s43,ia,0.05,videoplayback (15).mp4,100.73,,
+lstm_s43,ia,0.05,videoplayback (17).mp4,10.33,,
+lstm_s43,ia,0.05,videoplayback1.mp4,49.6,88.4,-38.8
+lstm_s43,humano,0.1,1723634695.mp4,27.06,0.2,26.86
+lstm_s43,humano,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,1.52,7.68
+lstm_s43,humano,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,6.0,90.5
+lstm_s43,humano,0.1,Brannutvikling.mp4,115.0,113.0,2.0
+lstm_s43,humano,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,128.3,-34.23
+lstm_s43,humano,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,35.3,71.7
+lstm_s43,humano,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,38.2,76.77
+lstm_s43,humano,0.1,Har du en fungerande brandvarnare_.mp4,20.53,,
+lstm_s43,humano,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,135.9,62.93
+lstm_s43,humano,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,140.0,-21.1
+lstm_s43,humano,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+lstm_s43,humano,0.1,videoplayback (1).mp4,255.4,80.6,174.8
+lstm_s43,humano,0.1,videoplayback (12).mp4,111.23,10.2,101.03
+lstm_s43,humano,0.1,videoplayback (15).mp4,113.53,113.0,0.53
+lstm_s43,humano,0.1,videoplayback (17).mp4,33.87,4.2,29.67
+lstm_s43,humano,0.1,videoplayback1.mp4,73.43,35.0,38.43
+lstm_s43,humano,0.05,1723634695.mp4,27.06,17.684,9.376
+lstm_s43,humano,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,,
+lstm_s43,humano,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,85.1,11.4
+lstm_s43,humano,0.05,Brannutvikling.mp4,115.0,,
+lstm_s43,humano,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,,
+lstm_s43,humano,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,,
+lstm_s43,humano,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,46.6,68.37
+lstm_s43,humano,0.05,Har du en fungerande brandvarnare_.mp4,20.53,,
+lstm_s43,humano,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,193.2,5.63
+lstm_s43,humano,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,,
+lstm_s43,humano,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+lstm_s43,humano,0.05,videoplayback (1).mp4,255.4,,
+lstm_s43,humano,0.05,videoplayback (12).mp4,111.23,75.4,35.83
+lstm_s43,humano,0.05,videoplayback (15).mp4,113.53,,
+lstm_s43,humano,0.05,videoplayback (17).mp4,33.87,,
+lstm_s43,humano,0.05,videoplayback1.mp4,73.43,88.4,-14.97
+lstm_s44,ia,0.1,13871980_3840_2160_24fps.mp4,12.68,1.71,10.97
+lstm_s44,ia,0.1,14297190_3840_2160_24fps.mp4,19.1,0.793,18.307
+lstm_s44,ia,0.1,1723634695.mp4,32.23,0.3,31.93
+lstm_s44,ia,0.1,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+lstm_s44,ia,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,1.52,9.12
+lstm_s44,ia,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,39.0,7.8
+lstm_s44,ia,0.1,Brandgefahren im Haushalt.mp4,24.27,,
+lstm_s44,ia,0.1,Brannutvikling.mp4,47.5,115.0,-67.5
+lstm_s44,ia,0.1,Brennende Akkus.mp4,5.67,,
+lstm_s44,ia,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,132.2,-58.3
+lstm_s44,ia,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,19.7,12.33
+lstm_s44,ia,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,30.4,36.17
+lstm_s44,ia,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,167.8,-103.87
+lstm_s44,ia,0.1,VID_20230612_142839.mp4,20.9,28.7,-7.8
+lstm_s44,ia,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,143.3,-64.2
+lstm_s44,ia,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+lstm_s44,ia,0.1,videoplayback (1).mp4,82.87,129.5,-46.63
+lstm_s44,ia,0.1,videoplayback (12).mp4,55.03,6.3,48.73
+lstm_s44,ia,0.1,videoplayback (15).mp4,100.73,113.2,-12.47
+lstm_s44,ia,0.1,videoplayback (17).mp4,10.33,3.9,6.43
+lstm_s44,ia,0.1,videoplayback1.mp4,49.6,35.0,14.6
+lstm_s44,ia,0.05,13871980_3840_2160_24fps.mp4,12.68,,
+lstm_s44,ia,0.05,14297190_3840_2160_24fps.mp4,19.1,9.802,9.298
+lstm_s44,ia,0.05,1723634695.mp4,32.23,10.711,21.519
+lstm_s44,ia,0.05,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+lstm_s44,ia,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,,
+lstm_s44,ia,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,56.6,-9.8
+lstm_s44,ia,0.05,Brandgefahren im Haushalt.mp4,24.27,,
+lstm_s44,ia,0.05,Brannutvikling.mp4,47.5,,
+lstm_s44,ia,0.05,Brennende Akkus.mp4,5.67,,
+lstm_s44,ia,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,,
+lstm_s44,ia,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,120.5,-88.47
+lstm_s44,ia,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,46.2,20.37
+lstm_s44,ia,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,193.8,-129.87
+lstm_s44,ia,0.05,VID_20230612_142839.mp4,20.9,,
+lstm_s44,ia,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,,
+lstm_s44,ia,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+lstm_s44,ia,0.05,videoplayback (1).mp4,82.87,,
+lstm_s44,ia,0.05,videoplayback (12).mp4,55.03,88.2,-33.17
+lstm_s44,ia,0.05,videoplayback (15).mp4,100.73,,
+lstm_s44,ia,0.05,videoplayback (17).mp4,10.33,,
+lstm_s44,ia,0.05,videoplayback1.mp4,49.6,59.7,-10.1
+lstm_s44,humano,0.1,1723634695.mp4,27.06,0.3,26.76
+lstm_s44,humano,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,1.52,7.68
+lstm_s44,humano,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,39.0,57.5
+lstm_s44,humano,0.1,Brannutvikling.mp4,115.0,115.0,0.0
+lstm_s44,humano,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,132.2,-38.13
+lstm_s44,humano,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,19.7,87.3
+lstm_s44,humano,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,30.4,84.57
+lstm_s44,humano,0.1,Har du en fungerande brandvarnare_.mp4,20.53,,
+lstm_s44,humano,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,167.8,31.03
+lstm_s44,humano,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,143.3,-24.4
+lstm_s44,humano,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+lstm_s44,humano,0.1,videoplayback (1).mp4,255.4,129.5,125.9
+lstm_s44,humano,0.1,videoplayback (12).mp4,111.23,6.3,104.93
+lstm_s44,humano,0.1,videoplayback (15).mp4,113.53,113.2,0.33
+lstm_s44,humano,0.1,videoplayback (17).mp4,33.87,3.9,29.97
+lstm_s44,humano,0.1,videoplayback1.mp4,73.43,35.0,38.43
+lstm_s44,humano,0.05,1723634695.mp4,27.06,10.711,16.349
+lstm_s44,humano,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,,
+lstm_s44,humano,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,56.6,39.9
+lstm_s44,humano,0.05,Brannutvikling.mp4,115.0,,
+lstm_s44,humano,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,,
+lstm_s44,humano,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,120.5,-13.5
+lstm_s44,humano,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,46.2,68.77
+lstm_s44,humano,0.05,Har du en fungerande brandvarnare_.mp4,20.53,,
+lstm_s44,humano,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,193.8,5.03
+lstm_s44,humano,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,,
+lstm_s44,humano,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+lstm_s44,humano,0.05,videoplayback (1).mp4,255.4,,
+lstm_s44,humano,0.05,videoplayback (12).mp4,111.23,88.2,23.03
+lstm_s44,humano,0.05,videoplayback (15).mp4,113.53,,
+lstm_s44,humano,0.05,videoplayback (17).mp4,33.87,,
+lstm_s44,humano,0.05,videoplayback1.mp4,73.43,59.7,13.73
+gradient boosting,ia,0.1,13871980_3840_2160_24fps.mp4,12.68,1.5,11.18
+gradient boosting,ia,0.1,14297190_3840_2160_24fps.mp4,19.1,0.5,18.6
+gradient boosting,ia,0.1,1723634695.mp4,32.23,0.5,31.73
+gradient boosting,ia,0.1,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,4.5,-1.73
+gradient boosting,ia,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,6.5,4.14
+gradient boosting,ia,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,36.5,10.3
+gradient boosting,ia,0.1,Brandgefahren im Haushalt.mp4,24.27,,
+gradient boosting,ia,0.1,Brannutvikling.mp4,47.5,110.5,-63.0
+gradient boosting,ia,0.1,Brennende Akkus.mp4,5.67,24.5,-18.83
+gradient boosting,ia,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,120.5,-46.6
+gradient boosting,ia,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,16.5,15.53
+gradient boosting,ia,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,11.5,55.07
+gradient boosting,ia,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,174.5,-110.57
+gradient boosting,ia,0.1,VID_20230612_142839.mp4,20.9,17.5,3.4
+gradient boosting,ia,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,20.5,58.6
+gradient boosting,ia,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,2.5,1.17
+gradient boosting,ia,0.1,videoplayback (1).mp4,82.87,131.5,-48.63
+gradient boosting,ia,0.1,videoplayback (12).mp4,55.03,2.5,52.53
+gradient boosting,ia,0.1,videoplayback (15).mp4,100.73,115.5,-14.77
+gradient boosting,ia,0.1,videoplayback (17).mp4,10.33,13.5,-3.17
+gradient boosting,ia,0.1,videoplayback1.mp4,49.6,34.5,15.1
+gradient boosting,ia,0.05,13871980_3840_2160_24fps.mp4,12.68,,
+gradient boosting,ia,0.05,14297190_3840_2160_24fps.mp4,19.1,0.5,18.6
+gradient boosting,ia,0.05,1723634695.mp4,32.23,6.5,25.73
+gradient boosting,ia,0.05,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+gradient boosting,ia,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,,
+gradient boosting,ia,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,52.5,-5.7
+gradient boosting,ia,0.05,Brandgefahren im Haushalt.mp4,24.27,,
+gradient boosting,ia,0.05,Brannutvikling.mp4,47.5,118.5,-71.0
+gradient boosting,ia,0.05,Brennende Akkus.mp4,5.67,,
+gradient boosting,ia,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,120.5,-46.6
+gradient boosting,ia,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,118.5,-86.47
+gradient boosting,ia,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,45.5,21.07
+gradient boosting,ia,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,208.5,-144.57
+gradient boosting,ia,0.05,VID_20230612_142839.mp4,20.9,,
+gradient boosting,ia,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,,
+gradient boosting,ia,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+gradient boosting,ia,0.05,videoplayback (1).mp4,82.87,208.5,-125.63
+gradient boosting,ia,0.05,videoplayback (12).mp4,55.03,9.5,45.53
+gradient boosting,ia,0.05,videoplayback (15).mp4,100.73,,
+gradient boosting,ia,0.05,videoplayback (17).mp4,10.33,,
+gradient boosting,ia,0.05,videoplayback1.mp4,49.6,53.5,-3.9
+gradient boosting,humano,0.1,1723634695.mp4,27.06,0.5,26.56
+gradient boosting,humano,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,6.5,2.7
+gradient boosting,humano,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,36.5,60.0
+gradient boosting,humano,0.1,Brannutvikling.mp4,115.0,110.5,4.5
+gradient boosting,humano,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,120.5,-26.43
+gradient boosting,humano,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,16.5,90.5
+gradient boosting,humano,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,11.5,103.47
+gradient boosting,humano,0.1,Har du en fungerande brandvarnare_.mp4,20.53,,
+gradient boosting,humano,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,174.5,24.33
+gradient boosting,humano,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,20.5,98.4
+gradient boosting,humano,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,2.5,1.83
+gradient boosting,humano,0.1,videoplayback (1).mp4,255.4,131.5,123.9
+gradient boosting,humano,0.1,videoplayback (12).mp4,111.23,2.5,108.73
+gradient boosting,humano,0.1,videoplayback (15).mp4,113.53,115.5,-1.97
+gradient boosting,humano,0.1,videoplayback (17).mp4,33.87,13.5,20.37
+gradient boosting,humano,0.1,videoplayback1.mp4,73.43,34.5,38.93
+gradient boosting,humano,0.05,1723634695.mp4,27.06,6.5,20.56
+gradient boosting,humano,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,,
+gradient boosting,humano,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,52.5,44.0
+gradient boosting,humano,0.05,Brannutvikling.mp4,115.0,118.5,-3.5
+gradient boosting,humano,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,120.5,-26.43
+gradient boosting,humano,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,118.5,-11.5
+gradient boosting,humano,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,45.5,69.47
+gradient boosting,humano,0.05,Har du en fungerande brandvarnare_.mp4,20.53,,
+gradient boosting,humano,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,208.5,-9.67
+gradient boosting,humano,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,,
+gradient boosting,humano,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+gradient boosting,humano,0.05,videoplayback (1).mp4,255.4,208.5,46.9
+gradient boosting,humano,0.05,videoplayback (12).mp4,111.23,9.5,101.73
+gradient boosting,humano,0.05,videoplayback (15).mp4,113.53,,
+gradient boosting,humano,0.05,videoplayback (17).mp4,33.87,,
+gradient boosting,humano,0.05,videoplayback1.mp4,73.43,53.5,19.93
+regresion logistica,ia,0.1,13871980_3840_2160_24fps.mp4,12.68,11.5,1.18
+regresion logistica,ia,0.1,14297190_3840_2160_24fps.mp4,19.1,19.5,-0.4
+regresion logistica,ia,0.1,1723634695.mp4,32.23,0.5,31.73
+regresion logistica,ia,0.1,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+regresion logistica,ia,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,7.5,3.14
+regresion logistica,ia,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,38.5,8.3
+regresion logistica,ia,0.1,Brandgefahren im Haushalt.mp4,24.27,,
+regresion logistica,ia,0.1,Brannutvikling.mp4,47.5,110.5,-63.0
+regresion logistica,ia,0.1,Brennende Akkus.mp4,5.67,,
+regresion logistica,ia,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,102.5,-28.6
+regresion logistica,ia,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,118.5,-86.47
+regresion logistica,ia,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,27.5,39.07
+regresion logistica,ia,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,174.5,-110.57
+regresion logistica,ia,0.1,VID_20230612_142839.mp4,20.9,,
+regresion logistica,ia,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,138.5,-59.4
+regresion logistica,ia,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+regresion logistica,ia,0.1,videoplayback (1).mp4,82.87,131.5,-48.63
+regresion logistica,ia,0.1,videoplayback (12).mp4,55.03,55.5,-0.47
+regresion logistica,ia,0.1,videoplayback (15).mp4,100.73,118.5,-17.77
+regresion logistica,ia,0.1,videoplayback (17).mp4,10.33,27.5,-17.17
+regresion logistica,ia,0.1,videoplayback1.mp4,49.6,53.5,-3.9
+regresion logistica,ia,0.05,13871980_3840_2160_24fps.mp4,12.68,,
+regresion logistica,ia,0.05,14297190_3840_2160_24fps.mp4,19.1,23.5,-4.4
+regresion logistica,ia,0.05,1723634695.mp4,32.23,20.5,11.73
+regresion logistica,ia,0.05,700_F_124207480_7UfkXKXrfnslHPXWEvBvDbahs5IJRWjO_ST.mp4,2.77,,
+regresion logistica,ia,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,10.64,,
+regresion logistica,ia,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,46.8,,
+regresion logistica,ia,0.05,Brandgefahren im Haushalt.mp4,24.27,,
+regresion logistica,ia,0.05,Brannutvikling.mp4,47.5,119.5,-72.0
+regresion logistica,ia,0.05,Brennende Akkus.mp4,5.67,,
+regresion logistica,ia,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,73.9,132.5,-58.6
+regresion logistica,ia,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,32.03,119.5,-87.47
+regresion logistica,ia,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,66.57,39.5,27.07
+regresion logistica,ia,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,63.93,210.5,-146.57
+regresion logistica,ia,0.05,VID_20230612_142839.mp4,20.9,,
+regresion logistica,ia,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,79.1,,
+regresion logistica,ia,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,3.67,,
+regresion logistica,ia,0.05,videoplayback (1).mp4,82.87,,
+regresion logistica,ia,0.05,videoplayback (12).mp4,55.03,,
+regresion logistica,ia,0.05,videoplayback (15).mp4,100.73,118.5,-17.77
+regresion logistica,ia,0.05,videoplayback (17).mp4,10.33,,
+regresion logistica,ia,0.05,videoplayback1.mp4,49.6,239.5,-189.9
+regresion logistica,humano,0.1,1723634695.mp4,27.06,0.5,26.56
+regresion logistica,humano,0.1,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,7.5,1.7
+regresion logistica,humano,0.1,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,38.5,58.0
+regresion logistica,humano,0.1,Brannutvikling.mp4,115.0,110.5,4.5
+regresion logistica,humano,0.1,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,102.5,-8.43
+regresion logistica,humano,0.1,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,118.5,-11.5
+regresion logistica,humano,0.1,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,27.5,87.47
+regresion logistica,humano,0.1,Har du en fungerande brandvarnare_.mp4,20.53,,
+regresion logistica,humano,0.1,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,174.5,24.33
+regresion logistica,humano,0.1,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,138.5,-19.6
+regresion logistica,humano,0.1,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+regresion logistica,humano,0.1,videoplayback (1).mp4,255.4,131.5,123.9
+regresion logistica,humano,0.1,videoplayback (12).mp4,111.23,55.5,55.73
+regresion logistica,humano,0.1,videoplayback (15).mp4,113.53,118.5,-4.97
+regresion logistica,humano,0.1,videoplayback (17).mp4,33.87,27.5,6.37
+regresion logistica,humano,0.1,videoplayback1.mp4,73.43,53.5,19.93
+regresion logistica,humano,0.05,1723634695.mp4,27.06,20.5,6.56
+regresion logistica,humano,0.05,700_F_132088641_URj7fxf00kOATXV1mNgjeBrQCXsMgfw1_ST.mp4,9.2,,
+regresion logistica,humano,0.05,April 2016 - Fire Investigation 1B - Milpitas CA.mp4,96.5,,
+regresion logistica,humano,0.05,Brannutvikling.mp4,115.0,119.5,-4.5
+regresion logistica,humano,0.05,Brennender Christbaum _ Weihnachtsbaum → so schnell kann gehen.mp4,94.07,132.5,-38.43
+regresion logistica,humano,0.05,Die Provinzial klärt auf – Brandursache Fettbrand.mp4,107.0,119.5,-12.5
+regresion logistica,humano,0.05,Fire Investigation 2A Burn Cell 1 - Toaster Pop Tart Fire.mp4,114.97,39.5,75.47
+regresion logistica,humano,0.05,Har du en fungerande brandvarnare_.mp4,20.53,,
+regresion logistica,humano,0.05,Launch of Fire Investigations by BRE and FIUK.mp4,198.83,210.5,-11.67
+regresion logistica,humano,0.05,Weihnachtsbaumbrände - sind vermeidbar.mp4,118.9,,
+regresion logistica,humano,0.05,What Type Of Smoke Alarm Is Best For Your Home_.mp4,4.33,,
+regresion logistica,humano,0.05,videoplayback (1).mp4,255.4,,
+regresion logistica,humano,0.05,videoplayback (12).mp4,111.23,,
+regresion logistica,humano,0.05,videoplayback (15).mp4,113.53,118.5,-4.97
+regresion logistica,humano,0.05,videoplayback (17).mp4,33.87,,
+regresion logistica,humano,0.05,videoplayback1.mp4,73.43,239.5,-166.07
