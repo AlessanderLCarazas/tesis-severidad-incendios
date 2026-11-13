@@ -1,0 +1,4148 @@
+{
+ "modelos": "congelados",
+ "fracciones": {
+  "completa": {
+   "fotogramas": 51105,
+   "fotogramas_usados": 51076,
+   "tramos": 147,
+   "tramos_cortos": 7,
+   "videos_con_corte": 13,
+   "cortes": 45,
+   "dt_mediana": 0.10000000149011612,
+   "dt_p95": 0.11999999731779099,
+   "control": 0.0
+  },
+  "quitar_25": {
+   "fotogramas": 38281,
+   "fotogramas_usados": 38247,
+   "tramos": 150,
+   "tramos_cortos": 8,
+   "videos_con_corte": 16,
+   "cortes": 48,
+   "dt_mediana": 0.10000000149011612,
+   "dt_p95": 0.30000001192092896
+  },
+  "quitar_50": {
+   "fotogramas": 25547,
+   "fotogramas_usados": 25488,
+   "tramos": 147,
+   "tramos_cortos": 14,
+   "videos_con_corte": 15,
+   "cortes": 45,
+   "dt_mediana": 0.1667500138282776,
+   "dt_p95": 0.5
+  },
+  "quitar_75": {
+   "fotogramas": 12845,
+   "fotogramas_usados": 12750,
+   "tramos": 150,
+   "tramos_cortos": 22,
+   "videos_con_corte": 18,
+   "cortes": 48,
+   "dt_mediana": 0.30000001192092896,
+   "dt_p95": 1.100000023841858
+  }
+ },
+ "resultados": {
+  "completa": {
+   "cfc_s42": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.4602746244196681,
+      "f1_clase": [
+       0.4858321870701513,
+       0.2650508209538702,
+       0.6299408652349828
+      ],
+      "kappa": 0.30606759862805555,
+      "exactitud": 0.47501594726770147,
+      "f1_mantenido": 0.4602746244196681,
+      "kappa_mantenido": 0.30606759862805555,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.16666666666666666,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 4,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 4.640000000000001
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.2,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 17,
+        "antes_del_cambio": 1,
+        "ewt_mediana": -8.449999618530274
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.47156904242068887,
+      "f1_clase": [
+       0.5854189336235038,
+       0.32455089820359284,
+       0.5047372954349698
+      ],
+      "kappa": 0.34086058439101763,
+      "exactitud": 0.4720496894409938,
+      "f1_mantenido": 0.4713683096760494,
+      "kappa_mantenido": 0.3404187050519223,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 12,
+        "ewt_mediana": 25.694953050166376
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.2,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 12,
+        "antes_del_cambio": 3,
+        "ewt_mediana": 17.842599983215337
+       }
+      }
+     }
+    }
+   },
+   "cfc_s43": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.4626557278085323,
+      "f1_clase": [
+       0.5623115577889447,
+       0.1809482383645063,
+       0.6447073872721458
+      ],
+      "kappa": 0.3680677429003658,
+      "exactitud": 0.49649160110567725,
+      "f1_mantenido": 0.4626557278085323,
+      "kappa_mantenido": 0.3680677429003658,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.2,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 5,
+        "antes_del_cambio": 7,
+        "ewt_mediana": -4.4199994277954096
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.03333333333333333,
+        "propagacion_con_alerta": 0.425,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 14,
+        "antes_del_cambio": 3,
+        "ewt_mediana": -18.669996948242186
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.5029000367349131,
+      "f1_clase": [
+       0.6513239297203662,
+       0.30231798889977146,
+       0.5550581915846016
+      ],
+      "kappa": 0.41696116269291683,
+      "exactitud": 0.5138145213107732,
+      "f1_mantenido": 0.5029000367349131,
+      "kappa_mantenido": 0.41696116269291683,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 12,
+        "ewt_mediana": 12.034998664855959
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.034482758620689655,
+        "propagacion_con_alerta": 0.425,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 10,
+        "antes_del_cambio": 5,
+        "ewt_mediana": 17.427700786590577
+       }
+      }
+     }
+    }
+   },
+   "cfc_s44": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.45770175780694816,
+      "f1_clase": [
+       0.4737152982870644,
+       0.3099965168930686,
+       0.5893934582407113
+      ],
+      "kappa": 0.2842563139647455,
+      "exactitud": 0.46247076334254733,
+      "f1_mantenido": 0.45770175780694816,
+      "kappa_mantenido": 0.2842563139647455,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 10,
+        "fpr_controlado": 0.3333333333333333,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 3,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 1.835000476837159
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 7,
+        "fpr_controlado": 0.23333333333333334,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 5,
+        "antes_del_cambio": 8,
+        "ewt_mediana": -1.6149993324279777
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4501058495925461,
+      "f1_clase": [
+       0.5227665706051873,
+       0.3566491567597456,
+       0.4709018214127055
+      ],
+      "kappa": 0.27779767197181526,
+      "exactitud": 0.44591989719426,
+      "f1_mantenido": 0.44993104468112133,
+      "kappa_mantenido": 0.2774828804897679,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 8,
+        "fpr_controlado": 0.27586206896551724,
+        "propagacion_con_alerta": 0.75,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 13,
+        "ewt_mediana": 32.94500076293946
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.1724137931034483,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 13,
+        "ewt_mediana": 25.54495152428747
+       }
+      }
+     }
+    }
+   },
+   "gru_s42": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.5133916253290458,
+      "f1_clase": [
+       0.5293085293085293,
+       0.4299967814612166,
+       0.5808695652173913
+      ],
+      "kappa": 0.3318865050336891,
+      "exactitud": 0.5154156921114182,
+      "f1_mantenido": 0.5133916253290458,
+      "kappa_mantenido": 0.3318865050336891,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 8,
+        "fpr_controlado": 0.26666666666666666,
+        "propagacion_con_alerta": 0.775,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 2,
+        "antes_del_cambio": 11,
+        "ewt_mediana": 9.120000019073487
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.03333333333333333,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 10,
+        "antes_del_cambio": 4,
+        "ewt_mediana": -18.97
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4903179512220818,
+      "f1_clase": [
+       0.552202566770725,
+       0.45396255450115414,
+       0.4647887323943662
+      ],
+      "kappa": 0.3258053180312268,
+      "exactitud": 0.487256371814093,
+      "f1_mantenido": 0.4900899079908884,
+      "kappa_mantenido": 0.32535199726713504,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.20689655172413793,
+        "propagacion_con_alerta": 0.825,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 1,
+        "antes_del_cambio": 14,
+        "ewt_mediana": 33.170000011920926
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.034482758620689655,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 6,
+        "antes_del_cambio": 7,
+        "ewt_mediana": 8.184998283386232
+       }
+      }
+     }
+    }
+   },
+   "gru_s43": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.5317772898576735,
+      "f1_clase": [
+       0.5772485114384206,
+       0.3758815232722144,
+       0.6422018348623854
+      ],
+      "kappa": 0.40263672033081355,
+      "exactitud": 0.5398681692536679,
+      "f1_mantenido": 0.5317772898576735,
+      "kappa_mantenido": 0.40263672033081355,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.2,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 4,
+        "antes_del_cambio": 6,
+        "ewt_mediana": -16.5000015258789
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06666666666666667,
+        "propagacion_con_alerta": 0.65,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 7,
+        "antes_del_cambio": 4,
+        "ewt_mediana": -29.03499847412109
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.52383967454304,
+      "f1_clase": [
+       0.6112484548825711,
+       0.4102705687465489,
+       0.55
+      ],
+      "kappa": 0.40834036685631736,
+      "exactitud": 0.5170272006853716,
+      "f1_mantenido": 0.52383967454304,
+      "kappa_mantenido": 0.40834036685631736,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.1724137931034483,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 1,
+        "antes_del_cambio": 11,
+        "ewt_mediana": 4.9300061035156375
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.034482758620689655,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 3,
+        "antes_del_cambio": 6,
+        "ewt_mediana": -5.7700061035156125
+       }
+      }
+     }
+    }
+   },
+   "gru_s44": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.5116216872943178,
+      "f1_clase": [
+       0.5767907413199875,
+       0.35318135420210955,
+       0.6048929663608563
+      ],
+      "kappa": 0.37855507993098847,
+      "exactitud": 0.5166914735275356,
+      "f1_mantenido": 0.5116216872943178,
+      "kappa_mantenido": 0.37855507993098847,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.2,
+        "propagacion_con_alerta": 0.75,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 4,
+        "antes_del_cambio": 8,
+        "ewt_mediana": -0.6999984741210881
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.03333333333333333,
+        "propagacion_con_alerta": 0.6,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 9,
+        "antes_del_cambio": 4,
+        "ewt_mediana": -48.18500305175781
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.47816424791801687,
+      "f1_clase": [
+       0.5457875457875457,
+       0.39206090266449156,
+       0.4966442953020134
+      ],
+      "kappa": 0.32182584086909893,
+      "exactitud": 0.4726922253159135,
+      "f1_mantenido": 0.47816424791801687,
+      "kappa_mantenido": 0.32182584086909893,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 7,
+        "fpr_controlado": 0.2413793103448276,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 23.394950761348014
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.034482758620689655,
+        "propagacion_con_alerta": 0.6,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -12.599998474121094
+       }
+      }
+     }
+    }
+   },
+   "lstm_s42": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.43422014834074196,
+      "f1_clase": [
+       0.5433474481836417,
+       0.1995505617977528,
+       0.5597624350408315
+      ],
+      "kappa": 0.2958249051998424,
+      "exactitud": 0.46672336806293857,
+      "f1_mantenido": 0.43422014834074196,
+      "kappa_mantenido": 0.2958249051998424,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.16666666666666666,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 5,
+        "antes_del_cambio": 7,
+        "ewt_mediana": -2.2850003814697253
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 12,
+        "antes_del_cambio": 3,
+        "ewt_mediana": -14.200000000000003
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.45181654884118894,
+      "f1_clase": [
+       0.618069361608129,
+       0.28192371475953565,
+       0.455456570155902
+      ],
+      "kappa": 0.32321662467933865,
+      "exactitud": 0.4782608695652174,
+      "f1_mantenido": 0.45181654884118894,
+      "kappa_mantenido": 0.32321662467933865,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.1724137931034483,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 3,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 24.430006103515638
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 8,
+        "antes_del_cambio": 5,
+        "ewt_mediana": 11.179999237060557
+       }
+      }
+     }
+    }
+   },
+   "lstm_s43": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.4856253161492455,
+      "f1_clase": [
+       0.5279383429672447,
+       0.27327586206896554,
+       0.6556617434115262
+      ],
+      "kappa": 0.3500621455682488,
+      "exactitud": 0.5120136083351052,
+      "f1_mantenido": 0.4856253161492455,
+      "kappa_mantenido": 0.3500621455682488,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 10,
+        "fpr_controlado": 0.3333333333333333,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 5,
+        "antes_del_cambio": 10,
+        "ewt_mediana": 7.625000104904175
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06666666666666667,
+        "propagacion_con_alerta": 0.425,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 14,
+        "antes_del_cambio": 3,
+        "ewt_mediana": -20.370001525878905
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4699315360342255,
+      "f1_clase": [
+       0.613210111443327,
+       0.30048465266558966,
+       0.4960998439937597
+      ],
+      "kappa": 0.3558099543229696,
+      "exactitud": 0.47740415506532446,
+      "f1_mantenido": 0.46977350077980756,
+      "kappa_mantenido": 0.3555216898062479,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 8,
+        "fpr_controlado": 0.27586206896551724,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 12,
+        "ewt_mediana": 34.05000009536744
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06896551724137931,
+        "propagacion_con_alerta": 0.425,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 10,
+        "antes_del_cambio": 5,
+        "ewt_mediana": 10.387851028442382
+       }
+      }
+     }
+    }
+   },
+   "lstm_s44": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.4600108280370299,
+      "f1_clase": [
+       0.536939644377661,
+       0.22457432121491025,
+       0.6185185185185185
+      ],
+      "kappa": 0.3218098899447468,
+      "exactitud": 0.49287688709334465,
+      "f1_mantenido": 0.4600108280370299,
+      "kappa_mantenido": 0.3218098899447468,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.2,
+        "propagacion_con_alerta": 0.775,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 4,
+        "antes_del_cambio": 10,
+        "ewt_mediana": 7.799999999999997
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 13,
+        "antes_del_cambio": 3,
+        "ewt_mediana": -9.949999618530274
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4596077697330874,
+      "f1_clase": [
+       0.5901068854088989,
+       0.26271471876052543,
+       0.526001705029838
+      ],
+      "kappa": 0.34074652677717066,
+      "exactitud": 0.4699079031912615,
+      "f1_mantenido": 0.4596077697330874,
+      "kappa_mantenido": 0.34074652677717066,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 7,
+        "fpr_controlado": 0.2413793103448276,
+        "propagacion_con_alerta": 0.75,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 11,
+        "ewt_mediana": 30.499998426437383
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 9,
+        "antes_del_cambio": 6,
+        "ewt_mediana": 16.349299964904784
+       }
+      }
+     }
+    }
+   },
+   "gradient boosting": {
+    "modelo": "gradient boosting",
+    "referencias": {
+     "ia": {
+      "f1": 0.442422788582933,
+      "f1_clase": [
+       0.5102903862418946,
+       0.21213483146067416,
+       0.6048431480462301
+      ],
+      "kappa": 0.29213593367320345,
+      "exactitud": 0.47629172868381886,
+      "f1_mantenido": 0.442422788582933,
+      "kappa_mantenido": 0.29213593367320345,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 1,
+        "fpr_sin_fuego": 0.03125,
+        "n_controlado": 30,
+        "alarmas_controlado": 8,
+        "fpr_controlado": 0.26666666666666666,
+        "propagacion_con_alerta": 0.775,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 1,
+        "antes_del_cambio": 12,
+        "ewt_mediana": 3.7699999999999996
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.03333333333333333,
+        "propagacion_con_alerta": 0.55,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 10,
+        "antes_del_cambio": 4,
+        "ewt_mediana": -5.700000000000003
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4509836515222172,
+      "f1_clase": [
+       0.596694214876033,
+       0.29279731993299835,
+       0.4634594197576203
+      ],
+      "kappa": 0.31996813165609583,
+      "exactitud": 0.4606982223174127,
+      "f1_mantenido": 0.450798041045477,
+      "kappa_mantenido": 0.31955289193293424,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 1,
+        "fpr_sin_fuego": 0.03125,
+        "n_controlado": 29,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.20689655172413793,
+        "propagacion_con_alerta": 0.8,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 1,
+        "antes_del_cambio": 13,
+        "ewt_mediana": 26.56
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.034482758620689655,
+        "propagacion_con_alerta": 0.55,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 6,
+        "antes_del_cambio": 6,
+        "ewt_mediana": 20.245000000000005
+       }
+      }
+     }
+    }
+   },
+   "regresion logistica": {
+    "modelo": "regresion logistica",
+    "referencias": {
+     "ia": {
+      "f1": 0.49066081253734906,
+      "f1_clase": [
+       0.47474132684114423,
+       0.38734920117378546,
+       0.6098919095971176
+      ],
+      "kappa": 0.3109959041910888,
+      "exactitud": 0.4901126940250904,
+      "f1_mantenido": 0.49066081253734906,
+      "kappa_mantenido": 0.3109959041910888,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.1,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 5,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -10.535
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.4,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 12,
+        "antes_del_cambio": 2,
+        "ewt_mediana": -58.599999999999994
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.5272511926658893,
+      "f1_clase": [
+       0.567235699311171,
+       0.4746291959406714,
+       0.5398886827458256
+      ],
+      "kappa": 0.3648474690392285,
+      "exactitud": 0.5228100235596488,
+      "f1_mantenido": 0.5270246845098256,
+      "kappa_mantenido": 0.3643782976072949,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06896551724137931,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 10,
+        "ewt_mediana": 13.150000000000002
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.4,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 8,
+        "antes_del_cambio": 2,
+        "ewt_mediana": -8.319999999999993
+       }
+      }
+     }
+    }
+   }
+  },
+  "quitar_25": {
+   "cfc_s42": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.45024987477827366,
+      "f1_clase": [
+       0.48318536454129674,
+       0.2524193548387097,
+       0.6151449049548146
+      ],
+      "kappa": 0.28865769200944824,
+      "exactitud": 0.4673612587709972,
+      "f1_mantenido": 0.45024987477827366,
+      "kappa_mantenido": 0.28865769200944824,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.16666666666666666,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 4,
+        "antes_del_cambio": 8,
+        "ewt_mediana": -6.269999237060546
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.175,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 18,
+        "antes_del_cambio": 1,
+        "ewt_mediana": -7.799998474121097
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.46605518650812067,
+      "f1_clase": [
+       0.5912215758857747,
+       0.33087783916513197,
+       0.4760661444734552
+      ],
+      "kappa": 0.3254188999028248,
+      "exactitud": 0.4720496894409938,
+      "f1_mantenido": 0.46605518650812067,
+      "kappa_mantenido": 0.3254188999028248,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 3,
+        "antes_del_cambio": 10,
+        "ewt_mediana": 26.859799993634223
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.175,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 13,
+        "antes_del_cambio": 2,
+        "ewt_mediana": 22.555500087738036
+       }
+      }
+     }
+    }
+   },
+   "cfc_s43": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.47158047902068995,
+      "f1_clase": [
+       0.585207396301849,
+       0.1955282770714599,
+       0.6340057636887608
+      ],
+      "kappa": 0.3801405101657592,
+      "exactitud": 0.5069104826706358,
+      "f1_mantenido": 0.47158047902068995,
+      "kappa_mantenido": 0.3801405101657592,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.2,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 4,
+        "antes_del_cambio": 7,
+        "ewt_mediana": -6.569998474121093
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 12,
+        "antes_del_cambio": 3,
+        "ewt_mediana": -20.569998474121093
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.5077994947875869,
+      "f1_clase": [
+       0.6745213549337261,
+       0.3173455978975033,
+       0.5315315315315315
+      ],
+      "kappa": 0.42620774037133535,
+      "exactitud": 0.5240950953094882,
+      "f1_mantenido": 0.5077994947875869,
+      "kappa_mantenido": 0.42620774037133535,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 12,
+        "ewt_mediana": 17.329998474121098
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 8,
+        "antes_del_cambio": 4,
+        "ewt_mediana": 11.128600029945373
+       }
+      }
+     }
+    }
+   },
+   "cfc_s44": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.45808524195422445,
+      "f1_clase": [
+       0.4840726406668651,
+       0.2926490984743412,
+       0.597533986721467
+      ],
+      "kappa": 0.2992456833416559,
+      "exactitud": 0.46353391452264514,
+      "f1_mantenido": 0.45808524195422445,
+      "kappa_mantenido": 0.2992456833416559,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 9,
+        "fpr_controlado": 0.3,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 3,
+        "antes_del_cambio": 8,
+        "ewt_mediana": -3.7849990463256837
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.2,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 3,
+        "antes_del_cambio": 7,
+        "ewt_mediana": -9.834999809265138
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4574850618023842,
+      "f1_clase": [
+       0.5283018867924528,
+       0.35164228539884074,
+       0.49251101321585905
+      ],
+      "kappa": 0.29626391949091024,
+      "exactitud": 0.4510601841936175,
+      "f1_mantenido": 0.45731027717964134,
+      "kappa_mantenido": 0.2959510056561748,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 7,
+        "fpr_controlado": 0.2413793103448276,
+        "propagacion_con_alerta": 0.75,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 11,
+        "ewt_mediana": 28.915000047683712
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.1724137931034483,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 11,
+        "ewt_mediana": 21.765002288818366
+       }
+      }
+     }
+    }
+   },
+   "gru_s42": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.4744636143227283,
+      "f1_clase": [
+       0.5002905287623475,
+       0.4187290969899666,
+       0.5043712172158709
+      ],
+      "kappa": 0.25235503915616875,
+      "exactitud": 0.47565383797576016,
+      "f1_mantenido": 0.4744636143227283,
+      "kappa_mantenido": 0.25235503915616875,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 7,
+        "fpr_controlado": 0.23333333333333334,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 3,
+        "antes_del_cambio": 8,
+        "ewt_mediana": -2.9517001628875734
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.03333333333333333,
+        "propagacion_con_alerta": 0.4,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 14,
+        "antes_del_cambio": 4,
+        "ewt_mediana": 0.6318001556396453
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4426527245250722,
+      "f1_clase": [
+       0.5327963176064442,
+       0.408994708994709,
+       0.3861671469740634
+      ],
+      "kappa": 0.24320974594139733,
+      "exactitud": 0.44998929106875135,
+      "f1_mantenido": 0.44245018893175553,
+      "kappa_mantenido": 0.24275027100929392,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.1724137931034483,
+        "propagacion_con_alerta": 0.75,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 11,
+        "ewt_mediana": 22.564899806082245
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.034482758620689655,
+        "propagacion_con_alerta": 0.4,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 10,
+        "antes_del_cambio": 3,
+        "ewt_mediana": 5.745901603698732
+       }
+      }
+     }
+    }
+   },
+   "gru_s43": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.49154601262943826,
+      "f1_clase": [
+       0.612860545117756,
+       0.33856502242152464,
+       0.5232124703490342
+      ],
+      "kappa": 0.3467354364691293,
+      "exactitud": 0.5066978524346162,
+      "f1_mantenido": 0.49154601262943826,
+      "kappa_mantenido": 0.3467354364691293,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06666666666666667,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 9,
+        "antes_del_cambio": 4,
+        "ewt_mediana": -33.300001525878905
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 12,
+        "antes_del_cambio": 4,
+        "ewt_mediana": -85.80000305175781
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.46995266161146215,
+      "f1_clase": [
+       0.6151427822897564,
+       0.35819176504463,
+       0.4365234375
+      ],
+      "kappa": 0.3319415342941098,
+      "exactitud": 0.4804026558149497,
+      "f1_mantenido": 0.46995266161146215,
+      "kappa_mantenido": 0.3319415342941098,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06896551724137931,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -4.2700003814697265
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 8,
+        "antes_del_cambio": 4,
+        "ewt_mediana": -2.4768516731262213
+       }
+      }
+     }
+    }
+   },
+   "gru_s44": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.44134105430496606,
+      "f1_clase": [
+       0.5564276048714479,
+       0.25172790105492904,
+       0.5158676569885212
+      ],
+      "kappa": 0.29590419870458395,
+      "exactitud": 0.4546034446098235,
+      "f1_mantenido": 0.44134105430496606,
+      "kappa_mantenido": 0.29590419870458395,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13333333333333333,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 5,
+        "antes_del_cambio": 6,
+        "ewt_mediana": -7.234999809265136
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 13,
+        "antes_del_cambio": 4,
+        "ewt_mediana": -6.54374843597412
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.47101155744795115,
+      "f1_clase": [
+       0.5726360274696249,
+       0.35931232091690546,
+       0.481086323957323
+      ],
+      "kappa": 0.3151654764446039,
+      "exactitud": 0.4726922253159135,
+      "f1_mantenido": 0.47101155744795115,
+      "kappa_mantenido": 0.3151654764446039,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 4,
+        "antes_del_cambio": 7,
+        "ewt_mediana": 16.450000190734865
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 9,
+        "antes_del_cambio": 4,
+        "ewt_mediana": 3.0693994140624987
+       }
+      }
+     }
+    }
+   },
+   "lstm_s42": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.45350502159522305,
+      "f1_clase": [
+       0.5552252458266637,
+       0.21224130339057684,
+       0.5930485155684286
+      ],
+      "kappa": 0.32824038626985175,
+      "exactitud": 0.48352115670848395,
+      "f1_mantenido": 0.45350502159522305,
+      "kappa_mantenido": 0.32824038626985175,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.1,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 5,
+        "antes_del_cambio": 7,
+        "ewt_mediana": -2.584999618530272
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 12,
+        "antes_del_cambio": 3,
+        "ewt_mediana": -10.199999237060545
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4896820463993419,
+      "f1_clase": [
+       0.6364870982344952,
+       0.31217277486910994,
+       0.5203862660944206
+      ],
+      "kappa": 0.376171298845293,
+      "exactitud": 0.5071749839366031,
+      "f1_mantenido": 0.4896820463993419,
+      "kappa_mantenido": 0.376171298845293,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06896551724137931,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 4,
+        "antes_del_cambio": 10,
+        "ewt_mediana": 25.394996948242195
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 8,
+        "antes_del_cambio": 5,
+        "ewt_mediana": 9.280003433227549
+       }
+      }
+     }
+    }
+   },
+   "lstm_s43": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.4729076651078989,
+      "f1_clase": [
+       0.554675118858954,
+       0.24173027989821882,
+       0.6223175965665236
+      ],
+      "kappa": 0.3481426177571383,
+      "exactitud": 0.4996810546459707,
+      "f1_mantenido": 0.4729076651078989,
+      "kappa_mantenido": 0.3481426177571383,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.2,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 5,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 3.399998521804812
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.45,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 13,
+        "antes_del_cambio": 3,
+        "ewt_mediana": -47.635000762939455
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4680056977998086,
+      "f1_clase": [
+       0.6206357477853048,
+       0.3051388445579317,
+       0.47824250105618926
+      ],
+      "kappa": 0.3499973434499175,
+      "exactitud": 0.47868922681516385,
+      "f1_mantenido": 0.46785341302835953,
+      "kappa_mantenido": 0.3497034151033752,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.1724137931034483,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 3,
+        "antes_del_cambio": 11,
+        "ewt_mediana": 26.759699997901915
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.45,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 9,
+        "antes_del_cambio": 4,
+        "ewt_mediana": 6.9300061035156375
+       }
+      }
+     }
+    }
+   },
+   "lstm_s44": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.46743097525017485,
+      "f1_clase": [
+       0.5404587849760525,
+       0.22482014388489208,
+       0.63701399688958
+      ],
+      "kappa": 0.34033298665792244,
+      "exactitud": 0.4988305337018924,
+      "f1_mantenido": 0.46743097525017485,
+      "kappa_mantenido": 0.34033298665792244,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.2,
+        "propagacion_con_alerta": 0.75,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 3,
+        "antes_del_cambio": 10,
+        "ewt_mediana": 1.5800000953674322
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 12,
+        "antes_del_cambio": 3,
+        "ewt_mediana": -27.569998474121093
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.43800066997197246,
+      "f1_clase": [
+       0.5732769345608361,
+       0.22437395659432388,
+       0.5163511187607573
+      ],
+      "kappa": 0.31958979377324626,
+      "exactitud": 0.4472049689440994,
+      "f1_mantenido": 0.43780828017329493,
+      "kappa_mantenido": 0.3191617669152229,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.20689655172413793,
+        "propagacion_con_alerta": 0.75,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 1,
+        "antes_del_cambio": 12,
+        "ewt_mediana": 26.45939999580383
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 8,
+        "antes_del_cambio": 4,
+        "ewt_mediana": 0.7649984741211
+       }
+      }
+     }
+    }
+   },
+   "gradient boosting": {
+    "modelo": "gradient boosting",
+    "referencias": {
+     "ia": {
+      "f1": 0.4624102226269147,
+      "f1_clase": [
+       0.5301272984441301,
+       0.24155024785939613,
+       0.615553121577218
+      ],
+      "kappa": 0.3162492916282904,
+      "exactitud": 0.49521581968955986,
+      "f1_mantenido": 0.4624102226269147,
+      "kappa_mantenido": 0.3162492916282904,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 9,
+        "fpr_controlado": 0.3,
+        "propagacion_con_alerta": 0.775,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 1,
+        "antes_del_cambio": 13,
+        "ewt_mediana": 8.614999999999998
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.03333333333333333,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 9,
+        "antes_del_cambio": 6,
+        "ewt_mediana": -0.879999999999999
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4662788306980566,
+      "f1_clase": [
+       0.6197183098591549,
+       0.30960376091336467,
+       0.4695144213216502
+      ],
+      "kappa": 0.3431792952154127,
+      "exactitud": 0.4767616191904048,
+      "f1_mantenido": 0.4660946143937936,
+      "kappa_mantenido": 0.3427630715640546,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 7,
+        "fpr_controlado": 0.2413793103448276,
+        "propagacion_con_alerta": 0.8,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 1,
+        "antes_del_cambio": 13,
+        "ewt_mediana": 38.93000000000001
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.034482758620689655,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 7,
+        "ewt_mediana": 19.930000000000007
+       }
+      }
+     }
+    }
+   },
+   "regresion logistica": {
+    "modelo": "regresion logistica",
+    "referencias": {
+     "ia": {
+      "f1": 0.5009021066624589,
+      "f1_clase": [
+       0.473551637279597,
+       0.4085541015001596,
+       0.6206005812076203
+      ],
+      "kappa": 0.32270995717112416,
+      "exactitud": 0.5003189453540293,
+      "f1_mantenido": 0.5009021066624589,
+      "kappa_mantenido": 0.32270995717112416,
+      "segundos_vacios": 0,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.1,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 4,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -13.17
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 9,
+        "antes_del_cambio": 2,
+        "ewt_mediana": -63.3
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.5275949680198163,
+      "f1_clase": [
+       0.5594577942082564,
+       0.48194622279129323,
+       0.5413808870598994
+      ],
+      "kappa": 0.36407867130312777,
+      "exactitud": 0.5228100235596488,
+      "f1_mantenido": 0.5274058637366298,
+      "kappa_mantenido": 0.36376184232478515,
+      "segundos_vacios": 1,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06896551724137931,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 10,
+        "ewt_mediana": 15.150000000000002
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 6,
+        "antes_del_cambio": 2,
+        "ewt_mediana": -12.584999999999994
+       }
+      }
+     }
+    }
+   }
+  },
+  "quitar_50": {
+   "cfc_s42": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.4570159026061524,
+      "f1_clase": [
+       0.487859335752163,
+       0.2563501367721766,
+       0.6268382352941176
+      ],
+      "kappa": 0.30619010966183147,
+      "exactitud": 0.47310227514352543,
+      "f1_mantenido": 0.45785704811030836,
+      "kappa_mantenido": 0.3078334266733992,
+      "segundos_vacios": 6,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.16666666666666666,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 4,
+        "antes_del_cambio": 7,
+        "ewt_mediana": -6.569998474121093
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.125,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 20,
+        "antes_del_cambio": 1,
+        "ewt_mediana": 27.625400047302243
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4684999679522471,
+      "f1_clase": [
+       0.5721352019785655,
+       0.33124065769805683,
+       0.5021240441801189
+      ],
+      "kappa": 0.32869211012426336,
+      "exactitud": 0.4681944741914757,
+      "f1_mantenido": 0.4686630385309882,
+      "kappa_mantenido": 0.329038742555283,
+      "segundos_vacios": 8,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 11,
+        "ewt_mediana": 14.950000190734865
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.125,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 15,
+        "antes_del_cambio": 1,
+        "ewt_mediana": 22.455400047302245
+       }
+      }
+     }
+    }
+   },
+   "cfc_s43": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.45124140530090967,
+      "f1_clase": [
+       0.5800340053436969,
+       0.17294520547945205,
+       0.6007450050795801
+      ],
+      "kappa": 0.35683703748362383,
+      "exactitud": 0.48543482883266,
+      "f1_mantenido": 0.45151339205439883,
+      "kappa_mantenido": 0.3577652061551725,
+      "segundos_vacios": 6,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.16666666666666666,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 5,
+        "antes_del_cambio": 6,
+        "ewt_mediana": -17.09999885559082
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.4,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 14,
+        "antes_del_cambio": 3,
+        "ewt_mediana": -16.900000762939456
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.48420545443828744,
+      "f1_clase": [
+       0.637125748502994,
+       0.31085420680796405,
+       0.5046364080039043
+      ],
+      "kappa": 0.3747428852116784,
+      "exactitud": 0.4992503748125937,
+      "f1_mantenido": 0.48463750635386954,
+      "kappa_mantenido": 0.3751827222440849,
+      "segundos_vacios": 8,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 3,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 7.9300061035156375
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.4,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 10,
+        "antes_del_cambio": 4,
+        "ewt_mediana": 6.502398796081549
+       }
+      }
+     }
+    }
+   },
+   "cfc_s44": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.4791721266543802,
+      "f1_clase": [
+       0.49707943925233644,
+       0.3260796786072983,
+       0.6143572621035058
+      ],
+      "kappa": 0.32634339554911185,
+      "exactitud": 0.48011907293217093,
+      "f1_mantenido": 0.4797917322650151,
+      "kappa_mantenido": 0.3278670450930685,
+      "segundos_vacios": 6,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 7,
+        "fpr_controlado": 0.23333333333333334,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 4,
+        "antes_del_cambio": 7,
+        "ewt_mediana": -15.500001525878908
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.16666666666666666,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 5,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -16.319998474121093
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4583482534311112,
+      "f1_clase": [
+       0.48992336077206927,
+       0.3646646916240237,
+       0.5204567078972407
+      ],
+      "kappa": 0.2739268593803543,
+      "exactitud": 0.44699079031912614,
+      "f1_mantenido": 0.45806445875934226,
+      "kappa_mantenido": 0.2737826343482953,
+      "segundos_vacios": 8,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 7,
+        "fpr_controlado": 0.2413793103448276,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 3,
+        "antes_del_cambio": 10,
+        "ewt_mediana": 22.830000000000013
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 5,
+        "fpr_controlado": 0.1724137931034483,
+        "propagacion_con_alerta": 0.65,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 3,
+        "antes_del_cambio": 10,
+        "ewt_mediana": 20.430000000000007
+       }
+      }
+     }
+    }
+   },
+   "gru_s42": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.4749984518400468,
+      "f1_clase": [
+       0.4813683567501527,
+       0.41041666666666665,
+       0.533210332103321
+      ],
+      "kappa": 0.24870577403107652,
+      "exactitud": 0.4775675100999362,
+      "f1_mantenido": 0.4751993459376757,
+      "kappa_mantenido": 0.24931961428937433,
+      "segundos_vacios": 6,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 9,
+        "fpr_controlado": 0.3,
+        "propagacion_con_alerta": 0.775,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 2,
+        "antes_del_cambio": 7,
+        "ewt_mediana": -15.199998474121095
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.35,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 15,
+        "antes_del_cambio": 1,
+        "ewt_mediana": -34.400000762939456
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4523476187797654,
+      "f1_clase": [
+       0.5024154589371981,
+       0.42194323144104806,
+       0.43268416596104997
+      ],
+      "kappa": 0.24570886909954293,
+      "exactitud": 0.45320197044334976,
+      "f1_mantenido": 0.45212537999112107,
+      "kappa_mantenido": 0.24532378728766424,
+      "segundos_vacios": 8,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 7,
+        "fpr_controlado": 0.2413793103448276,
+        "propagacion_con_alerta": 0.8,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 4.889998531341552
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.35,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 11,
+        "antes_del_cambio": 3,
+        "ewt_mediana": 14.13000152587891
+       }
+      }
+     }
+    }
+   },
+   "gru_s43": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.49164160755844133,
+      "f1_clase": [
+       0.5651731160896131,
+       0.3693246852346433,
+       0.5404270213510676
+      ],
+      "kappa": 0.3173236951105618,
+      "exactitud": 0.5030831384222837,
+      "f1_mantenido": 0.4918631310609303,
+      "kappa_mantenido": 0.3182608688965133,
+      "segundos_vacios": 6,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.03333333333333333,
+        "propagacion_con_alerta": 0.5,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 11,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -0.5549993896484366
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.4,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 13,
+        "antes_del_cambio": 3,
+        "ewt_mediana": -16.670748825073243
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4611866171896412,
+      "f1_clase": [
+       0.6086298258894777,
+       0.3489187609585038,
+       0.42601126472094214
+      ],
+      "kappa": 0.31722491683384546,
+      "exactitud": 0.4752623688155922,
+      "f1_mantenido": 0.4615891104291367,
+      "kappa_mantenido": 0.3176745094883967,
+      "segundos_vacios": 8,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.034482758620689655,
+        "propagacion_con_alerta": 0.5,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 7,
+        "antes_del_cambio": 6,
+        "ewt_mediana": 17.950899658203124
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.4,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 9,
+        "antes_del_cambio": 4,
+        "ewt_mediana": 25.530003051757816
+       }
+      }
+     }
+    }
+   },
+   "gru_s44": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.4627778007276783,
+      "f1_clase": [
+       0.5729291000238721,
+       0.3030821917808219,
+       0.5123221103783409
+      ],
+      "kappa": 0.29491452962968767,
+      "exactitud": 0.4873485009568361,
+      "f1_mantenido": 0.4627850909652933,
+      "kappa_mantenido": 0.2954006750640181,
+      "segundos_vacios": 6,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.1,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 6,
+        "antes_del_cambio": 7,
+        "ewt_mediana": -3.029999809265137
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.45,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 14,
+        "antes_del_cambio": 1,
+        "ewt_mediana": -25.430000000000007
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.45454300621990756,
+      "f1_clase": [
+       0.5666356011183598,
+       0.29093281148075667,
+       0.5060606060606061
+      ],
+      "kappa": 0.2976373523623508,
+      "exactitud": 0.46326836581709147,
+      "f1_mantenido": 0.4550024363583686,
+      "kappa_mantenido": 0.29801645260188514,
+      "segundos_vacios": 8,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.10344827586206896,
+        "propagacion_con_alerta": 0.65,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 4,
+        "antes_del_cambio": 7,
+        "ewt_mediana": 1.3649984741210996
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.45,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 9,
+        "antes_del_cambio": 3,
+        "ewt_mediana": -8.54219955444336
+       }
+      }
+     }
+    }
+   },
+   "lstm_s42": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.4459055171626587,
+      "f1_clase": [
+       0.5503663003663004,
+       0.18384649709950915,
+       0.6035037540221666
+      ],
+      "kappa": 0.32841881391398886,
+      "exactitud": 0.4788432915160536,
+      "f1_mantenido": 0.44654508558522094,
+      "kappa_mantenido": 0.3298412047745928,
+      "segundos_vacios": 6,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06666666666666667,
+        "propagacion_con_alerta": 0.625,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 7,
+        "antes_del_cambio": 7,
+        "ewt_mediana": 1.0149992370605476
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 12,
+        "antes_del_cambio": 2,
+        "ewt_mediana": -33.669996948242186
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.48988869628690007,
+      "f1_clase": [
+       0.6389834354436125,
+       0.30408970976253297,
+       0.526592943654555
+      ],
+      "kappa": 0.38159973284842075,
+      "exactitud": 0.5073891625615764,
+      "f1_mantenido": 0.48975692514709407,
+      "kappa_mantenido": 0.38174456390582157,
+      "segundos_vacios": 8,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06896551724137931,
+        "propagacion_con_alerta": 0.6,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 27.06
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 8,
+        "antes_del_cambio": 4,
+        "ewt_mediana": -1.9061028289794866
+       }
+      }
+     }
+    }
+   },
+   "lstm_s43": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.4649166463333769,
+      "f1_clase": [
+       0.570704510897111,
+       0.20157068062827224,
+       0.6224747474747475
+      ],
+      "kappa": 0.35955704321530524,
+      "exactitud": 0.4981926429938337,
+      "f1_mantenido": 0.46551479135162116,
+      "kappa_mantenido": 0.36100444100473505,
+      "segundos_vacios": 6,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13333333333333333,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 5,
+        "antes_del_cambio": 8,
+        "ewt_mediana": 0.14999923706054918
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.3,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 17,
+        "antes_del_cambio": 2,
+        "ewt_mediana": -38.50565008163453
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.46433041371084394,
+      "f1_clase": [
+       0.6208104052026013,
+       0.288693385467579,
+       0.48348745046235136
+      ],
+      "kappa": 0.34909036311700026,
+      "exactitud": 0.4782608695652174,
+      "f1_mantenido": 0.4641267832838271,
+      "kappa_mantenido": 0.3489443966735416,
+      "segundos_vacios": 8,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 10,
+        "ewt_mediana": 23.900003051757817
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.3,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 13,
+        "antes_del_cambio": 2,
+        "ewt_mediana": 6.0299969482422
+       }
+      }
+     }
+    }
+   },
+   "lstm_s44": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.4681739325126009,
+      "f1_clase": [
+       0.5466875326030256,
+       0.25284339457567806,
+       0.6049908703590993
+      ],
+      "kappa": 0.32544814117681287,
+      "exactitud": 0.49564108016159897,
+      "f1_mantenido": 0.46892960343551676,
+      "kappa_mantenido": 0.3271546671441874,
+      "segundos_vacios": 6,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 8,
+        "fpr_controlado": 0.26666666666666666,
+        "propagacion_con_alerta": 0.775,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 3,
+        "antes_del_cambio": 8,
+        "ewt_mediana": -2.935000572204589
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.425,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 14,
+        "antes_del_cambio": 2,
+        "ewt_mediana": -18.669996948242186
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.41532096752126835,
+      "f1_clase": [
+       0.5539568345323741,
+       0.2273173927284638,
+       0.464688675302967
+      ],
+      "kappa": 0.27733687168616084,
+      "exactitud": 0.424287856071964,
+      "f1_mantenido": 0.4150809877572967,
+      "kappa_mantenido": 0.2770755897691174,
+      "segundos_vacios": 8,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 9,
+        "fpr_controlado": 0.3103448275862069,
+        "propagacion_con_alerta": 0.75,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 1,
+        "antes_del_cambio": 11,
+        "ewt_mediana": 21.970000381469724
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.425,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 10,
+        "antes_del_cambio": 4,
+        "ewt_mediana": 24.53000000000001
+       }
+      }
+     }
+    }
+   },
+   "gradient boosting": {
+    "modelo": "gradient boosting",
+    "referencias": {
+     "ia": {
+      "f1": 0.4499276848337246,
+      "f1_clase": [
+       0.5254284911491992,
+       0.21315192743764172,
+       0.6112026359143328
+      ],
+      "kappa": 0.3083243365728935,
+      "exactitud": 0.48543482883266,
+      "f1_mantenido": 0.4506326311281878,
+      "kappa_mantenido": 0.31003348792517593,
+      "segundos_vacios": 6,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 10,
+        "fpr_controlado": 0.3333333333333333,
+        "propagacion_con_alerta": 0.825,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 0,
+        "antes_del_cambio": 12,
+        "ewt_mediana": 2.3999999999999986
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06666666666666667,
+        "propagacion_con_alerta": 0.55,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 10,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -3.8999999999999986
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4513646408234095,
+      "f1_clase": [
+       0.6005479452054795,
+       0.2794017675050986,
+       0.4741442097596504
+      ],
+      "kappa": 0.3286820714510087,
+      "exactitud": 0.46219747269222533,
+      "f1_mantenido": 0.451171522860748,
+      "kappa_mantenido": 0.32841479895302494,
+      "segundos_vacios": 8,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 8,
+        "fpr_controlado": 0.27586206896551724,
+        "propagacion_con_alerta": 0.85,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 1,
+        "antes_del_cambio": 13,
+        "ewt_mediana": 38.93000000000001
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06896551724137931,
+        "propagacion_con_alerta": 0.55,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 6,
+        "antes_del_cambio": 6,
+        "ewt_mediana": 21.745000000000005
+       }
+      }
+     }
+    }
+   },
+   "regresion logistica": {
+    "modelo": "regresion logistica",
+    "referencias": {
+     "ia": {
+      "f1": 0.5180696423437373,
+      "f1_clase": [
+       0.4963223536936361,
+       0.41964285714285715,
+       0.6382437161947184
+      ],
+      "kappa": 0.3538128657068399,
+      "exactitud": 0.5181798851796725,
+      "f1_mantenido": 0.5188907518072493,
+      "kappa_mantenido": 0.35554845856077477,
+      "segundos_vacios": 6,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13333333333333333,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 3,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -12.384999999999998
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.03333333333333333,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 9,
+        "antes_del_cambio": 2,
+        "ewt_mediana": -39.535
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.5424326349734095,
+      "f1_clase": [
+       0.5662386470404008,
+       0.48618219037871035,
+       0.5748770675011176
+      ],
+      "kappa": 0.39177203563716523,
+      "exactitud": 0.5348040265581495,
+      "f1_mantenido": 0.5425649800263522,
+      "kappa_mantenido": 0.39197357817878553,
+      "segundos_vacios": 8,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.10344827586206896,
+        "propagacion_con_alerta": 0.725,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 12,
+        "ewt_mediana": 22.13000000000001
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.034482758620689655,
+        "propagacion_con_alerta": 0.475,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 4,
+        "ewt_mediana": -5.969999999999999
+       }
+      }
+     }
+    }
+   }
+  },
+  "quitar_75": {
+   "cfc_s42": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.4419143109768832,
+      "f1_clase": [
+       0.46831183398766124,
+       0.2819971870604782,
+       0.57543391188251
+      ],
+      "kappa": 0.26744231326719126,
+      "exactitud": 0.446098235169041,
+      "f1_mantenido": 0.4513210464418993,
+      "kappa_mantenido": 0.28691989111576655,
+      "segundos_vacios": 295,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.1,
+        "propagacion_con_alerta": 0.625,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 8,
+        "antes_del_cambio": 6,
+        "ewt_mediana": -3.8999999999999986
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.05,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 21,
+        "antes_del_cambio": 0,
+        "ewt_mediana": null
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.46892559905916037,
+      "f1_clase": [
+       0.5360484314804623,
+       0.38813418353202106,
+       0.4825941821649976
+      ],
+      "kappa": 0.28894450916541026,
+      "exactitud": 0.4669094024416363,
+      "f1_mantenido": 0.4776746280365285,
+      "kappa_mantenido": 0.30506823351899215,
+      "segundos_vacios": 286,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.6,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 8,
+        "ewt_mediana": 19.930000000000007
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.05,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 16,
+        "antes_del_cambio": 0,
+        "ewt_mediana": null
+       }
+      }
+     }
+    }
+   },
+   "cfc_s43": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.4461674778871283,
+      "f1_clase": [
+       0.5749516441005803,
+       0.20846905537459284,
+       0.5550817341862118
+      ],
+      "kappa": 0.33001030634688455,
+      "exactitud": 0.47331490537954496,
+      "f1_mantenido": 0.45812464143516163,
+      "kappa_mantenido": 0.3525431539058185,
+      "segundos_vacios": 295,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13333333333333333,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 9,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -7.734999237060546
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.35,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 15,
+        "antes_del_cambio": 2,
+        "ewt_mediana": -49.71500152587891
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.5060484799671751,
+      "f1_clase": [
+       0.623686723973257,
+       0.38295243977764054,
+       0.5115062761506276
+      ],
+      "kappa": 0.366467122452638,
+      "exactitud": 0.5172413793103449,
+      "f1_mantenido": 0.5180068014742901,
+      "kappa_mantenido": 0.3864160297906428,
+      "segundos_vacios": 286,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 6,
+        "antes_del_cambio": 8,
+        "ewt_mediana": 23.29499923706055
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.35,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 11,
+        "antes_del_cambio": 1,
+        "ewt_mediana": -13.330003051757814
+       }
+      }
+     }
+    }
+   },
+   "cfc_s44": {
+    "modelo": "cfc",
+    "referencias": {
+     "ia": {
+      "f1": 0.4548239874252015,
+      "f1_clase": [
+       0.5108877721943048,
+       0.33608247422680415,
+       0.5175017158544956
+      ],
+      "kappa": 0.267182274622913,
+      "exactitud": 0.45885604933021473,
+      "f1_mantenido": 0.4655175759668991,
+      "kappa_mantenido": 0.2881670872001132,
+      "segundos_vacios": 295,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13333333333333333,
+        "propagacion_con_alerta": 0.6,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 8,
+        "antes_del_cambio": 6,
+        "ewt_mediana": -3.8999999999999986
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13333333333333333,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 8,
+        "antes_del_cambio": 6,
+        "ewt_mediana": -3.8999999999999986
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.47615594496221775,
+      "f1_clase": [
+       0.5262299537917913,
+       0.39901207464324917,
+       0.5032258064516129
+      ],
+      "kappa": 0.288917079207234,
+      "exactitud": 0.47162133219104735,
+      "f1_mantenido": 0.4874223365641173,
+      "kappa_mantenido": 0.30899009013650147,
+      "segundos_vacios": 286,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.6,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 19.930000000000007
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13793103448275862,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 19.930000000000007
+       }
+      }
+     }
+    }
+   },
+   "gru_s42": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.39306959816560266,
+      "f1_clase": [
+       0.4073455759599332,
+       0.39276485788113696,
+       0.3790983606557377
+      ],
+      "kappa": 0.12183186415725733,
+      "exactitud": 0.3931533064001701,
+      "f1_mantenido": 0.3996211336937238,
+      "kappa_mantenido": 0.13467440110881657,
+      "segundos_vacios": 295,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 9,
+        "fpr_controlado": 0.3,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 7,
+        "antes_del_cambio": 6,
+        "ewt_mediana": -7.219999999999999
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.15,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 20,
+        "antes_del_cambio": 0,
+        "ewt_mediana": -35.0299984741211
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.3885655015325999,
+      "f1_clase": [
+       0.4061984833498187,
+       0.4643023798413439,
+       0.29519564140663695
+      ],
+      "kappa": 0.11576000605281078,
+      "exactitud": 0.4088669950738916,
+      "f1_mantenido": 0.3923089388305392,
+      "kappa_mantenido": 0.12431670597228284,
+      "segundos_vacios": 286,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 9,
+        "fpr_controlado": 0.3103448275862069,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 4,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 16.51454999685287
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.15,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 15,
+        "antes_del_cambio": 1,
+        "ewt_mediana": 13.370001525878905
+       }
+      }
+     }
+    }
+   },
+   "gru_s43": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.39322833743307517,
+      "f1_clase": [
+       0.4558375634517767,
+       0.336026936026936,
+       0.38782051282051283
+      ],
+      "kappa": 0.1532035535075279,
+      "exactitud": 0.39995747395279607,
+      "f1_mantenido": 0.40295578994143805,
+      "kappa_mantenido": 0.1673910563812041,
+      "segundos_vacios": 295,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.03333333333333333,
+        "propagacion_con_alerta": 0.4,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 14,
+        "antes_del_cambio": 5,
+        "ewt_mediana": 1.232399444580075
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.25,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 18,
+        "antes_del_cambio": 2,
+        "ewt_mediana": 8.599999237060544
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.41868167174498483,
+      "f1_clase": [
+       0.5271084337349398,
+       0.42250530785562634,
+       0.3064312736443884
+      ],
+      "kappa": 0.1897179415271666,
+      "exactitud": 0.4474191475690726,
+      "f1_mantenido": 0.4304550696829957,
+      "kappa_mantenido": 0.2064449093591536,
+      "segundos_vacios": 286,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 1,
+        "fpr_controlado": 0.034482758620689655,
+        "propagacion_con_alerta": 0.4,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 10,
+        "antes_del_cambio": 5,
+        "ewt_mediana": 22.56499618530274
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.25,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 14,
+        "antes_del_cambio": 2,
+        "ewt_mediana": 58.68499885559082
+       }
+      }
+     }
+    }
+   },
+   "gru_s44": {
+    "modelo": "gru",
+    "referencias": {
+     "ia": {
+      "f1": 0.4396225276312298,
+      "f1_clase": [
+       0.5313855284181693,
+       0.3054730589732711,
+       0.48200899550224885
+      ],
+      "kappa": 0.2446055982344646,
+      "exactitud": 0.4607697214543908,
+      "f1_mantenido": 0.4491573263518272,
+      "kappa_mantenido": 0.260390593892864,
+      "segundos_vacios": 295,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.1,
+        "propagacion_con_alerta": 0.55,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 10,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -3.670000762939452
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.25,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 17,
+        "antes_del_cambio": 0,
+        "ewt_mediana": -69.05
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.45071222991652754,
+      "f1_clase": [
+       0.5655422232284356,
+       0.3013003488740882,
+       0.4852941176470588
+      ],
+      "kappa": 0.2828859962770186,
+      "exactitud": 0.4611265795673592,
+      "f1_mantenido": 0.46130155579152105,
+      "kappa_mantenido": 0.29889640879466484,
+      "segundos_vacios": 286,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.10344827586206896,
+        "propagacion_con_alerta": 0.55,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 6,
+        "antes_del_cambio": 7,
+        "ewt_mediana": 6.815000000000003
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.25,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 12,
+        "antes_del_cambio": 1,
+        "ewt_mediana": -25.85000228881836
+       }
+      }
+     }
+    }
+   },
+   "lstm_s42": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.4052411729662572,
+      "f1_clase": [
+       0.5303743555256669,
+       0.19848545237146273,
+       0.48686371100164205
+      ],
+      "kappa": 0.25953835002927916,
+      "exactitud": 0.43057622793961303,
+      "f1_mantenido": 0.4151653946283365,
+      "kappa_mantenido": 0.2768090251202888,
+      "segundos_vacios": 295,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.55,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 9,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -7.5349984741210925
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.25,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 17,
+        "antes_del_cambio": 1,
+        "ewt_mediana": -63.66500457763672
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.4424706198810313,
+      "f1_clase": [
+       0.6131256952169076,
+       0.33252720677146314,
+       0.3817589576547231
+      ],
+      "kappa": 0.29634099641562195,
+      "exactitud": 0.47569072606553864,
+      "f1_mantenido": 0.45435599182790615,
+      "kappa_mantenido": 0.31542096973785294,
+      "segundos_vacios": 286,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.55,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 6,
+        "antes_del_cambio": 8,
+        "ewt_mediana": 23.495000000000005
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.25,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 12,
+        "antes_del_cambio": 2,
+        "ewt_mediana": -5.715004577636719
+       }
+      }
+     }
+    }
+   },
+   "lstm_s43": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.4278737532072004,
+      "f1_clase": [
+       0.5495626822157434,
+       0.17405857740585773,
+       0.56
+      ],
+      "kappa": 0.3055728659786422,
+      "exactitud": 0.4573676376780778,
+      "f1_mantenido": 0.4377977021181751,
+      "kappa_mantenido": 0.3258481214497432,
+      "segundos_vacios": 295,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06666666666666667,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 8,
+        "antes_del_cambio": 6,
+        "ewt_mediana": -3.8999999999999986
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.225,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 19,
+        "antes_del_cambio": 0,
+        "ewt_mediana": -43.25564865112305
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.47057401564241835,
+      "f1_clase": [
+       0.6048522699975979,
+       0.32335329341317365,
+       0.4835164835164835
+      ],
+      "kappa": 0.33223374062093647,
+      "exactitud": 0.48318697793960164,
+      "f1_mantenido": 0.48190443230253655,
+      "kappa_mantenido": 0.3506926450794172,
+      "segundos_vacios": 286,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 2,
+        "fpr_controlado": 0.06896551724137931,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 9,
+        "ewt_mediana": 19.930000000000007
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.225,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 15,
+        "antes_del_cambio": 0,
+        "ewt_mediana": -34.22999694824219
+       }
+      }
+     }
+    }
+   },
+   "lstm_s44": {
+    "modelo": "lstm",
+    "referencias": {
+     "ia": {
+      "f1": 0.4370302769538617,
+      "f1_clase": [
+       0.5144343302990897,
+       0.3036893203883495,
+       0.49296718017414604
+      ],
+      "kappa": 0.23632675931981362,
+      "exactitud": 0.44992557941739314,
+      "f1_mantenido": 0.44827806655797503,
+      "kappa_mantenido": 0.2552195809690295,
+      "segundos_vacios": 295,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 6,
+        "fpr_controlado": 0.2,
+        "propagacion_con_alerta": 0.6,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 8,
+        "antes_del_cambio": 7,
+        "ewt_mediana": 0.08410041809082003
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.275,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 18,
+        "antes_del_cambio": 0,
+        "ewt_mediana": -45.0299984741211
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.3976118288921313,
+      "f1_clase": [
+       0.5094193548387097,
+       0.28647686832740216,
+       0.39693926351028214
+      ],
+      "kappa": 0.2042288040991166,
+      "exactitud": 0.40372670807453415,
+      "f1_mantenido": 0.4052809953199255,
+      "kappa_mantenido": 0.2173476880201749,
+      "segundos_vacios": 286,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 7,
+        "fpr_controlado": 0.2413793103448276,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 10,
+        "ewt_mediana": 17.229999237060554
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.275,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 14,
+        "antes_del_cambio": 1,
+        "ewt_mediana": -24.449997711181638
+       }
+      }
+     }
+    }
+   },
+   "gradient boosting": {
+    "modelo": "gradient boosting",
+    "referencias": {
+     "ia": {
+      "f1": 0.43079238803167236,
+      "f1_clase": [
+       0.5046473482777474,
+       0.21072088724584104,
+       0.5770089285714286
+      ],
+      "kappa": 0.2623220750094921,
+      "exactitud": 0.46459706570274295,
+      "f1_mantenido": 0.4435595219040571,
+      "kappa_mantenido": 0.2859605610340601,
+      "segundos_vacios": 295,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 1,
+        "fpr_sin_fuego": 0.03125,
+        "n_controlado": 30,
+        "alarmas_controlado": 11,
+        "fpr_controlado": 0.36666666666666664,
+        "propagacion_con_alerta": 0.875,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 0,
+        "antes_del_cambio": 9,
+        "ewt_mediana": -1.2300000000000004
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.1,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 8,
+        "antes_del_cambio": 5,
+        "ewt_mediana": -24.23
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.42208105015803316,
+      "f1_clase": [
+       0.5768409818569904,
+       0.24346629986244842,
+       0.4459358687546607
+      ],
+      "kappa": 0.287909052807506,
+      "exactitud": 0.43542514457057185,
+      "f1_mantenido": 0.4324964926647736,
+      "kappa_mantenido": 0.3052386323099737,
+      "segundos_vacios": 286,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 1,
+        "fpr_sin_fuego": 0.03125,
+        "n_controlado": 29,
+        "alarmas_controlado": 10,
+        "fpr_controlado": 0.3448275862068966,
+        "propagacion_con_alerta": 0.875,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 1,
+        "antes_del_cambio": 12,
+        "ewt_mediana": 26.56
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.10344827586206896,
+        "propagacion_con_alerta": 0.575,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 7,
+        "ewt_mediana": 19.930000000000007
+       }
+      }
+     }
+    }
+   },
+   "regresion logistica": {
+    "modelo": "regresion logistica",
+    "referencias": {
+     "ia": {
+      "f1": 0.5002614002158295,
+      "f1_clase": [
+       0.4758576874205845,
+       0.4230893260238633,
+       0.6018371872030409
+      ],
+      "kappa": 0.30925101322680526,
+      "exactitud": 0.5007442058260685,
+      "f1_mantenido": 0.5121966437048395,
+      "kappa_mantenido": 0.3347773553134773,
+      "segundos_vacios": 295,
+      "segundos": 4703,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 4,
+        "fpr_controlado": 0.13333333333333333,
+        "propagacion_con_alerta": 0.675,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 4,
+        "antes_del_cambio": 6,
+        "ewt_mediana": -17.17
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 30,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.5,
+        "n_propagacion": 40,
+        "n_cambio": 21,
+        "sin_alerta": 9,
+        "antes_del_cambio": 1,
+        "ewt_mediana": -56.65
+       }
+      }
+     },
+     "humano": {
+      "f1": 0.5098669806160773,
+      "f1_clase": [
+       0.5351586807716241,
+       0.4670967741935484,
+       0.5273454868830592
+      ],
+      "kappa": 0.33678177783167573,
+      "exactitud": 0.5050331976868708,
+      "f1_mantenido": 0.5204958159108756,
+      "kappa_mantenido": 0.35775049080245225,
+      "segundos_vacios": 286,
+      "segundos": 4669,
+      "alerta": {
+       "0.1": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 3,
+        "fpr_controlado": 0.10344827586206896,
+        "propagacion_con_alerta": 0.7,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 2,
+        "antes_del_cambio": 12,
+        "ewt_mediana": 17.465000000000003
+       },
+       "0.05": {
+        "n_sin_fuego": 32,
+        "alarmas_sin_fuego": 0,
+        "fpr_sin_fuego": 0.0,
+        "n_controlado": 29,
+        "alarmas_controlado": 0,
+        "fpr_controlado": 0.0,
+        "propagacion_con_alerta": 0.5,
+        "n_propagacion": 40,
+        "n_cambio": 16,
+        "sin_alerta": 5,
+        "antes_del_cambio": 2,
+        "ewt_mediana": -9.440000000000001
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

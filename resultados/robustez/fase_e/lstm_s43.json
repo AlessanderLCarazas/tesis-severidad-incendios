@@ -1,0 +1,291 @@
+{
+ "pesos": "runs_fuego/modelos_robustos/lstm_s43/mejor.pt",
+ "unidad_dt": 1.0,
+ "corrida": "lstm_s43",
+ "modelo": "lstm",
+ "antes": {
+  "f1": 0.5564461796258972,
+  "f1_clase": [
+   0.7299396031061259,
+   0.16363636363636364,
+   0.7757625721352019
+  ],
+  "exactitud": 0.6710192237939789,
+  "kappa": 0.5737830508438744,
+  "conf": [
+   [
+    846,
+    131,
+    56
+   ],
+   [
+    232,
+    63,
+    8
+   ],
+   [
+    207,
+    273,
+    941
+   ]
+  ],
+  "segundos": 2757,
+  "cambios": 5.51063829787234
+ },
+ "histeresis": {
+  "f1": 0.5495317093758881,
+  "f1_clase": [
+   0.7064544650751547,
+   0.1761297798377752,
+   0.7660108832147342
+  ],
+  "exactitud": 0.6492564381574175,
+  "kappa": 0.5523730932474246,
+  "conf": [
+   [
+    799,
+    185,
+    49
+   ],
+   [
+    223,
+    76,
+    4
+   ],
+   [
+    207,
+    299,
+    915
+   ]
+  ],
+  "segundos": 2757,
+  "cambios": 2.978723404255319
+ },
+ "alerta": {
+  "0.1": {
+   "umbral": 0.6958556175231934,
+   "videos_calibracion": 52,
+   "fpr_sin_fuego": 0.0,
+   "n_sin_fuego": 28,
+   "alarmas_sin_fuego": 0,
+   "fpr_controlado": 0.12,
+   "n_controlado": 25,
+   "alarmas_controlado": 3,
+   "deteccion_propagacion": 0.7727272727272727,
+   "n_propagacion": 22,
+   "validacion": {
+    "videos": 6,
+    "con_alerta_antes": 2,
+    "sin_alerta": 0,
+    "adelanto_mediana": -3.8649998092651368,
+    "adelanto_media": -5.775883522033691
+   },
+   "calibracion": {
+    "videos": 5,
+    "con_alerta_antes": 1,
+    "sin_alerta": 1,
+    "adelanto_mediana": -6.369998283386227,
+    "adelanto_media": 127.95500047683713
+   },
+   "ambos": {
+    "videos": 11,
+    "con_alerta_antes": 3,
+    "sin_alerta": 1,
+    "adelanto_mediana": -3.8649998092651368,
+    "adelanto_media": 47.71647007751464
+   },
+   "detalle": [
+    {
+     "archivo": "13228967_3840_2160_30fps.mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 16.05,
+     "t_alerta": 15.315299987792969,
+     "adelanto_s": 0.734700012207032
+    },
+    {
+     "archivo": "BRANDWEER - UITRUK - PRIO 1 - 2 Auto totaal uitgebrand!!.mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 6.1,
+     "t_alerta": 10.399999618530273,
+     "adelanto_s": -4.299999618530274
+    },
+    {
+     "archivo": "BRANDWEER - WAT KOMT ER ALLEMAAL BIJ KIJKEN - OPLEIDING MANSCHAP A! Dutch Firefighters.mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 16.07,
+     "t_alerta": 19.5,
+     "adelanto_s": -3.4299999999999997
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS  - MANSCHAPPEN IN OPLEIDING ERVAREN WAT HITTE IS. 74.mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 239.2,
+     "t_alerta": 244.10000610351562,
+     "adelanto_s": -4.900006103515636
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS -  VOERTUIGEN IN BRAND IN EEN PARKEERGARAGE  . 86.mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 30.27,
+     "t_alerta": 55.099998474121094,
+     "adelanto_s": -24.829998474121094
+    },
+    {
+     "archivo": "videoplayback (10).mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 157.77,
+     "t_alerta": 155.6999969482422,
+     "adelanto_s": 2.0700030517578227
+    },
+    {
+     "archivo": "Brandgefahr durch Notebook-Akkus.mp4",
+     "conjunto": "calibracion",
+     "t_incontrolado": 36.43,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "Jeder dritte Brand entsteht durch Elektrizit\u00e4t.mp4",
+     "conjunto": "calibracion",
+     "t_incontrolado": 14.43,
+     "t_alerta": 15.899999618530273,
+     "adelanto_s": -1.4699996185302737
+    },
+    {
+     "archivo": "Large dollhouse burning down.mp4",
+     "conjunto": "calibracion",
+     "t_incontrolado": 789.53,
+     "t_alerta": 247.3000030517578,
+     "adelanto_s": 542.2299969482422
+    },
+    {
+     "archivo": "VR Home Fire Demonstration - Sprinklered and Unsprinklered (room with sprinkler first).mp4",
+     "conjunto": "calibracion",
+     "t_incontrolado": 66.93,
+     "t_alerta": 84.5999984741211,
+     "adelanto_s": -17.669998474121087
+    },
+    {
+     "archivo": "videoplayback (4).mp4",
+     "conjunto": "calibracion",
+     "t_incontrolado": 105.43,
+     "t_alerta": 116.69999694824219,
+     "adelanto_s": -11.26999694824218
+    }
+   ]
+  },
+  "0.05": {
+   "umbral": 0.9785308241844177,
+   "videos_calibracion": 52,
+   "fpr_sin_fuego": 0.0,
+   "n_sin_fuego": 28,
+   "alarmas_sin_fuego": 0,
+   "fpr_controlado": 0.04,
+   "n_controlado": 25,
+   "alarmas_controlado": 1,
+   "deteccion_propagacion": 0.6363636363636364,
+   "n_propagacion": 22,
+   "validacion": {
+    "videos": 6,
+    "con_alerta_antes": 0,
+    "sin_alerta": 2,
+    "adelanto_mediana": -26.130003051757807,
+    "adelanto_media": -23.76500114440918
+   },
+   "calibracion": {
+    "videos": 5,
+    "con_alerta_antes": 1,
+    "sin_alerta": 3,
+    "adelanto_mediana": 230.3800015258789,
+    "adelanto_media": 230.3800015258789
+   },
+   "ambos": {
+    "videos": 11,
+    "con_alerta_antes": 1,
+    "sin_alerta": 5,
+    "adelanto_mediana": -19.84999847412109,
+    "adelanto_media": 60.949999745686846
+   },
+   "detalle": [
+    {
+     "archivo": "13228967_3840_2160_30fps.mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 16.05,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "BRANDWEER - UITRUK - PRIO 1 - 2 Auto totaal uitgebrand!!.mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 6.1,
+     "t_alerta": 40.599998474121094,
+     "adelanto_s": -34.49999847412109
+    },
+    {
+     "archivo": "BRANDWEER - WAT KOMT ER ALLEMAAL BIJ KIJKEN - OPLEIDING MANSCHAP A! Dutch Firefighters.mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 16.07,
+     "t_alerta": 40.0,
+     "adelanto_s": -23.93
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS  - MANSCHAPPEN IN OPLEIDING ERVAREN WAT HITTE IS. 74.mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 239.2,
+     "t_alerta": 247.5,
+     "adelanto_s": -8.300000000000011
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS -  VOERTUIGEN IN BRAND IN EEN PARKEERGARAGE  . 86.mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 30.27,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "videoplayback (10).mp4",
+     "conjunto": "validacion",
+     "t_incontrolado": 157.77,
+     "t_alerta": 186.10000610351562,
+     "adelanto_s": -28.330006103515615
+    },
+    {
+     "archivo": "Brandgefahr durch Notebook-Akkus.mp4",
+     "conjunto": "calibracion",
+     "t_incontrolado": 36.43,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "Jeder dritte Brand entsteht durch Elektrizit\u00e4t.mp4",
+     "conjunto": "calibracion",
+     "t_incontrolado": 14.43,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "Large dollhouse burning down.mp4",
+     "conjunto": "calibracion",
+     "t_incontrolado": 789.53,
+     "t_alerta": 313.0,
+     "adelanto_s": 476.53
+    },
+    {
+     "archivo": "VR Home Fire Demonstration - Sprinklered and Unsprinklered (room with sprinkler first).mp4",
+     "conjunto": "calibracion",
+     "t_incontrolado": 66.93,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "videoplayback (4).mp4",
+     "conjunto": "calibracion",
+     "t_incontrolado": 105.43,
+     "t_alerta": 121.19999694824219,
+     "adelanto_s": -15.76999694824218
+    }
+   ]
+  }
+ },
+ "segmentos_por_video": 3.0945945945945947
+}

@@ -2296,3 +2296,112 @@ Lectura:
 - La GRU y el CfC empeoran con camara movil con las dos referencias (GRU de 0.556 a 0.476 contra la IA y de 0.548 a 0.458 contra la humana). Contra la IA, la LSTM, el gradient boosting y la regresion logistica mejoran con camara movil; contra la humana empeoran todos.
 - Las falsas alarmas en controlados se duplican con camara movil (33 % de 12 contra 15 a 17 % de 18), aunque con muy pocos videos.
 - La alerta llega antes del cambio en los videos con camara movil y despues en los de camara fija. Los grupos no difieren solo en la camara. Segun la IA, los de camara movil tienen mas incontrolado (42 % de los segundos contra 33 %) y menos controlado (25 % contra 37 %; 12 videos controlados contra 18). Por eso la comparacion es descriptiva y no aisla el efecto de la camara.
+
+## Resultados del experimento de robustez: fotogramas quitados (2026-11-13)
+
+Se siguio el plan registrado antes de ver resultados (con su adenda). La configuracion congelada no se toco.
+
+### Verificacion de las corridas
+
+- `descriptores_v3.py` con `--quitar 0.25`, `0.50` y `0.75` (semilla 42), corrido por el usuario: los 102 videos de prueba en cada fraccion; 38 281, 25 547 y 12 845 fotogramas (75 %, 50 % y 25 % de los 51 105 de la corrida completa); 0.73, 0.53 y 0.32 h (1.58 h en total).
+- `python evaluar_robustez.py` (parte 1): el control con la corrida completa reproduce la fase F con diferencia 0 en F1, kappa, falsas alarmas y adelanto, con las dos referencias.
+- `python robustez_parte2.py` (parte 2): 9 modelos reentrenados sin errores (CfC 19.8 min cada uno en CPU, en paralelo; GRU y LSTM 0.9 a 1.0 min en GPU), fraccion quitada media de 0.372 por ventana, recalibrados con el mismo codigo de la fase E congelada y registrados con su SHA-256 en `resultados/robustez/modelos_robustos.json`.
+- `python analisis_robustez.py` (script nuevo): repite la inferencia de las dos partes (diferencia 0 con `parte1.json` y `parte2.json`), hace el bootstrap pareado y dibuja la figura.
+
+Descripcion de cada fraccion:
+
+| fraccion | fotogramas | cortes de escena | videos con corte | tramos cortos descartados | dt mediano (s) | dt percentil 95 (s) | segundos sin fotogramas (IA, de 4 703) |
+|---|---|---|---|---|---|---|---|
+| completa | 51 105 | 45 | 13 | 7 | 0.10 | 0.12 | 0 |
+| 25 % quitado | 38 281 | 48 | 16 | 8 | 0.10 | 0.30 | 0 |
+| 50 % quitado | 25 547 | 45 | 15 | 14 | 0.17 | 0.50 | 6 |
+| 75 % quitado | 12 845 | 48 | 18 | 22 | 0.30 | 1.10 | 295 (6.3 %) |
+
+Quitar fotogramas casi no cambia los cortes detectados (45 a 48) y descarta mas tramos cortos.
+
+### Parte 1: modelos congelados
+
+F1 macro (kappa lineal) del nivel por segundo; modelos temporales con la media de 3 semillas. Entre corchetes, la medida de la adenda (el segundo sin fotogramas toma el ultimo nivel decidido), solo donde difiere en 0.005 o mas.
+
+| referencia | modelo | 0 % | 25 % | 50 % | 75 % | caida a 75 % |
+|---|---|---|---|---|---|---|
+| IA | CfC | 0.460 (0.319) | 0.460 (0.323) | 0.462 (0.330) | 0.448 (0.288) [0.458] | -0.013 |
+| IA | GRU | 0.519 (0.371) | 0.469 (0.298) | 0.476 (0.287) | 0.409 (0.173) [0.417] | -0.110 |
+| IA | LSTM | 0.460 (0.323) | 0.465 (0.339) | 0.460 (0.338) | 0.423 (0.267) [0.434] | -0.037 |
+| IA | gradient boosting | 0.442 (0.292) | 0.462 (0.316) | 0.450 (0.308) | 0.431 (0.262) [0.444] | -0.012 |
+| IA | regresion logistica | 0.491 (0.311) | 0.501 (0.323) | 0.518 (0.354) | 0.500 (0.309) [0.512] | +0.010 |
+| humana | CfC | 0.475 (0.345) | 0.477 (0.349) | 0.470 (0.326) | 0.484 (0.315) [0.494] | +0.009 |
+| humana | GRU | 0.497 (0.352) | 0.461 (0.297) | 0.456 (0.287) | 0.419 (0.196) [0.428] | -0.078 |
+| humana | LSTM | 0.460 (0.340) | 0.465 (0.349) | 0.457 (0.336) | 0.437 (0.278) [0.447] | -0.024 |
+| humana | gradient boosting | 0.451 (0.320) | 0.466 (0.343) | 0.451 (0.329) | 0.422 (0.288) [0.432] | -0.029 |
+| humana | regresion logistica | 0.527 (0.365) | 0.528 (0.364) | 0.542 (0.392) | 0.510 (0.337) [0.520] | -0.017 |
+
+Alerta con alfa 0.10 (umbrales congelados). Falsas alarmas en los 32 videos sin fuego: 0 en todos los modelos temporales y en la regresion logistica, en todas las fracciones; gradient boosting 1 de 32 con 0 % y 75 %.
+
+| modelo | falsas alarmas en controlados, IA (de 30): 0 / 25 / 50 / 75 % | EWT mediana, IA (s) | antes del cambio, IA (de 21) | sin alerta, IA | EWT mediana, humana (s) | antes del cambio, humana (de 16) |
+|---|---|---|---|---|---|---|
+| CfC | 0.233 / 0.222 / 0.189 / 0.122 | +0.7 / -5.5 / -13.1 / -5.2 | 8.3 / 7.7 / 6.7 / 5.7 | 4.0 / 3.7 / 4.3 / 8.3 | +23.6 / +24.4 / +15.2 / +21.1 | 12.3 / 11.0 / 10.0 / 8.3 |
+| GRU | 0.222 / 0.144 / 0.144 / 0.144 | -2.7 / -14.5 / -6.3 / -3.2 | 8.3 / 6.0 / 6.3 / 5.3 | 3.3 / 5.7 / 6.3 / 10.3 | +20.5 / +11.6 / +8.1 / +15.3 | 11.3 / 7.7 / 7.3 / 7.0 |
+| LSTM | 0.233 / 0.167 / 0.156 / 0.089 | +4.4 / +0.8 / -0.6 / -3.8 | 9.0 / 8.7 / 7.7 / 6.0 | 4.7 / 4.3 / 5.0 / 8.3 | +29.7 / +26.2 / +24.3 / +20.2 | 10.7 / 11.0 / 10.0 / 9.0 |
+| gradient boosting | 0.267 / 0.300 / 0.333 / 0.367 | +3.8 / +8.6 / +2.4 / -1.2 | 12 / 13 / 12 / 9 | 1 / 1 / 0 / 0 | +26.6 / +38.9 / +38.9 / +26.6 | 13 / 13 / 13 / 12 |
+| regresion logistica | 0.100 / 0.100 / 0.133 / 0.133 | -10.5 / -13.2 / -12.4 / -17.2 | 5 / 5 / 5 / 6 | 5 / 4 / 3 / 4 | +13.2 / +15.2 / +22.1 / +17.5 | 10 / 10 / 12 / 12 |
+
+Con la referencia humana las falsas alarmas en controlados siguen el mismo patron (CfC 0.184 a 0.138, GRU 0.207 a 0.149, LSTM 0.230 a 0.103, gradient boosting 0.207 a 0.345). Tablas completas, con alfa 0.05, en `resultados/robustez/parte1.md`.
+
+### Parte 2: modelos reentrenados con fotogramas quitados
+
+Validacion de los reentrenados (fase E recalibrada, umbral 0.5 + histeresis): F1 macro CfC 0.537 +- 0.033, GRU 0.588 +- 0.046, LSTM 0.561 +- 0.014 (congelados: 0.536, 0.641 y 0.548). La GRU pierde 0.05 en validacion con el aumento (incipiente de 0.397 a 0.303). Detalle en `resultados/robustez/fase_e/resumen.md`.
+
+F1 macro (kappa lineal) en la prueba, con los umbrales conformales recalculados:
+
+| referencia | modelo | 0 % | 25 % | 50 % | 75 % | caida a 75 % |
+|---|---|---|---|---|---|---|
+| IA | CfC | 0.449 (0.326) | 0.457 (0.336) | 0.461 (0.345) | 0.466 (0.308) [0.478] | +0.017 |
+| IA | GRU | 0.508 (0.361) | 0.506 (0.349) | 0.508 (0.366) | 0.497 (0.321) [0.508] | -0.011 |
+| IA | LSTM | 0.454 (0.315) | 0.464 (0.327) | 0.476 (0.348) | 0.475 (0.317) [0.486] | +0.021 |
+| humana | CfC | 0.472 (0.361) | 0.469 (0.351) | 0.483 (0.365) | 0.478 (0.315) [0.489] | +0.007 |
+| humana | GRU | 0.504 (0.358) | 0.474 (0.300) | 0.503 (0.353) | 0.516 (0.339) [0.527] | +0.012 |
+| humana | LSTM | 0.454 (0.337) | 0.464 (0.347) | 0.480 (0.354) | 0.472 (0.315) [0.483] | +0.018 |
+
+Alerta con alfa 0.10: 0 falsas alarmas en los 32 videos sin fuego en todas las fracciones.
+
+| modelo | falsas alarmas en controlados, IA: 0 / 25 / 50 / 75 % | EWT mediana, IA (s) | antes del cambio, IA (de 21) | sin alerta, IA | EWT mediana, humana (s) | antes del cambio, humana (de 16) |
+|---|---|---|---|---|---|---|
+| CfC | 0.267 / 0.244 / 0.189 / 0.144 | +2.6 / -1.2 / -1.9 / +0.3 | 9.7 / 9.0 / 8.3 / 7.7 | 3.3 / 3.0 / 3.7 / 6.7 | +29.4 / +30.1 / +27.7 / +28.8 | 13.3 / 12.3 / 12.0 / 9.0 |
+| GRU | 0.144 / 0.111 / 0.111 / 0.089 | -2.8 / -0.5 / -3.5 / +4.3 | 9.7 / 8.7 / 8.0 / 7.7 | 3.0 / 4.0 / 4.7 / 7.0 | +30.1 / +24.2 / +21.3 / +30.8 | 10.7 / 10.7 / 9.7 / 9.0 |
+| LSTM | 0.200 / 0.156 / 0.133 / 0.156 | +8.9 / +2.1 / +0.5 / -0.6 | 9.7 / 8.7 / 7.7 / 6.0 | 5.7 / 5.3 / 6.0 / 8.3 | +36.2 / +22.8 / +22.8 / +22.3 | 11.3 / 10.7 / 9.7 / 8.7 |
+
+Tablas completas en `resultados/robustez/parte2.md`.
+
+### Pruebas pareadas (bootstrap de 1000 remuestreos de videos, semilla 42, como en la fase F)
+
+Caida relativa del F1 macro = (F1 con todos - F1 con fotogramas quitados) / F1 con todos. Diferencia = caida de la GRU o la LSTM menos caida de la CfC (positiva = la CfC cae menos).
+
+| parte | referencia | comparacion | 25 % | 50 % | 75 % |
+|---|---|---|---|---|---|
+| 1 | IA | GRU - CfC | **+9.5 pp (+0.1 a +19.1)** | +8.7 pp (-4.7 a +19.6) | **+18.5 pp (+1.7 a +32.3)** |
+| 1 | IA | LSTM - CfC | -1.1 pp (-5.8 a +3.5) | +0.6 pp (-6.2 a +6.8) | +5.2 pp (-2.9 a +13.8) |
+| 1 | humana | GRU - CfC | +7.8 pp (-1.6 a +17.0) | +7.4 pp (-6.9 a +19.0) | **+17.6 pp (+0.6 a +33.6)** |
+| 1 | humana | LSTM - CfC | -0.6 pp (-6.0 a +4.0) | -0.1 pp (-8.2 a +6.7) | +7.0 pp (-1.9 a +15.6) |
+| 2 | IA | GRU - CfC | +2.3 pp (-4.6 a +9.7) | +2.8 pp (-2.5 a +7.9) | +6.0 pp (-7.6 a +19.2) |
+| 2 | IA | LSTM - CfC | -0.4 pp (-5.0 a +4.6) | -2.3 pp (-7.4 a +2.7) | -0.9 pp (-9.5 a +7.8) |
+| 2 | humana | GRU - CfC | +5.5 pp (-1.8 a +12.7) | +2.7 pp (-3.2 a +8.3) | -0.9 pp (-10.2 a +8.4) |
+| 2 | humana | LSTM - CfC | -2.7 pp (-8.4 a +2.9) | -3.3 pp (-8.5 a +2.4) | -2.4 pp (-9.7 a +5.1) |
+
+En negrita, intervalos que no incluyen el cero. Con kappa son significativas las mismas tres de la GRU en la parte 1 (+20.6, +43.5 y +35.5 pp) y ninguna en la parte 2.
+
+Caidas con intervalo que no incluye el cero (parte 1): GRU a 75 % contra la IA (-0.110, de -0.207 a -0.012) y LSTM a 75 % contra la IA (-0.037, de -0.073 a -0.004). La CfC no tiene ninguna caida significativa con ninguna referencia ni fraccion. Algunas referencias sin tiempo mejoran de forma significativa (gradient boosting a 25 %, +0.020 contra la IA y +0.015 contra la humana; regresion logistica a 50 % contra la IA, +0.027). En la parte 2 ningun modelo cae de forma significativa.
+
+Reentrenado menos congelado (F1 macro): la GRU mejora a 75 % (+0.088 contra la IA, de +0.011 a +0.165; +0.097 contra la humana, de +0.020 a +0.172) y la LSTM a 75 % contra la IA (+0.052, de +0.012 a +0.097). Con todos los fotogramas, el reentrenamiento no cambia el F1 de forma significativa en ningun modelo (de -0.011 a +0.006). La CfC no cambia de forma significativa en ninguna fraccion.
+
+Figura: `resultados/robustez/f1_vs_quitados.png` (F1 macro contra el porcentaje de fotogramas quitados; filas: referencia de la IA y humana; columnas: parte 1 y parte 2, con los congelados en linea punteada en la parte 2). Detalle de todas las pruebas en `resultados/robustez/analisis.md` y `analisis.json`.
+
+### Lectura
+
+- **Sin reentrenar, la CfC es el modelo temporal mas estable:** su F1 macro no cambia con hasta el 75 % de los fotogramas quitados (caida relativa de -2 a +3 %, ninguna significativa). La GRU cae 21 % contra la IA y 16 % contra la humana a 75 %, y la diferencia con la CfC es significativa a 75 % con las dos referencias (y a 25 % contra la IA). Contra la LSTM, la CfC solo cae menos a 75 % (5 a 7 pp) y la diferencia no es significativa.
+- **La ventaja de la GRU se invierte con el 75 % quitado:** congelada, pasa de 0.519 (mejor que la CfC, 0.460) a 0.409 (peor que la CfC, 0.448), contra la IA.
+- **Con el aumento de datos, la GRU y la LSTM se vuelven tan estables como la CfC** (ninguna caida significativa) y la diferencia de caidas con la CfC deja de ser significativa. La GRU reentrenada mantiene el F1 mas alto de los modelos temporales en todas las fracciones (0.497 a 0.508 contra la IA), pero pierde 0.05 de F1 en validacion. La CfC no gana nada con el aumento, lo que es coherente con que ya trate el intervalo de tiempo real.
+- **La alerta se vuelve mas conservadora al quitar fotogramas** con los umbrales congelados: menos falsas alarmas en controlados (CfC de 0.23 a 0.12, LSTM de 0.23 a 0.09) pero mas videos con cambio sin alerta (de 3 a 5 de 21 hasta de 8 a 10 de 21) y menos alertas antes del cambio. El gradient boosting hace lo contrario: mas falsas alarmas en controlados (de 0.27 a 0.37). Sin fuego, ninguna falsa alarma de los modelos temporales en ninguna fraccion.
+- **La medida de la adenda** (mantener el ultimo nivel) sube el F1 a 75 % en 0.008 a 0.013 y no cambia ninguna conclusion.
+- **Hipotesis, no comprobada:** la GRU y la LSTM reciben `dt` sin normalizar como entrada extra, y con fotogramas quitados llega a valores (hasta 1 s) que no vieron al entrenar (0.1 s); la CfC lo usa como intervalo de tiempo de su ecuacion. Ademas, la columna `dt` del contexto se satura en el percentil 99 de entrenamiento (0.125 s) para todos los modelos.
+- Limitaciones: una sola semilla de quitado por fraccion, 70 y 69 videos de fuego, y los descriptores de la parte 2 se calcularon con todos los fotogramas (el aumento solo quita filas y recalcula `dt`).

@@ -1,0 +1,269 @@
+{
+ "fecha": "2026-11-13",
+ "nota": "modelos de la parte 2 de robustez (fotogramas quitados al entrenar); no reemplazan a la configuracion congelada",
+ "aumento": "en cada ventana q ~ uniforme(0, 0.75); cada fotograma salvo el primero se quita con probabilidad q; dt recalculado y columna dt del contexto renormalizada con la normalizacion congelada",
+ "calibracion": "umbral conformal recalculado con los 52 videos de calibracion sin fuego o controlados, completos",
+ "corridas": {
+  "cfc_s42": {
+   "modelo": "cfc",
+   "semilla": 42,
+   "archivo_pesos": "runs_fuego/modelos_robustos/cfc_s42/mejor.pt",
+   "sha256": "ecba88572a0dac7a2761f3cd369b2c8818cc903f8de944b53595d1429c37845e",
+   "mejor_epoca": 60,
+   "tasa": 0.001,
+   "factor_incipiente": 1.0,
+   "q_max": 0.75,
+   "fraccion_quitada_media": 0.3719692383742937,
+   "minutos": 19.7454537431399,
+   "umbral_alerta": {
+    "0.1": 0.6085411906242371,
+    "0.05": 0.9788241386413574
+   },
+   "validacion": {
+    "f1_antes": 0.5358415135770221,
+    "f1_final": 0.5161759562611066,
+    "kappa_final": 0.5093798527769962,
+    "f1_incipiente_final": 0.11621621621621622
+   },
+   "congelado": {
+    "umbral_alerta": {
+     "0.1": 0.8125312924385071,
+     "0.05": 0.9870138764381409
+    },
+    "f1_final_validacion": 0.5153370100549571
+   }
+  },
+  "cfc_s43": {
+   "modelo": "cfc",
+   "semilla": 43,
+   "archivo_pesos": "runs_fuego/modelos_robustos/cfc_s43/mejor.pt",
+   "sha256": "4f17e7d2deeaa7a4804982af4a9c728c72a1f63c49803bf1cb4d1635001b3bd7",
+   "mejor_epoca": 45,
+   "tasa": 0.001,
+   "factor_incipiente": 1.0,
+   "q_max": 0.75,
+   "fraccion_quitada_media": 0.37088620085682217,
+   "minutos": 19.782298696041106,
+   "umbral_alerta": {
+    "0.1": 0.7379007935523987,
+    "0.05": 0.9841343760490417
+   },
+   "validacion": {
+    "f1_antes": 0.5076644471648663,
+    "f1_final": 0.5103394815204276,
+    "kappa_final": 0.470778796742076,
+    "f1_incipiente_final": 0.1655773420479303
+   },
+   "congelado": {
+    "umbral_alerta": {
+     "0.1": 0.6721824407577515,
+     "0.05": 0.9812596440315247
+    },
+    "f1_final_validacion": 0.5322182526896914
+   }
+  },
+  "cfc_s44": {
+   "modelo": "cfc",
+   "semilla": 44,
+   "archivo_pesos": "runs_fuego/modelos_robustos/cfc_s44/mejor.pt",
+   "sha256": "3c15a4d293964610519ec16b9915c01ec79edd07a8467a664aa26e4c5724341a",
+   "mejor_epoca": 14,
+   "tasa": 0.001,
+   "factor_incipiente": 1.0,
+   "q_max": 0.75,
+   "fraccion_quitada_media": 0.3719981406834618,
+   "minutos": 19.77044221162796,
+   "umbral_alerta": {
+    "0.1": 0.786305844783783,
+    "0.05": 0.8847231864929199
+   },
+   "validacion": {
+    "f1_antes": 0.6012182138346952,
+    "f1_final": 0.5838782452234527,
+    "kappa_final": 0.6875030218029325,
+    "f1_incipiente_final": 0.10642201834862386
+   },
+   "congelado": {
+    "umbral_alerta": {
+     "0.1": 0.6839209198951721,
+     "0.05": 0.7681381106376648
+    },
+    "f1_final_validacion": 0.561407157178386
+   }
+  },
+  "gru_s42": {
+   "modelo": "gru",
+   "semilla": 42,
+   "archivo_pesos": "runs_fuego/modelos_robustos/gru_s42/mejor.pt",
+   "sha256": "3c1c1e3e73f6fdff3443b62a01784ce16f0667e7383f73e60f273359b89f1a7b",
+   "mejor_epoca": 56,
+   "tasa": 0.003,
+   "factor_incipiente": 2.0,
+   "q_max": 0.75,
+   "fraccion_quitada_media": 0.3719692383742937,
+   "minutos": 0.8539153536160787,
+   "umbral_alerta": {
+    "0.1": 0.5462030172348022,
+    "0.05": 0.9891052842140198
+   },
+   "validacion": {
+    "f1_antes": 0.5937128709063914,
+    "f1_final": 0.5633283800596925,
+    "kappa_final": 0.5487811776594547,
+    "f1_incipiente_final": 0.2576985413290113
+   },
+   "congelado": {
+    "umbral_alerta": {
+     "0.1": 0.6761824488639832,
+     "0.05": 0.9988958835601807
+    },
+    "f1_final_validacion": 0.6411246946759295
+   }
+  },
+  "gru_s43": {
+   "modelo": "gru",
+   "semilla": 43,
+   "archivo_pesos": "runs_fuego/modelos_robustos/gru_s43/mejor.pt",
+   "sha256": "75ce06967790849e7b04bdb3c458fe5834592d0260b94f9476ce2b8ecc7f62ca",
+   "mejor_epoca": 55,
+   "tasa": 0.003,
+   "factor_incipiente": 2.0,
+   "q_max": 0.75,
+   "fraccion_quitada_media": 0.37088620085682217,
+   "minutos": 0.9210830171902974,
+   "umbral_alerta": {
+    "0.1": 0.7166265249252319,
+    "0.05": 0.9753961563110352
+   },
+   "validacion": {
+    "f1_antes": 0.6468846234544487,
+    "f1_final": 0.6529875545182423,
+    "kappa_final": 0.6647449629909998,
+    "f1_incipiente_final": 0.3644524236983842
+   },
+   "congelado": {
+    "umbral_alerta": {
+     "0.1": 0.9269532561302185,
+     "0.05": 0.9965761303901672
+    },
+    "f1_final_validacion": 0.6299382486676716
+   }
+  },
+  "gru_s44": {
+   "modelo": "gru",
+   "semilla": 44,
+   "archivo_pesos": "runs_fuego/modelos_robustos/gru_s44/mejor.pt",
+   "sha256": "78d88a140c5ef90f4f48d5a0144d38fbcbf1073b36258c66f2075bbc3f5ea478",
+   "mejor_epoca": 51,
+   "tasa": 0.003,
+   "factor_incipiente": 2.0,
+   "q_max": 0.75,
+   "fraccion_quitada_media": 0.3719981406834618,
+   "minutos": 0.9217171947161357,
+   "umbral_alerta": {
+    "0.1": 0.6029866337776184,
+    "0.05": 0.7311715483665466
+   },
+   "validacion": {
+    "f1_antes": 0.5556586943369523,
+    "f1_final": 0.5485566970798332,
+    "kappa_final": 0.5126648689510442,
+    "f1_incipiente_final": 0.28634039444850257
+   },
+   "congelado": {
+    "umbral_alerta": {
+     "0.1": 0.7003180384635925,
+     "0.05": 0.998225748538971
+    },
+    "f1_final_validacion": 0.65259579837995
+   }
+  },
+  "lstm_s42": {
+   "modelo": "lstm",
+   "semilla": 42,
+   "archivo_pesos": "runs_fuego/modelos_robustos/lstm_s42/mejor.pt",
+   "sha256": "f8205a7cc5be6a0157156f57028df38b07c51d74584a99fe3e2cc1ca02640a87",
+   "mejor_epoca": 49,
+   "tasa": 0.001,
+   "factor_incipiente": 1.0,
+   "q_max": 0.75,
+   "fraccion_quitada_media": 0.3719692383742937,
+   "minutos": 0.9554393966992696,
+   "umbral_alerta": {
+    "0.1": 0.7020515203475952,
+    "0.05": 0.9872029423713684
+   },
+   "validacion": {
+    "f1_antes": 0.5544606018807855,
+    "f1_final": 0.5532057621099484,
+    "kappa_final": 0.5497868640383432,
+    "f1_incipiente_final": 0.18854415274463007
+   },
+   "congelado": {
+    "umbral_alerta": {
+     "0.1": 0.564163863658905,
+     "0.05": 0.966112494468689
+    },
+    "f1_final_validacion": 0.48734642410518897
+   }
+  },
+  "lstm_s43": {
+   "modelo": "lstm",
+   "semilla": 43,
+   "archivo_pesos": "runs_fuego/modelos_robustos/lstm_s43/mejor.pt",
+   "sha256": "051a4827e9e67bb967c8bda159beea6c043b068f7b227e2be31b6cfd5371084a",
+   "mejor_epoca": 60,
+   "tasa": 0.001,
+   "factor_incipiente": 1.0,
+   "q_max": 0.75,
+   "fraccion_quitada_media": 0.37088620085682217,
+   "minutos": 0.9512068788210551,
+   "umbral_alerta": {
+    "0.1": 0.6958556175231934,
+    "0.05": 0.9785308241844177
+   },
+   "validacion": {
+    "f1_antes": 0.5564461796258972,
+    "f1_final": 0.5495317093758881,
+    "kappa_final": 0.5523730932474246,
+    "f1_incipiente_final": 0.1761297798377752
+   },
+   "congelado": {
+    "umbral_alerta": {
+     "0.1": 0.6204381585121155,
+     "0.05": 0.984614908695221
+    },
+    "f1_final_validacion": 0.5513143237938153
+   }
+  },
+  "lstm_s44": {
+   "modelo": "lstm",
+   "semilla": 44,
+   "archivo_pesos": "runs_fuego/modelos_robustos/lstm_s44/mejor.pt",
+   "sha256": "d3f0b13b127d58882d58e6e40f2b6fdf7584d4f9b57b69bce1bdbbe6fb4645ca",
+   "mejor_epoca": 55,
+   "tasa": 0.001,
+   "factor_incipiente": 1.0,
+   "q_max": 0.75,
+   "fraccion_quitada_media": 0.3719981406834618,
+   "minutos": 0.9443727691968282,
+   "umbral_alerta": {
+    "0.1": 0.7073801159858704,
+    "0.05": 0.9771100282669067
+   },
+   "validacion": {
+    "f1_antes": 0.5965679007321624,
+    "f1_final": 0.5812793832187588,
+    "kappa_final": 0.6498406176536564,
+    "f1_incipiente_final": 0.14745308310991956
+   },
+   "congelado": {
+    "umbral_alerta": {
+     "0.1": 0.6135221123695374,
+     "0.05": 0.9825692176818848
+    },
+    "f1_final_validacion": 0.6055478901120362
+   }
+  }
+ }
+}
