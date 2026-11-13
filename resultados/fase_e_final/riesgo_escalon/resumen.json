@@ -1,0 +1,42 @@
+{
+ "alerta": {
+  "gru|0.1": {
+   "umbral": 0.7678179144859314,
+   "fpr_sin_fuego": 0.0,
+   "fpr_controlado": 0.1466666666666667,
+   "deteccion_propagacion": 0.8333333333333334,
+   "adelanto_validacion": -2.7433327929178897,
+   "antes_validacion": 1.6666666666666667,
+   "adelanto_ambos": -2.226665585835777,
+   "antes_ambos": 4.0,
+   "sin_alerta_ambos": 1.6666666666666667
+  },
+  "gru|0.05": {
+   "umbral": 0.9978992541631063,
+   "fpr_sin_fuego": 0.0,
+   "fpr_controlado": 0.02666666666666667,
+   "deteccion_propagacion": 0.606060606060606,
+   "adelanto_validacion": -32.048334223429364,
+   "antes_validacion": 0.0,
+   "adelanto_ambos": -32.048334223429364,
+   "antes_ambos": 1.0,
+   "sin_alerta_ambos": 6.0
+  }
+ },
+ "nivel": {
+  "gru": {
+   "antes": {
+    "f1": 0.6604269645422568,
+    "exactitud": 0.7141820819731594,
+    "kappa": 0.6412690827291829,
+    "cambios": 2.5248226950354606
+   },
+   "histeresis": {
+    "f1": 0.641219580574517,
+    "exactitud": 0.6902430177729416,
+    "kappa": 0.6151317414399026,
+    "cambios": 1.8865248226950353
+   }
+  }
+ }
+}

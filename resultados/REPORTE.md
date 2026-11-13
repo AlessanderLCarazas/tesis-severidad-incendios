@@ -1807,3 +1807,96 @@ python entrenar_variantes.py --variante softmax --semilla 42
 - `resultados/fase_e/`: `resumen.md`, un `.json` por corrida y `segmentos/`.
 - `resultados/variantes_gru/`: `resumen.md` y un `.json` por corrida.
 - No versionados: `runs_fuego/descriptores_v3/`, `runs_fuego/escena_v2/`, `runs_fuego/modelos_escena_v2/`.
+
+## Configuracion final congelada antes de la prueba (2026-11-13)
+
+Todo en validacion y calibracion; la prueba no se uso. Scripts nuevos: `entrenar_final.py` (entrenamiento con `--factor_incipiente` y `--riesgo escalon|anticipado`), `fase_e_final.py` (fase E final, con el adelanto tambien en calibracion) y `configuracion_final.py` (etapas `tasas`, `riesgo`, `final` y `congelar`). No se modifico ningun script anterior.
+
+Comandos:
+
+```
+python configuracion_final.py --etapa tasas
+python configuracion_final.py --etapa riesgo
+python fase_e_final.py --pesos runs_fuego/modelos_final/riesgo/escalon --salida resultados/fase_e_final/riesgo_escalon --sin_referencias
+python fase_e_final.py --pesos runs_fuego/modelos_final/riesgo/anticipado --salida resultados/fase_e_final/riesgo_anticipado --sin_referencias
+python configuracion_final.py --etapa final --riesgo escalon
+python fase_e_final.py --guardar_referencias runs_fuego/modelos_final/referencias
+python configuracion_final.py --etapa congelar --riesgo escalon
+```
+
+### 1. Peso del incipiente
+
+Doble peso al incipiente en los tres modelos: pesos de la perdida de nivel 0.541 / 5.759 / 1.246 (controlado / incipiente / incontrolado); el factor 2 se aplica despues del tope de 5. La GRU con tasa 1e-3 y semilla 42 reproduce exactamente la variante b de `entrenar_variantes.py` (F1 suavizado 0.6542, epoca 41).
+
+### 2. Tasa (semilla 42, 60 epocas, peso doble, riesgo en escalon)
+
+| modelo | F1 suavizado con 1e-3 | con 3e-3 | elegida | F1 incipiente (1e-3 / 3e-3) | kappa (1e-3 / 3e-3) | minutos por corrida |
+|---|---|---|---|---|---|---|
+| CfC (CPU) | 0.4786 | 0.4875 | 3e-3 | 0.226 / 0.293 | 0.417 / 0.430 | 17.3 en la busqueda, 14.4 en las semillas 43 y 44 |
+| GRU | 0.6542 | 0.6596 | 3e-3 | 0.392 / 0.436 | 0.658 / 0.618 | 1.1 |
+| LSTM | 0.5373 | 0.5593 | 3e-3 | 0.255 / 0.336 | 0.494 / 0.452 | 1.1 |
+
+Los tres eligen 3e-3, otra vez el valor mas alto probado. Las diferencias son pequenas (0.005 a 0.022 de F1 suavizado, con una sola semilla) y en la GRU y la LSTM el kappa baja con 3e-3.
+
+### 3. Riesgo anticipado (solo GRU, 3 semillas, tasa 3e-3)
+
+Meta anticipada: en los videos que llegan a incontrolado (`tau_mascara = 1`), antes del cambio el riesgo es `max(escalon, 1 - tau / 60)` recortado a [0, 1]. Alerta con alfa 0.10; 6 videos con cambio en validacion y 5 en calibracion.
+
+| meta de riesgo | umbral | falsas alarmas sin fuego | falsas alarmas en controlados | propagacion con alerta | adelanto mediano en validacion (s) | antes del cambio en validacion | adelanto mediano en validacion + calibracion (s) | antes del cambio en validacion + calibracion |
+|---|---|---|---|---|---|---|---|---|
+| escalon | 0.768 +- 0.113 | 0.000 | 0.147 +- 0.050 | 0.833 | -2.7 +- 2.1 | 1.7 de 6 | -2.2 +- 2.5 | 4.0 de 11 |
+| anticipado | 0.890 +- 0.082 | 0.000 | 0.093 +- 0.019 | 0.788 | -5.2 +- 4.2 | 1.0 de 6 | -4.2 +- 3.4 | 2.7 de 11 |
+
+**Decision (regla fijada antes de mirar): el riesgo anticipado no adelanta la alerta, asi que se queda el escalon.** Con la meta anticipada el umbral conformal sube (0.77 a 0.89), bajan las falsas alarmas en controlados y la alerta llega mas tarde. Efecto lateral no buscado: el nivel de la GRU mejora con la meta anticipada (F1 macro con histeresis 0.665 +- 0.003 contra 0.641 +- 0.009; kappa 0.657 contra 0.615); no se adopta porque el criterio acordado era la alerta. Detalle en `resultados/fase_e_final/riesgo_escalon/` y `riesgo_anticipado/`.
+
+### 4. Fase E final en validacion (umbral 0.5, histeresis de 2 s, alerta con alfa 0.10)
+
+3 semillas (42, 43, 44) por modelo temporal. La etiqueta tiene 0.13 cambios de nivel por video.
+
+| modelo | etapa | F1 macro | F1 controlado | F1 incipiente | F1 incontrolado | exactitud | kappa lineal | cambios por video |
+|---|---|---|---|---|---|---|---|---|
+| CfC | antes | 0.497 +- 0.024 | 0.467 | 0.299 | 0.726 | 0.526 | 0.436 | 5.11 |
+| CfC | final | 0.485 +- 0.034 | 0.432 | 0.296 | 0.725 | 0.513 | 0.426 | 2.27 |
+| GRU | antes | 0.660 +- 0.008 | 0.760 | 0.416 | 0.805 | 0.714 | 0.641 | 2.52 |
+| GRU | final | 0.641 +- 0.009 | 0.738 | 0.397 | 0.789 | 0.690 | 0.615 | 1.89 |
+| LSTM | antes | 0.552 +- 0.011 | 0.551 | 0.313 | 0.791 | 0.607 | 0.498 | 3.87 |
+| LSTM | final | 0.536 +- 0.014 | 0.528 | 0.302 | 0.777 | 0.587 | 0.478 | 2.23 |
+| gradient boosting | antes | 0.622 | 0.623 | 0.444 | 0.799 | 0.679 | 0.519 | 12.81 |
+| gradient boosting | final | 0.653 | 0.664 | 0.449 | 0.847 | 0.720 | 0.598 | 2.30 |
+| regresion logistica | antes | 0.482 | 0.468 | 0.285 | 0.691 | 0.514 | 0.357 | 12.28 |
+| regresion logistica | final | 0.479 | 0.488 | 0.268 | 0.681 | 0.509 | 0.371 | 3.13 |
+
+Alerta (28 videos sin fuego, 25 controlados y 22 con propagacion en validacion; 6 + 5 videos con cambio a incontrolado):
+
+| modelo | alfa | umbral | falsas alarmas sin fuego | falsas alarmas en controlados | propagacion con alerta | adelanto mediano en validacion (s) | antes del cambio en validacion | adelanto mediano en validacion + calibracion (s) | antes del cambio en validacion + calibracion | sin alerta |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CfC | 0.10 (final) | 0.777 | 0.000 | 0.133 | 0.818 | -6.7 +- 4.1 | 2.0 de 6 | -3.2 +- 5.2 | 4.3 de 11 | 0.7 |
+| GRU | 0.10 (final) | 0.768 | 0.000 | 0.147 | 0.833 | -2.7 +- 2.1 | 1.7 de 6 | -2.2 +- 2.5 | 4.0 de 11 | 1.7 |
+| LSTM | 0.10 (final) | 0.907 | 0.000 | 0.093 | 0.758 | -11.7 +- 6.0 | 0.3 de 6 | -9.0 +- 6.2 | 2.3 de 11 | 1.0 |
+| gradient boosting | 0.10 (final) | 0.869 | 0.071 | 0.360 | 0.864 | 0.4 | 3 de 6 | 1.3 | 6 de 11 | 0 |
+| regresion logistica | 0.10 (final) | 0.832 | 0.000 | 0.080 | 0.682 | -9.7 | 1 de 6 | -10.4 | 2 de 11 | 3 |
+| CfC | 0.05 | 0.973 | 0.000 | 0.080 | 0.621 | -14.6 | 0.3 de 6 | -13.4 | 1.3 de 11 | 4.0 |
+| GRU | 0.05 | 0.998 | 0.000 | 0.027 | 0.606 | -32.0 | 0 de 6 | -32.0 | 1.0 de 11 | 6.0 |
+| LSTM | 0.05 | 0.993 | 0.000 | 0.053 | 0.606 | -21.3 | 0 de 6 | -18.8 | 1.7 de 11 | 3.3 |
+
+Comparacion con la configuracion anterior (peso simple, tasa 1e-3; valores finales con histeresis):
+
+| modelo | F1 macro antes -> ahora | F1 incipiente | kappa |
+|---|---|---|---|
+| CfC | 0.536 -> 0.485 | 0.169 -> 0.296 | 0.529 -> 0.426 |
+| GRU | 0.612 -> 0.641 | 0.209 -> 0.397 | 0.679 -> 0.615 |
+| LSTM | 0.548 -> 0.536 | 0.156 -> 0.302 | 0.563 -> 0.478 |
+
+Lectura:
+- El incipiente sube en los tres modelos (de 0.16-0.21 a 0.30-0.40), que era el objetivo.
+- Solo la GRU mejora en F1 macro; el CfC y la LSTM bajan en F1 macro, y el kappa baja en los tres (se pierde en controlado).
+- El CfC queda casi empatado con la regresion logistica en F1 macro (0.485 contra 0.479 con histeresis) y lejos de la GRU.
+- El gradient boosting con histeresis sigue con el mejor F1 macro (0.653 contra 0.641 de la GRU), pero con 36 % de falsas alarmas en controlados y 7 % en videos sin fuego.
+- La alerta sigue sin adelantar el cambio a incontrolado: el adelanto mediano es negativo en los tres modelos temporales tambien con los 11 videos; con la GRU la alerta llega antes del cambio en 4 de 11.
+- Las falsas alarmas en controlados (9 a 15 %) quedan cerca del 10 % nominal; ninguna en videos sin fuego.
+
+### 5. Configuracion congelada
+
+`resultados/configuracion_final.json`: tasas (3e-3 en los tres), pesos de nivel, meta de riesgo (escalon), umbrales de CORAL 0.5, histeresis 2 s, alfa 0.10 (y 0.05 como secundario), umbral conformal de cada corrida, factor de desactivacion 0.8, semillas 42/43/44, hiperparametros, y la ruta y el SHA-256 de cada archivo de pesos (9 modelos en `runs_fuego/modelos_final/final/` y las 2 referencias en `runs_fuego/modelos_final/referencias/`). Despues de esto no se cambia nada antes de la prueba.
+
+Archivos generados: `resultados/modelos_final/` (`tasas.json`, `tasas/`, `riesgo/`, `final/`), `resultados/fase_e_final/` (`resumen.md`, `resumen.json`, un `.json` por corrida, `segmentos/`, `riesgo_escalon/`, `riesgo_anticipado/`), `resultados/configuracion_final.json`. Los pesos van en `runs_fuego/modelos_final/` (no se versiona).
