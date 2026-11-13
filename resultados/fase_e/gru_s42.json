@@ -1,0 +1,234 @@
+{
+ "corrida": "gru_s42",
+ "modelo": "gru",
+ "antes": {
+  "f1": 0.6296764680223519,
+  "f1_clase": [
+   0.768804799261652,
+   0.2736842105263158,
+   0.8465403942790878
+  ],
+  "exactitud": 0.7370330068915488,
+  "kappa": 0.667686957679578,
+  "conf": [
+   [
+    833,
+    143,
+    57
+   ],
+   [
+    185,
+    104,
+    14
+   ],
+   [
+    116,
+    210,
+    1095
+   ]
+  ],
+  "segundos": 2757,
+  "cambios": 3.0425531914893615
+ },
+ "histeresis": {
+  "f1": 0.6145901591218669,
+  "f1_clase": [
+   0.7492904446546831,
+   0.2620689655172414,
+   0.8324110671936759
+  ],
+  "exactitud": 0.7105549510337323,
+  "kappa": 0.6454513543650477,
+  "conf": [
+   [
+    792,
+    188,
+    53
+   ],
+   [
+    186,
+    114,
+    3
+   ],
+   [
+    103,
+    265,
+    1053
+   ]
+  ],
+  "segundos": 2757,
+  "cambios": 2.276595744680851
+ },
+ "alerta": {
+  "0.1": {
+   "umbral": 0.5982957482337952,
+   "videos_calibracion": 52,
+   "fpr_sin_fuego": 0.0,
+   "n_sin_fuego": 28,
+   "alarmas_sin_fuego": 0,
+   "fpr_controlado": 0.16,
+   "n_controlado": 25,
+   "deteccion_propagacion": 0.9090909090909091,
+   "n_propagacion": 22,
+   "con_alerta_antes": 3,
+   "sin_alerta": 0,
+   "adelanto_mediana": -0.20000300407410254,
+   "adelanto_media": -7.092333561579387,
+   "detalle": [
+    {
+     "archivo": "13228967_3840_2160_30fps.mp4",
+     "t_incontrolado": 16.05,
+     "t_alerta": 14.013999938964844,
+     "adelanto_s": 2.036000061035157
+    },
+    {
+     "archivo": "BRANDWEER - UITRUK - PRIO 1 - 2 Auto totaal uitgebrand!!.mp4",
+     "t_incontrolado": 6.1,
+     "t_alerta": 5.099999904632568,
+     "adelanto_s": 1.0000000953674313
+    },
+    {
+     "archivo": "BRANDWEER - WAT KOMT ER ALLEMAAL BIJ KIJKEN - OPLEIDING MANSCHAP A! Dutch Firefighters.mp4",
+     "t_incontrolado": 16.07,
+     "t_alerta": 38.0,
+     "adelanto_s": -21.93
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS  - MANSCHAPPEN IN OPLEIDING ERVAREN WAT HITTE IS. 74.mp4",
+     "t_incontrolado": 239.2,
+     "t_alerta": 240.60000610351562,
+     "adelanto_s": -1.4000061035156364
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS -  VOERTUIGEN IN BRAND IN EEN PARKEERGARAGE  . 86.mp4",
+     "t_incontrolado": 30.27,
+     "t_alerta": 53.900001525878906,
+     "adelanto_s": -23.630001525878907
+    },
+    {
+     "archivo": "videoplayback (10).mp4",
+     "t_incontrolado": 157.77,
+     "t_alerta": 156.39999389648438,
+     "adelanto_s": 1.3700061035156352
+    }
+   ]
+  },
+  "0.05": {
+   "umbral": 0.989740252494812,
+   "videos_calibracion": 52,
+   "fpr_sin_fuego": 0.0,
+   "n_sin_fuego": 28,
+   "alarmas_sin_fuego": 0,
+   "fpr_controlado": 0.04,
+   "n_controlado": 25,
+   "deteccion_propagacion": 0.5909090909090909,
+   "n_propagacion": 22,
+   "con_alerta_antes": 0,
+   "sin_alerta": 3,
+   "adelanto_mediana": -13.600000762939453,
+   "adelanto_media": -14.91000228881836,
+   "detalle": [
+    {
+     "archivo": "13228967_3840_2160_30fps.mp4",
+     "t_incontrolado": 16.05,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "BRANDWEER - UITRUK - PRIO 1 - 2 Auto totaal uitgebrand!!.mp4",
+     "t_incontrolado": 6.1,
+     "t_alerta": 19.700000762939453,
+     "adelanto_s": -13.600000762939453
+    },
+    {
+     "archivo": "BRANDWEER - WAT KOMT ER ALLEMAAL BIJ KIJKEN - OPLEIDING MANSCHAP A! Dutch Firefighters.mp4",
+     "t_incontrolado": 16.07,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS  - MANSCHAPPEN IN OPLEIDING ERVAREN WAT HITTE IS. 74.mp4",
+     "t_incontrolado": 239.2,
+     "t_alerta": 244.60000610351562,
+     "adelanto_s": -5.400006103515636
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS -  VOERTUIGEN IN BRAND IN EEN PARKEERGARAGE  . 86.mp4",
+     "t_incontrolado": 30.27,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "videoplayback (10).mp4",
+     "t_incontrolado": 157.77,
+     "t_alerta": 183.5,
+     "adelanto_s": -25.72999999999999
+    }
+   ]
+  }
+ },
+ "umbrales": [
+  0.4,
+  0.85
+ ],
+ "f1_calibracion": 0.5600405066252164,
+ "umbrales_solo": {
+  "f1": 0.6360852550551819,
+  "f1_clase": [
+   0.803921568627451,
+   0.3652037617554859,
+   0.7391304347826086
+  ],
+  "exactitud": 0.6753717809212912,
+  "kappa": 0.6307076865713054,
+  "conf": [
+   [
+    779,
+    225,
+    29
+   ],
+   [
+    70,
+    233,
+    0
+   ],
+   [
+    56,
+    515,
+    850
+   ]
+  ],
+  "segundos": 2757,
+  "cambios": 2.723404255319149
+ },
+ "despues": {
+  "f1": 0.6204906796576827,
+  "f1_clase": [
+   0.7917981072555205,
+   0.3476968796433878,
+   0.7219770520741394
+  ],
+  "exactitud": 0.6546971345665579,
+  "kappa": 0.6122082186552518,
+  "conf": [
+   [
+    753,
+    253,
+    27
+   ],
+   [
+    69,
+    234,
+    0
+   ],
+   [
+    47,
+    556,
+    818
+   ]
+  ],
+  "segundos": 2757,
+  "cambios": 1.574468085106383
+ },
+ "segmentos_por_video": 2.9054054054054053
+}

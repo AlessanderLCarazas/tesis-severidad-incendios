@@ -13,7 +13,7 @@ CAMPOS_VIDEOS = ["conjunto", "archivo", "clase", "tipo", "fotogramas", "tramos",
                  "s_controlado", "s_incipiente", "s_incontrolado"]
 
 
-def vectores_carpeta(carpeta, videos=None, edad_min=1.0, min_larga=10):
+def vectores_carpeta(carpeta, videos=None, edad_min=1.0, min_larga=10, sufijo=""):
     fot = pd.read_csv(os.path.join(carpeta, "fotogramas.csv"), dtype={"archivo": str}, keep_default_na=False, na_values=[])
     des = pd.read_csv(os.path.join(carpeta, "descriptores.csv"), dtype={"archivo": str}, keep_default_na=False, na_values=[])
     if videos is not None:
@@ -28,6 +28,8 @@ def vectores_carpeta(carpeta, videos=None, edad_min=1.0, min_larga=10):
         if larga:
             largas[v].add(int(k))
     salida = {}
+    if sufijo:
+        fot = fot.drop(columns=DETECCIONES).rename(columns={c + sufijo: c for c in DETECCIONES})
     columnas = ["k", "t", "dt", "tramo"] + CAMARA + DETECCIONES
     for v, sub in fot.groupby("archivo", sort=False):
         sub = sub.sort_values("k")
@@ -45,6 +47,7 @@ def main():
     p.add_argument("--particion", default=os.path.join("resultados", "particion", "particion.csv"))
     p.add_argument("--metas", default=os.path.join("resultados", "particion", "metas.csv"))
     p.add_argument("--fuente", default="ia")
+    p.add_argument("--detecciones", choices=["alta", "seguimiento"], default="alta")
     p.add_argument("--edad_min", type=float, default=1.0)
     p.add_argument("--min_larga", type=int, default=10)
     p.add_argument("--min_fotogramas", type=int, default=10)
@@ -67,7 +70,7 @@ def main():
     for r in leer_csv(os.path.join(a.entrada, "cortes.csv")):
         inicios[r["archivo"]].append(float(r["t_corte"]))
     print("calculando el vector de escena...", flush=True)
-    vectores = vectores_carpeta(a.entrada, set(particion), a.edad_min, a.min_larga)
+    vectores = vectores_carpeta(a.entrada, set(particion), a.edad_min, a.min_larga, "_alta" if a.detecciones == "alta" else "")
     faltan = sorted(v for v in particion if v not in vectores)
     if faltan:
         raise SystemExit(f"faltan {len(faltan)} videos de la particion en {a.entrada}; termina la corrida de descriptores_v3.py")
@@ -135,6 +138,8 @@ def main():
     lineas = ["# Vector de escena por fotograma, version 2 (datos del propio pipeline)", ""]
     lineas.append(f"- Generado por `python escena_v2.py` desde `{a.entrada.replace(os.sep, '/')}`. El vector lo calcula"
                   " `vector_escena.VectorEscena`, la misma clase que usa el sistema en vivo.")
+    lineas.append("- Detecciones del fotograma: las del propio pipeline, "
+                  + ("filtradas a confianza 0.25." if a.detecciones == "alta" else "a la confianza del seguimiento (0.1)."))
     lineas.append(f"- Normalizacion ajustada solo con entrenamiento: {norm_x.n_filas} fotogramas de {len(norm_x.videos)} videos.")
     lineas.append(f"- Tramos de menos de {a.min_fotogramas} fotogramas descartados: {cortas}.")
     lineas.append("")

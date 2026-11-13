@@ -1674,3 +1674,136 @@ python descriptores_v3.py
 - `descriptores_v3.py`, `vector_escena.py`, `escena_v2.py`, `probar_vector_escena.py` (nuevos).
 - `resultados/vector_escena/videos_prueba.csv` y `comparacion.md`.
 - `runs_fuego/descriptores_v3_prueba/` (los 5 videos, no versionado).
+
+## Vector de escena v2, reentrenamiento y fase E en validacion (2026-11-13)
+
+Fecha: 2026-11-13. Rama: `avance-80`. Scripts nuevos: `reentrenar_escena.py`, `fase_e.py`, `entrenar_variantes.py`. Modificado: `escena_v2.py` (opcion `--detecciones`). **La prueba no se uso.** No se sobrescribio nada anterior (`runs_fuego/escena/`, `resultados/modelos_escena/` y el modelo por trayectoria siguen como estaban).
+
+### Corrida completa de `descriptores_v3.py` y `escena_v2.py`
+
+- La corrida la lanzo el usuario: 603 videos en 6.22 h, salida en `runs_fuego/descriptores_v3/`. Los conteos por video (fotogramas, trayectorias, filas) y los 241 cortes son iguales a los de la corrida de la noche.
+- `python escena_v2.py` usa las detecciones del propio pipeline filtradas a confianza 0.25 (`--detecciones alta`, decision del usuario; `seguimiento` usa las de 0.1).
+- **Comparacion con `resultados/escena/`:** mismos videos y mismas secuencias en los cuatro conjuntos. Validacion y calibracion son identicas en fotogramas, metas y fotogramas sin trayectoria. En entrenamiento y prueba hay 1 fotograma mas en cada uno (189 292 y 51 076): son 4 fotogramas de 3 clips sin fuego con cortes (`1898933216_clip_001`, `2568999255_clip_001`, `1694496253_clip_002`) que la version anterior asignaba al tramo equivocado por interpolar la marca de tiempo. La version nueva usa el tramo real.
+
+### Reentrenamiento (`python reentrenar_escena.py`)
+
+- 60 epocas completas (sin parada temprana), mejor epoca por F1 de escena suavizado. Resto igual que antes: dropout 0.2, weight decay 1e-3, descenso coseno, muestreo por video, pesos por clase.
+- **Tasa de aprendizaje:** se probo 1e-4, 3e-4 y 1e-3 con la semilla 42 y se eligio por el F1 suavizado de validacion. La rejilla la eligio Claude. Las semillas 43 y 44 se entrenaron con la tasa elegida. El CfC en CPU (3 corridas en paralelo, 4 hilos cada una).
+
+| Modelo | F1 suavizado con 1e-4 | con 3e-4 | con 1e-3 | Tasa elegida | Minutos por corrida |
+|---|---|---|---|---|---|
+| CfC | 0.482 | 0.524 | 0.529 | 1e-3 | 29.7 (busqueda), 19.6 (semillas 43 y 44) |
+| GRU | 0.487 | 0.515 | 0.629 | 1e-3 | 1.3 a 1.9 |
+| LSTM | 0.501 | 0.519 | 0.545 | 1e-3 | 1.3 a 2.0 |
+
+- **Los tres eligen la tasa mas alta de la rejilla**, asi que el optimo puede estar por encima de 1e-3; no se probo.
+- Tiempo total: 49.6 min (29.9 min la busqueda de tasa).
+
+Validacion antes de la fase E (2 757 s de escena, media +- desviacion de 3 semillas):
+
+| Estimador | F1 macro | F1 controlado | F1 incipiente | F1 incontrolado | Exactitud | Kappa lineal | MAE tau (s) | Cambios por video |
+|---|---|---|---|---|---|---|---|---|
+| CfC | 0.544 +- 0.015 | 0.711 | 0.170 | 0.751 | 0.644 +- 0.014 | 0.543 +- 0.040 | 37.5 | 5.3 |
+| GRU | 0.621 +- 0.008 | 0.788 | 0.208 | 0.866 | 0.753 +- 0.012 | 0.698 +- 0.022 | 27.9 | 3.4 |
+| LSTM | 0.552 +- 0.048 | 0.738 | 0.137 | 0.782 | 0.685 +- 0.042 | 0.583 +- 0.074 | 31.3 | 4.8 |
+| gradient boosting (sin tiempo) | 0.622 | 0.623 | 0.444 | 0.799 | 0.679 | 0.519 | - | 12.8 |
+| regresion logistica (sin tiempo) | 0.482 | 0.468 | 0.285 | 0.691 | 0.514 | 0.357 | - | 12.3 |
+
+- En los segundos sin trayectoria de 1 s o mas, el GRU sube de kappa 0.326 a 0.563.
+- Detalle por corrida, matrices de confusion y curvas: `resultados/modelos_escena_v2/final/comparacion.md` y `curvas.png`.
+
+### Fase E (`python fase_e.py`)
+
+- **Configuracion final (decision del usuario): umbrales de CORAL en 0.5 con histeresis de 2 s, y alerta con alfa 0.10.** Los umbrales ajustados en calibracion se reportan solo como comparacion: empeoran la validacion porque calibracion tiene otra proporcion de niveles.
+- Histeresis: el nivel sube cuando el nivel crudo se mantiene por encima durante 2 s y baja cuando se mantiene por debajo durante 2 s (causal).
+- Alerta conformal por video: puntuacion = riesgo maximo de cada uno de los 52 videos de calibracion sin fuego o controlados; umbral = cuantil conformal. Se activa cuando el riesgo llega al umbral y se apaga cuando baja de 0.8 veces el umbral durante 2 s (el factor 0.8 lo eligio Claude).
+- Referencias sin tiempo: una prediccion por segundo, riesgo = 0.5 P(incipiente) + P(incontrolado), misma histeresis y misma alerta.
+- Segmentos `(archivo, t_inicio, t_fin, nivel)` de la configuracion final en `resultados/fase_e/segmentos/`.
+
+| Modelo | Etapa | F1 macro | F1 controlado | F1 incipiente | F1 incontrolado | Exactitud | Kappa lineal | Cambios por video |
+|---|---|---|---|---|---|---|---|---|
+| CfC | antes | 0.544 +- 0.015 | 0.711 | 0.170 | 0.751 | 0.644 | 0.543 +- 0.040 | 5.26 |
+| CfC | 0.5 + histeresis (final) | 0.536 +- 0.019 | 0.706 | 0.169 | 0.734 | 0.629 | 0.529 +- 0.041 | 2.16 |
+| CfC | solo umbrales ajustados | 0.477 +- 0.019 | 0.690 | 0.115 | 0.627 | 0.547 | 0.465 | 6.65 |
+| CfC | umbrales ajustados + histeresis | 0.464 +- 0.020 | 0.678 | 0.113 | 0.602 | 0.529 | 0.444 | 2.20 |
+| GRU | antes | 0.621 +- 0.008 | 0.788 | 0.208 | 0.866 | 0.753 | 0.698 +- 0.022 | 3.41 |
+| GRU | 0.5 + histeresis (final) | 0.612 +- 0.002 | 0.771 | 0.209 | 0.855 | 0.732 | 0.679 +- 0.026 | 2.21 |
+| GRU | solo umbrales ajustados | 0.579 +- 0.041 | 0.802 | 0.175 | 0.761 | 0.690 | 0.633 | 2.70 |
+| GRU | umbrales ajustados + histeresis | 0.561 +- 0.043 | 0.787 | 0.155 | 0.740 | 0.666 | 0.607 | 1.67 |
+| LSTM | antes | 0.552 +- 0.048 | 0.738 | 0.137 | 0.782 | 0.685 | 0.583 +- 0.074 | 4.76 |
+| LSTM | 0.5 + histeresis (final) | 0.548 +- 0.048 | 0.726 | 0.156 | 0.763 | 0.663 | 0.563 +- 0.078 | 2.71 |
+| LSTM | solo umbrales ajustados | 0.528 +- 0.050 | 0.735 | 0.139 | 0.708 | 0.633 | 0.536 | 4.80 |
+| LSTM | umbrales ajustados + histeresis | 0.516 +- 0.047 | 0.720 | 0.138 | 0.691 | 0.611 | 0.514 | 2.75 |
+| gradient boosting | antes | 0.622 | 0.623 | 0.444 | 0.799 | 0.679 | 0.519 | 12.81 |
+| gradient boosting | histeresis (final) | 0.653 | 0.664 | 0.449 | 0.847 | 0.720 | 0.598 | 2.30 |
+| regresion logistica | antes | 0.482 | 0.468 | 0.285 | 0.691 | 0.514 | 0.357 | 12.28 |
+| regresion logistica | histeresis (final) | 0.479 | 0.488 | 0.268 | 0.681 | 0.509 | 0.371 | 3.13 |
+
+Cambios de nivel por video segun la etiqueta: 0.13.
+
+Alerta (28 videos sin fuego, 25 controlados, 22 con propagacion y 6 con cambio a incontrolado en validacion). Adelanto = `t_incontrolado` de la IA menos el instante de la primera alerta; negativo significa que la alerta llega despues del cambio.
+
+| Modelo | Alfa | Umbral de riesgo | Falsas alarmas en videos sin fuego | Falsas alarmas en videos controlados | Videos con propagacion con alerta | Adelanto mediano (s) | Con alerta antes del cambio | Sin alerta |
+|---|---|---|---|---|---|---|---|---|
+| CfC | 0.10 (final) | 0.723 | 0.000 | 0.187 +- 0.038 | 0.803 | -6.8 | 1.3 de 6 | 0.3 |
+| CfC | 0.05 | 0.912 | 0.000 | 0.040 | 0.591 | -10.7 | 0.3 de 6 | 3.0 |
+| GRU | 0.10 (final) | 0.614 | 0.000 | 0.107 +- 0.038 | 0.848 | -4.0 | 2.0 de 6 | 0.3 |
+| GRU | 0.05 | 0.968 | 0.000 | 0.013 | 0.606 | -19.8 | 0.0 de 6 | 2.7 |
+| LSTM | 0.10 (final) | 0.599 | 0.000 | 0.093 +- 0.019 | 0.833 | -8.7 | 1.7 de 6 | 0.0 |
+| LSTM | 0.05 | 0.978 | 0.000 | 0.027 | 0.530 | -24.1 | 0.0 de 6 | 3.3 |
+| gradient boosting | 0.10 (final) | 0.869 | 0.071 | 0.360 | 0.864 | +0.4 | 3 de 6 | 0 |
+| gradient boosting | 0.05 | 0.989 | 0.000 | 0.000 | 0.727 | -18.4 | 1 de 6 | 1 |
+| regresion logistica | 0.10 (final) | 0.832 | 0.000 | 0.080 | 0.682 | -9.7 | 1 de 6 | 1 |
+| regresion logistica | 0.05 | 0.971 | 0.000 | 0.000 | 0.409 | +1.6 | 1 de 6 | 5 |
+
+### Lectura de los resultados
+
+- **Con el vector del propio pipeline, la tasa 1e-3 y 60 epocas, el GRU sube a F1 0.621 y kappa 0.698** (antes 0.556 y 0.582). Su kappa contra la IA supera el kappa humano contra IA (0.426), con la salvedad de que son videos distintos.
+- **La histeresis reduce los cambios de nivel de 3.4 - 5.3 a unos 2.2 por video y cuesta alrededor de 0.01 de F1** en los modelos temporales. La etiqueta tiene 0.13: los modelos siguen cambiando de nivel mucho mas que la etiqueta.
+- **El gradient boosting con histeresis es el mejor en F1 macro (0.653)**, porque la histeresis le quita el parpadeo (12.8 a 2.3 cambios) y conserva el incipiente (0.449). El GRU es mejor en exactitud (0.732 contra 0.720) y kappa (0.679 contra 0.598), con 3 semillas contra 1 corrida.
+- **El CfC sigue por debajo del GRU** con 3 semillas (F1 0.536 contra 0.612; kappa 0.529 contra 0.679). La LSTM queda entre los dos y es la mas variable.
+- **La alerta no adelanta el cambio a incontrolado.** Con alfa 0.10 el adelanto mediano es negativo en los tres modelos temporales (de -4 a -9 s) y solo 1 a 2 de los 6 videos tienen la alerta antes del cambio. Son solo 6 videos y el instante es el de la IA.
+- **Falsas alarmas:** 0 de 28 en los videos sin fuego para los modelos temporales; en los controlados, de 9 a 19 % con alfa 0.10 (el nivel nominal es 10 %). El gradient boosting da 7 % en sin fuego y 36 % en controlados con alfa 0.10.
+- Con alfa 0.05 el umbral sube a 0.91 - 0.98 y la alerta se pierde en unos 3 de los 6 videos con cambio.
+
+### Variantes de la GRU para el incipiente (`python entrenar_variantes.py`)
+
+Misma GRU, tasa 1e-3, 60 epocas, semillas 42, 43 y 44. La variante base reproduce exactamente las corridas finales de la GRU. En la variante b el peso del incipiente pasa de 2.88 a 5.76 (se dobla despues del tope de 5).
+
+| Variante | F1 macro antes | F1 macro con histeresis | F1 incipiente antes | F1 incipiente con histeresis | Kappa antes | Kappa con histeresis |
+|---|---|---|---|---|---|---|
+| base (CORAL, tres perdidas) | 0.621 +- 0.008 | 0.612 +- 0.002 | 0.208 +- 0.052 | 0.209 +- 0.040 | 0.698 +- 0.022 | 0.679 +- 0.026 |
+| a. softmax con entropia cruzada | 0.623 +- 0.059 | 0.611 +- 0.057 | 0.365 +- 0.060 | 0.346 +- 0.060 | 0.605 +- 0.083 | 0.592 +- 0.080 |
+| b. doble peso para el incipiente | 0.630 +- 0.022 | 0.615 +- 0.021 | 0.317 +- 0.073 | 0.303 +- 0.070 | 0.652 +- 0.028 | 0.633 +- 0.023 |
+| c. solo la perdida de nivel | 0.609 +- 0.023 | 0.604 +- 0.018 | 0.225 +- 0.054 | 0.239 +- 0.042 | 0.658 +- 0.017 | 0.638 +- 0.016 |
+
+- **a y b mejoran el incipiente (de 0.21 a 0.35 y 0.30 con histeresis) pero no el F1 macro, y bajan el kappa** (0.679 a 0.592 y 0.633). Lo que se gana en incipiente se pierde en los otros dos niveles.
+- El softmax es mucho mas variable entre semillas (F1 de 0.560 a 0.701).
+- **c no mejora nada:** quitar las salidas de riesgo y tau no ayuda al nivel (y baja el kappa de 0.698 a 0.658), asi que las tres perdidas no se estorban.
+- Con 3 semillas y 303 s de incipiente en validacion, las diferencias de F1 macro entre variantes estan dentro del ruido.
+
+### Limitaciones que se declaran
+
+- Validacion pequena: 47 videos de fuego, 303 s de incipiente y 6 videos con cambio a incontrolado.
+- La tasa elegida es el borde superior de la rejilla.
+- Calibracion se uso para el umbral conformal y, solo como comparacion, para los umbrales de CORAL.
+- Las referencias sin tiempo son una sola corrida.
+
+### Comandos
+
+```
+python escena_v2.py
+python reentrenar_escena.py
+python comparar_escena.py --datos runs_fuego/escena_v2 --modelos resultados/modelos_escena_v2/final
+python fase_e.py
+python entrenar_variantes.py --variante softmax --semilla 42
+```
+
+### Archivos
+
+- `reentrenar_escena.py`, `fase_e.py`, `entrenar_variantes.py` (nuevos); `escena_v2.py` (opcion `--detecciones`).
+- `resultados/escena_v2/` (resumen, videos y normalizacion).
+- `resultados/modelos_escena_v2/`: `tasas.json`, `tasas/lr_*/` (busqueda) y `final/` (9 corridas, `comparacion.md`, `curvas.png`, `referencias.json`).
+- `resultados/fase_e/`: `resumen.md`, un `.json` por corrida y `segmentos/`.
+- `resultados/variantes_gru/`: `resumen.md` y un `.json` por corrida.
+- No versionados: `runs_fuego/descriptores_v3/`, `runs_fuego/escena_v2/`, `runs_fuego/modelos_escena_v2/`.

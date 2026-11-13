@@ -1,0 +1,171 @@
+{
+ "corrida": "regresion logistica",
+ "modelo": "regresion logistica",
+ "antes": {
+  "f1": 0.48153114480296705,
+  "f1_clase": [
+   0.46844919786096256,
+   0.2850909090909091,
+   0.6910533274570295
+  ],
+  "exactitud": 0.5143271672107363,
+  "kappa": 0.3573793328213213,
+  "conf": [
+   [
+    438,
+    553,
+    42
+   ],
+   [
+    85,
+    196,
+    22
+   ],
+   [
+    314,
+    323,
+    784
+   ]
+  ],
+  "segundos": 2757,
+  "cambios": 12.27659574468085
+ },
+ "histeresis": {
+  "f1": 0.47894819198721256,
+  "f1_clase": [
+   0.4877250409165303,
+   0.2678695350451076,
+   0.68125
+  ],
+  "exactitud": 0.508886470801596,
+  "kappa": 0.37130540334394513,
+  "conf": [
+   [
+    447,
+    543,
+    43
+   ],
+   [
+    97,
+    193,
+    13
+   ],
+   [
+    256,
+    402,
+    763
+   ]
+  ],
+  "segundos": 2757,
+  "cambios": 3.127659574468085
+ },
+ "alerta": {
+  "0.1": {
+   "umbral": 0.8321653865816006,
+   "videos_calibracion": 52,
+   "fpr_sin_fuego": 0.0,
+   "n_sin_fuego": 28,
+   "alarmas_sin_fuego": 0,
+   "fpr_controlado": 0.08,
+   "n_controlado": 25,
+   "deteccion_propagacion": 0.6818181818181818,
+   "n_propagacion": 22,
+   "con_alerta_antes": 1,
+   "sin_alerta": 1,
+   "adelanto_mediana": -9.72999999999999,
+   "adelanto_media": -9.662,
+   "detalle": [
+    {
+     "archivo": "13228967_3840_2160_30fps.mp4",
+     "t_incontrolado": 16.05,
+     "t_alerta": 13.5,
+     "adelanto_s": 2.5500000000000007
+    },
+    {
+     "archivo": "BRANDWEER - UITRUK - PRIO 1 - 2 Auto totaal uitgebrand!!.mp4",
+     "t_incontrolado": 6.1,
+     "t_alerta": 24.5,
+     "adelanto_s": -18.4
+    },
+    {
+     "archivo": "BRANDWEER - WAT KOMT ER ALLEMAAL BIJ KIJKEN - OPLEIDING MANSCHAP A! Dutch Firefighters.mp4",
+     "t_incontrolado": 16.07,
+     "t_alerta": 37.5,
+     "adelanto_s": -21.43
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS  - MANSCHAPPEN IN OPLEIDING ERVAREN WAT HITTE IS. 74.mp4",
+     "t_incontrolado": 239.2,
+     "t_alerta": 240.5,
+     "adelanto_s": -1.3000000000000114
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS -  VOERTUIGEN IN BRAND IN EEN PARKEERGARAGE  . 86.mp4",
+     "t_incontrolado": 30.27,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "videoplayback (10).mp4",
+     "t_incontrolado": 157.77,
+     "t_alerta": 167.5,
+     "adelanto_s": -9.72999999999999
+    }
+   ]
+  },
+  "0.05": {
+   "umbral": 0.9711392306065945,
+   "videos_calibracion": 52,
+   "fpr_sin_fuego": 0.0,
+   "n_sin_fuego": 28,
+   "alarmas_sin_fuego": 0,
+   "fpr_controlado": 0.0,
+   "n_controlado": 25,
+   "deteccion_propagacion": 0.4090909090909091,
+   "n_propagacion": 22,
+   "con_alerta_antes": 1,
+   "sin_alerta": 5,
+   "adelanto_mediana": 1.5500000000000007,
+   "adelanto_media": 1.5500000000000007,
+   "detalle": [
+    {
+     "archivo": "13228967_3840_2160_30fps.mp4",
+     "t_incontrolado": 16.05,
+     "t_alerta": 14.5,
+     "adelanto_s": 1.5500000000000007
+    },
+    {
+     "archivo": "BRANDWEER - UITRUK - PRIO 1 - 2 Auto totaal uitgebrand!!.mp4",
+     "t_incontrolado": 6.1,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "BRANDWEER - WAT KOMT ER ALLEMAAL BIJ KIJKEN - OPLEIDING MANSCHAP A! Dutch Firefighters.mp4",
+     "t_incontrolado": 16.07,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS  - MANSCHAPPEN IN OPLEIDING ERVAREN WAT HITTE IS. 74.mp4",
+     "t_incontrolado": 239.2,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "DUTCH FIREFIGHTERS -  VOERTUIGEN IN BRAND IN EEN PARKEERGARAGE  . 86.mp4",
+     "t_incontrolado": 30.27,
+     "t_alerta": null,
+     "adelanto_s": null
+    },
+    {
+     "archivo": "videoplayback (10).mp4",
+     "t_incontrolado": 157.77,
+     "t_alerta": null,
+     "adelanto_s": null
+    }
+   ]
+  }
+ },
+ "segmentos_por_video": 3.0
+}
