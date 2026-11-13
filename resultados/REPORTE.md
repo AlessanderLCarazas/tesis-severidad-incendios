@@ -1900,3 +1900,91 @@ Lectura:
 `resultados/configuracion_final.json`: tasas (3e-3 en los tres), pesos de nivel, meta de riesgo (escalon), umbrales de CORAL 0.5, histeresis 2 s, alfa 0.10 (y 0.05 como secundario), umbral conformal de cada corrida, factor de desactivacion 0.8, semillas 42/43/44, hiperparametros, y la ruta y el SHA-256 de cada archivo de pesos (9 modelos en `runs_fuego/modelos_final/final/` y las 2 referencias en `runs_fuego/modelos_final/referencias/`). Despues de esto no se cambia nada antes de la prueba.
 
 Archivos generados: `resultados/modelos_final/` (`tasas.json`, `tasas/`, `riesgo/`, `final/`), `resultados/fase_e_final/` (`resumen.md`, `resumen.json`, un `.json` por corrida, `segmentos/`, `riesgo_escalon/`, `riesgo_anticipado/`), `resultados/configuracion_final.json`. Los pesos van en `runs_fuego/modelos_final/` (no se versiona).
+
+## Configuracion final por modelo, congelada de nuevo antes de la prueba (2026-11-13)
+
+Reemplaza a la configuracion congelada de la seccion anterior. Todo en validacion y calibracion; la prueba no se uso. Scripts nuevos: `entrenar_unidad_dt.py` (envuelve a `entrenar_final.py` y divide el intervalo del modelo entre `--unidad_dt`), `fase_e_elegida.py` (fase E con la corrida elegida de cada modelo) y `congelar_configuracion.py` (etapas `elegir` y `congelar`). No se modifico ningun script anterior.
+
+Comandos:
+
+```
+python entrenar_unidad_dt.py --modelo cfc --semilla 42 --lr 1e-3 --factor_incipiente 1.0 --riesgo escalon --dispositivo cpu
+python fase_e_elegida.py --carpetas "runs_fuego/modelos_final/cfc_dt/cfc_s*" --sin_referencias --salida resultados/fase_e_elegida/cfc_dt
+python congelar_configuracion.py --etapa elegir
+python fase_e_elegida.py --guardar_referencias runs_fuego/modelos_final/referencias
+python congelar_configuracion.py --etapa congelar
+```
+
+### 1. Eleccion por modelo
+
+Aplicar el doble peso y 3e-3 a los tres se habia decidido mirando solo la GRU. Ahora cada modelo elige entre las dos configuraciones que ya tenian 3 semillas, con el mismo criterio: F1 macro final (umbral 0.5 + histeresis) en validacion, media de las semillas 42, 43 y 44.
+
+| modelo | A: peso simple, 1e-3 | B: doble peso, 3e-3 | elegida |
+|---|---|---|---|
+| CfC | 0.536 +- 0.019 (0.515, 0.532, 0.561) | 0.485 +- 0.034 (0.475, 0.531, 0.448) | A |
+| GRU | 0.612 +- 0.002 (0.615, 0.611, 0.610) | 0.641 +- 0.009 (0.641, 0.630, 0.653) | B |
+| LSTM | 0.548 +- 0.048 (0.487, 0.551, 0.606) | 0.536 +- 0.014 (0.548, 0.543, 0.516) | A |
+
+Se confirma GRU = B, CfC = A y LSTM = A. En la LSTM la diferencia (0.012) es menor que la desviacion entre semillas de A (0.048). La eleccion queda en `resultados/modelos_final/eleccion.json`.
+
+### 2. Unidad de tiempo del CfC
+
+En `CfCCell` el intervalo multiplica el termino de tiempo de la compuerta de interpolacion; con dt de 0.1 s ese termino queda cerca de cero. Se probo el CfC con su configuracion elegida (A) y `timespans = dt / 0.1`, semilla 42, 60 epocas en CPU (11.0 min).
+
+| CfC, semilla 42 | F1 macro antes | F1 macro final | kappa final | mejor epoca |
+|---|---|---|---|---|
+| dt en segundos (actual) | 0.530 | 0.515 | 0.473 | 26 |
+| dt / 0.1 | 0.500 | 0.483 | 0.440 | 31 |
+
+**No mejora el F1 macro final (0.483 contra 0.515), asi que el CfC se queda con dt en segundos** y no se corrieron las semillas 43 y 44. La corrida queda en `resultados/modelos_final/cfc_dt/` y `resultados/fase_e_elegida/cfc_dt/`.
+
+### 3. Busqueda de tasa cerrada
+
+La busqueda de tasa termina aqui. Las diferencias entre 1e-3 y 3e-3 con la semilla 42 (0.005 a 0.022 de F1 suavizado) estan dentro de la variacion entre semillas (desviacion de 0.002 a 0.048 en el F1 final). No se prueban mas tasas.
+
+### 4. Riesgo
+
+El riesgo se queda en escalon, por la regla acordada (el riesgo anticipado no adelanto la alerta). **Hallazgo, no adoptado:** en la GRU la meta anticipada `max(escalon, 1 - tau / 60)` mejoro el nivel (F1 macro final 0.665 +- 0.003 contra 0.641 +- 0.009; kappa 0.657 contra 0.615; 3 semillas), aunque atraso la alerta (adelanto mediano en validacion + calibracion -4.2 s contra -2.2 s).
+
+### 5. Tabla final de validacion con la configuracion de cada modelo
+
+3 semillas por modelo temporal. La etiqueta tiene 0.13 cambios de nivel por video.
+
+| modelo | configuracion | etapa | F1 macro | F1 controlado | F1 incipiente | F1 incontrolado | exactitud | kappa lineal | cambios por video |
+|---|---|---|---|---|---|---|---|---|---|
+| CfC | A | antes | 0.544 +- 0.015 | 0.711 | 0.170 | 0.751 | 0.644 | 0.543 | 5.26 |
+| CfC | A | final | 0.536 +- 0.019 | 0.706 | 0.169 | 0.734 | 0.629 | 0.529 | 2.16 |
+| GRU | B | antes | 0.660 +- 0.008 | 0.760 | 0.416 | 0.805 | 0.714 | 0.641 | 2.52 |
+| GRU | B | final | 0.641 +- 0.009 | 0.738 | 0.397 | 0.789 | 0.690 | 0.615 | 1.89 |
+| LSTM | A | antes | 0.552 +- 0.048 | 0.738 | 0.137 | 0.782 | 0.685 | 0.583 | 4.76 |
+| LSTM | A | final | 0.548 +- 0.048 | 0.726 | 0.156 | 0.763 | 0.663 | 0.563 | 2.71 |
+| gradient boosting | - | antes | 0.622 | 0.623 | 0.444 | 0.799 | 0.679 | 0.519 | 12.81 |
+| gradient boosting | - | final | 0.653 | 0.664 | 0.449 | 0.847 | 0.720 | 0.598 | 2.30 |
+| regresion logistica | - | antes | 0.482 | 0.468 | 0.285 | 0.691 | 0.514 | 0.357 | 12.28 |
+| regresion logistica | - | final | 0.479 | 0.488 | 0.268 | 0.681 | 0.509 | 0.371 | 3.13 |
+
+Alerta (28 videos sin fuego, 25 controlados y 22 con propagacion en validacion; 6 + 5 videos con cambio a incontrolado):
+
+| modelo | alfa | umbral | falsas alarmas sin fuego | falsas alarmas en controlados | propagacion con alerta | adelanto mediano en validacion (s) | antes del cambio en validacion | adelanto mediano en validacion + calibracion (s) | antes del cambio en validacion + calibracion | sin alerta |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CfC | 0.10 (final) | 0.723 | 0.000 | 0.187 | 0.803 | -6.8 +- 1.8 | 1.3 de 6 | -4.3 +- 3.6 | 3.3 de 11 | 0.3 |
+| GRU | 0.10 (final) | 0.768 | 0.000 | 0.147 | 0.833 | -2.7 +- 2.1 | 1.7 de 6 | -2.2 +- 2.5 | 4.0 de 11 | 1.7 |
+| LSTM | 0.10 (final) | 0.599 | 0.000 | 0.093 | 0.833 | -8.7 +- 8.4 | 1.7 de 6 | -1.7 +- 0.9 | 4.7 de 11 | 0.0 |
+| gradient boosting | 0.10 (final) | 0.869 | 0.071 | 0.360 | 0.864 | 0.4 | 3 de 6 | 1.3 | 6 de 11 | 0 |
+| regresion logistica | 0.10 (final) | 0.832 | 0.000 | 0.080 | 0.682 | -9.7 | 1 de 6 | -10.4 | 2 de 11 | 3 |
+| CfC | 0.05 | 0.912 | 0.000 | 0.040 | 0.591 | -10.7 | 0.3 de 6 | -28.7 | 1.0 de 11 | 5.7 |
+| GRU | 0.05 | 0.998 | 0.000 | 0.027 | 0.606 | -32.0 | 0 de 6 | -32.0 | 1.0 de 11 | 6.0 |
+| LSTM | 0.05 | 0.978 | 0.000 | 0.027 | 0.530 | -24.1 | 0 de 6 | -27.8 | 0.3 de 11 | 6.7 |
+
+Lectura:
+- La GRU es el mejor modelo temporal en F1 macro (0.641) y kappa (0.615); el CfC (0.536, kappa 0.529) y la LSTM (0.548, kappa 0.563) quedan por debajo y cerca entre si.
+- El gradient boosting con histeresis tiene el mejor F1 macro (0.653), con 36 % de falsas alarmas en controlados y 7 % en videos sin fuego.
+- El incipiente sigue debil en el CfC y la LSTM (0.17 y 0.16), que usan peso simple; en la GRU es 0.40.
+- La alerta sigue sin adelantar el cambio a incontrolado: adelanto mediano negativo en los tres modelos temporales, con alerta antes del cambio en 3 a 5 de 11 videos.
+- Falsas alarmas: ninguna en videos sin fuego; en controlados, 9 a 19 % (nominal 10 %).
+
+### 6. Configuracion congelada
+
+`resultados/configuracion_final.json` (sobrescrito): por modelo, configuracion elegida, tasa, pesos de nivel, meta de riesgo (escalon), intervalo (dt en segundos), la prueba de la unidad de tiempo del CfC y el F1 de cada configuracion; decision (umbrales 0.5, histeresis 2 s, alfa 0.10 y 0.05, factor de desactivacion 0.8); por corrida, semilla, mejor epoca, umbral conformal, ruta y SHA-256 de los pesos. Pesos: CfC y LSTM en `runs_fuego/modelos_escena_v2/final/`, GRU en `runs_fuego/modelos_final/final/`, referencias en `runs_fuego/modelos_final/referencias/`. Despues de esto no se cambia nada antes de la prueba.
+
+Archivos generados: `resultados/modelos_final/eleccion.json`, `resultados/modelos_final/cfc_dt/`, `resultados/fase_e_elegida/` (`resumen.md`, un `.json` por corrida, `segmentos/`, `cfc_dt/`), `resultados/configuracion_final.json`.

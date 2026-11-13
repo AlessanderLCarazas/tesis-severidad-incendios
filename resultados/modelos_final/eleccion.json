@@ -1,0 +1,109 @@
+{
+ "cfc": {
+  "elegida": "A",
+  "descripcion": "configuracion A: peso simple del incipiente y tasa 1e-3",
+  "criterio": "f1 macro final (umbral 0.5 + histeresis) en validacion, media de 3 semillas",
+  "opciones": {
+   "A": {
+    "f1_final": [
+     0.5153370100549571,
+     0.5322182526896914,
+     0.561407157178386
+    ],
+    "media": 0.5363208066410116,
+    "desviacion": 0.019030463747830104
+   },
+   "B": {
+    "f1_final": [
+     0.47463706022259067,
+     0.5304653350229606,
+     0.44840268079564494
+    ],
+    "media": 0.4845016920137321,
+    "desviacion": 0.034220393773197966
+   }
+  },
+  "unidad_dt": null,
+  "carpeta_resultados": "resultados/modelos_escena_v2/final",
+  "carpetas_pesos": [
+   "runs_fuego/modelos_escena_v2/final/cfc_s42",
+   "runs_fuego/modelos_escena_v2/final/cfc_s43",
+   "runs_fuego/modelos_escena_v2/final/cfc_s44"
+  ],
+  "prueba_unidad_dt": {
+   "unidad_dt": 0.1,
+   "f1_final_semilla_42": 0.4830674705272842,
+   "f1_final_base_semilla_42": 0.5153370100549571,
+   "f1_final": [
+    0.4830674705272842,
+    null,
+    null
+   ],
+   "adoptado": false
+  }
+ },
+ "gru": {
+  "elegida": "B",
+  "descripcion": "configuracion B: doble peso del incipiente y tasa 3e-3",
+  "criterio": "f1 macro final (umbral 0.5 + histeresis) en validacion, media de 3 semillas",
+  "opciones": {
+   "A": {
+    "f1_final": [
+     0.6145901591218669,
+     0.6108819436702301,
+     0.6097302717526495
+    ],
+    "media": 0.6117341248482489,
+    "desviacion": 0.0020735293391536927
+   },
+   "B": {
+    "f1_final": [
+     0.6411246946759295,
+     0.6299382486676716,
+     0.65259579837995
+    ],
+    "media": 0.641219580574517,
+    "desviacion": 0.009250149268756148
+   }
+  },
+  "unidad_dt": null,
+  "carpeta_resultados": "resultados/modelos_final/final",
+  "carpetas_pesos": [
+   "runs_fuego/modelos_final/final/gru_s42",
+   "runs_fuego/modelos_final/final/gru_s43",
+   "runs_fuego/modelos_final/final/gru_s44"
+  ]
+ },
+ "lstm": {
+  "elegida": "A",
+  "descripcion": "configuracion A: peso simple del incipiente y tasa 1e-3",
+  "criterio": "f1 macro final (umbral 0.5 + histeresis) en validacion, media de 3 semillas",
+  "opciones": {
+   "A": {
+    "f1_final": [
+     0.48734642410518897,
+     0.5513143237938153,
+     0.6055478901120362
+    ],
+    "media": 0.5480695460036801,
+    "desviacion": 0.04831006160709853
+   },
+   "B": {
+    "f1_final": [
+     0.547739499734705,
+     0.5431641595520936,
+     0.5157825558582374
+    ],
+    "media": 0.535562071715012,
+    "desviacion": 0.01411040680001711
+   }
+  },
+  "unidad_dt": null,
+  "carpeta_resultados": "resultados/modelos_escena_v2/final",
+  "carpetas_pesos": [
+   "runs_fuego/modelos_escena_v2/final/lstm_s42",
+   "runs_fuego/modelos_escena_v2/final/lstm_s43",
+   "runs_fuego/modelos_escena_v2/final/lstm_s44"
+  ]
+ }
+}

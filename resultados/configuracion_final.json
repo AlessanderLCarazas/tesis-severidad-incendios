@@ -1,6 +1,7 @@
 {
  "fecha": "2026-11-13",
  "nota": "configuracion congelada antes de la prueba; no se cambia nada despues",
+ "eleccion": "cada modelo elige entre A (peso simple, 1e-3) y B (doble peso, 3e-3) por el f1 macro final en validacion, media de 3 semillas; la busqueda de tasa queda cerrada",
  "datos": {
   "carpeta": "runs_fuego/escena_v2",
   "vector_escena": "vector_escena.VectorEscena (34 valores, detecciones a confianza 0.25)",
@@ -15,34 +16,115 @@
   "fuente_etiquetas": "ia"
  },
  "modelo": {
-  "unidades": 64,
-  "dropout": 0.2,
   "salidas": "coral k=3, riesgo, log(1 + tau)",
-  "ponderacion": "kendall"
- },
- "entrenamiento": {
-  "epocas": 60,
-  "lote": 32,
-  "decaimiento": 0.001,
-  "recorte": 1.0,
-  "plan_tasa": "coseno",
+  "ponderacion": "kendall",
   "seleccion_epoca": "f1 macro de escena por segundo en validacion, suavizado con 3 epocas",
-  "tasas_probadas": [
-   0.001,
-   0.003
+  "plan_tasa": "coseno"
+ },
+ "pesos_nivel": {
+  "formula": "min(1 / (3 f_k), tope) y luego factor para el incipiente"
+ },
+ "meta_riesgo": {
+  "tipo": "escalon",
+  "valores": [
+   0.0,
+   0.5,
+   1.0
   ],
-  "semilla_tasa": 42,
-  "semillas": [
-   42,
-   43,
-   44
-  ],
-  "tasa_elegida": {
-   "gru": 0.003,
-   "lstm": 0.003,
-   "cfc": 0.003
+  "descartado": "riesgo anticipado max(escalon, 1 - tau / 60): no adelanta la alerta"
+ },
+ "tau": {
+  "meta": "log(1 + tau)",
+  "perdida": "huber delta 1",
+  "mascara": "solo videos con cambio a incontrolado (tau_mascara = 1)"
+ },
+ "semillas": [
+  42,
+  43,
+  44
+ ],
+ "busqueda_tasa": {
+  "configuracion_a": {
+   "gru": {
+    "elegida": 0.001,
+    "tasas": {
+     "0.0001": {
+      "f1_suavizado": 0.486959620472057,
+      "f1": 0.4882599741675242,
+      "kappa": 0.4833100950574247,
+      "mejor_epoca": 35,
+      "minutos": 1.9431147257486978
+     },
+     "0.0003": {
+      "f1_suavizado": 0.5151594160045749,
+      "f1": 0.515218535082115,
+      "kappa": 0.5370633135298303,
+      "mejor_epoca": 50,
+      "minutos": 1.8928740978240968
+     },
+     "0.001": {
+      "f1_suavizado": 0.629304962838985,
+      "f1": 0.6296764680223519,
+      "kappa": 0.667686957679578,
+      "mejor_epoca": 58,
+      "minutos": 1.801262088616689
+     }
+    }
+   },
+   "lstm": {
+    "elegida": 0.001,
+    "tasas": {
+     "0.0001": {
+      "f1_suavizado": 0.5005426974941537,
+      "f1": 0.49820514453784276,
+      "kappa": 0.520028088552644,
+      "mejor_epoca": 35,
+      "minutos": 1.8198201060295105
+     },
+     "0.0003": {
+      "f1_suavizado": 0.5185283890076393,
+      "f1": 0.5190304603727652,
+      "kappa": 0.47575303718745654,
+      "mejor_epoca": 18,
+      "minutos": 1.976720114549001
+     },
+     "0.001": {
+      "f1_suavizado": 0.5452983905427006,
+      "f1": 0.495392740641019,
+      "kappa": 0.4867004926434443,
+      "mejor_epoca": 21,
+      "minutos": 1.7628243128458658
+     }
+    }
+   },
+   "cfc": {
+    "elegida": 0.001,
+    "tasas": {
+     "0.0001": {
+      "f1_suavizado": 0.48146344532313234,
+      "f1": 0.44732528404721456,
+      "kappa": 0.41344002694622717,
+      "mejor_epoca": 19,
+      "minutos": 29.74189510742823
+     },
+     "0.0003": {
+      "f1_suavizado": 0.5236527218591753,
+      "f1": 0.5237760676349045,
+      "kappa": 0.5309072946456321,
+      "mejor_epoca": 56,
+      "minutos": 29.751743241151175
+     },
+     "0.001": {
+      "f1_suavizado": 0.5293876454433374,
+      "f1": 0.529725510671858,
+      "kappa": 0.4884758623145752,
+      "mejor_epoca": 26,
+      "minutos": 29.730808881918588
+     }
+    }
+   }
   },
-  "busqueda_tasa": {
+  "configuracion_b": {
    "gru": {
     "elegida": 0.003,
     "tasas": {
@@ -106,42 +188,7 @@
      }
     }
    }
-  },
-  "dispositivo": {
-   "cfc": "cpu",
-   "gru": "cuda",
-   "lstm": "cuda"
   }
- },
- "pesos_nivel": {
-  "formula": "min(1 / (3 f_k), tope) y luego factor para el incipiente",
-  "tope": 5.0,
-  "factor_incipiente": 2.0,
-  "valores": [
-   0.5405118295406042,
-   5.759090510188303,
-   1.2459123562809014
-  ],
-  "frecuencias": [
-   0.6166994228722847,
-   0.11575901880466694,
-   0.2675415583230483
-  ]
- },
- "meta_riesgo": {
-  "tipo": "escalon",
-  "escalon": [
-   0.0,
-   0.5,
-   1.0
-  ],
-  "anticipado": "max(escalon, 1 - tau / 60) recortado a [0, 1] antes del cambio, solo en videos que llegan a incontrolado",
-  "horizonte_s": 60.0
- },
- "tau": {
-  "meta": "log(1 + tau)",
-  "perdida": "huber delta 1",
-  "mascara": "solo videos con cambio a incontrolado (tau_mascara = 1)"
  },
  "decision": {
   "umbral_coral": [
@@ -156,6 +203,255 @@
   "permanencia_alerta_s": 2.0,
   "nivel_por_segundo": "mayoria de los fotogramas del segundo"
  },
+ "por_modelo": {
+  "cfc": {
+   "configuracion": "A",
+   "descripcion": "configuracion A: peso simple del incipiente y tasa 1e-3",
+   "tasa": 0.001,
+   "factor_incipiente": 1.0,
+   "tope_peso": 5.0,
+   "pesos_nivel": [
+    0.5405118295406042,
+    2.8795452550941514,
+    1.2459123562809014
+   ],
+   "meta_riesgo": "escalon",
+   "unidad_dt_s": null,
+   "intervalo": "dt en segundos",
+   "epocas": 60,
+   "lote": 32,
+   "decaimiento": 0.001,
+   "recorte": 1.0,
+   "unidades": 64,
+   "dropout": 0.2,
+   "dispositivo": "cpu",
+   "f1_final_por_configuracion": {
+    "A": {
+     "f1_final": [
+      0.5153370100549571,
+      0.5322182526896914,
+      0.561407157178386
+     ],
+     "media": 0.5363208066410116,
+     "desviacion": 0.019030463747830104
+    },
+    "B": {
+     "f1_final": [
+      0.47463706022259067,
+      0.5304653350229606,
+      0.44840268079564494
+     ],
+     "media": 0.4845016920137321,
+     "desviacion": 0.034220393773197966
+    }
+   },
+   "prueba_unidad_dt": {
+    "unidad_dt": 0.1,
+    "f1_final_semilla_42": 0.4830674705272842,
+    "f1_final_base_semilla_42": 0.5153370100549571,
+    "f1_final": [
+     0.4830674705272842,
+     null,
+     null
+    ],
+    "adoptado": false
+   }
+  },
+  "gru": {
+   "configuracion": "B",
+   "descripcion": "configuracion B: doble peso del incipiente y tasa 3e-3",
+   "tasa": 0.003,
+   "factor_incipiente": 2.0,
+   "tope_peso": 5.0,
+   "pesos_nivel": [
+    0.5405118295406042,
+    5.759090510188303,
+    1.2459123562809014
+   ],
+   "meta_riesgo": "escalon",
+   "unidad_dt_s": null,
+   "intervalo": "dt en segundos",
+   "epocas": 60,
+   "lote": 32,
+   "decaimiento": 0.001,
+   "recorte": 1.0,
+   "unidades": 64,
+   "dropout": 0.2,
+   "dispositivo": "cuda",
+   "f1_final_por_configuracion": {
+    "A": {
+     "f1_final": [
+      0.6145901591218669,
+      0.6108819436702301,
+      0.6097302717526495
+     ],
+     "media": 0.6117341248482489,
+     "desviacion": 0.0020735293391536927
+    },
+    "B": {
+     "f1_final": [
+      0.6411246946759295,
+      0.6299382486676716,
+      0.65259579837995
+     ],
+     "media": 0.641219580574517,
+     "desviacion": 0.009250149268756148
+    }
+   }
+  },
+  "lstm": {
+   "configuracion": "A",
+   "descripcion": "configuracion A: peso simple del incipiente y tasa 1e-3",
+   "tasa": 0.001,
+   "factor_incipiente": 1.0,
+   "tope_peso": 5.0,
+   "pesos_nivel": [
+    0.5405118295406042,
+    2.8795452550941514,
+    1.2459123562809014
+   ],
+   "meta_riesgo": "escalon",
+   "unidad_dt_s": null,
+   "intervalo": "dt en segundos",
+   "epocas": 60,
+   "lote": 32,
+   "decaimiento": 0.001,
+   "recorte": 1.0,
+   "unidades": 64,
+   "dropout": 0.2,
+   "dispositivo": "cuda",
+   "f1_final_por_configuracion": {
+    "A": {
+     "f1_final": [
+      0.48734642410518897,
+      0.5513143237938153,
+      0.6055478901120362
+     ],
+     "media": 0.5480695460036801,
+     "desviacion": 0.04831006160709853
+    },
+    "B": {
+     "f1_final": [
+      0.547739499734705,
+      0.5431641595520936,
+      0.5157825558582374
+     ],
+     "media": 0.535562071715012,
+     "desviacion": 0.01411040680001711
+    }
+   }
+  }
+ },
+ "corridas": {
+  "cfc_s42": {
+   "modelo": "cfc",
+   "semilla": 42,
+   "mejor_epoca": 26,
+   "archivo_pesos": "runs_fuego/modelos_escena_v2/final/cfc_s42/mejor.pt",
+   "sha256": "c56507a97d95c08eebe71b7886e41b0d199484d35a398afc092928837d971e59",
+   "f1_final_validacion": 0.5153370100549571,
+   "umbral_alerta": {
+    "0.1": 0.8125312924385071,
+    "0.05": 0.9870138764381409
+   }
+  },
+  "cfc_s43": {
+   "modelo": "cfc",
+   "semilla": 43,
+   "mejor_epoca": 40,
+   "archivo_pesos": "runs_fuego/modelos_escena_v2/final/cfc_s43/mejor.pt",
+   "sha256": "adab34b91d229bacc83c194e8fa2f1ad43879533f28f3360d9fb01f9043e3fec",
+   "f1_final_validacion": 0.5322182526896914,
+   "umbral_alerta": {
+    "0.1": 0.6721824407577515,
+    "0.05": 0.9812596440315247
+   }
+  },
+  "cfc_s44": {
+   "modelo": "cfc",
+   "semilla": 44,
+   "mejor_epoca": 60,
+   "archivo_pesos": "runs_fuego/modelos_escena_v2/final/cfc_s44/mejor.pt",
+   "sha256": "0c3c4276483b8e3fb6dd4ddd18e01f702087f51c7e20ae1e1e351757c6abb06c",
+   "f1_final_validacion": 0.561407157178386,
+   "umbral_alerta": {
+    "0.1": 0.6839209198951721,
+    "0.05": 0.7681381106376648
+   }
+  },
+  "gru_s42": {
+   "modelo": "gru",
+   "semilla": 42,
+   "mejor_epoca": 52,
+   "archivo_pesos": "runs_fuego/modelos_final/final/gru_s42/mejor.pt",
+   "sha256": "d4f699bee0fb110c80f216163bb33eb93fb2647738391bce8c869c3576672fce",
+   "f1_final_validacion": 0.6411246946759295,
+   "umbral_alerta": {
+    "0.1": 0.6761824488639832,
+    "0.05": 0.9988958835601807
+   }
+  },
+  "gru_s43": {
+   "modelo": "gru",
+   "semilla": 43,
+   "mejor_epoca": 56,
+   "archivo_pesos": "runs_fuego/modelos_final/final/gru_s43/mejor.pt",
+   "sha256": "fb4b22897a061f9c0693bd0bd5a0f5c3bc5cf692168f5472728cf792af74e68c",
+   "f1_final_validacion": 0.6299382486676716,
+   "umbral_alerta": {
+    "0.1": 0.9269532561302185,
+    "0.05": 0.9965761303901672
+   }
+  },
+  "gru_s44": {
+   "modelo": "gru",
+   "semilla": 44,
+   "mejor_epoca": 51,
+   "archivo_pesos": "runs_fuego/modelos_final/final/gru_s44/mejor.pt",
+   "sha256": "3612adaa4e673ae036d43d82266bd07f4df9bd5023f0de90e52ae48fda1721ec",
+   "f1_final_validacion": 0.65259579837995,
+   "umbral_alerta": {
+    "0.1": 0.7003180384635925,
+    "0.05": 0.998225748538971
+   }
+  },
+  "lstm_s42": {
+   "modelo": "lstm",
+   "semilla": 42,
+   "mejor_epoca": 21,
+   "archivo_pesos": "runs_fuego/modelos_escena_v2/final/lstm_s42/mejor.pt",
+   "sha256": "ff3edf6d74f7a0a711001ea71269ff138cb5a75de8eaee3d8804f26ccda661dc",
+   "f1_final_validacion": 0.48734642410518897,
+   "umbral_alerta": {
+    "0.1": 0.564163863658905,
+    "0.05": 0.966112494468689
+   }
+  },
+  "lstm_s43": {
+   "modelo": "lstm",
+   "semilla": 43,
+   "mejor_epoca": 47,
+   "archivo_pesos": "runs_fuego/modelos_escena_v2/final/lstm_s43/mejor.pt",
+   "sha256": "787b44afeea168239925a744d31d857a078f387fb492d0ce0f8026fc661897a9",
+   "f1_final_validacion": 0.5513143237938153,
+   "umbral_alerta": {
+    "0.1": 0.6204381585121155,
+    "0.05": 0.984614908695221
+   }
+  },
+  "lstm_s44": {
+   "modelo": "lstm",
+   "semilla": 44,
+   "mejor_epoca": 48,
+   "archivo_pesos": "runs_fuego/modelos_escena_v2/final/lstm_s44/mejor.pt",
+   "sha256": "bfe36864f5d50b3703bca816c6ce7182c08d3d7e93692ece47f3bff8cfa289d1",
+   "f1_final_validacion": 0.6055478901120362,
+   "umbral_alerta": {
+    "0.1": 0.6135221123695374,
+    "0.05": 0.9825692176818848
+   }
+  }
+ },
  "referencias_sin_tiempo": {
   "entrada": "media por segundo del vector de escena",
   "semilla": 42,
@@ -165,6 +461,7 @@
    "gradient_boosting": {
     "archivo": "runs_fuego/modelos_final/referencias/gradient_boosting.joblib",
     "sha256": "32ad1288026f2306c86e88788fac587df9739b8a7c63ce263fb204e1d411bb3f",
+    "f1_final_validacion": 0.6534183787690258,
     "umbral_alerta": {
      "0.1": 0.8694660869523223,
      "0.05": 0.9891735956360741
@@ -173,6 +470,7 @@
    "regresion_logistica": {
     "archivo": "runs_fuego/modelos_final/referencias/regresion_logistica.joblib",
     "sha256": "eb7b4664f45b23deb5cb97e4004e22b85e090534788dd8bb396e4f913375db80",
+    "f1_final_validacion": 0.47894819198721256,
     "umbral_alerta": {
      "0.1": 0.8321653865816006,
      "0.05": 0.9711392306065945
@@ -180,169 +478,5 @@
    }
   }
  },
- "modelos": {
-  "cfc_s42": {
-   "modelo": "cfc",
-   "semilla": 42,
-   "tasa": 0.003,
-   "mejor_epoca": 53,
-   "riesgo": "escalon",
-   "pesos_nivel": [
-    0.5405118295406042,
-    5.759090510188303,
-    1.2459123562809014
-   ],
-   "archivo_pesos": "runs_fuego/modelos_final/final/cfc_s42/mejor.pt",
-   "sha256": "a7f6474e382097a6f889863f4a5cbc2745a55b77cf790a8447231bf90cc5fe4f",
-   "umbral_alerta": {
-    "0.1": 0.8148293495178223,
-    "0.05": 0.9845834970474243
-   }
-  },
-  "cfc_s43": {
-   "modelo": "cfc",
-   "semilla": 43,
-   "tasa": 0.003,
-   "mejor_epoca": 57,
-   "riesgo": "escalon",
-   "pesos_nivel": [
-    0.5405118295406042,
-    5.759090510188303,
-    1.2459123562809014
-   ],
-   "archivo_pesos": "runs_fuego/modelos_final/final/cfc_s43/mejor.pt",
-   "sha256": "ab2dc1ab258a003cc4ee873dfd58799ae7352ee040f351c912df68726305b5e9",
-   "umbral_alerta": {
-    "0.1": 0.7973701357841492,
-    "0.05": 0.9826248288154602
-   }
-  },
-  "cfc_s44": {
-   "modelo": "cfc",
-   "semilla": 44,
-   "tasa": 0.003,
-   "mejor_epoca": 55,
-   "riesgo": "escalon",
-   "pesos_nivel": [
-    0.5405118295406042,
-    5.759090510188303,
-    1.2459123562809014
-   ],
-   "archivo_pesos": "runs_fuego/modelos_final/final/cfc_s44/mejor.pt",
-   "sha256": "fc339c080892d65b0ca11212242860601a324d123a7aa79a2550fc838958d5b8",
-   "umbral_alerta": {
-    "0.1": 0.7180207967758179,
-    "0.05": 0.9526991248130798
-   }
-  },
-  "gru_s42": {
-   "modelo": "gru",
-   "semilla": 42,
-   "tasa": 0.003,
-   "mejor_epoca": 52,
-   "riesgo": "escalon",
-   "pesos_nivel": [
-    0.5405118295406042,
-    5.759090510188303,
-    1.2459123562809014
-   ],
-   "archivo_pesos": "runs_fuego/modelos_final/final/gru_s42/mejor.pt",
-   "sha256": "d4f699bee0fb110c80f216163bb33eb93fb2647738391bce8c869c3576672fce",
-   "umbral_alerta": {
-    "0.1": 0.6761824488639832,
-    "0.05": 0.9988958835601807
-   }
-  },
-  "gru_s43": {
-   "modelo": "gru",
-   "semilla": 43,
-   "tasa": 0.003,
-   "mejor_epoca": 56,
-   "riesgo": "escalon",
-   "pesos_nivel": [
-    0.5405118295406042,
-    5.759090510188303,
-    1.2459123562809014
-   ],
-   "archivo_pesos": "runs_fuego/modelos_final/final/gru_s43/mejor.pt",
-   "sha256": "fb4b22897a061f9c0693bd0bd5a0f5c3bc5cf692168f5472728cf792af74e68c",
-   "umbral_alerta": {
-    "0.1": 0.9269532561302185,
-    "0.05": 0.9965761303901672
-   }
-  },
-  "gru_s44": {
-   "modelo": "gru",
-   "semilla": 44,
-   "tasa": 0.003,
-   "mejor_epoca": 51,
-   "riesgo": "escalon",
-   "pesos_nivel": [
-    0.5405118295406042,
-    5.759090510188303,
-    1.2459123562809014
-   ],
-   "archivo_pesos": "runs_fuego/modelos_final/final/gru_s44/mejor.pt",
-   "sha256": "3612adaa4e673ae036d43d82266bd07f4df9bd5023f0de90e52ae48fda1721ec",
-   "umbral_alerta": {
-    "0.1": 0.7003180384635925,
-    "0.05": 0.998225748538971
-   }
-  },
-  "lstm_s42": {
-   "modelo": "lstm",
-   "semilla": 42,
-   "tasa": 0.003,
-   "mejor_epoca": 43,
-   "riesgo": "escalon",
-   "pesos_nivel": [
-    0.5405118295406042,
-    5.759090510188303,
-    1.2459123562809014
-   ],
-   "archivo_pesos": "runs_fuego/modelos_final/final/lstm_s42/mejor.pt",
-   "sha256": "ca0c2fdbe2709460cd5961541dcf31b755e258cfe8177beba7439e02426eb7a5",
-   "umbral_alerta": {
-    "0.1": 0.8762426376342773,
-    "0.05": 0.9879064559936523
-   }
-  },
-  "lstm_s43": {
-   "modelo": "lstm",
-   "semilla": 43,
-   "tasa": 0.003,
-   "mejor_epoca": 48,
-   "riesgo": "escalon",
-   "pesos_nivel": [
-    0.5405118295406042,
-    5.759090510188303,
-    1.2459123562809014
-   ],
-   "archivo_pesos": "runs_fuego/modelos_final/final/lstm_s43/mejor.pt",
-   "sha256": "6d34d282380ac4330605c5dbffbfd2e743b097acd230131523aa3598ff8891bc",
-   "umbral_alerta": {
-    "0.1": 0.8609883785247803,
-    "0.05": 0.9941621422767639
-   }
-  },
-  "lstm_s44": {
-   "modelo": "lstm",
-   "semilla": 44,
-   "tasa": 0.003,
-   "mejor_epoca": 55,
-   "riesgo": "escalon",
-   "pesos_nivel": [
-    0.5405118295406042,
-    5.759090510188303,
-    1.2459123562809014
-   ],
-   "archivo_pesos": "runs_fuego/modelos_final/final/lstm_s44/mejor.pt",
-   "sha256": "60eed0b0a6e7753e78ea63cdc512b3c424fe1fb15ae0af9a3c4d59c9859261fe",
-   "umbral_alerta": {
-    "0.1": 0.9823400974273682,
-    "0.05": 0.9960187077522278
-   }
-  }
- },
- "resultados_validacion": "resultados/fase_e_final/resumen.md"
+ "resultados_validacion": "resultados/fase_e_elegida/resumen.md"
 }
