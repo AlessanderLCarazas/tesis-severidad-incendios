@@ -2405,3 +2405,13 @@ Figura: `resultados/robustez/f1_vs_quitados.png` (F1 macro contra el porcentaje 
 - **La medida de la adenda** (mantener el ultimo nivel) sube el F1 a 75 % en 0.008 a 0.013 y no cambia ninguna conclusion.
 - **Hipotesis, no comprobada:** la GRU y la LSTM reciben `dt` sin normalizar como entrada extra, y con fotogramas quitados llega a valores (hasta 1 s) que no vieron al entrenar (0.1 s); la CfC lo usa como intervalo de tiempo de su ecuacion. Ademas, la columna `dt` del contexto se satura en el percentil 99 de entrenamiento (0.125 s) para todos los modelos.
 - Limitaciones: una sola semilla de quitado por fraccion, 70 y 69 videos de fuego, y los descriptores de la parte 2 se calcularon con todos los fotogramas (el aumento solo quita filas y recalcula `dt`).
+
+## Fase G, paso 19: README del avance 80 % (2026-11-13)
+
+- `README.md` reemplazado: solo lo del 80 % (se quitaron la seccion de evolucion entre avances y todo lo del 30 % y del 50 %), con el pipeline, la tabla de fases, evidencias por fase, resultados en la prueba contra las dos referencias, robustez, comandos, scripts, limitaciones y creditos.
+- Script nuevo: `figuras_readme_80.py` (no se modifico `figuras_readme.py`). Genera los graficos desde resultados guardados, sin correr modelos, y escribe las tablas del README en `resultados/tablas_readme_80.md`.
+- Imagenes nuevas en `docs/img/`: `descriptores_v2.png` (218 KB), `instantes_humano_ia.png` (103 KB), `curvas_entrenamiento.png` (401 KB), `confusion_gru.png` (80 KB), `map_tiou.png` (109 KB), `adelanto_alerta.png` (130 KB), `tiempo_etapas.png` (62 KB), `f1_vs_quitados.png` (222 KB, misma figura de la robustez con tildes) y `demo_vela_80.gif` (3.0 MB; 8 s de `runs_fuego/demo/sistema_vela.mp4` desde el inicio, 10 fps, 640 x 247, 256 colores).
+- La demo publicada es solo la vela (Pexels 19151618); el basural no se publica hasta confirmar su licencia.
+- Paleta de los graficos validada con el validador del skill de graficos (todas las comprobaciones pasan; tres colores bajo 3:1 de contraste, compensados con marcadores distintos y las tablas).
+- La licencia de FASDD no se pudo verificar en su pagina de Science Data Bank; en el README se cita con su titulo y DOI, sin afirmar una licencia.
+- Pendiente del usuario: la version nueva del pipeline quedo guardada como `docs/img/pipeline_estado_80 (1).png`; hay que renombrarla a `docs/img/pipeline_estado_80.png` (reemplazando la anterior) antes del commit.
