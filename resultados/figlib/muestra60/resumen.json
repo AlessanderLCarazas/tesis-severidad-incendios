@@ -1,0 +1,396 @@
+{
+ "secuencias": 60,
+ "imagenes": 4721,
+ "imagenes_con_humo": 2381,
+ "detector": {
+  "humo_conf_640|0.25": {
+   "recall": 0.22091558168836622,
+   "recall_ic": [
+    0.1479756856903236,
+    0.30131273790930335
+   ],
+   "precision": 0.748221906116643,
+   "precision_ic": [
+    0.6435268237023285,
+    0.8675090515956806
+   ],
+   "tp": 526,
+   "fp": 177,
+   "fn": 1855
+  },
+  "humo_conf_640|0.1": {
+   "recall": 0.41495170096598066,
+   "recall_ic": [
+    0.3270253995541618,
+    0.5041997633573196
+   ],
+   "precision": 0.6753246753246753,
+   "precision_ic": [
+    0.6037536500449237,
+    0.7621922900364253
+   ],
+   "tp": 988,
+   "fp": 475,
+   "fn": 1393
+  },
+  "fuego_conf_640|0.25": {
+   "recall": 0.00041999160016799666,
+   "recall_ic": [
+    0.0,
+    0.0012706884455092454
+   ],
+   "precision": 1.0,
+   "precision_ic": [
+    1.0,
+    1.0
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 2380
+  },
+  "fuego_conf_640|0.1": {
+   "recall": 0.0037799244015119695,
+   "recall_ic": [
+    0.0,
+    0.011436196009583207
+   ],
+   "precision": 1.0,
+   "precision_ic": [
+    1.0,
+    1.0
+   ],
+   "tp": 9,
+   "fp": 0,
+   "fn": 2372
+  },
+  "humo_conf_1280|0.25": {
+   "recall": 0.20075598488030238,
+   "recall_ic": [
+    0.13047057256624728,
+    0.2774199909575451
+   ],
+   "precision": 0.8535714285714285,
+   "precision_ic": [
+    0.7347431560867889,
+    0.96788104800153
+   ],
+   "tp": 478,
+   "fp": 82,
+   "fn": 1903
+  },
+  "humo_conf_1280|0.1": {
+   "recall": 0.36665266694666104,
+   "recall_ic": [
+    0.2771971788687172,
+    0.46211261671446235
+   ],
+   "precision": 0.8306374881065651,
+   "precision_ic": [
+    0.7375825887009925,
+    0.9418985434266303
+   ],
+   "tp": 873,
+   "fp": 178,
+   "fn": 1508
+  },
+  "fuego_conf_1280|0.25": {
+   "recall": 0.00125997480050399,
+   "recall_ic": [
+    0.0,
+    0.0033531031859516647
+   ],
+   "precision": 0.75,
+   "precision_ic": [
+    0.5,
+    1.0
+   ],
+   "tp": 3,
+   "fp": 1,
+   "fn": 2378
+  },
+  "fuego_conf_1280|0.1": {
+   "recall": 0.00251994960100798,
+   "recall_ic": [
+    0.0,
+    0.006802793427026276
+   ],
+   "precision": 0.46153846153846156,
+   "precision_ic": [
+    0.0,
+    1.0
+   ],
+   "tp": 6,
+   "fp": 7,
+   "fn": 2375
+  }
+ },
+ "trayectorias": {
+  "humo": 0.45,
+  "fuego": 0.0
+ },
+ "alerta": {
+  "cfc_s42": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "cfc_s43": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "cfc_s44": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "gru_s42": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "gru_s43": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "gru_s44": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "lstm_s42": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "lstm_s43": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "lstm_s44": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "cfc_s45": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "cfc_s46": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "gru_s45": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "gru_s46": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "lstm_s45": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "lstm_s46": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "mamba_s42": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "mamba_s43": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "mamba_s44": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "mamba_s45": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "mamba_s46": {
+   "fa_antes": 0.0,
+   "alerta_despues": 0.0,
+   "minutos_mediana": null,
+   "minutos": []
+  },
+  "regla_humo": {
+   "fa_antes": 0.18333333333333332,
+   "alerta_despues": 0.5,
+   "minutos_mediana": 8.941666666666666,
+   "minutos": [
+    15.0,
+    0.0,
+    0.0,
+    0.0,
+    10.0,
+    4.0,
+    21.016666666666666,
+    9.0,
+    23.0,
+    9.0,
+    40.0,
+    6.016666666666667,
+    7.9,
+    0.0,
+    23.0,
+    32.0,
+    8.883333333333333,
+    31.983333333333334,
+    1.0166666666666666,
+    0.0,
+    15.983333333333333,
+    4.0,
+    7.566666666666666,
+    3.033333333333333,
+    3.0,
+    10.0,
+    20.0,
+    20.966666666666665,
+    0.0,
+    34.016666666666666
+   ]
+  }
+ },
+ "por_modelo": {
+  "cfc": {
+   "fa_antes": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "alerta_despues": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "minutos_mediana": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  "gru": {
+   "fa_antes": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "alerta_despues": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "minutos_mediana": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  "lstm": {
+   "fa_antes": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "alerta_despues": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "minutos_mediana": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  "mamba": {
+   "fa_antes": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "alerta_despues": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "minutos_mediana": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  "regla_humo": {
+   "fa_antes": [
+    0.18333333333333332
+   ],
+   "alerta_despues": [
+    0.5
+   ],
+   "minutos_mediana": [
+    8.941666666666666
+   ]
+  }
+ },
+ "segundos_por_secuencia": 23.00166666666667
+}

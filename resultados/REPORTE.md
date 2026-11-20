@@ -2415,3 +2415,362 @@ Figura: `resultados/robustez/f1_vs_quitados.png` (F1 macro contra el porcentaje 
 - Paleta de los graficos validada con el validador del skill de graficos (todas las comprobaciones pasan; tres colores bajo 3:1 de contraste, compensados con marcadores distintos y las tablas).
 - La licencia de FASDD no se pudo verificar en su pagina de Science Data Bank; en el README se cita con su titulo y DOI, sin afirmar una licencia.
 - Pendiente del usuario: la version nueva del pipeline quedo guardada como `docs/img/pipeline_estado_80 (1).png`; hay que renombrarla a `docs/img/pipeline_estado_80.png` (reemplazando la anterior) antes del commit.
+
+## Bloque del asesor para el Cap. 5: experimentos por etapa y metricas nuevas (2026-11-19)
+
+**Este bloque se agrego despues de la fase F por un comentario del asesor. Nada de esto se uso para elegir el sistema: no se reentreno ni se recalibro nada, y la configuracion congelada (`resultados/configuracion_final.json`) y todas las decisiones siguen igual.** Rama: `main` (version final); `avance-80` queda congelada.
+
+- Los experimentos por etapa (E6, E8 y E5) usan solo ajuste y validacion. Las metricas nuevas de la prueba (B4 a B8) se calculan sobre las salidas de los modelos congelados.
+- Salidas por fotograma de los 9 modelos congelados en calibracion, validacion y prueba: `python salidas_congeladas.py` (CPU), guardadas en `runs_fuego/salidas_congeladas/` (no se versiona). Antes no estaban guardadas por fotograma; se recalcularon con los pesos congelados (SHA-256 comprobado) y reproducen con diferencia 0 el umbral conformal de cada corrida, la fase E en validacion (`resultados/fase_e_elegida/`), el F1 de la fase F y el MAE de tau de la fase F.
+- Modelos: CfC, GRU y LSTM con 3 semillas. No hay modelos Mamba: el bloque anterior (semillas, Mamba, regla, ablaciones, Holm, figuras y piloto de FIgLib) no se ejecuto en esta sesion y no hay nada de el en el repositorio.
+- Scripts nuevos: `salidas_congeladas.py`, `experimentos_etapas.py`, `metricas_sistema.py` y `tablas_latex.py` (tablas en LaTeX con el estilo de los cuadros del Cap. 5: bordes, encabezados en negrita y coma decimal).
+- Comandos: `python salidas_congeladas.py`, `python experimentos_etapas.py`, `python metricas_sistema.py`.
+- Salidas: `resultados/cap5/etapas.md`, `etapas.json`, `sistema.md`, `sistema.json`; tablas en `resultados/tablas_tesis/` (`e6_cortes.tex`, `e8_decision_gru.tex`, `e8_decision_cfc.tex`, `e5_auc_columnas.tex`, `b4_confiabilidad.tex`, `b5_cobertura_conformal.tex`, `b6_estabilidad.tex`, `b7_costo.tex`, `b8_tiempo_peligro.tex`); figura `resultados/figuras_tesis/confiabilidad_gru.pdf`.
+
+### E6. Cortes: doble umbral contra un solo umbral
+
+Con las distancias h ya guardadas de los 13 videos de ajuste y los 11 de validacion (`resultados/cortes/indicadores/indicadores.csv`), con la misma rejilla, separacion, emparejamiento y criterio que la regla elegida. En ajuste, un solo umbral solo llega al maximo sin falsos (12 de 19) con T = 0.675.
+
+| regla | T_alto | T_bajo | ajuste: detectados | ajuste: falsos | validacion: detectados | validacion: falsos | validacion: sin revisar |
+|---|---|---|---|---|---|---|---|
+| doble umbral (elegida) | 0.85 | 0.65 | 12 de 19 | 0 | 14 de 18 | 0 | 0 |
+| un solo umbral | 0.675 | 0.675 | 12 de 19 | 0 | 14 de 18 | 2 | 2 |
+
+Con el mismo numero de cortes detectados, el umbral unico produce 2 falsos cortes en validacion (las luces de emergencia con la camara valida) y 2 detecciones sin revisar; la regla doble no tiene ninguno.
+
+### E8. Decision en validacion (referencia de la IA)
+
+GRU (media de 3 semillas; la referencia tiene 0.13 cambios por minuto):
+
+| variante | F1 macro | falsas alarmas en controlados | falsas alarmas sin fuego | cambios por minuto | EWT mediana (s) | antes del cambio (de 6) |
+|---|---|---|---|---|---|---|
+| conformal (alfa 0.10), histeresis 2 s (elegida) | 0.641 | 14.7 % | 0 % | 1.93 | -2.7 | 1.7 |
+| umbral fijo 0.5, histeresis 2 s | 0.641 | 38.7 % | 0 % | 1.93 | -1.8 | 2.0 |
+| conformal, histeresis 0 s | 0.660 | 14.7 % | 0 % | 2.58 | -2.7 | 1.7 |
+| conformal, histeresis 1 s | 0.652 | 14.7 % | 0 % | 2.34 | -2.7 | 1.7 |
+| conformal, histeresis 3 s | 0.636 | 14.7 % | 0 % | 1.65 | -2.7 | 1.7 |
+
+CfC: elegida 0.536 / 18.7 % / 0 % / 2.21 / -6.8 s / 1.3; umbral fijo 0.5: 30.7 % en controlados, 1.2 % sin fuego, EWT 0.0 s, 2.7 de 6; histeresis 0, 1 y 3 s: F1 0.544, 0.536 y 0.537 con 5.38, 3.38 y 1.77 cambios por minuto.
+
+- Sin histeresis el F1 sube un poco (GRU +0.019, CfC +0.008) a costa de mas cambios de nivel (GRU 2.58 contra 1.93 por minuto; CfC 5.38 contra 2.21). Se reporta, pero el sistema no cambia.
+- El umbral fijo de 0.5 adelanta un poco la alerta, pero mas que duplica las falsas alarmas en controlados (GRU 38.7 % contra 14.7 %).
+
+### E5. Poder separador de las 34 columnas del vector de escena (validacion, por segundo, referencia de la IA)
+
+AUC de Controlado contra Incipiente o Incontrolado, con el vector sin normalizar, 47 videos y 2 757 segundos. Mejores: area detectada de humo (0.829), d11 area de humo media (0.812), detecciones de humo (0.811), d11 area de humo maxima (0.811), d10 confianza de humo media (0.808). Peores (AUC orientada): d4 crecimiento relativo medio (0.513), d12 tasa del humo media (0.513), d3 tasa de crecimiento media (0.511), d7 velocidad del centro media (0.508), area detectada de fuego (0.506). El humo separa mejor que el fuego; las tasas medias casi no separan por si solas.
+
+### B4 a B8. Metricas nuevas en la prueba
+
+- **B4, confiabilidad (ECE con 10 intervalos y Brier multiclase), IA / humana:** CfC 0.170 / 0.241 y 0.644 / 0.752; GRU 0.289 / 0.331 y 0.716 / 0.817; LSTM 0.221 / 0.294 y 0.662 / 0.789. Los tres modelos son sobreconfiados: en la GRU, 7 028 segundos tienen confianza mayor que 0.9 y su exactitud es 0.62 (IA).
+- **B5, cobertura conformal (por video, como se calibro):** en los videos sin fuego y controlados juntos, la tasa queda cerca del 10 % en todos los conjuntos (calibracion 9.6 %, validacion 4.4 a 8.8 %, prueba 8.7 a 11.3 %) y el 10 % cae dentro del IC 95 % en todas las corridas. Pero todas las falsas alarmas estan en los controlados (20 % en calibracion, 9 a 19 % en validacion, 18 a 23 % en prueba) y ninguna en los sin fuego: la garantia es para la poblacion junta, no para cada grupo.
+- **B6, estabilidad (prueba):** el modelo cambia de nivel de 1.6 (GRU) a 2.8 (LSTM) veces por minuto, contra 0.4 de cada referencia; sin histeresis serian de 2.0 a 6.2.
+- **B7, costo:** CfC 46 133 parametros, GRU 19 829 y LSTM 26 293. Por paso, con lote 1: CPU 0.15 a 0.25 ms; GPU 0.40 a 0.71 ms (mas lenta que la CPU por el costo de lanzar cada operacion con lote 1). Los milisegundos varian hasta un 25 % entre corridas, pero el orden se mantiene (en CPU la LSTM es la mas lenta; en GPU, la CfC).
+- **B8, tiempo al peligro (error absoluto mediano):** contra la IA, CfC 15.1 s, GRU 19.4 s y LSTM 16.7 s, frente a 33.3 s de la constante; contra la humana, de 41.2 a 45.4 s, peor que la constante (36.8 s).
+
+## Plan del bloque pendiente del Cap. 5 (registrado el 2026-11-19, antes de correr nada)
+
+Rama `main`. La configuracion congelada y el sistema principal no cambian. Todo lo nuevo se decide en validacion y se evalua una sola vez en la prueba, con las dos referencias, el bootstrap pareado de videos (1000 remuestreos, semilla 42) y las metricas de la fase F y del bloque del asesor (E8, B4 a B8). Se reutilizan las salidas de `runs_fuego/salidas_congeladas/`.
+
+**Entrenador comun.** `entrenar_cap5.py` repite el procedimiento de `entrenar_final.py` (60 epocas, AdamW con decaimiento 1e-3, coseno, recorte 1, lote 32, misma toma de ventanas, epoca elegida por el F1 de escena suavizado en validacion). Al terminar calcula las salidas por fotograma en calibracion, validacion y prueba (en CPU, como las congeladas) y el umbral conformal (alfa 0.10 y 0.05, 52 videos de calibracion), como la fase E. **Control antes de usarlo:** la variante completa con la semilla 42 debe reproducir la GRU congelada (`gru_s42`, configuracion B) y la LSTM congelada (`lstm_s42`, configuracion A); si no las reproduce, se para.
+
+1. **Semillas 45 y 46** de CfC (A: peso simple, 1e-3, CPU), GRU (B: doble peso, 3e-3) y LSTM (A), con su configuracion congelada y la misma fase E. Las tablas de la prueba de la fase F y de B4 a B8 se recalculan con 5 semillas (42 a 46); las de 3 semillas se conservan.
+2. **Mamba** con `mambapy` (PyTorch puro; se instalo y funciona en Windows, asi que no hace falta el Transformer): misma compuerta de contexto, `dt` como entrada extra (como la GRU y la LSTM), una capa de entrada lineal a 64 unidades, 1 bloque Mamba (d_model 64, d_state 16, expansion 2, convolucion 4), dropout 0.2 y las mismas tres salidas, perdidas (CORAL, riesgo, Huber de log(1 + tau), Kendall) y muestreo. Eleccion con el mismo criterio que los demas: para cada peso del incipiente (A simple y B doble) la tasa entre 1e-3 y 3e-3 por el F1 suavizado con la semilla 42; luego las semillas 43 y 44; gana el peso con mayor F1 macro final (umbral 0.5 + histeresis 2 s) en validacion, media de 3 semillas; despues las semillas 45 y 46. GPU para entrenar, CPU para las salidas. Misma fase E.
+3. **Regla sin aprendizaje.** Por fotograma, con el area detectada de fuego (A_f) y de humo (A_h) del vector de escena (detecciones a confianza 0.25, sin normalizar): nivel 2 si A_f >= f2 o A_h >= h2; si no, nivel 1 si A_f >= f1 o A_h >= h1; si no, nivel 0 (f1 <= f2, h1 <= h2). Luego la misma histeresis de 2 s y la mayoria por segundo. Umbrales candidatos: 0 y los percentiles 5 a 95 (paso 5) de cada area en los fotogramas de validacion. Busqueda: se ordenan todas las combinaciones por el F1 macro por segundo sin histeresis y las 50 mejores se vuelven a evaluar con la histeresis; gana la de mayor F1 macro final (videos de fuego de validacion, referencia de la IA). Riesgo = min(1, max(A_f / f2, A_h / h2)); alerta conformal con los mismos 52 videos de calibracion, alfa 0.10 y la misma regla de activacion. En el mAP sus segmentos tienen puntuacion 1 (no tiene probabilidades). Se evalua en la prueba como una referencia mas (nivel, mAP, alerta, B5 y B6).
+4. **Ablaciones** con GRU (B) y CfC (A), semillas 42 a 44, una pieza a la vez, reentrenando y recalibrando la alerta como en la fase E:
+   - a. sin el contexto de camara en la compuerta: la compuerta recibe solo `dt`;
+   - b. `dt` constante de 0.1 s (entrada del modelo y columna `dt` del contexto);
+   - c. sin compuerta: el modelo recibe el vector de escena directamente;
+   - d. umbral de alerta fijo de 0.5 en vez del conformal, sin reentrenar (salidas congeladas);
+   - e. sin cada grupo de descriptores (deteccion d1; tamano y crecimiento d2 a d4; posicion y movimiento d5 a d7; comportamiento en el tiempo d8 y d9; humo d10 a d12; escena d13), quitando sus columnas de maximo y media, y aparte sin las 4 estadisticas de deteccion del fotograma (`n_det_fuego`, `n_det_humo`, `area_det_fuego`, `area_det_humo`); la normalizacion congelada no cambia;
+   - f. sin compensacion de camara: solo se informa la opcion y el tiempo; no se corre.
+   - Se reporta la diferencia de F1 macro frente al sistema completo (las mismas semillas congeladas) con su IC pareado contra las dos referencias; para d, tambien las falsas alarmas en controlados y el EWT. Primero las de GRU (GPU); las de CfC en procesos de CPU en paralelo.
+5. **Holm.** Valor p de cada comparacion pareada con la aproximacion normal del bootstrap (p = 2 (1 - Phi(|d| / EE)), con EE la desviacion de las 1000 diferencias remuestreadas, los mismos remuestreos de los IC ya reportados). Una sola familia con todas las comparaciones pareadas que tienen IC: fase F (GRU - CfC y GRU - gradient boosting, F1 y kappa, dos referencias), las mismas con 5 semillas y las de Mamba, robustez (caidas absolutas de F1, diferencias de caidas relativas de F1 y kappa, reentrenado menos congelado de F1 y kappa) y ablaciones (F1, dos referencias). Holm al 5 %. Como informacion secundaria, Holm dentro de cada bloque.
+6. **Camara movil.** Se reutiliza sin cambios el criterio registrado el 2026-11-13 antes de ver resultados: puntaje = media por fotograma de (norma de la traslacion + 0.5 (|s - 1| + |rotacion|)) x 10, de la similitud de la etapa 4; camara movil si el puntaje es >= 0.01 (59 videos de prueba moviles y 43 fijos). Se reporta F1 macro y kappa de cada modelo en cada grupo, con IC por bootstrap de videos dentro del grupo, contra las dos referencias.
+7. **Figuras PDF** en `resultados/figuras_tesis/`: `map_tiou.pdf`, `adelanto_alerta.pdf` y `f1_vs_quitados.pdf`, sin titulo, ejes en espanol y la misma paleta.
+8. **Tablas LaTeX** en `resultados/tablas_tesis/`: `e9_nivel.tex`, `e9_alerta.tex`, `e10_ablaciones.tex` (* si el IC sigue sin el cero despues de Holm), `e11_camara.tex` y `e12_costo.tex`.
+9. **FIgLib, piloto** (al final, sin reentrenar ni recalibrar nada; http://hpwren.ucsd.edu/):
+   - Lista de 528 secuencias del indice de `https://cdn.hpwren.ucsd.edu/HPWREN-FIgLib-Data/`. Orden al azar con semilla 42; se recorre ese orden y se aceptan las 10 primeras que no sean en blanco y negro ni nocturnas (como SmokeyNet), revisando la imagen de la aparicion del humo: blanco y negro si la diferencia media entre canales es menor que 2 niveles de 255; nocturna si el brillo medio es menor que 50.
+   - Descarga del `.tgz` de cada una a una carpeta fuera del repositorio. El pipeline completo corre con las marcas de tiempo reales del nombre (dt de unos 60 s).
+   - Detector de humo por imagen: positiva si el desfase es >= 0 y prediccion positiva si hay al menos una caja de humo con confianza >= 0.25 (tambien se informa 0.1). Se reportan recall, precision, trayectorias formadas, tamano por secuencia y el tiempo estimado para 60 secuencias.
+   - Metricas de la evaluacion completa, para despues: falsas alarmas antes de la aparicion del humo, porcentaje de secuencias con alerta despues de la aparicion y minutos hasta la primera alerta, para CfC, GRU, LSTM, Mamba y una regla que alerta cuando el detector ve humo en 2 imagenes seguidas.
+   - Las imagenes no se versionan.
+
+### Adenda al plan (2026-11-19, en calibracion, antes de evaluar en la prueba)
+
+- Regla sin aprendizaje: con el riesgo recortado en 1, 27 de los 52 videos de calibracion empataban en el maximo (umbral conformal = 1 y tasa de alarma de 52 %, no 10 %). Se quita el recorte: riesgo = max(A_f / f2, A_h / h2), sin tope. El orden de los videos por debajo de 1 no cambia. Se detecto y corrigio con calibracion; la prueba todavia no se habia mirado.
+
+## Resultados del bloque pendiente del Cap. 5 (2026-11-20)
+
+Rama `main`. Se siguio el plan registrado el 2026-11-19 (seccion anterior) con su adenda. La configuracion congelada (`resultados/configuracion_final.json`) y el sistema principal no cambiaron; todo lo nuevo se decidio en validacion y la prueba se evaluo una sola vez. Los SHA-256 de `etiquetas.csv`, `resultados/etiquetas_ia.csv` y `resultados/etiquetas_ia_v2.csv` son los mismos de antes. Este bloque completa lo que la seccion del bloque del asesor (2026-11-19) marcaba como no ejecutado (semillas, Mamba, regla, ablaciones, Holm, figuras y FIgLib).
+
+### Comandos y corridas
+
+- Control del entrenador comun: `python entrenar_cap5.py --modelo gru --lr 3e-3 --factor_incipiente 2.0 --pesos runs_fuego/cap5/control --salida resultados/cap5/entrenamientos/control` (y lo mismo con `--modelo lstm --lr 1e-3 --factor_incipiente 1.0`). Reproduce `gru_s42` y `lstm_s42` congeladas con diferencia 0 en pesos, salidas por fotograma y umbrales conformales.
+- `python correr_cap5.py --cola gpu`: ablaciones de GRU, semillas 45 y 46 de GRU y LSTM, busqueda de Mamba y sus semillas.
+- `python correr_cap5.py --cola cpu --procesos 3 --hilos 2`: CfC (semillas 45 y 46 y sus 30 ablaciones), en CPU como la CfC congelada.
+- `python regla_cap5.py`: regla sin aprendizaje.
+- `python evaluacion_cap5.py`: evaluacion en la prueba, Holm, camara, costo (con la GPU y la CPU libres), figuras y tablas. Despues, `python evaluacion_cap5.py --reusar_costo` solo para regenerar `e10_ablaciones.tex` con las filas en orden de la a a la e y las letras en minuscula; `bloque2.json` quedo identico (`--reusar_costo` toma el costo ya medido de `bloque2.json` para no volver a medir milisegundos).
+- Controles de la evaluacion contra la fase F (F1, mAP, falsas alarmas e IC pareados con las 3 semillas congeladas): diferencia maxima 0.
+- 78 entrenamientos validos: 60 ablaciones (2 modelos x 10 variantes x 3 semillas), 6 semillas nuevas, 10 de Mamba (busqueda y semillas) y 2 de control. Registros en `runs_fuego/cap5/registros/` (no se versiona).
+- Caidas y relanzamientos (ninguna cambio resultados; cada corrida se repitio entera):
+  - GRU `sin_detecciones_fotograma` s43: caida nativa de la GPU (0xC0000409); se relanzo la cola y termino bien.
+  - Primera busqueda de Mamba: la inferencia en CPU con lotes de 64 y la validacion en GPU con lotes de 64 agotaron la RAM (16 GB) y tumbaron la corrida A 3e-3 s42 y dos procesos de CfC (uno de ellos `dt_constante` s43, 0xC0000005). Se pasaron las salidas de Mamba a lotes de 4 y su validacion a lotes de 8 (con `torch.cuda.empty_cache()` antes de las salidas) y la busqueda se repitio desde cero. Las corridas viejas quedaron en `resultados/cap5/entrenamientos/mamba_busqueda_descartada_lote64/` y `runs_fuego/cap5/mamba_busqueda_descartada_lote64/` y no se usan (A 1e-3 s42 eligio la misma epoca, 20, en las dos versiones).
+  - Tiempos: la cola de GPU termino hacia las 22:20 del 19 de noviembre; la de CPU, a las 0:07 del 20 (ultima tanda de 2.81 h).
+
+### 1. Semillas 45 y 46: prueba con 5 semillas (42 a 46)
+
+Nivel por segundo (media +- desviacion entre semillas, IC 95 % por bootstrap pareado de videos):
+
+| modelo | referencia | F1 macro [IC 95 %] | kappa lineal [IC 95 %] | mAP tIoU 0.3 / 0.5 / 0.7 |
+|---|---|---|---|---|
+| CfC | IA | 0.458 +- 0.013 [0.396, 0.519] | 0.331 [0.202, 0.448] | 0.301 / 0.229 / 0.174 |
+| CfC | humana | 0.459 +- 0.035 [0.400, 0.516] | 0.346 [0.252, 0.437] | 0.185 / 0.108 / 0.041 |
+| GRU | IA | 0.526 +- 0.015 [0.442, 0.606] | 0.384 [0.233, 0.530] | 0.396 / 0.308 / 0.237 |
+| GRU | humana | 0.503 +- 0.017 [0.419, 0.585] | 0.364 [0.252, 0.479] | 0.290 / 0.142 / 0.072 |
+| LSTM | IA | 0.462 +- 0.016 [0.393, 0.528] | 0.334 [0.205, 0.454] | 0.327 / 0.261 / 0.197 |
+| LSTM | humana | 0.466 +- 0.010 [0.398, 0.537] | 0.353 [0.252, 0.455] | 0.219 / 0.121 / 0.047 |
+| Mamba | IA | 0.526 +- 0.020 [0.451, 0.598] | 0.399 [0.282, 0.518] | 0.357 / 0.267 / 0.173 |
+| Mamba | humana | 0.540 +- 0.020 [0.463, 0.609] | 0.399 [0.287, 0.504] | 0.258 / 0.137 / 0.075 |
+| gradient boosting | IA | 0.442 [0.368, 0.525] | 0.292 [0.178, 0.413] | 0.246 / 0.204 / 0.130 |
+| gradient boosting | humana | 0.451 [0.362, 0.531] | 0.320 [0.218, 0.426] | 0.193 / 0.125 / 0.028 |
+| regresion logistica | IA | 0.491 [0.407, 0.570] | 0.311 [0.158, 0.449] | 0.277 / 0.204 / 0.147 |
+| regresion logistica | humana | 0.527 [0.433, 0.604] | 0.365 [0.220, 0.485] | 0.172 / 0.069 / 0.021 |
+| regla sin aprendizaje | IA | 0.434 [0.331, 0.514] | 0.291 [0.163, 0.408] | 0.195 / 0.165 / 0.082 |
+| regla sin aprendizaje | humana | 0.312 [0.236, 0.384] | 0.175 [0.091, 0.266] | 0.063 / 0.028 / 0.002 |
+| clase mayoritaria | IA | 0.180 [0.135, 0.219] | 0.000 | 0.116 / 0.091 / 0.043 |
+| clase mayoritaria | humana | 0.100 [0.064, 0.138] | 0.000 | 0.035 / 0.006 / 0.000 |
+
+Alerta con alfa 0.10, tiempo al peligro y confiabilidad (5 semillas):
+
+| modelo | falsas alarmas sin fuego | en controlados (IA / humana) | EWT mediana IA / humana (s) | antes del cambio IA / humana | error mediano de tau IA / humana (s) | ECE IA / humana | cambios por minuto (IA) |
+|---|---|---|---|---|---|---|---|
+| CfC | 0 % | 21.3 % / 19.3 % | +0.2 / +25.5 | 9.0 de 21 / 12.4 de 16 | 15.2 / 45.1 | 0.164 / 0.242 | 2.23 |
+| GRU | 0 % | 18.0 % / 15.2 % | -8.3 / +17.1 | 7.2 de 21 / 10.4 de 16 | 19.1 / 39.1 | 0.275 / 0.319 | 1.64 |
+| LSTM | 0 % | 22.7 % / 22.1 % | +1.9 / +26.7 | 8.4 de 21 / 10.6 de 16 | 17.6 / 40.6 | 0.225 / 0.301 | 2.42 |
+| Mamba | 0 % | 6.7 % / 7.6 % | -3.0 / +26.3 | 7.2 de 21 / 10.4 de 16 | 21.0 / 40.7 | 0.192 / 0.210 | 1.86 |
+| gradient boosting | 3.1 % | 26.7 % / 20.7 % | +3.8 / +26.6 | 12 de 21 / 13 de 16 | - | 0.263 / 0.297 | 2.78 |
+| regresion logistica | 0 % | 10.0 % / 6.9 % | -10.5 / +13.2 | 5 de 21 / 10 de 16 | - | 0.149 / 0.148 | 2.55 |
+| regla sin aprendizaje | 3.1 % | 10.0 % / 6.9 % | -22.6 / +11.6 | 1 de 21 / 8 de 16 | - | - | 1.16 |
+
+- Con 5 semillas el orden no cambia respecto a las 3 congeladas (GRU IA 0.519 con 3 y 0.526 con 5; CfC 0.460 y 0.458). La referencia de cambios por minuto es 0.41 (IA) y 0.40 (humana).
+- B4 a B8 con 5 semillas en `resultados/tablas_tesis/b4_confiabilidad_5s.tex`, `b5_cobertura_conformal_5s.tex`, `b6_estabilidad_5s.tex` y `b8_tiempo_peligro_5s.tex`; las de 3 semillas (`b4_confiabilidad.tex`, etc.) se conservan sin cambios.
+- B5 con 5 semillas: la tasa conjunta (sin fuego + controlados) en la prueba queda en 8.7 a 11.0 % para CfC, GRU y LSTM, y el 10 % cae dentro del IC 95 % en 5 de 5 corridas (GRU con referencia humana: 4 de 5). Todas las falsas alarmas de las redes siguen estando en los controlados.
+- B8: el MAE de tau de Mamba (85.1 +- 50.2 s IA) no es comparable: ver el punto 2.
+
+### 2. Mamba
+
+- Implementacion con `mambapy` (PyTorch puro, funciona en Windows): compuerta de contexto, `dt` como entrada extra, lineal a 64, 1 bloque Mamba (d_state 16, expansion 2, convolucion 4), dropout 0.2 y las mismas tres salidas y perdidas. 35 445 parametros.
+- Eleccion en validacion (`resultados/cap5/entrenamientos/mamba_eleccion.json`):
+  - peso A (simple): F1 suavizado con la semilla 42 de 0.546 (1e-3) y 0.542 (3e-3); se elige 1e-3; F1 final en validacion con las semillas 42 a 44: 0.564, 0.561 y 0.528 (media 0.551);
+  - peso B (doble): 0.538 (1e-3) y 0.559 (3e-3); se elige 3e-3; F1 final 0.517, 0.630 y 0.543 (media 0.563);
+  - **elegido: B, 3e-3**; luego las semillas 45 y 46. F1 final en validacion con 5 semillas: 0.563 +- 0.038.
+- Prueba (5 semillas): F1 0.526 IA y 0.540 humana, igual o algo mejor que la GRU (Mamba - GRU: -0.000 [-0.058, +0.050] IA y +0.037 [-0.020, +0.091] humana). Mamba - CfC con referencia humana: +0.081 [+0.019, +0.138], p = 0.011 sin corregir, no significativa tras Holm.
+- Alerta: la de menos falsas alarmas en controlados (6.7 % IA), con la tasa conjunta en 3.2 % (por debajo del 10 % nominal: mas conservadora en la prueba que en calibracion).
+- Tiempo al peligro: el error mediano (21.0 s IA, 40.7 s humana) es parecido al de las otras redes, pero el MAE se infla porque la cabeza de log(1 + tau) de Mamba da valores extremos en unos pocos fotogramas: de 82 a 431 fotogramas de prueba por semilla con tau > 1 h (maximo 245 001 s), contra un maximo de 39 a 91 s en CfC, GRU y LSTM. No se corrige (el protocolo no tiene recorte de tau); se reporta el error mediano.
+- E8 con Mamba (validacion, 5 semillas): elegida 0.563 / 9.6 % en controlados / 1.75 cambios por minuto; umbral fijo 0.5: 56.8 % en controlados; sin histeresis: F1 0.594 con 5.58 cambios por minuto.
+- Costo por paso: el mas lento (CPU 0.535 ms, GPU 1.017 ms, con la cache recurrente de `mambapy`), muy por debajo de los 100 ms entre fotogramas a 10 fps.
+
+### 3. Regla sin aprendizaje
+
+- Umbrales elegidos en validacion (fraccion del fotograma, detecciones a 0.25): fuego 0.0221 (incipiente) y 0.0851 (incontrolado); humo 0.0911 y 0.0911, es decir, cualquier humo de al menos el 9.1 % del fotograma lleva directo a Incontrolado. 6 840 combinaciones; las 50 mejores sin histeresis se reevaluaron con histeresis. Umbral de alerta (riesgo sin tope, adenda) 10.44 con alfa 0.10. Salida en `resultados/cap5/regla.json`.
+- F1 macro final en validacion (umbral 0.5 + histeresis 2 s, referencia de la IA), junto a los modelos temporales:
+
+| modelo | semillas | F1 macro final en validacion |
+|---|---|---|
+| CfC | 5 | 0.539 +- 0.019 |
+| GRU | 5 | 0.614 +- 0.035 |
+| LSTM | 5 | 0.545 +- 0.038 |
+| Mamba | 5 | 0.563 +- 0.038 |
+| gradient boosting | 1 | 0.653 |
+| regresion logistica | 1 | 0.479 |
+| regla sin aprendizaje | 1 | 0.573 |
+
+- En la prueba cae mucho: 0.434 [0.331, 0.514] con la IA y 0.312 [0.236, 0.384] con la humana, la mas baja despues de la clase mayoritaria. Sus umbrales se eligieron entre 6 840 combinaciones en los mismos 47 videos de validacion, asi que su F1 de validacion es optimista. Cambia poco de nivel (1.16 por minuto), pero avisa tarde (EWT -22.6 s IA, 1 de 21 alertas antes del cambio) y tiene la unica falsa alarma en un video sin fuego junto con gradient boosting (1 de 32).
+
+### 4. Ablaciones (GRU y CfC, semillas 42 a 44)
+
+Diferencia de F1 macro frente al sistema completo con las mismas semillas congeladas, IC 95 % pareado. Ninguna sigue significativa despues de Holm (por eso no hay asteriscos en `e10_ablaciones.tex`).
+
+| variante | GRU IA | GRU humana | CfC IA | CfC humana |
+|---|---|---|---|---|
+| sistema completo (F1) | 0.519 | 0.497 | 0.460 | 0.475 |
+| a. sin contexto de camara en la compuerta | +0.035 [-0.009, +0.071] | +0.019 [-0.026, +0.063] | +0.063 [+0.019, +0.112] | -0.002 [-0.045, +0.047] |
+| b. dt constante de 0.1 s | -0.022 [-0.058, +0.021] | -0.029 [-0.080, +0.019] | +0.015 [-0.016, +0.049] | +0.002 [-0.034, +0.032] |
+| c. sin compuerta | -0.034 [-0.075, +0.017] | -0.012 [-0.071, +0.048] | -0.015 [-0.050, +0.021] | +0.009 [-0.026, +0.042] |
+| d. umbral de alerta fijo 0.5 | 0 (no cambia el nivel) | 0 | 0 | 0 |
+| e. sin deteccion (d1) | +0.029 [-0.001, +0.066] | +0.037 [+0.003, +0.076] | +0.009 [-0.032, +0.057] | -0.017 [-0.060, +0.024] |
+| e. sin tamano y crecimiento (d2 a d4) | +0.015 [-0.025, +0.054] | +0.023 [-0.037, +0.092] | -0.010 [-0.044, +0.026] | +0.001 [-0.035, +0.040] |
+| e. sin posicion y movimiento (d5 a d7) | +0.008 [-0.040, +0.057] | +0.016 [-0.047, +0.066] | +0.020 [-0.016, +0.059] | -0.003 [-0.045, +0.040] |
+| e. sin comportamiento en el tiempo (d8 y d9) | +0.020 [-0.013, +0.050] | -0.001 [-0.032, +0.032] | -0.001 [-0.038, +0.036] | +0.009 [-0.031, +0.053] |
+| e. sin humo (d10 a d12) | +0.049 [-0.004, +0.099] | +0.008 [-0.040, +0.067] | -0.003 [-0.056, +0.064] | -0.058 [-0.110, -0.011] |
+| e. sin escena (d13) | +0.024 [-0.010, +0.053] | +0.002 [-0.036, +0.042] | +0.004 [-0.025, +0.040] | +0.017 [-0.018, +0.057] |
+| e. sin estadisticas de deteccion del fotograma | +0.001 [-0.025, +0.030] | +0.010 [-0.024, +0.045] | -0.003 [-0.033, +0.034] | -0.005 [-0.032, +0.025] |
+
+Variante d (umbral fijo 0.5 en vez del conformal, sin reentrenar, semillas 42 a 44):
+
+| modelo | referencia | falsas alarmas en controlados: conformal / fijo | EWT mediana: conformal / fijo (s) | antes del cambio: conformal / fijo |
+|---|---|---|---|---|
+| GRU | IA | 22.2 % / 37.8 % | -2.7 / +7.9 | 8.3 / 13.3 de 21 |
+| GRU | humana | 20.7 % / 32.2 % | +20.5 / +38.4 | 11.3 / 13.7 de 16 |
+| CfC | IA | 23.3 % / 42.2 % | +0.7 / +8.3 | 8.3 / 12.0 de 21 |
+| CfC | humana | 18.4 % / 36.8 % | +23.6 / +37.0 | 12.3 / 13.3 de 16 |
+
+- Sin corregir, solo 3 de 40 IC no incluyen el cero: CfC sin contexto de camara con la IA (+0.063, mejor sin el), GRU sin d1 con la humana (+0.037, mejor sin el) y CfC sin humo con la humana (-0.058, peor sin el). Con Holm no queda ninguna.
+- Con 70 videos de prueba las ablaciones no muestran que alguna pieza por si sola mejore el F1: los grupos de descriptores parecen redundantes entre si y varias diferencias de la GRU son positivas (quitar una pieza no la empeora). La compuerta (c) y el dt real (b) tienen diferencias negativas en la GRU (-0.034 y -0.022 con la IA), pero sus IC incluyen el cero.
+- d confirma lo de E8: el umbral fijo adelanta la alerta unos 8 a 18 s, pero multiplica por 1.6 a 2 las falsas alarmas en controlados.
+- f no se corrio (ver la seccion de la opcion `--sin_compensacion`, abajo).
+
+### 5. Holm
+
+Familia global de 208 comparaciones pareadas (valor p por la aproximacion normal del bootstrap, con los mismos remuestreos de los IC):
+
+| bloque | comparaciones | IC sin el cero (sin corregir) | significativas con Holm global | con Holm dentro del bloque |
+|---|---|---|---|---|
+| fase F (3 semillas) | 8 | 0 | 0 | 0 |
+| fase F (5 semillas y Mamba) | 16 | 1 | 0 | 0 |
+| robustez | 144 | 20 | 0 | 0 |
+| ablaciones | 40 | 3 | 0 | 0 |
+| total | 208 | 24 | 0 | - |
+
+- El valor p mas bajo es 1.05e-03 (caida de F1 de gradient boosting al quitar el 25 % de fotogramas, IA), con p de Holm 0.218.
+- Con 5 semillas, GRU - gradient boosting con la IA da +0.084 [-0.002, +0.158] con p = 0.047: el IC por percentiles incluye el cero por poco y la aproximacion normal da algo menos de 0.05. Ninguna de las dos lecturas sobrevive a Holm.
+- Conclusion: ninguna diferencia entre modelos, ninguna ablacion y ninguna comparacion de robustez es significativa despues de corregir por comparaciones multiples.
+
+### 6. Camara movil contra fija
+
+Mismo criterio registrado el 2026-11-13 (39 videos de fuego con camara movil y 31 fija con la IA; 39 y 30 con la humana). F1 macro con IC por bootstrap de videos dentro de cada grupo (5 semillas):
+
+| modelo | referencia | F1 movil [IC] | F1 fija [IC] |
+|---|---|---|---|
+| CfC | IA | 0.455 [0.378, 0.527] | 0.451 [0.331, 0.543] |
+| CfC | humana | 0.401 [0.314, 0.477] | 0.501 [0.384, 0.588] |
+| GRU | IA | 0.477 [0.376, 0.571] | 0.569 [0.418, 0.683] |
+| GRU | humana | 0.466 [0.376, 0.561] | 0.554 [0.399, 0.668] |
+| LSTM | IA | 0.470 [0.389, 0.548] | 0.451 [0.305, 0.561] |
+| LSTM | humana | 0.427 [0.331, 0.512] | 0.494 [0.361, 0.597] |
+| Mamba | IA | 0.502 [0.396, 0.597] | 0.544 [0.426, 0.645] |
+| Mamba | humana | 0.496 [0.403, 0.588] | 0.603 [0.458, 0.686] |
+| regla sin aprendizaje | IA | 0.390 [0.271, 0.500] | 0.473 [0.304, 0.566] |
+| regla sin aprendizaje | humana | 0.304 [0.188, 0.408] | 0.322 [0.204, 0.426] |
+
+Kappa y los modelos sin secuencias en `e11_camara.tex` y `bloque2.md`. La GRU, Mamba y, con la referencia humana, CfC y LSTM rinden algo menos con camara movil, pero todos los IC se solapan: con estos grupos no se puede afirmar una diferencia.
+
+### 7. Figuras (`resultados/figuras_tesis/`, PDF, sin titulo, ejes en espanol, misma paleta)
+
+- `map_tiou.pdf`: mAP de segmentos contra tIoU (0.3, 0.5, 0.7), una curva por modelo (barras = desviacion entre semillas), un panel por referencia.
+- `adelanto_alerta.pdf`: adelanto de la alerta respecto al cambio a Incontrolado por video (todas las semillas), mediana en negro y numero medio de videos sin alerta a la derecha; un panel por referencia.
+- `f1_vs_quitados.pdf`: F1 macro contra el porcentaje de fotogramas quitados, congelados y reentrenados, con banda de +- una desviacion y los congelados en linea discontinua en los paneles de reentrenados.
+
+### 8. Tablas LaTeX (`resultados/tablas_tesis/`)
+
+`e9_nivel.tex` (F1 y kappa con IC y mAP 0.5, 5 semillas), `e9_alerta.tex` (falsas alarmas, EWT, MAE de tau y ECE), `e10_ablaciones.tex` (sin asteriscos: ninguna significativa tras Holm), `e11_camara.tex`, `e12_costo.tex`, y las de B4, B5, B6 y B8 con 5 semillas (`*_5s.tex`).
+
+Costo por paso con lote 1 (mediana de 2 000 pasos tras 200 de calentamiento):
+
+| modelo | parametros | CPU mediana / p95 (ms) | GPU mediana / p95 (ms) |
+|---|---|---|---|
+| CfC | 46 133 | 0.208 / 0.331 | 0.665 / 0.759 |
+| GRU | 19 829 | 0.172 / 0.194 | 0.385 / 0.437 |
+| LSTM | 26 293 | 0.234 / 0.303 | 0.394 / 0.534 |
+| Mamba | 35 445 | 0.535 / 0.725 | 1.017 / 1.386 |
+
+### 9. FIgLib (datos de HPWREN, http://hpwren.ucsd.edu/)
+
+Sin reentrenar ni recalibrar nada. Secuencias de `https://cdn.hpwren.ucsd.edu/HPWREN-FIgLib-Data/`, una imagen por minuto (dt de unos 60 s, tomado del nombre). Las imagenes estan fuera del repositorio (`../FIgLib_piloto/`) y no se versionan.
+
+**Piloto (10 secuencias)**: `python figlib_piloto.py elegir`, `descargar` y `correr`. Se revisaron 12 en el orden aleatorio (semilla 42) y se excluyeron 2 nocturnas. Humo por imagen con 0.25: recall 0.101 y precision 0.500; con 0.1: 0.324 y 0.561. Trayectorias de humo en 4 de 10 secuencias, ninguna de fuego, ninguna alerta de GRU, CfC ni LSTM. 26 s y 68 MB por secuencia. Salidas: `resultados/figlib/piloto_*.csv` y `piloto_descarga.json`.
+
+**Muestra de 60 secuencias** (pedida por el usuario despues del piloto; mismo orden aleatorio con semilla 42 y mismas exclusiones, incluye las 10 del piloto): `python figlib_muestra.py elegir`, `descargar`, `evaluar` y `resumen`. Se revisaron 72: 60 aceptadas, 8 nocturnas, 3 en blanco y negro y 1 sin imagenes. 4 721 imagenes, 2 381 desde la aparicion del humo (desfase >= 0). Detector a 640, como el sistema. Una imagen de 0 bytes se omite. 23 s por secuencia. IC 95 % por bootstrap de secuencias (1000 remuestreos).
+
+| detector | imagen | confianza | recall [IC 95 %] | precision [IC 95 %] |
+|---|---|---|---|---|
+| humo | 640 | 0.25 | 0.221 [0.148, 0.301] | 0.748 [0.644, 0.868] |
+| humo | 640 | 0.10 | 0.415 [0.327, 0.504] | 0.675 [0.604, 0.762] |
+| fuego | 640 | 0.25 | 0.000 (1 de 2 381) | 1 de 1 |
+| fuego | 640 | 0.10 | 0.004 [0.000, 0.011] | 9 de 9 |
+| humo (diagnostico) | 1280 | 0.25 | 0.201 [0.130, 0.277] | 0.854 [0.735, 0.968] |
+| humo (diagnostico) | 1280 | 0.10 | 0.367 [0.277, 0.462] | 0.831 [0.738, 0.942] |
+
+- Secuencias con trayectorias: de humo 45 % (27 de 60), de fuego 0 %.
+- Alerta (metricas 9c): CfC, GRU, LSTM y Mamba, las 20 corridas (5 semillas cada uno): 0 % de falsas alarmas antes de la aparicion del humo y 0 % de secuencias con alerta despues. La regla de humo en 2 imagenes seguidas (confianza 0.25): falsas alarmas antes de la aparicion en 18.3 % (11 de 60), alerta despues en 50 % (30 de 60), mediana de 8.9 min hasta la primera alerta.
+- Lectura: el sistema describe trayectorias de **fuego** (los 13 descriptores son por trayectoria de fuego) y en FIgLib, al inicio, solo se ve humo lejano sin llama visible (recall de fuego cercano a 0), asi que no se forman trayectorias de fuego y los modelos nunca alertan. Es un cambio de dominio (humo de incendio forestal a kilometros, una imagen por minuto) frente a los videos cercanos de DetectiumFire, no un problema de calibracion. El detector de humo encuentra el humo en 1 de cada 5 imagenes con 0.25; pasar a 1280 no sube el recall (0.201) y solo mejora la precision, asi que el limite no es solo la resolucion. El diagnostico a 1280 no se usa en el sistema.
+- Salidas: `resultados/figlib/muestra60_lista.csv` y `resultados/figlib/muestra60/{imagenes.csv, secuencias.csv, resumen.json}`.
+
+### Ablacion f: opcion `--sin_compensacion` en `descriptores_v3.py` (no se corrio)
+
+- Cambio (pedido por el usuario): con `--sin_compensacion`, el seguimiento no recibe la matriz de la camara (sin GMC en el Kalman) y los descriptores reciben la identidad (`s = 1`) en vez de la similitud estimada, asi que d3 y d4 usan `A_k - A_{k-1}` sin `s_k^2` y d7 no lleva el centro anterior a las coordenadas actuales. La estimacion de la camara se sigue calculando para los cortes de escena y para el contexto de la compuerta (`s_k, rot, tx, ty, inliers`), que no cambian. Se diferencia de `--variante dt_tope2`, que solo quita la compensacion del seguimiento.
+- Verificacion en `14294880_3840_2160_24fps.mp4`: sin la opcion, la salida es identica a la anterior (diferencia 0 en los descriptores, 607 filas; en los fotogramas, 273, y en los cortes). Con la opcion: misma estimacion de camara, mismas marcas, tramos y detecciones; 685 filas y 9 trayectorias en vez de 7 (el seguimiento sin compensacion corta mas trayectorias); cambian d3 y d7.
+- Comandos para el usuario (PowerShell, desde la carpeta del proyecto):
+  1. `python descriptores_v3.py --sin_compensacion --salida runs_fuego/descriptores_v3_sin_comp` (los 603 videos, unas 6.2 h; se puede retomar volviendo a lanzar el mismo comando, salta los videos ya escritos).
+  2. `python escena_v2.py --entrada runs_fuego/descriptores_v3_sin_comp --salida runs_fuego/escena_v2_sin_comp --resumen resultados/escena_v2_sin_comp` (lee los CSV y arma los vectores; su tiempo no esta medido, deberian ser minutos; la normalizacion se ajusta con los videos de entrenamiento de los descriptores nuevos; las columnas de contexto no cambian).
+  3. GRU, para S = 42, 43 y 44 (unos 2 min cada una en GPU): `python entrenar_cap5.py --modelo gru --semilla S --lr 3e-3 --factor_incipiente 2.0 --datos runs_fuego/escena_v2_sin_comp --normalizacion_contexto resultados/escena_v2_sin_comp/normalizacion_contexto.json --pesos runs_fuego/cap5/ablaciones/sin_compensacion --salida resultados/cap5/entrenamientos/ablaciones/sin_compensacion`
+  4. CfC, para S = 42, 43 y 44 (unos 15 min cada una en CPU; con 3 procesos en paralelo tardaron de 15 a 27 min): lo mismo con `--modelo cfc --lr 1e-3 --factor_incipiente 1.0 --dispositivo cpu`.
+  5. `python evaluacion_cap5.py --reusar_costo` (unos 2 min): la ablacion f entra sola en la tabla de ablaciones, en Holm y en `e10_ablaciones.tex`.
+- Total aproximado: 6.2 h de descriptores + alrededor de 1 h de entrenamiento y evaluacion.
+
+### Lectura general
+
+- La GRU y Mamba quedan arriba en F1 (0.526 con la IA en las dos; Mamba 0.540 con la humana), pero ninguna diferencia entre modelos es significativa tras Holm. La regla sin aprendizaje es la peor referencia no trivial en la prueba pese a su buen F1 de validacion.
+- Las ablaciones no permiten atribuir la mejora a una pieza concreta; el umbral conformal si reduce las falsas alarmas en controlados frente al umbral fijo.
+- En FIgLib el sistema no transfiere: sin llama visible no hay trayectorias de fuego y no hay alertas.
+
+### Archivos
+
+- Scripts nuevos: `variantes_cap5.py`, `modelos_cap5.py`, `entrenar_cap5.py`, `correr_cap5.py`, `regla_cap5.py`, `evaluacion_cap5.py`, `evaluacion_cap5_informe.py`, `figlib_piloto.py`, `figlib_muestra.py`. Modificado: `descriptores_v3.py` (opcion `--sin_compensacion`; sin ella la salida no cambia).
+- Resultados: `resultados/cap5/bloque2.md` y `bloque2.json`, `resultados/cap5/regla.json`, `resultados/cap5/robustez_pruebas.json`, `resultados/cap5/entrenamientos/` (metricas e historial de cada corrida, `mamba_eleccion.json`), `resultados/figlib/`, `resultados/tablas_tesis/{e9_nivel, e9_alerta, e10_ablaciones, e11_camara, e12_costo, b4_confiabilidad_5s, b5_cobertura_conformal_5s, b6_estabilidad_5s, b8_tiempo_peligro_5s}.tex`, `resultados/figuras_tesis/{map_tiou, adelanto_alerta, f1_vs_quitados}.pdf`.
+- No se versionan: `runs_fuego/cap5/` (pesos, salidas por fotograma y registros) y las imagenes de FIgLib (`../FIgLib_piloto/`).
+
+## Adenda: ablacion f, sin compensacion de camara (2026-11-20)
+
+- **Que se hizo:** la ablacion f completa, encadenada y con reintentos. Primero los descriptores sin compensacion de camara: el seguimiento va sin GMC y los descriptores reciben la identidad, asi que cambian d3, d4 y d7. La estimacion de camara se sigue usando para los cortes y para el contexto de la compuerta. Despues el vector de escena, la GRU y la CfC con las semillas 42 a 44 y la configuracion de `correr_cap5.py`, y al final la evaluacion con el mismo bootstrap pareado (1000 remuestreos, semilla 42).
+- **Comando:** `python ablacion_f.py`. Encadena `descriptores_v3.py --sin_compensacion`, `escena_v2.py`, `entrenar_cap5.py` (6 corridas) y `evaluacion_cap5.py --reusar_costo --sin_figuras`. Si se corta, se vuelve a lanzar y retoma donde quedo.
+- **Duracion:** 6.63 h en total, sin cortes ni reintentos.
+  - Descriptores: 5.87 h para 603 videos.
+  - Escena: 0.3 min.
+  - GRU: 1 min por semilla, en GPU.
+  - CfC: 13 a 14 min por semilla, en CPU.
+  - Evaluacion: 1.8 min.
+- **Datos:** mismos videos, secuencias, fotogramas y etiquetas que `resultados/escena_v2/`. Solo crecen los fotogramas sin trayectoria: entrenamiento 37752 frente a 34489, validacion 6808 frente a 6496, calibracion 7616 frente a 7092 y prueba 9196 frente a 9105.
+- **Controles (nada de lo ya calculado cambio):**
+  - Control contra la fase F: diferencia maxima 0.
+  - En `bloque2.json`, las 208 pruebas anteriores son identicas salvo `p_holm`, y ninguna cambia de significancia.
+  - `camara`, `costos` y las 24 corridas anteriores son identicas.
+  - Las figuras no se regeneraron (`--sin_figuras`).
+  - Copia previa en `resultados/cap5/antes_ablacion_f/`.
+
+### Resultado (F1 macro en la prueba, media de 3 semillas; diferencia variante menos sistema completo, IC 95 % pareado)
+
+| | GRU IA | GRU humana | CfC IA | CfC humana |
+|---|---|---|---|---|
+| sistema completo | 0.519 | 0.497 | 0.460 | 0.475 |
+| f. sin compensacion de camara | 0.545 | 0.482 | 0.442 | 0.442 |
+| diferencia | +0.026 [-0.008, +0.061] | -0.015 [-0.047, +0.022] | -0.018 [-0.051, +0.013] | -0.033 [-0.068, -0.002] |
+| p (aproximacion normal) | 0.141 | 0.387 | 0.263 | 0.060 |
+
+### Holm actualizado
+
+- **Familia global:** 212 comparaciones (antes 208). Sin corregir no incluyen el cero 25 (antes 24); despues de Holm siguen significativas 0.
+- **El p mas bajo** sigue siendo 1.05e-03 (gradient boosting con quitar_25); su p de Holm pasa de 0.218 a 0.222.
+- **Por bloque:**
+  - fase F (3 semillas): 8 comparaciones; sin corregir 0; Holm 0.
+  - fase F (5 semillas y Mamba): 16 comparaciones; sin corregir 1; Holm 0.
+  - ablaciones: 44 comparaciones (antes 40); sin corregir 4 (antes 3); Holm global 0; Holm dentro del bloque 0.
+  - robustez: 144 comparaciones; sin corregir 20; Holm 0.
+- **Las 4 de f:** p de Holm global = 1.0.
+- **Nota:** el criterio sin corregir es que el IC percentil no incluya el cero, y el p sale de la aproximacion normal. En CfC humana el IC excluye el cero por poco (limite superior -0.002), pero p = 0.060, asi que es un resultado en el borde.
+
+### Lectura
+
+Quitar la compensacion de camara no cambia el F1 de forma significativa en ningun modelo ni referencia. La CfC baja con las dos referencias (-0.018 y -0.033). La GRU sube con la IA (+0.026) y baja con la humana (-0.015). Con Holm no queda ninguna diferencia, asi que en esta prueba no se puede afirmar que la compensacion ayude ni que perjudique al F1. En la prueba solo cambian d3, d4 y d7 y hay 91 fotogramas mas sin trayectoria (0.2 % de la prueba).
+
+### Archivos
+
+- **Nuevos:**
+  - `ablacion_f.py`
+  - `resultados/escena_v2_sin_comp/` (`normalizacion.json`, `normalizacion_contexto.json`, `videos.csv`, `resumen.md`)
+  - `resultados/cap5/entrenamientos/ablaciones/sin_compensacion/{gru,cfc}_s{42,43,44}/` (`historial.csv`, `metricas.json`)
+  - `resultados/cap5/antes_ablacion_f/` (copia previa)
+- **Actualizados:**
+  - `resultados/cap5/bloque2.md` y `bloque2.json`
+  - `resultados/tablas_tesis/e10_ablaciones.tex` (nueva fila f)
+- **Sin versionar:** `runs_fuego/descriptores_v3_sin_comp/`, `runs_fuego/escena_v2_sin_comp/`, `runs_fuego/cap5/ablaciones/sin_compensacion/` y los registros en `runs_fuego/cap5/registros/`.

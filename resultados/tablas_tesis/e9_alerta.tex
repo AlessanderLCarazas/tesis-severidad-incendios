@@ -1,0 +1,11 @@
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\hline
+\textbf{Modelo} & \textbf{Falsas alarmas sin fuego} & \textbf{Falsas alarmas en controlados (IA / humana)} & \textbf{EWT IA (s)} & \textbf{EWT humana (s)} & \textbf{MAE $\tau$ IA (s)} & \textbf{MAE $\tau$ humana (s)} & \textbf{ECE IA} \\ \hline
+CfC & 0{,}0\,\% & 21{,}3\,\% / 19{,}3\,\% & +0{,}2 $\pm$ 3{,}7 & +25{,}5 $\pm$ 8{,}2 & 18{,}5 $\pm$ 1{,}7 & 62{,}8 $\pm$ 2{,}9 & 0{,}164 $\pm$ 0{,}015 \\ \hline
+GRU & 0{,}0\,\% & 18{,}0\,\% / 15{,}2\,\% & $-$8{,}3 $\pm$ 12{,}2 & +17{,}1 $\pm$ 10{,}1 & 25{,}0 $\pm$ 2{,}1 & 57{,}8 $\pm$ 1{,}2 & 0{,}275 $\pm$ 0{,}024 \\ \hline
+LSTM & 0{,}0\,\% & 22{,}7\,\% / 22{,}1\,\% & +1{,}9 $\pm$ 5{,}1 & +26{,}7 $\pm$ 4{,}9 & 20{,}7 $\pm$ 1{,}9 & 59{,}2 $\pm$ 2{,}3 & 0{,}225 $\pm$ 0{,}012 \\ \hline
+Mamba & 0{,}0\,\% & 6{,}7\,\% / 7{,}6\,\% & $-$3{,}0 $\pm$ 3{,}2 & +26{,}3 $\pm$ 16{,}5 & 85{,}1 $\pm$ 50{,}2 & 76{,}8 $\pm$ 18{,}4 & 0{,}192 $\pm$ 0{,}027 \\ \hline
+Gradient boosting & 3{,}1\,\% & 26{,}7\,\% / 20{,}7\,\% & +3{,}8 & +26{,}6 & -- & -- & 0{,}263 \\ \hline
+Regresión logística & 0{,}0\,\% & 10{,}0\,\% / 6{,}9\,\% & $-$10{,}5 & +13{,}2 & -- & -- & 0{,}149 \\ \hline
+Regla sin aprendizaje & 3{,}1\,\% & 10{,}0\,\% / 6{,}9\,\% & $-$22{,}6 & +11{,}6 & -- & -- & -- \\ \hline
+\end{tabular}

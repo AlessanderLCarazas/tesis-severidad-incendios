@@ -19,6 +19,7 @@ CAMPOS_DESC = CAMPOS_V2 + ["tramo"]
 CAMPOS_FOTOGRAMA = ["archivo", "k", "t", "dt", "tramo", "s_k", "rot", "tx", "ty", "inliers", "valido", "n_tray",
                     "n_det_fuego", "n_det_humo", "area_det_fuego", "area_det_humo", "conf_det_fuego", "conf_det_humo",
                     "n_det_fuego_alta", "n_det_humo_alta", "area_det_fuego_alta", "area_det_humo_alta"]
+IDENTIDAD = {"M": np.array([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]]), "s": 1.0}
 ARCHIVOS = {"descriptores.csv": CAMPOS_DESC, "fotogramas.csv": CAMPOS_FOTOGRAMA, "cortes.csv": CAMPOS_CORTES,
             "resumen.csv": CAMPOS_RESUMEN, "procesados.csv": CAMPOS_LOG}
 
@@ -73,11 +74,11 @@ def procesar_video(ruta, nombre, a, modelo, dispositivo, targs):
         salidas = {}
         for c, tr in trackers.items():
             datos = det[det[:, 5] == c] if len(det) else np.zeros((0, 6), np.float32)
-            salidas[c] = tr.update(Boxes(datos, (alto, ancho)), None, dt=m.dt, warp=mov["M"] if kl > 0 else None)
+            salidas[c] = tr.update(Boxes(datos, (alto, ancho)), None, dt=m.dt, warp=mov["M"] if kl > 0 and not a.sin_compensacion else None)
         camara = {"s_k": round(mov["s"], 5), "rot": round(mov["rot"], 5), "tx": round(mov["tx"] / ancho, 6),
                   "ty": round(mov["ty"] / alto, 6), "inliers": round(mov["inliers"], 4)}
         n_tray = 0
-        for fila in desc.paso(kl, m.t, m.dt, mov, salidas[0], det):
+        for fila in desc.paso(kl, m.t, m.dt, IDENTIDAD if a.sin_compensacion else mov, salidas[0], det):
             reg = {"archivo": nombre, "id": fila["id"], "k": m.k, "t": round(m.t, 4), "dt": round(m.dt, 4),
                    "d2_med": round(fila["d2_med"], 6), "d11_med": round(fila["d11_med"], 6), "tramo": tramo}
             reg.update(camara)
@@ -128,6 +129,7 @@ def main():
     p.add_argument("--variante", default="dt_tope2_cmc")
     p.add_argument("--dt_max", type=float, default=2.0)
     p.add_argument("--mascara", choices=["todas", "fuego", "ninguna"], default="fuego")
+    p.add_argument("--sin_compensacion", action="store_true")
     p.add_argument("--factor_humo", type=float, default=2.0)
     p.add_argument("--min_humo", type=float, default=0.2)
     p.add_argument("--conf_humo", type=float, default=0.25)

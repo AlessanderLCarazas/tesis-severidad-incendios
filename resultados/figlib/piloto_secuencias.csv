@@ -1,0 +1,11 @@
+secuencia,imagenes,paso_s,segundos_proceso,cortes,trayectorias_humo,trayectorias_humo_2_o_mas,trayectorias_fuego,trayectorias_fuego_2_o_mas,largo_max_trayectoria_humo,gru_s42_alerta_antes,gru_s42_min_hasta_alerta,cfc_s42_alerta_antes,cfc_s42_min_hasta_alerta,lstm_s42_alerta_antes,lstm_s42_min_hasta_alerta
+20180720_FIRE_syp-w-mobo-c,81,60.0,29.2,0,0,0,0,0,0,0,,0,,0,
+20240701_Kitchenfire_lp-e-mobo-c,81,60.0,25.8,0,0,0,0,0,0,0,,0,,0,
+20220905-FairviewFire-bh-n-mobo-c,80,60.0,26.3,0,1,1,0,0,3,0,,0,,0,
+20160718_FIRE_mg-s-iqeye,41,120.0,10.7,0,0,0,0,0,0,0,,0,,0,
+20200806_BorderFire_lp-s-mobo-c,81,60.0,30.1,0,0,0,0,0,0,0,,0,,0,
+20240907_ChurchFire_ws-w-mobo-c,80,60.0,32.6,0,3,3,0,0,6,0,,0,,0,
+20251009_RanchoFire_bm-s-mobo-c,80,60.0,29.3,0,1,1,0,0,26,0,,0,,0,
+20190801_Caliente_om-w-mobo,81,60.0,27.2,0,0,0,0,0,0,0,,0,,0,
+20191007_FIRE_sm-s-mobo-c,81,60.0,22.8,0,0,0,0,0,0,0,,0,,0,
+20170807_FIRE_bh-n-mobo-c,78,60.0,26.6,0,1,1,0,0,61,0,,0,,0,

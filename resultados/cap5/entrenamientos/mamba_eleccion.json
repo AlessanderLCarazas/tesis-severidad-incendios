@@ -1,0 +1,36 @@
+{
+ "opciones": {
+  "A": {
+   "factor_incipiente": 1.0,
+   "f1_suavizado_semilla_42": {
+    "0.001": 0.5464138322538875,
+    "0.003": 0.5420287409476111
+   },
+   "tasa": 0.001,
+   "grupo": "mamba_busqueda/A_lr0.001",
+   "f1_final_validacion": [
+    0.563727384569321,
+    0.5608333096320791,
+    0.5277241965311249
+   ],
+   "media": 0.550761630244175
+  },
+  "B": {
+   "factor_incipiente": 2.0,
+   "f1_suavizado_semilla_42": {
+    "0.001": 0.5382316082433496,
+    "0.003": 0.5593097787650151
+   },
+   "tasa": 0.003,
+   "grupo": "mamba_busqueda/B_lr0.003",
+   "f1_final_validacion": [
+    0.517246799579468,
+    0.6296644373505339,
+    0.5431283271845113
+   ],
+   "media": 0.5633465213715044
+  }
+ },
+ "elegido": "B",
+ "grupo": "mamba_busqueda/B_lr0.003"
+}

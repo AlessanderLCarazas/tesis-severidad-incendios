@@ -1,0 +1,1442 @@
+[
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de CfC con quitar_25, IA",
+  "punto": -0.0002388380939868373,
+  "ic": [
+   -0.015932008911906066,
+   0.018344784956187517
+  ],
+  "p": 0.97886333634652
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de CfC con quitar_50, IA",
+  "punto": 0.002265774842097834,
+  "ic": [
+   -0.02100308638986496,
+   0.026542261696553725
+  ],
+  "p": 0.8594689661250681
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de CfC con quitar_75, IA",
+  "punto": -0.012575444581978512,
+  "ic": [
+   -0.0583214432996711,
+   0.025864049644849486
+  ],
+  "p": 0.5562332557000309
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de GRU con quitar_25, IA",
+  "punto": -0.04981330707463483,
+  "ic": [
+   -0.10556833351217786,
+   0.0010603930725493183
+  ],
+  "p": 0.06810562554132416
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de GRU con quitar_50, IA",
+  "punto": -0.04245758078495687,
+  "ic": [
+   -0.11542874957625338,
+   0.025855808025216497
+  ],
+  "p": 0.23875462759449584
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de GRU con quitar_75, IA",
+  "punto": -0.11029004641704315,
+  "ic": [
+   -0.2071768088200563,
+   -0.012095278879269075
+  ],
+  "p": 0.029710712566903164
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de LSTM con quitar_25, IA",
+  "punto": 0.004662456475426513,
+  "ic": [
+   -0.016280073478051525,
+   0.0291107479542225
+  ],
+  "p": 0.6846382764321133
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de LSTM con quitar_50, IA",
+  "punto": -0.000286732172793569,
+  "ic": [
+   -0.025641188146001394,
+   0.027486027218717936
+  ],
+  "p": 0.9832244395591463
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de LSTM con quitar_75, IA",
+  "punto": -0.03657036313323264,
+  "ic": [
+   -0.0727931809286807,
+   -0.0035733425744585894
+  ],
+  "p": 0.039858219479285584
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de gradient boosting con quitar_25, IA",
+  "punto": 0.019987434043981733,
+  "ic": [
+   0.00857573557994044,
+   0.03195369222972973
+  ],
+  "p": 0.0010465308556413255
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de gradient boosting con quitar_50, IA",
+  "punto": 0.007504896250791593,
+  "ic": [
+   -0.016552913824501345,
+   0.029159787816722477
+  ],
+  "p": 0.5193750344706269
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de gradient boosting con quitar_75, IA",
+  "punto": -0.011630400551260633,
+  "ic": [
+   -0.052248471682741354,
+   0.022737872797300048
+  ],
+  "p": 0.552798842832317
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de regresi\u00f3n log\u00edstica con quitar_25, IA",
+  "punto": 0.010241294125109879,
+  "ic": [
+   -0.0066215056037667915,
+   0.02802723640127485
+  ],
+  "p": 0.25244042889690643
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de regresi\u00f3n log\u00edstica con quitar_50, IA",
+  "punto": 0.027408829806388257,
+  "ic": [
+   0.002215074066593634,
+   0.0599990417281315
+  ],
+  "p": 0.05465202622927623
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de regresi\u00f3n log\u00edstica con quitar_75, IA",
+  "punto": 0.009600587678480488,
+  "ic": [
+   -0.035715387796122405,
+   0.05170064419403641
+  ],
+  "p": 0.6744702058815808
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 GRU - CfC con quitar_25, IA",
+  "punto": 0.09547333132533856,
+  "ic": [
+   0.0014807526311177758,
+   0.190824827597881
+  ],
+  "p": 0.04484709387206465
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa GRU - CfC con quitar_25, IA",
+  "punto": 0.2059996608951426,
+  "ic": [
+   0.00982524123188421,
+   0.3682022663969655
+  ],
+  "p": 0.024297169203729485
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 GRU - CfC con quitar_50, IA",
+  "punto": 0.08674085983737842,
+  "ic": [
+   -0.04716124054816577,
+   0.19573344066172121
+  ],
+  "p": 0.16765174287311613
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa GRU - CfC con quitar_50, IA",
+  "punto": 0.25884365641197615,
+  "ic": [
+   -0.02329508103889085,
+   0.5426776542270219
+  ],
+  "p": 0.06048927821182715
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 GRU - CfC con quitar_75, IA",
+  "punto": 0.1852080829732975,
+  "ic": [
+   0.017044007475725497,
+   0.32305072629713816
+  ],
+  "p": 0.020756388401672377
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa GRU - CfC con quitar_75, IA",
+  "punto": 0.435322443863311,
+  "ic": [
+   0.14925332600275507,
+   0.7449421581186109
+  ],
+  "p": 0.0038733822593746137
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 LSTM - CfC con quitar_25, IA",
+  "punto": -0.010655806084711663,
+  "ic": [
+   -0.05777366123761681,
+   0.03512484044772538
+  ],
+  "p": 0.6498946182067
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa LSTM - CfC con quitar_25, IA",
+  "punto": -0.040584094223967596,
+  "ic": [
+   -0.21325727531269265,
+   0.06651872191203903
+  ],
+  "p": 0.5618632974756501
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 LSTM - CfC con quitar_50, IA",
+  "punto": 0.005546738070433355,
+  "ic": [
+   -0.06229689493269433,
+   0.06835052020084055
+  ],
+  "p": 0.87172023043858
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa LSTM - CfC con quitar_50, IA",
+  "punto": -0.01492966169823684,
+  "ic": [
+   -0.205144929660389,
+   0.17875479546984563
+  ],
+  "p": 0.8792054910586653
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 LSTM - CfC con quitar_75, IA",
+  "punto": 0.05218366258325059,
+  "ic": [
+   -0.02898558740046771,
+   0.1380645102216906
+  ],
+  "p": 0.22828373621678932
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa LSTM - CfC con quitar_75, IA",
+  "punto": 0.07398173046182911,
+  "ic": [
+   -0.1145903002161223,
+   0.2898220335436081
+  ],
+  "p": 0.4774005171210547
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de CfC con quitar_25, IA",
+  "punto": 0.008198159536634053,
+  "ic": [
+   -0.005162688418388663,
+   0.02497572336129751
+  ],
+  "p": 0.2961821503117217
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de CfC con quitar_50, IA",
+  "punto": 0.012015871711073212,
+  "ic": [
+   -0.0020037848990554284,
+   0.02715211845676934
+  ],
+  "p": 0.11902231759672377
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de CfC con quitar_75, IA",
+  "punto": 0.016879068760997817,
+  "ic": [
+   -0.023429224194432954,
+   0.052753359782435984
+  ],
+  "p": 0.39153855837829776
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de GRU con quitar_25, IA",
+  "punto": -0.0024255012201395143,
+  "ic": [
+   -0.03943336355006085,
+   0.027831347491721295
+  ],
+  "p": 0.8865679069319428
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de GRU con quitar_50, IA",
+  "punto": -0.0005965267595304802,
+  "ic": [
+   -0.01844015689116173,
+   0.018673098594780575
+  ],
+  "p": 0.9502652568664454
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de GRU con quitar_75, IA",
+  "punto": -0.011401273091423414,
+  "ic": [
+   -0.05004785658861236,
+   0.025805936720072725
+  ],
+  "p": 0.5683748411378149
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de LSTM con quitar_25, IA",
+  "punto": 0.010284594401139324,
+  "ic": [
+   -0.006729323930177468,
+   0.02874849044160247
+  ],
+  "p": 0.2684049032229763
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de LSTM con quitar_50, IA",
+  "punto": 0.022385171825785255,
+  "ic": [
+   0.0007991424019121396,
+   0.04651028345179063
+  ],
+  "p": 0.053977765848277404
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de LSTM con quitar_75, IA",
+  "punto": 0.02132501763524325,
+  "ic": [
+   -0.007853834672528225,
+   0.04597903005104566
+  ],
+  "p": 0.12370938565961342
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 GRU - CfC con quitar_25, IA",
+  "punto": 0.02302507253747795,
+  "ic": [
+   -0.04624447860658943,
+   0.09686678932916046
+  ],
+  "p": 0.5317800061845768
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa GRU - CfC con quitar_25, IA",
+  "punto": 0.062245279593559515,
+  "ic": [
+   -0.06634113100133382,
+   0.19387164623452552
+  ],
+  "p": 0.32896949864575564
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 GRU - CfC con quitar_50, IA",
+  "punto": 0.027926044755027184,
+  "ic": [
+   -0.025323073211721954,
+   0.0786642695774174
+  ],
+  "p": 0.29944535768442404
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa GRU - CfC con quitar_50, IA",
+  "punto": 0.04603205340722215,
+  "ic": [
+   -0.052103568589961256,
+   0.1866520115882572
+  ],
+  "p": 0.44399174656150264
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 GRU - CfC con quitar_75, IA",
+  "punto": 0.06001374322796468,
+  "ic": [
+   -0.0761908805215623,
+   0.19234557649764128
+  ],
+  "p": 0.3635136628473512
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa GRU - CfC con quitar_75, IA",
+  "punto": 0.05474401521458393,
+  "ic": [
+   -0.15316784946514933,
+   0.33835546374268555
+  ],
+  "p": 0.6616307101038501
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 LSTM - CfC con quitar_25, IA",
+  "punto": -0.004412336721042749,
+  "ic": [
+   -0.05019219403337676,
+   0.045736481690456354
+  ],
+  "p": 0.8570596050208661
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa LSTM - CfC con quitar_25, IA",
+  "punto": -0.010651089718223122,
+  "ic": [
+   -0.14776168110335197,
+   0.12267850473528581
+  ],
+  "p": 0.8784939537147518
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 LSTM - CfC con quitar_50, IA",
+  "punto": -0.022579348605704496,
+  "ic": [
+   -0.07444961797757237,
+   0.027423069539414573
+  ],
+  "p": 0.3820951349302084
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa LSTM - CfC con quitar_50, IA",
+  "punto": -0.04756777331916915,
+  "ic": [
+   -0.21090456838944385,
+   0.0851473765814542
+  ],
+  "p": 0.537912193996432
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 LSTM - CfC con quitar_75, IA",
+  "punto": -0.009415541948169286,
+  "ic": [
+   -0.09469476024576472,
+   0.07827874312841744
+  ],
+  "p": 0.8363555982962172
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa LSTM - CfC con quitar_75, IA",
+  "punto": -0.06512478042418576,
+  "ic": [
+   -0.20077570667005007,
+   0.1174924782097504
+  ],
+  "p": 0.4279659497974737
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de CfC con completa, IA",
+  "punto": -0.01105742689956335,
+  "ic": [
+   -0.04625549209866977,
+   0.026108919521325918
+  ],
+  "p": 0.5429688364168734
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de CfC con completa, IA",
+  "punto": 0.006920317122017738,
+  "ic": [
+   -0.03849285193922565,
+   0.05027140738107496
+  ],
+  "p": 0.7612477267294793
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de CfC con quitar_25, IA",
+  "punto": -0.002620429268942459,
+  "ic": [
+   -0.036286971791164566,
+   0.034079796341209986
+  ],
+  "p": 0.8829765035533597
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de CfC con quitar_25, IA",
+  "punto": 0.0129689389859583,
+  "ic": [
+   -0.03809520563661999,
+   0.06642378152985257
+  ],
+  "p": 0.6258601708180136
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de CfC con quitar_50, IA",
+  "punto": -0.001307330030587972,
+  "ic": [
+   -0.029303963389731347,
+   0.03159831718350132
+  ],
+  "p": 0.9315987191067734
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de CfC con quitar_50, IA",
+  "punto": 0.015556819564456037,
+  "ic": [
+   -0.02602366481567587,
+   0.059826683415045954
+  ],
+  "p": 0.482702785316266
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de CfC con quitar_75, IA",
+  "punto": 0.01839708644341298,
+  "ic": [
+   -0.016053413593623285,
+   0.04881253145848861
+  ],
+  "p": 0.26686617282108527
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de CfC con quitar_75, IA",
+  "punto": 0.019719517410745846,
+  "ic": [
+   -0.02087113515696561,
+   0.060084361837998645
+  ],
+  "p": 0.3414452784331048
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de GRU con completa, IA",
+  "punto": -0.010715991385845891,
+  "ic": [
+   -0.04256100302550913,
+   0.02715817829101511
+  ],
+  "p": 0.5512416625724343
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de GRU con completa, IA",
+  "punto": -0.009603327610121282,
+  "ic": [
+   -0.05911978235730725,
+   0.05227088748390296
+  ],
+  "p": 0.7309441280915805
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de GRU con quitar_25, IA",
+  "punto": 0.03667181446864942,
+  "ic": [
+   0.0004298743728676102,
+   0.07499696698929224
+  ],
+  "p": 0.0544122911737166
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de GRU con quitar_25, IA",
+  "punto": 0.050855129665456855,
+  "ic": [
+   -0.004420708114544355,
+   0.11169401721182896
+  ],
+  "p": 0.07664964606777147
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de GRU con quitar_50, IA",
+  "punto": 0.0311450626395805,
+  "ic": [
+   -0.015737003153177352,
+   0.08674716451734502
+  ],
+  "p": 0.2494631619992549
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de GRU con quitar_50, IA",
+  "punto": 0.0788029346812274,
+  "ic": [
+   -5.7429669982463465e-05,
+   0.16058032346237885
+  ],
+  "p": 0.05614232366136385
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de GRU con quitar_75, IA",
+  "punto": 0.08817278193977385,
+  "ic": [
+   0.011280107609125227,
+   0.1647869648559861
+  ],
+  "p": 0.022794249302307668
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de GRU con quitar_75, IA",
+  "punto": 0.1479893101742681,
+  "ic": [
+   0.04221357729870464,
+   0.2465539289291411
+  ],
+  "p": 0.004376190915708955
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de LSTM con completa, IA",
+  "punto": -0.006182883162875852,
+  "ic": [
+   -0.03153689027332073,
+   0.01337464346030611
+  ],
+  "p": 0.5829444612881309
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de LSTM con completa, IA",
+  "punto": -0.00777984853877739,
+  "ic": [
+   -0.04022275642075129,
+   0.02407889621357344
+  ],
+  "p": 0.6326609755394421
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de LSTM con quitar_25, IA",
+  "punto": -0.0005607452371630406,
+  "ic": [
+   -0.022102243883618585,
+   0.019731951993541972
+  ],
+  "p": 0.9585615646815433
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de LSTM con quitar_25, IA",
+  "punto": -0.011829966342397358,
+  "ic": [
+   -0.04577857228354,
+   0.015735299738834356
+  ],
+  "p": 0.46185818787391275
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de LSTM con quitar_50, IA",
+  "punto": 0.016489020835702972,
+  "ic": [
+   -0.005213300364339021,
+   0.04068613665654852
+  ],
+  "p": 0.16631615308134196
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de LSTM con quitar_50, IA",
+  "punto": 0.010240393744948784,
+  "ic": [
+   -0.0257517906311602,
+   0.04567759376623818
+  ],
+  "p": 0.5680690433351323
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de LSTM con quitar_75, IA",
+  "punto": 0.05171249760560004,
+  "ic": [
+   0.011613550887970647,
+   0.09657296014573666
+  ],
+  "p": 0.020636622219389222
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de LSTM con quitar_75, IA",
+  "punto": 0.050342857676228925,
+  "ic": [
+   -0.0075301647930137655,
+   0.11025702559123264
+  ],
+  "p": 0.0954825464437139
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de CfC con quitar_25, humana",
+  "punto": 0.0022549381166478977,
+  "ic": [
+   -0.01406777519653126,
+   0.020340669990231177
+  ],
+  "p": 0.7973047268868876
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de CfC con quitar_50, humana",
+  "punto": -0.004507084308834175,
+  "ic": [
+   -0.025096011144186275,
+   0.01477384795562422
+  ],
+  "p": 0.6783584992561134
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de CfC con quitar_75, humana",
+  "punto": 0.008851698413468334,
+  "ic": [
+   -0.02586609856289312,
+   0.04144412340778788
+  ],
+  "p": 0.6029635447877211
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de GRU con quitar_25, humana",
+  "punto": -0.03623497669955106,
+  "ic": [
+   -0.0894668134183628,
+   0.012795086937543587
+  ],
+  "p": 0.16541244461258908
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de GRU con quitar_50, humana",
+  "punto": -0.04141487716460823,
+  "ic": [
+   -0.1035194374822125,
+   0.025361429677167525
+  ],
+  "p": 0.20754331700432616
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de GRU con quitar_75, humana",
+  "punto": -0.07812082349634214,
+  "ic": [
+   -0.17055837116652098,
+   0.006915748862183124
+  ],
+  "p": 0.08450763899295155
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de LSTM con quitar_25, humana",
+  "punto": 0.004777519854207046,
+  "ic": [
+   -0.018347696875452416,
+   0.033015892505880676
+  ],
+  "p": 0.7108178862721666
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de LSTM con quitar_50, humana",
+  "punto": -0.003938592363163185,
+  "ic": [
+   -0.034475580340847925,
+   0.02650042648238952
+  ],
+  "p": 0.8039713677167799
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de LSTM con quitar_75, humana",
+  "punto": -0.023566463397640347,
+  "ic": [
+   -0.05690619164399272,
+   0.009707769760630739
+  ],
+  "p": 0.1773938607557144
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de gradient boosting con quitar_25, humana",
+  "punto": 0.01529517917583939,
+  "ic": [
+   0.002295714857569889,
+   0.03006472853375924
+  ],
+  "p": 0.026413426720879984
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de gradient boosting con quitar_50, humana",
+  "punto": 0.0003809893011922916,
+  "ic": [
+   -0.019141916114421065,
+   0.0227881736641308
+  ],
+  "p": 0.9726518778837594
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de gradient boosting con quitar_75, humana",
+  "punto": -0.028902601364184044,
+  "ic": [
+   -0.05930780010354137,
+   0.005782966971072732
+  ],
+  "p": 0.07688148700506003
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de regresi\u00f3n log\u00edstica con quitar_25, humana",
+  "punto": 0.00034377535392704495,
+  "ic": [
+   -0.016689668064168984,
+   0.01944384558931169
+  ],
+  "p": 0.9703952628542845
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de regresi\u00f3n log\u00edstica con quitar_50, humana",
+  "punto": 0.015181442307520276,
+  "ic": [
+   -0.010060665409769983,
+   0.04792813528597753
+  ],
+  "p": 0.30840689651649256
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida de F1 de regresi\u00f3n log\u00edstica con quitar_75, humana",
+  "punto": -0.017384212049811998,
+  "ic": [
+   -0.05239945509937,
+   0.02728111123441778
+  ],
+  "p": 0.39270697522903
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 GRU - CfC con quitar_25, humana",
+  "punto": 0.0775914722789949,
+  "ic": [
+   -0.016158470176790986,
+   0.1697754656837916
+  ],
+  "p": 0.10142111996335923
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa GRU - CfC con quitar_25, humana",
+  "punto": 0.16872335971820296,
+  "ic": [
+   -0.03214790721488191,
+   0.36217496396121707
+  ],
+  "p": 0.0751982302677785
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 GRU - CfC con quitar_50, humana",
+  "punto": 0.07376449084930906,
+  "ic": [
+   -0.06935603682876369,
+   0.18958162084389737
+  ],
+  "p": 0.24710358875109462
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa GRU - CfC con quitar_50, humana",
+  "punto": 0.12878939985010618,
+  "ic": [
+   -0.1662830761654425,
+   0.34530770007886513
+  ],
+  "p": 0.3168203742001374
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 GRU - CfC con quitar_75, humana",
+  "punto": 0.17568623890427065,
+  "ic": [
+   0.005645801190586663,
+   0.3361375118891507
+  ],
+  "p": 0.03937463487346338
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa GRU - CfC con quitar_75, humana",
+  "punto": 0.3546713235134531,
+  "ic": [
+   0.02034880434776587,
+   0.6434357008797553
+  ],
+  "p": 0.02693915066959751
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 LSTM - CfC con quitar_25, humana",
+  "punto": -0.00562706390524343,
+  "ic": [
+   -0.060353231581023375,
+   0.039729390545933926
+  ],
+  "p": 0.8197933741807082
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa LSTM - CfC con quitar_25, humana",
+  "punto": -0.01363239899743238,
+  "ic": [
+   -0.139426441896617,
+   0.09098900049736254
+  ],
+  "p": 0.8174773292907327
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 LSTM - CfC con quitar_50, humana",
+  "punto": -0.0009376765766853576,
+  "ic": [
+   -0.08248287272984971,
+   0.06670030096520617
+  ],
+  "p": 0.980952042533076
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa LSTM - CfC con quitar_50, humana",
+  "punto": -0.04473545149820626,
+  "ic": [
+   -0.2267688318915969,
+   0.11156725040440543
+  ],
+  "p": 0.6024436568042024
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de f1 LSTM - CfC con quitar_75, humana",
+  "punto": 0.0698218715098124,
+  "ic": [
+   -0.01918939060370484,
+   0.15607559258035245
+  ],
+  "p": 0.12159272518466624
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte1, caida relativa de kappa LSTM - CfC con quitar_75, humana",
+  "punto": 0.09519345184053077,
+  "ic": [
+   -0.09919859210656239,
+   0.2743161921016016
+  ],
+  "p": 0.2938457546519522
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de CfC con quitar_25, humana",
+  "punto": -0.002276405631226497,
+  "ic": [
+   -0.021683084386191945,
+   0.017390222775134807
+  ],
+  "p": 0.8191500319619731
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de CfC con quitar_50, humana",
+  "punto": 0.011463183146249112,
+  "ic": [
+   -0.004820210398848193,
+   0.02989097040450948
+  ],
+  "p": 0.19348031223752438
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de CfC con quitar_75, humana",
+  "punto": 0.006956490766606427,
+  "ic": [
+   -0.02377925465575138,
+   0.03778210125427021
+  ],
+  "p": 0.6543909312544376
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de GRU con quitar_25, humana",
+  "punto": -0.030229389424898057,
+  "ic": [
+   -0.06589050484254408,
+   0.0029919167069925867
+  ],
+  "p": 0.08827852189224639
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de GRU con quitar_50, humana",
+  "punto": -0.0011396534532468472,
+  "ic": [
+   -0.021751762202423787,
+   0.022116017296135455
+  ],
+  "p": 0.915802596659745
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de GRU con quitar_75, humana",
+  "punto": 0.012030438203415983,
+  "ic": [
+   -0.030112220643379803,
+   0.04841959099498672
+  ],
+  "p": 0.5554712315948136
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de LSTM con quitar_25, humana",
+  "punto": 0.010012662946181639,
+  "ic": [
+   -0.011121688434823283,
+   0.03000101005738782
+  ],
+  "p": 0.3405117557265045
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de LSTM con quitar_50, humana",
+  "punto": 0.026044079754827143,
+  "ic": [
+   0.0004758256434450368,
+   0.04952854842424688
+  ],
+  "p": 0.037619361257949846
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida de F1 de LSTM con quitar_75, humana",
+  "punto": 0.017689532719655954,
+  "ic": [
+   -0.009981955782638588,
+   0.042617366059215935
+  ],
+  "p": 0.192218912076912
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 GRU - CfC con quitar_25, humana",
+  "punto": 0.05517026318568837,
+  "ic": [
+   -0.018144138305231837,
+   0.12745141172253693
+  ],
+  "p": 0.13430392018690296
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa GRU - CfC con quitar_25, humana",
+  "punto": 0.13393860084790882,
+  "ic": [
+   -0.006246197816251702,
+   0.2752400642306216
+  ],
+  "p": 0.06112428873806963
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 GRU - CfC con quitar_50, humana",
+  "punto": 0.02657317655913474,
+  "ic": [
+   -0.032208595842826246,
+   0.08301559279067423
+  ],
+  "p": 0.3640432231168025
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa GRU - CfC con quitar_50, humana",
+  "punto": 0.025179902202100427,
+  "ic": [
+   -0.06908051837803439,
+   0.12239306014450639
+  ],
+  "p": 0.6011569569680184
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 GRU - CfC con quitar_75, humana",
+  "punto": -0.009124136671249497,
+  "ic": [
+   -0.10232079393377859,
+   0.08409187740313318
+  ],
+  "p": 0.8461839402535865
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa GRU - CfC con quitar_75, humana",
+  "punto": -0.07551299447144755,
+  "ic": [
+   -0.24491322461278658,
+   0.07314278561106374
+  ],
+  "p": 0.3446502180327009
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 LSTM - CfC con quitar_25, humana",
+  "punto": -0.02686027496968208,
+  "ic": [
+   -0.08383493548176507,
+   0.029495789126096055
+  ],
+  "p": 0.34689956351103923
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa LSTM - CfC con quitar_25, humana",
+  "punto": -0.05863843184695716,
+  "ic": [
+   -0.19856005899846044,
+   0.05277925054413982
+  ],
+  "p": 0.3874900451512695
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 LSTM - CfC con quitar_50, humana",
+  "punto": -0.03299768147090742,
+  "ic": [
+   -0.08475030319020836,
+   0.023866192033246206
+  ],
+  "p": 0.24949676325666825
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa LSTM - CfC con quitar_50, humana",
+  "punto": -0.04067105576176724,
+  "ic": [
+   -0.18021149886523813,
+   0.08850206766662677
+  ],
+  "p": 0.5550463623151498
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de f1 LSTM - CfC con quitar_75, humana",
+  "punto": -0.024171686575219592,
+  "ic": [
+   -0.0965761198146106,
+   0.051196534142732626
+  ],
+  "p": 0.5128899197317671
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "parte2, caida relativa de kappa LSTM - CfC con quitar_75, humana",
+  "punto": -0.06283797865370372,
+  "ic": [
+   -0.1878704031434459,
+   0.09620148582340886
+  ],
+  "p": 0.39058338246701907
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de CfC con completa, humana",
+  "punto": -0.0033404359460371125,
+  "ic": [
+   -0.02790660218497938,
+   0.020169721320288738
+  ],
+  "p": 0.7959880835776036
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de CfC con completa, humana",
+  "punto": 0.016201665497815487,
+  "ic": [
+   -0.01767425996626208,
+   0.05167953427665671
+  ],
+  "p": 0.3785061739495461
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de CfC con quitar_25, humana",
+  "punto": -0.007871779693911507,
+  "ic": [
+   -0.03206376356206328,
+   0.012715886597066598
+  ],
+  "p": 0.4992711794802558
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de CfC con quitar_25, humana",
+  "punto": 0.0019652865247485884,
+  "ic": [
+   -0.029456170101236894,
+   0.03395959960003221
+  ],
+  "p": 0.9022381762489791
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de CfC con quitar_50, humana",
+  "punto": 0.012629831509046174,
+  "ic": [
+   -0.008904376132555398,
+   0.03295428517859425
+  ],
+  "p": 0.23622830077212176
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de CfC con quitar_50, humana",
+  "punto": 0.039007466691138304,
+  "ic": [
+   0.011145068881994792,
+   0.06730396208524636
+  ],
+  "p": 0.005205178403821176
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de CfC con quitar_75, humana",
+  "punto": -0.00523564359289902,
+  "ic": [
+   -0.03633934699885133,
+   0.02341752119928801
+  ],
+  "p": 0.7351910487312667
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de CfC con quitar_75, humana",
+  "punto": -6.218997668999693e-05,
+  "ic": [
+   -0.03850757543861274,
+   0.040934474281345515
+  ],
+  "p": 0.99748308543125
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de GRU con completa, humana",
+  "punto": 0.006398589256655762,
+  "ic": [
+   -0.04197865979776726,
+   0.05545597873149024
+  ],
+  "p": 0.8018769690661598
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de GRU con completa, humana",
+  "punto": 0.006282339573588924,
+  "ic": [
+   -0.06070853692319375,
+   0.07432254565387289
+  ],
+  "p": 0.8582256880346522
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de GRU con quitar_25, humana",
+  "punto": 0.012404176531308764,
+  "ic": [
+   -0.02692022723979374,
+   0.057469521134258676
+  ],
+  "p": 0.5625566241652147
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de GRU con quitar_25, humana",
+  "punto": 0.003456051829270279,
+  "ic": [
+   -0.051516260657420494,
+   0.06318724436155575
+  ],
+  "p": 0.9073044689007714
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de GRU con quitar_50, humana",
+  "punto": 0.04667381296801715,
+  "ic": [
+   -0.015616409972371773,
+   0.10657265225115065
+  ],
+  "p": 0.13165017403268497
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de GRU con quitar_50, humana",
+  "punto": 0.06575176029343743,
+  "ic": [
+   -0.021376032187182873,
+   0.14735951817108114
+  ],
+  "p": 0.13246133513601333
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de GRU con quitar_75, humana",
+  "punto": 0.09654985095641389,
+  "ic": [
+   0.01956789822398479,
+   0.1721568448879515
+  ],
+  "p": 0.014709095746532341
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de GRU con quitar_75, humana",
+  "punto": 0.14291677849378923,
+  "ic": [
+   0.035682188803137414,
+   0.24269068234965924
+  ],
+  "p": 0.007643298725217074
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de LSTM con completa, humana",
+  "punto": -0.0060012291598871,
+  "ic": [
+   -0.031154249949496563,
+   0.02146633605778719
+  ],
+  "p": 0.6651212767864023
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de LSTM con completa, humana",
+  "punto": -0.002879737432669449,
+  "ic": [
+   -0.032216901218205855,
+   0.028243549707489313
+  ],
+  "p": 0.8520584886930698
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de LSTM con quitar_25, humana",
+  "punto": -0.0007660860679125081,
+  "ic": [
+   -0.028141508370001192,
+   0.02365183700401597
+  ],
+  "p": 0.9547643343968464
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de LSTM con quitar_25, humana",
+  "punto": -0.0012397748786886487,
+  "ic": [
+   -0.030457061910231672,
+   0.024667522566296684
+  ],
+  "p": 0.9303989673541027
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de LSTM con quitar_50, humana",
+  "punto": 0.023981442958103227,
+  "ic": [
+   -0.0001707288849558007,
+   0.04475085875227718
+  ],
+  "p": 0.04163562344992844
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de LSTM con quitar_50, humana",
+  "punto": 0.017901915196269824,
+  "ic": [
+   -0.018669779562330308,
+   0.05096184337897747
+  ],
+  "p": 0.31772164793980195
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, f1 de LSTM con quitar_75, humana",
+  "punto": 0.0352547669574092,
+  "ic": [
+   -0.00028060573576272295,
+   0.06609744143437449
+  ],
+  "p": 0.04079929747272848
+ },
+ {
+  "bloque": "robustez",
+  "descripcion": "reentrenado - congelado, kappa de LSTM con quitar_75, humana",
+  "punto": 0.03707633850893982,
+  "ic": [
+   -0.018370911943723547,
+   0.08199886858513213
+  ],
+  "p": 0.16423050115394755
+ }
+]
