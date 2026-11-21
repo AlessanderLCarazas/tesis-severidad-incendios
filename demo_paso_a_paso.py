@@ -28,7 +28,27 @@ COLS_VECTOR = [("d1_max", "d1 confianza (máx.)"), ("d2_max", "d2 área (máx.)"
                ("d11_max", "d11 área de humo (máx.)"), ("n_tray", "trayectorias activas"), ("area_det_fuego", "área detectada de fuego"),
                ("area_det_humo", "área detectada de humo")]
 CAPTURA = {}
-ZONAS_DIFUMINAR = {"Jeder dritte Brand entsteht durch Elektrizität.mp4": [(1660, 806, 1864, 1080)]}
+DIFUMINADO = {
+    "Jeder dritte Brand entsteht durch Elektrizität.mp4": {"texto": "marca comercial difuminada", "zonas": [(1660, 806, 1864, 1080, None, None)]},
+    "Har du en fungerande brandvarnare_.mp4": {"texto": "teléfono y rostros difuminados", "zonas": [
+        (230, 300, 450, 500, 10.95, 11.05),
+        (250, 330, 540, 530, 11.05, 11.15),
+        (370, 320, 630, 530, 11.15, 11.25),
+        (440, 320, 700, 530, 11.25, 11.35),
+        (500, 300, 770, 510, 11.35, 11.45),
+        (560, 290, 820, 500, 11.45, 11.55),
+        (610, 300, 880, 510, 11.55, 11.65),
+        (670, 320, 900, 530, 11.65, 11.75),
+        (1245, 211, 1578, 869, 12.25, 15.28),
+        (1780, 0, 1920, 340, 27.55, 27.75),
+        (1620, 0, 1900, 290, 27.75, 27.85),
+        (1500, 0, 1790, 300, 27.85, 27.95),
+        (1440, 20, 1710, 320, 27.95, 28.05),
+        (1380, 20, 1660, 330, 28.05, 28.15),
+        (1340, 40, 1640, 360, 28.15, 28.25),
+        (1290, 90, 1590, 380, 28.25, 28.35),
+        (1250, 80, 1550, 380, 28.35, 28.55)]},
+}
 NOMBRE_CONJUNTO = {"prueba": "prueba", "validacion": "validación", "calibracion": "calibración"}
 
 
@@ -81,11 +101,15 @@ def decod(b):
     return cv2.imdecode(np.frombuffer(b, np.uint8), cv2.IMREAD_COLOR)
 
 
-def difuminar(img, zonas, sigma, ancho_fuente):
+def difuminar(img, zonas, sigma, ancho_fuente, t=None):
     if not zonas:
         return img
     f = img.shape[1] / float(ancho_fuente)
-    for x0, y0, x1, y1 in zonas:
+    for z in zonas:
+        x0, y0, x1, y1 = z[:4]
+        t0, t1 = (z[4], z[5]) if len(z) > 4 else (None, None)
+        if t is not None and t0 is not None and not (t0 <= t < t1):
+            continue
         xa, ya = max(0, int(np.floor(x0 * f))), max(0, int(np.floor(y0 * f)))
         xb, yb = min(img.shape[1], int(np.ceil(x1 * f))), min(img.shape[0], int(np.ceil(y1 * f)))
         if xb > xa and yb > ya:
@@ -427,18 +451,19 @@ class Demo:
         self.seg = segmentos(self.t, self.nivel, self.t_fin)
         self.t_alerta = float(self.t[np.argmax(self.alerta)]) if self.alerta.any() else None
         self.edad = edades(self.M)
-        self.cortes = sum(1 for m in self.M if m["corte"])
+        self.t_cortes = [float(m["t"]) for m in self.M if m["corte"]]
+        self.cortes = len(self.t_cortes)
         self.n = int(round(a.escena_s * a.fps))
         self.cred = a.credito
         self.lut_g = rampa(["#22262e", "#2a78d6", "#bcd8fa"])
         self.lut_h = rampa(["#eb6834", "#2a2e36", "#4b93ec"])
         self.nombre_modelo = {"cfc": "CfC", "gru": "GRU", "lstm": "LSTM"}.get(D["tipo"], D["tipo"])
 
-    def vis(self, b):
-        return difuminar(decod(b), self.a.zonas, self.a.sigma_difuminado, self.D["ancho"])
+    def vis(self, b, t):
+        return difuminar(decod(b), self.a.zonas, self.a.sigma_difuminado, self.D["ancho"], t)
 
     def img(self, j):
-        return self.vis(self.M[j]["jpg"])
+        return self.vis(self.M[j]["jpg"], self.M[j]["t"])
 
     def indice(self, t):
         return int(min(self.T - 1, np.searchsorted(self.t, t - 1e-9)))
@@ -463,7 +488,7 @@ class Demo:
         return esc
 
     def titulo(self, n):
-        j = self.indice(self.a.t_portada if self.a.t_portada >= 0 else 0.55 * self.t_fin)
+        j = self.indice(self.a.t_portada) if self.a.t_portada >= 0 else int(np.argmax(self.riesgo))
         conjunto = NOMBRE_CONJUNTO[self.a.conjunto]
         for _ in range(n):
             lz = Lienzo()
@@ -516,7 +541,7 @@ class Demo:
             lz = Lienzo()
             marco(lz, 1, "Entrada: fotogramas con su marca de tiempo",
                   "El sistema recibe pares (I_k, t_k): cada imagen con su marca de tiempo real, leída del archivo (CAP_PROP_POS_MSEC).", self.cred)
-            lz.imagen(self.vis(imgs[j]), 24, 96, 720, 405)
+            lz.imagen(self.vis(imgs[j], ts[j]), 24, 96, 720, 405)
             dt = ts[j] - ts[j - 1] if j > 0 else 0.0
             lz.etiqueta(f"fotograma {j} · t = {num(ts[j], 3)} s · Δt = {num(dt, 3)} s", 34, 106, 18, "tinta")
             lz.rect(768, 96, 1256, 501, "panel")
@@ -629,7 +654,15 @@ class Demo:
             lz.linea(990, 460, 1020, 460, "fuego", 2)
             lz.texto("recorrido del centro (2 s)", 1028, 460, 14, "tinta2", False, "lm")
             lz.texto("ByteTrack por clase, con el Δt real en el filtro de Kalman (tope de 2 intervalos) y la cámara compensada.", 24, 528, 16, "tinta", False, "lm")
-            lz.texto(f"Cortes de escena detectados en este video: {self.cortes} (en cada corte se reinicia el seguimiento).", 24, 558, 16, "tinta2", False, "lm")
+            previos = [tc for tc in self.t_cortes if tc <= m["t"] + 1e-9]
+            if previos and m["t"] - previos[-1] <= 1.5:
+                lz.chip(f"corte de escena a los {num(previos[-1], 1)} s: seguimiento reiniciado", 34, 452, 15, "acento")
+            if self.t_cortes:
+                instantes = " y ".join(f"a los {num(tc, 1)} s" for tc in self.t_cortes)
+                linea = f"Cortes de escena detectados en este video: {len(self.t_cortes)}, {instantes}; en cada corte se reinicia el seguimiento."
+            else:
+                linea = "Cortes de escena detectados en este video: 0 (en cada corte se reiniciaría el seguimiento)."
+            lz.texto(linea, 24, 558, 16, "tinta2", False, "lm")
             yield lz.final()
 
     def ventana_camara(self, n):
@@ -655,8 +688,12 @@ class Demo:
                 for (xa, ya), (xb, yb), ok in zip(p0, p1, inl):
                     color = "inlier" if ok else "outlier"
                     xs, ys = 24 + xb * esc, 96 + yb * esc
-                    lz.linea(xs - 4 * (xb - xa) * esc, ys - 4 * (yb - ya) * esc, xs, ys, color, 1)
-                    lz.circulo(xs, ys, 2, color)
+                    dentro, pa, pb = cv2.clipLine((24, 96, 720, 405), (int(round(xs - 4 * (xb - xa) * esc)), int(round(ys - 4 * (yb - ya) * esc))),
+                                                  (int(round(xs)), int(round(ys))))
+                    if dentro:
+                        lz.linea(pa[0], pa[1], pb[0], pb[1], color, 1)
+                    if 24 <= xs < 744 and 96 <= ys < 501:
+                        lz.circulo(xs, ys, 2, color)
             lz.circulo(34, 528, 5, "inlier")
             lz.texto("puntos consistentes (inliers)", 46, 528, 15, "tinta2", False, "lm")
             lz.circulo(300, 528, 5, "outlier")
@@ -812,7 +849,8 @@ class Demo:
                 if self.alerta[k]:
                     t_sig = self.t[k + 1] if k + 1 < self.T else self.t_fin
                     lz.rect(g.px(self.t[k]), 576, g.px(t_sig) + 1, 586, "alerta")
-            lz.texto("alerta activa", x0 + 6, 573, 12, "alerta", False, "lb")
+            if self.alerta.any():
+                lz.texto("alerta activa", x0 + 6, 573, 12, "alerta", False, "lb")
             g.horizontal(u, "alerta", 1, etiqueta=f"umbral {num(u, 3)}")
             g.horizontal(u * fac, "alerta", 1, discontinua=True, etiqueta=f"desactivación {num(u * fac, 3)}")
             g.linea(self.t, self.riesgo, "riesgo", 2, hasta=m["t"])
@@ -932,16 +970,16 @@ def guardar_pasos(paneles, vista_final, carpeta):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--video", default="Jeder dritte Brand entsteht durch Elektrizität.mp4")
+    p.add_argument("--video", default="Har du en fungerande brandvarnare_.mp4")
     p.add_argument("--videos", nargs="+", default=[os.path.join("real_video", "real_video", "fire"), os.path.join("real_video", "real_video", "non_fire")])
     p.add_argument("--corrida", default="cfc_s42")
     p.add_argument("--config", default=os.path.join("resultados", "configuracion_final.json"))
     p.add_argument("--salidas", default=os.path.join("runs_fuego", "salidas_congeladas"))
-    p.add_argument("--conjunto", default="calibracion", choices=list(NOMBRE_CONJUNTO))
+    p.add_argument("--conjunto", default="prueba", choices=list(NOMBRE_CONJUNTO))
     p.add_argument("--particion", default=os.path.join("resultados", "particion", "particion.csv"))
     p.add_argument("--difuminar", nargs="*", default=None)
     p.add_argument("--sigma_difuminado", type=float, default=24.0)
-    p.add_argument("--t_portada", type=float, default=-1.0)
+    p.add_argument("--t_portada", type=float, default=24.0)
     p.add_argument("--cache", default=os.path.join("runs_fuego", "demo_paso_a_paso"))
     p.add_argument("--rehacer", action="store_true")
     p.add_argument("--fotogramas_entrada", type=int, default=40)
@@ -949,8 +987,8 @@ def main():
     p.add_argument("--escena_s", type=float, default=3.5)
     p.add_argument("--aceleracion", type=int, default=-1)
     p.add_argument("--t_preproceso", type=float, default=1.5)
-    p.add_argument("--t_deteccion", type=float, default=6.0)
-    p.add_argument("--t_camara", type=float, default=-1.0)
+    p.add_argument("--t_deteccion", type=float, default=14.8)
+    p.add_argument("--t_camara", type=float, default=20.9)
     p.add_argument("--crf", type=int, default=24)
     p.add_argument("--tasa_max", default="1400k")
     p.add_argument("--credito", default="")
@@ -962,12 +1000,13 @@ def main():
     p.add_argument("--resumen", default=os.path.join("resultados", "demo", "demo_cfc.json"))
     a = p.parse_args()
     base = os.path.splitext(a.video)[0]
+    dif = DIFUMINADO.get(a.video, {"texto": "", "zonas": []})
     if a.difuminar is None:
-        a.zonas = ZONAS_DIFUMINAR.get(a.video, [])
+        a.zonas = dif["zonas"]
     else:
         a.zonas = [tuple(float(v) for v in z.split(",")) for z in a.difuminar]
     a.credito = a.credito or (f"Video: DetectiumFire (arXiv:2511.02495), archivo {base}, CC BY-NC-SA 4.0"
-                              + (", marca comercial difuminada" if a.zonas else ""))
+                              + (f", {dif['texto'] or 'zonas difuminadas'}" if a.zonas else ""))
     a.texto_conjunto = texto_conjunto(a)
 
     with open(a.config, encoding="utf-8") as f:

@@ -1,56 +1,186 @@
 {
- "video": "Jeder dritte Brand entsteht durch Elektrizität.mp4",
- "conjunto": "calibracion",
- "uso_del_video": "no se usó para entrenar ni para fijar el umbral de alerta",
+ "video": "Har du en fungerande brandvarnare_.mp4",
+ "conjunto": "prueba",
+ "uso_del_video": "no se usó para entrenar, validar ni calibrar",
  "corrida": "cfc_s42",
- "fotogramas": 213,
+ "fotogramas": 285,
  "difuminado": {
   "zonas_px_fuente": [
    [
+    230,
+    300,
+    450,
+    500,
+    10.95,
+    11.05
+   ],
+   [
+    250,
+    330,
+    540,
+    530,
+    11.05,
+    11.15
+   ],
+   [
+    370,
+    320,
+    630,
+    530,
+    11.15,
+    11.25
+   ],
+   [
+    440,
+    320,
+    700,
+    530,
+    11.25,
+    11.35
+   ],
+   [
+    500,
+    300,
+    770,
+    510,
+    11.35,
+    11.45
+   ],
+   [
+    560,
+    290,
+    820,
+    500,
+    11.45,
+    11.55
+   ],
+   [
+    610,
+    300,
+    880,
+    510,
+    11.55,
+    11.65
+   ],
+   [
+    670,
+    320,
+    900,
+    530,
+    11.65,
+    11.75
+   ],
+   [
+    1245,
+    211,
+    1578,
+    869,
+    12.25,
+    15.28
+   ],
+   [
+    1780,
+    0,
+    1920,
+    340,
+    27.55,
+    27.75
+   ],
+   [
+    1620,
+    0,
+    1900,
+    290,
+    27.75,
+    27.85
+   ],
+   [
+    1500,
+    0,
+    1790,
+    300,
+    27.85,
+    27.95
+   ],
+   [
+    1440,
+    20,
+    1710,
+    320,
+    27.95,
+    28.05
+   ],
+   [
+    1380,
+    20,
     1660,
-    806,
-    1864,
-    1080
+    330,
+    28.05,
+    28.15
+   ],
+   [
+    1340,
+    40,
+    1640,
+    360,
+    28.15,
+    28.25
+   ],
+   [
+    1290,
+    90,
+    1590,
+    380,
+    28.25,
+    28.35
+   ],
+   [
+    1250,
+    80,
+    1550,
+    380,
+    28.35,
+    28.55
    ]
   ],
   "sigma_px_fuente": 24.0
  },
- "aceleracion": 6,
- "duracion_s": 21.26666666666667,
+ "aceleracion": 8,
+ "duracion_s": 28.5,
  "control": {
   "comparado": true,
-  "fotogramas": 213,
+  "fotogramas": 285,
   "diferencia_maxima": {
    "t": 7.629394538355427e-07,
    "p1": 1.1920928955078125e-07,
-   "p2": 1.1920928955078125e-07,
+   "p2": 8.940696716308594e-08,
    "riesgo": 1.1920928955078125e-07,
-   "tau": 1.33514404296875e-05
+   "tau": 3.4332275390625e-05
   }
  },
  "segmentos": [
   [
    0.0,
-   16.9,
+   18.7,
    0
   ],
   [
-   16.9,
-   17.3,
+   18.7,
+   26.3,
    1
   ],
   [
-   17.3,
-   21.26666666666667,
-   2
+   26.3,
+   28.5,
+   0
   ]
  ],
- "primera_alerta_s": 15.6,
+ "primera_alerta_s": null,
  "umbral_alerta": 0.8125312924385071,
- "riesgo_maximo": 0.934257984161377,
- "tau_inicio_s": 1.3053432703018188,
- "cortes": 0,
- "resumen": "La CfC cambia de nivel 2 veces y alerta por primera vez a los 15,6 s.",
+ "riesgo_maximo": 0.6328153610229492,
+ "tau_inicio_s": 2.3123042583465576,
+ "cortes": 2,
+ "resumen": "La CfC cambia de nivel 2 veces y no alerta.",
  "letterbox": {
   "imgsz": [
    640,
@@ -61,20 +191,20 @@
  },
  "ventanas": {
   "preproceso_t": 1.5,
-  "deteccion_t": 6.0,
-  "camara_t": 5.0
+  "deteccion_t": 14.8,
+  "camara_t": 20.9
  },
  "mp4": {
-  "cuadros": 564,
-  "segundos": 56.4,
-  "mb": 2.142293,
+  "cuadros": 636,
+  "segundos": 63.6,
+  "mb": 2.344793,
   "ruta": "docs\\demo\\demo_cfc.mp4"
  },
  "gif": {
-  "cuadros": 107,
+  "cuadros": 143,
   "fps": 5.0,
   "colores": 128,
-  "mb": 4.434967,
+  "mb": 4.468134,
   "ancho": 720,
   "alto": 405,
   "ruta": "docs\\img\\demo_cfc.gif"
@@ -82,40 +212,40 @@
  "pasos": [
   {
    "ruta": "docs\\demo\\pasos\\etapa_1.png",
-   "mb": 0.357458
+   "mb": 0.199373
   },
   {
    "ruta": "docs\\demo\\pasos\\etapa_2.png",
-   "mb": 0.288257
+   "mb": 0.166348
   },
   {
    "ruta": "docs\\demo\\pasos\\etapa_3.png",
-   "mb": 0.378519
+   "mb": 0.276987
   },
   {
    "ruta": "docs\\demo\\pasos\\etapa_4.png",
-   "mb": 0.421092
+   "mb": 0.376744
   },
   {
    "ruta": "docs\\demo\\pasos\\etapa_5.png",
-   "mb": 0.160435
+   "mb": 0.210524
   },
   {
    "ruta": "docs\\demo\\pasos\\etapa_6.png",
-   "mb": 0.149685
+   "mb": 0.187821
   },
   {
    "ruta": "docs\\demo\\pasos\\etapa_7.png",
-   "mb": 0.137229
+   "mb": 0.161212
   },
   {
    "ruta": "docs\\demo\\pasos\\etapa_8.png",
-   "mb": 0.04877
+   "mb": 0.04513
   },
   {
    "ruta": "docs\\demo\\pasos\\vista_completa.png",
-   "mb": 0.173463
+   "mb": 0.242665
   }
  ],
- "credito": "Video: DetectiumFire (arXiv:2511.02495), archivo Jeder dritte Brand entsteht durch Elektrizität, CC BY-NC-SA 4.0, marca comercial difuminada"
+ "credito": "Video: DetectiumFire (arXiv:2511.02495), archivo Har du en fungerande brandvarnare_, CC BY-NC-SA 4.0, teléfono y rostros difuminados"
 }

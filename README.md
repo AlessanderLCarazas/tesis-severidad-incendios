@@ -16,11 +16,11 @@ El sistema recibe un video, detecta y sigue las regiones de fuego y humo, y resu
 
 ![Vista completa de la demo con la CfC](docs/img/demo_cfc.gif)
 
-*Ejemplo elegido para mostrar un cambio de nivel en la salida de la CfC; no representa el desempeño promedio (ver Resultados). Un video de calibración (no se usó para entrenar ni para fijar el umbral), un cuarto montado donde el fuego pasa del refrigerador al estante, recorre las 8 etapas con la CfC congelada (semilla 42) y la misma cadena del sistema en vivo; arriba, la vista completa. La CfC pasa de controlado a incipiente a los 16.9 s y a incontrolado a los 17.3 s, y alerta a los 15.6 s.*
+*Ejemplo elegido para mostrar un cambio de nivel en la salida de la CfC; no representa el desempeño promedio (ver Resultados). Un video de prueba (no se usó para entrenar ni para fijar el umbral), en el que una vela enciende la cortina de una cocina y que tiene dos cortes de escena, recorre las 8 etapas con la CfC congelada (semilla 42) y la misma cadena del sistema en vivo; arriba, la vista completa. La CfC pasa de controlado a incipiente a los 18.7 s y vuelve a controlado a los 26.3 s; no hay alerta, porque el riesgo máximo (0.633) no supera el umbral (0.813).*
 
 Paso a paso, con la explicación de cada etapa: [docs/demo/PASOS.md](docs/demo/PASOS.md).
 
-Video completo, con las 8 etapas paso a paso y la vista completa (56 s, H.264): [docs/demo/demo_cfc.mp4](docs/demo/demo_cfc.mp4). Video original: `Jeder dritte Brand entsteht durch Elektrizität.mp4`, de DetectiumFire ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)), con una marca comercial difuminada.
+Video completo, con las 8 etapas paso a paso y la vista completa (64 s, H.264): [docs/demo/demo_cfc.mp4](docs/demo/demo_cfc.mp4). Video original: `Har du en fungerande brandvarnare_.mp4`, de DetectiumFire ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)), con la pantalla de un teléfono y dos rostros difuminados.
 
 ## Experimentos
 
@@ -134,5 +134,5 @@ El registro completo de cada paso, con comandos, números y decisiones, está en
 - **DetectiumFire** ([arXiv:2511.02495](https://arxiv.org/abs/2511.02495)): videos e imágenes sin fuego. Sus videos de búsqueda web se publican bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) y se usan con fines académicos y no comerciales. No se redistribuyen.
 - **FASDD**, subconjunto CV ("FASDD: An Open-access 100,000-level Flame and Smoke Detection Dataset for Deep Learning in Fire Detection", Science Data Bank, DOI [10.57760/sciencedb.j00104.00103](https://doi.org/10.57760/sciencedb.j00104.00103)): entrenamiento y evaluación del detector. No se redistribuye.
 - **FIgLib** (HPWREN Fire Ignition images Library): evaluación externa. Imágenes de HPWREN, [http://hpwren.ucsd.edu/](http://hpwren.ucsd.edu/). No se redistribuyen.
-- **Video de la demo**: `Jeder dritte Brand entsteht durch Elektrizität.mp4`, de los videos de DetectiumFire ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)), con una marca comercial de la escena difuminada. Sus fotogramas aparecen, con crédito, en el GIF, las imágenes de cada etapa y el MP4, que se comparten bajo la misma licencia, con fines académicos y no comerciales.
+- **Video de la demo**: `Har du en fungerande brandvarnare_.mp4`, de los videos de DetectiumFire ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)). Se difuminaron la pantalla de un teléfono que muestra un número y los rostros de dos personas. Sus fotogramas aparecen, con crédito, en el GIF, las imágenes de cada etapa y el MP4, que se comparten bajo la misma licencia, con fines académicos y no comerciales.
 - Las gráficas y el diagrama son de elaboración propia y se comparten bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
