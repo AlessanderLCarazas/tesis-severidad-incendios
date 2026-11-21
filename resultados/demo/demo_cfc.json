@@ -1,0 +1,121 @@
+{
+ "video": "Jeder dritte Brand entsteht durch Elektrizität.mp4",
+ "conjunto": "calibracion",
+ "uso_del_video": "no se usó para entrenar ni para fijar el umbral de alerta",
+ "corrida": "cfc_s42",
+ "fotogramas": 213,
+ "difuminado": {
+  "zonas_px_fuente": [
+   [
+    1660,
+    806,
+    1864,
+    1080
+   ]
+  ],
+  "sigma_px_fuente": 24.0
+ },
+ "aceleracion": 6,
+ "duracion_s": 21.26666666666667,
+ "control": {
+  "comparado": true,
+  "fotogramas": 213,
+  "diferencia_maxima": {
+   "t": 7.629394538355427e-07,
+   "p1": 1.1920928955078125e-07,
+   "p2": 1.1920928955078125e-07,
+   "riesgo": 1.1920928955078125e-07,
+   "tau": 1.33514404296875e-05
+  }
+ },
+ "segmentos": [
+  [
+   0.0,
+   16.9,
+   0
+  ],
+  [
+   16.9,
+   17.3,
+   1
+  ],
+  [
+   17.3,
+   21.26666666666667,
+   2
+  ]
+ ],
+ "primera_alerta_s": 15.6,
+ "umbral_alerta": 0.8125312924385071,
+ "riesgo_maximo": 0.934257984161377,
+ "tau_inicio_s": 1.3053432703018188,
+ "cortes": 0,
+ "resumen": "La CfC cambia de nivel 2 veces y alerta por primera vez a los 15,6 s.",
+ "letterbox": {
+  "imgsz": [
+   640,
+   640
+  ],
+  "auto": true,
+  "zancada": 32
+ },
+ "ventanas": {
+  "preproceso_t": 1.5,
+  "deteccion_t": 6.0,
+  "camara_t": 5.0
+ },
+ "mp4": {
+  "cuadros": 564,
+  "segundos": 56.4,
+  "mb": 2.142293,
+  "ruta": "docs\\demo\\demo_cfc.mp4"
+ },
+ "gif": {
+  "cuadros": 107,
+  "fps": 5.0,
+  "colores": 128,
+  "mb": 4.434967,
+  "ancho": 720,
+  "alto": 405,
+  "ruta": "docs\\img\\demo_cfc.gif"
+ },
+ "pasos": [
+  {
+   "ruta": "docs\\demo\\pasos\\etapa_1.png",
+   "mb": 0.357458
+  },
+  {
+   "ruta": "docs\\demo\\pasos\\etapa_2.png",
+   "mb": 0.288257
+  },
+  {
+   "ruta": "docs\\demo\\pasos\\etapa_3.png",
+   "mb": 0.378519
+  },
+  {
+   "ruta": "docs\\demo\\pasos\\etapa_4.png",
+   "mb": 0.421092
+  },
+  {
+   "ruta": "docs\\demo\\pasos\\etapa_5.png",
+   "mb": 0.160435
+  },
+  {
+   "ruta": "docs\\demo\\pasos\\etapa_6.png",
+   "mb": 0.149685
+  },
+  {
+   "ruta": "docs\\demo\\pasos\\etapa_7.png",
+   "mb": 0.137229
+  },
+  {
+   "ruta": "docs\\demo\\pasos\\etapa_8.png",
+   "mb": 0.04877
+  },
+  {
+   "ruta": "docs\\demo\\pasos\\vista_completa.png",
+   "mb": 0.173463
+  }
+ ],
+ "credito": "Video: DetectiumFire (arXiv:2511.02495), archivo Jeder dritte Brand entsteht durch Elektrizität, CC BY-NC-SA 4.0, marca comercial difuminada"
+}
